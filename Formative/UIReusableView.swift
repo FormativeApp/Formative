@@ -28,7 +28,7 @@ class UIReusableView: UIView {
     
     func loadViewFromNib() -> UIView {
         let bundle = NSBundle(forClass: self.dynamicType)
-        let nib = UINib(nibName: "Test", bundle: bundle)
+        let nib = UINib(nibName: "PostView", bundle: bundle)
         
         // Assumes UIView is top level and only object in CustomView.xib file
         let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
