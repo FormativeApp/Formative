@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostView">
             <connections>
                 <outlet property="postImage" destination="bOX-fj-DeG" id="u2f-XM-H92"/>
+                <outlet property="postTextView" destination="v01-nh-X3S" id="S1E-w2-b7u"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
