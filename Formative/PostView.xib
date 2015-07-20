@@ -7,9 +7,13 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostView"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostView">
+            <connections>
+                <outlet property="postImage" destination="bOX-fj-DeG" id="u2f-XM-H92"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="Test">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="348" height="430"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -29,7 +33,7 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45v-II-OSi">
-                    <rect key="frame" x="8" y="28" width="50" height="1"/>
+                    <rect key="frame" x="8" y="31" width="50" height="1"/>
                     <color key="backgroundColor" red="0.77254901960784317" green="0.77254901960784317" blue="0.77254901960784317" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="KI4-sX-jXx"/>
@@ -39,21 +43,19 @@
                     <rect key="frame" x="8" y="97" width="332" height="216"/>
                     <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="bOX-fj-DeG" secondAttribute="height" multiplier="83:54" id="96h-yR-T4a"/>
-                        <constraint firstAttribute="height" constant="216" id="Ghd-AC-hXc"/>
+                        <constraint firstAttribute="width" secondItem="bOX-fj-DeG" secondAttribute="height" multiplier="83:54" id="InT-fF-yBP"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="0.0"/>
+                            <real key="value" value="5"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WOh-2Y-8qc">
-                    <rect key="frame" x="8" y="321" width="113" height="40"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WOh-2Y-8qc" customClass="PostProfileView" customModule="Formative" customModuleProvider="target">
+                    <rect key="frame" x="8" y="321" width="84" height="40"/>
                     <color key="backgroundColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="4jB-Ei-70Y"/>
-                        <constraint firstAttribute="width" constant="113" id="MDU-aU-zlT"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObU-7M-zjC">
@@ -63,6 +65,13 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rHu-zd-Nwy" customClass="PostFavoritesView" customModule="Formative" customModuleProvider="target">
+                    <rect key="frame" x="224" y="321" width="116" height="40"/>
+                    <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="sAf-zH-mdL"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -74,10 +83,13 @@
                 <constraint firstItem="ObU-7M-zjC" firstAttribute="top" secondItem="WOh-2Y-8qc" secondAttribute="bottom" constant="8" symbolic="YES" id="O8i-gY-bUT"/>
                 <constraint firstItem="WOh-2Y-8qc" firstAttribute="top" secondItem="bOX-fj-DeG" secondAttribute="bottom" constant="8" symbolic="YES" id="ReQ-tN-8OW"/>
                 <constraint firstItem="45v-II-OSi" firstAttribute="width" secondItem="GkD-eS-Y7G" secondAttribute="width" multiplier="0.75" id="Vsc-V9-bYK"/>
+                <constraint firstItem="rHu-zd-Nwy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WOh-2Y-8qc" secondAttribute="trailing" constant="5" id="XDy-GK-Puy"/>
                 <constraint firstItem="v01-nh-X3S" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="YuF-p7-WDq"/>
+                <constraint firstItem="rHu-zd-Nwy" firstAttribute="trailing" secondItem="bOX-fj-DeG" secondAttribute="trailing" id="avD-qf-kva"/>
                 <constraint firstItem="bOX-fj-DeG" firstAttribute="leading" secondItem="45v-II-OSi" secondAttribute="leading" id="gEw-L5-Yhw"/>
+                <constraint firstItem="rHu-zd-Nwy" firstAttribute="centerY" secondItem="WOh-2Y-8qc" secondAttribute="centerY" id="jLm-pM-ljK"/>
                 <constraint firstItem="WOh-2Y-8qc" firstAttribute="leading" secondItem="bOX-fj-DeG" secondAttribute="leading" id="lVx-8K-1yd"/>
-                <constraint firstItem="45v-II-OSi" firstAttribute="top" secondItem="GkD-eS-Y7G" secondAttribute="bottom" id="lgb-8F-I0e"/>
+                <constraint firstItem="45v-II-OSi" firstAttribute="top" secondItem="GkD-eS-Y7G" secondAttribute="bottom" constant="3" id="lgb-8F-I0e"/>
                 <constraint firstItem="v01-nh-X3S" firstAttribute="top" secondItem="GkD-eS-Y7G" secondAttribute="bottom" constant="8" symbolic="YES" id="mqU-9j-rQv"/>
                 <constraint firstItem="bOX-fj-DeG" firstAttribute="trailing" secondItem="v01-nh-X3S" secondAttribute="trailing" id="n2C-V4-eQL"/>
                 <constraint firstItem="ObU-7M-zjC" firstAttribute="centerX" secondItem="v01-nh-X3S" secondAttribute="centerX" id="pLy-Wu-0w0"/>

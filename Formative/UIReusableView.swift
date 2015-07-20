@@ -12,6 +12,7 @@ class UIReusableView: UIView {
 
     // Our custom view from the XIB file
     var view: UIView!
+    var className: String = "Test"
     
     func xibSetup() {
         view = loadViewFromNib()
@@ -28,7 +29,7 @@ class UIReusableView: UIView {
     
     func loadViewFromNib() -> UIView {
         let bundle = NSBundle(forClass: self.dynamicType)
-        let nib = UINib(nibName: "PostView", bundle: bundle)
+        let nib = UINib(nibName: className, bundle: bundle)
         
         // Assumes UIView is top level and only object in CustomView.xib file
         let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
@@ -55,19 +56,4 @@ class UIReusableView: UIView {
         xibSetup()
     }
 
-}
-
-extension UIView {
-    @IBInspectable var cornerRadius: CGFloat {
-        get {
-            return layer.cornerRadius
-        }
-        set {
-            layer.cornerRadius = newValue
-            if (newValue == -1){
-                layer.cornerRadius = bounds.height/2
-            }
-            layer.masksToBounds = newValue > 0 || newValue == -1
-        }
-    }
 }

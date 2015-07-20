@@ -16,6 +16,11 @@
 		A145858B1B4E29BF00C1BD30 /* FormativeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A145858A1B4E29BF00C1BD30 /* FormativeTests.swift */; };
 		A14E2D6A1B5D6D8A001666E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14E2D691B5D6D8A001666E8 /* Main.storyboard */; };
 		A1FBAFAF1B5D6ED400980086 /* PostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FBAFAE1B5D6ED400980086 /* PostView.xib */; };
+		A1FBAFB11B5D748300980086 /* PostProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FBAFB01B5D748300980086 /* PostProfileView.swift */; };
+		A1FBAFB31B5D749200980086 /* PostProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FBAFB21B5D749200980086 /* PostProfileView.xib */; };
+		A1FBAFB51B5D76A800980086 /* UIView+RoundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FBAFB41B5D76A800980086 /* UIView+RoundCorners.swift */; };
+		A1FBAFB91B5D7CB400980086 /* PostFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FBAFB81B5D7CB400980086 /* PostFavoritesView.swift */; };
+		A1FBAFBD1B5D7E5100980086 /* PostFavoritesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FBAFBC1B5D7E5100980086 /* PostFavoritesView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +47,11 @@
 		A145858A1B4E29BF00C1BD30 /* FormativeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormativeTests.swift; sourceTree = "<group>"; };
 		A14E2D691B5D6D8A001666E8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A1FBAFAE1B5D6ED400980086 /* PostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostView.xib; sourceTree = "<group>"; };
+		A1FBAFB01B5D748300980086 /* PostProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostProfileView.swift; sourceTree = "<group>"; };
+		A1FBAFB21B5D749200980086 /* PostProfileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostProfileView.xib; sourceTree = "<group>"; };
+		A1FBAFB41B5D76A800980086 /* UIView+RoundCorners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+RoundCorners.swift"; sourceTree = "<group>"; };
+		A1FBAFB81B5D7CB400980086 /* PostFavoritesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostFavoritesView.swift; sourceTree = "<group>"; };
+		A1FBAFBC1B5D7E5100980086 /* PostFavoritesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostFavoritesView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,14 +93,11 @@
 		A14585711B4E29BF00C1BD30 /* Formative */ = {
 			isa = PBXGroup;
 			children = (
-				A14585741B4E29BF00C1BD30 /* AppDelegate.swift */,
 				A14585761B4E29BF00C1BD30 /* ViewController.swift */,
 				A14E2D691B5D6D8A001666E8 /* Main.storyboard */,
-				A14503E81B4F04DB006AC555 /* UIReusableView.swift */,
-				A14503E61B4F008B006AC555 /* PostView.swift */,
-				A1FBAFAE1B5D6ED400980086 /* PostView.xib */,
 				A145857B1B4E29BF00C1BD30 /* Images.xcassets */,
-				A145857D1B4E29BF00C1BD30 /* LaunchScreen.xib */,
+				A1FBAFBA1B5D7E1700980086 /* Xibs */,
+				A1FBAFBB1B5D7E2500980086 /* Extensions */,
 				A14585721B4E29BF00C1BD30 /* Supporting Files */,
 			);
 			path = Formative;
@@ -99,6 +106,8 @@
 		A14585721B4E29BF00C1BD30 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A14585741B4E29BF00C1BD30 /* AppDelegate.swift */,
+				A145857D1B4E29BF00C1BD30 /* LaunchScreen.xib */,
 				A14585731B4E29BF00C1BD30 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -119,6 +128,28 @@
 				A14585891B4E29BF00C1BD30 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A1FBAFBA1B5D7E1700980086 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				A14503E81B4F04DB006AC555 /* UIReusableView.swift */,
+				A14503E61B4F008B006AC555 /* PostView.swift */,
+				A1FBAFAE1B5D6ED400980086 /* PostView.xib */,
+				A1FBAFB01B5D748300980086 /* PostProfileView.swift */,
+				A1FBAFB21B5D749200980086 /* PostProfileView.xib */,
+				A1FBAFB81B5D7CB400980086 /* PostFavoritesView.swift */,
+				A1FBAFBC1B5D7E5100980086 /* PostFavoritesView.xib */,
+			);
+			name = Xibs;
+			sourceTree = "<group>";
+		};
+		A1FBAFBB1B5D7E2500980086 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A1FBAFB41B5D76A800980086 /* UIView+RoundCorners.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,7 +234,9 @@
 			files = (
 				A145857F1B4E29BF00C1BD30 /* LaunchScreen.xib in Resources */,
 				A145857C1B4E29BF00C1BD30 /* Images.xcassets in Resources */,
+				A1FBAFB31B5D749200980086 /* PostProfileView.xib in Resources */,
 				A14E2D6A1B5D6D8A001666E8 /* Main.storyboard in Resources */,
+				A1FBAFBD1B5D7E5100980086 /* PostFavoritesView.xib in Resources */,
 				A1FBAFAF1B5D6ED400980086 /* PostView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,8 +255,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1FBAFB51B5D76A800980086 /* UIView+RoundCorners.swift in Sources */,
 				A14585771B4E29BF00C1BD30 /* ViewController.swift in Sources */,
+				A1FBAFB91B5D7CB400980086 /* PostFavoritesView.swift in Sources */,
 				A14585751B4E29BF00C1BD30 /* AppDelegate.swift in Sources */,
+				A1FBAFB11B5D748300980086 /* PostProfileView.swift in Sources */,
 				A14503E71B4F008B006AC555 /* PostView.swift in Sources */,
 				A14503E91B4F04DB006AC555 /* UIReusableView.swift in Sources */,
 			);
