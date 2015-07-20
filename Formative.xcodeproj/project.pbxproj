@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A14503E31B4EFC6B006AC555 /* Test.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14503E21B4EFC6B006AC555 /* Test.xib */; };
 		A14503E71B4F008B006AC555 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14503E61B4F008B006AC555 /* Test.swift */; };
 		A14503E91B4F04DB006AC555 /* UIReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14503E81B4F04DB006AC555 /* UIReusableView.swift */; };
 		A14585751B4E29BF00C1BD30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14585741B4E29BF00C1BD30 /* AppDelegate.swift */; };
@@ -16,6 +15,7 @@
 		A145857F1B4E29BF00C1BD30 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A145857D1B4E29BF00C1BD30 /* LaunchScreen.xib */; };
 		A145858B1B4E29BF00C1BD30 /* FormativeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A145858A1B4E29BF00C1BD30 /* FormativeTests.swift */; };
 		A14E2D6A1B5D6D8A001666E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14E2D691B5D6D8A001666E8 /* Main.storyboard */; };
+		A1FBAFAF1B5D6ED400980086 /* Test.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FBAFAE1B5D6ED400980086 /* Test.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +29,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A14503E21B4EFC6B006AC555 /* Test.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Test.xib; sourceTree = "<group>"; };
 		A14503E61B4F008B006AC555 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		A14503E81B4F04DB006AC555 /* UIReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIReusableView.swift; sourceTree = "<group>"; };
 		A145856F1B4E29BF00C1BD30 /* Formative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Formative.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +41,7 @@
 		A14585891B4E29BF00C1BD30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A145858A1B4E29BF00C1BD30 /* FormativeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormativeTests.swift; sourceTree = "<group>"; };
 		A14E2D691B5D6D8A001666E8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A1FBAFAE1B5D6ED400980086 /* Test.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Test.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +88,7 @@
 				A14E2D691B5D6D8A001666E8 /* Main.storyboard */,
 				A14503E81B4F04DB006AC555 /* UIReusableView.swift */,
 				A14503E61B4F008B006AC555 /* Test.swift */,
-				A14503E21B4EFC6B006AC555 /* Test.xib */,
+				A1FBAFAE1B5D6ED400980086 /* Test.xib */,
 				A145857B1B4E29BF00C1BD30 /* Images.xcassets */,
 				A145857D1B4E29BF00C1BD30 /* LaunchScreen.xib */,
 				A14585721B4E29BF00C1BD30 /* Supporting Files */,
@@ -201,10 +201,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A14503E31B4EFC6B006AC555 /* Test.xib in Resources */,
 				A145857F1B4E29BF00C1BD30 /* LaunchScreen.xib in Resources */,
 				A145857C1B4E29BF00C1BD30 /* Images.xcassets in Resources */,
 				A14E2D6A1B5D6D8A001666E8 /* Main.storyboard in Resources */,
+				A1FBAFAF1B5D6ED400980086 /* Test.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
