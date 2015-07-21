@@ -13,6 +13,7 @@ import UIKit
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var postTextView: UITextView!
     
+    @IBOutlet weak var textViewHeight: NSLayoutConstraint!
     override var className: String {
         get {
             return "PostView"
@@ -23,17 +24,19 @@ import UIKit
     }
     
     func setup(){
-        layer.shadowColor = UIColor.blackColor().CGColor
-        layer.shadowOffset = CGSize(width: 0, height: 10)
-        layer.shadowOpacity = 0.4
-        layer.shadowRadius = 5
-        //postImage.hidden = true
-        var newFrame = postImage.frame
-        frame.size.height = 0
-        postImage.frame = newFrame
-        setNeedsLayout()
-        postTextView.text = "In iOS 6 and later, assigning a new value to this property also replaces the value of the attributedText property with the same text, albeit without any inherent style attributes. Instead the text view styles the new string using the font, textColor, and other style-related properties of the class."
-        postTextView.scrollEnabled = false
+        postTextView.sizeToFit()
+        textViewHeight.constant = postTextView.bounds.height
+        postImage.image?.size.width
+        
+        var aspectRatioConstraint = NSLayoutConstraint(
+            item: postImage,
+            attribute: .Width,
+            relatedBy: .Equal,
+            toItem: postImage,
+            attribute: .Height,
+            multiplier: postImage.image!.aspectRatio,
+            constant: 0)
+        postImage.addConstraint(aspectRatioConstraint)
     }
     
     override func awakeFromNib() {
@@ -43,4 +46,11 @@ import UIKit
     
 
 
+}
+
+extension UIImage
+{
+    var aspectRatio: CGFloat {
+        return size.height != 0 ? size.width / size.height : 0
+    }
 }

@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -11,6 +10,7 @@
             <connections>
                 <outlet property="postImage" destination="bOX-fj-DeG" id="u2f-XM-H92"/>
                 <outlet property="postTextView" destination="v01-nh-X3S" id="S1E-w2-b7u"/>
+                <outlet property="textViewHeight" destination="2jJ-Kc-qHx" id="ui0-5g-48E"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -24,7 +24,7 @@
                     <color key="textColor" red="0.36078431372549019" green="0.36078431372549019" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="How can I get Ted to stay at the table during dinner?" translatesAutoresizingMaskIntoConstraints="NO" id="v01-nh-X3S">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="How can I get Ted to stay at the table during dinner? " selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v01-nh-X3S">
                     <rect key="frame" x="6" y="36" width="334" height="53"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -40,11 +40,11 @@
                         <constraint firstAttribute="height" constant="1" id="KI4-sX-jXx"/>
                     </constraints>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mealtime" translatesAutoresizingMaskIntoConstraints="NO" id="bOX-fj-DeG">
-                    <rect key="frame" x="8" y="97" width="332" height="216"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Portrait" translatesAutoresizingMaskIntoConstraints="NO" id="bOX-fj-DeG">
+                    <rect key="frame" x="8" y="97" width="332" height="200"/>
                     <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="bOX-fj-DeG" secondAttribute="height" multiplier="83:54" id="InT-fF-yBP"/>
+                        <constraint firstAttribute="height" priority="900" constant="200" id="EDB-nu-BJc"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -52,25 +52,25 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WOh-2Y-8qc" customClass="PostProfileView" customModule="Formative" customModuleProvider="target">
-                    <rect key="frame" x="8" y="321" width="84" height="40"/>
-                    <color key="backgroundColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="4jB-Ei-70Y"/>
-                    </constraints>
-                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObU-7M-zjC">
-                    <rect key="frame" x="115" y="369" width="116" height="36"/>
+                    <rect key="frame" x="115" y="355" width="116" height="50"/>
                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                     <state key="normal" title="View 7 Comments">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rHu-zd-Nwy" customClass="PostFavoritesView" customModule="Formative" customModuleProvider="target">
-                    <rect key="frame" x="224" y="321" width="116" height="40"/>
+                    <rect key="frame" x="224" y="307" width="116" height="40"/>
                     <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="sAf-zH-mdL"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WOh-2Y-8qc" customClass="PostProfileView" customModule="Formative" customModuleProvider="target">
+                    <rect key="frame" x="8" y="307" width="84" height="40"/>
+                    <color key="backgroundColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="4jB-Ei-70Y"/>
                     </constraints>
                 </view>
             </subviews>
@@ -80,19 +80,20 @@
                 <constraint firstAttribute="bottom" secondItem="ObU-7M-zjC" secondAttribute="bottom" constant="25" id="19z-Uc-bRd"/>
                 <constraint firstItem="GkD-eS-Y7G" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="ERd-Pl-dFy"/>
                 <constraint firstItem="v01-nh-X3S" firstAttribute="leading" secondItem="45v-II-OSi" secondAttribute="leading" constant="-2" id="FR9-CW-iCs"/>
+                <constraint firstItem="WOh-2Y-8qc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Gus-kh-Dv5"/>
                 <constraint firstItem="GkD-eS-Y7G" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="MRW-AV-LOZ"/>
                 <constraint firstItem="ObU-7M-zjC" firstAttribute="top" secondItem="WOh-2Y-8qc" secondAttribute="bottom" constant="8" symbolic="YES" id="O8i-gY-bUT"/>
-                <constraint firstItem="WOh-2Y-8qc" firstAttribute="top" secondItem="bOX-fj-DeG" secondAttribute="bottom" constant="8" symbolic="YES" id="ReQ-tN-8OW"/>
+                <constraint firstItem="WOh-2Y-8qc" firstAttribute="top" secondItem="bOX-fj-DeG" secondAttribute="bottom" constant="10" id="ReQ-tN-8OW"/>
                 <constraint firstItem="45v-II-OSi" firstAttribute="width" secondItem="GkD-eS-Y7G" secondAttribute="width" multiplier="0.75" id="Vsc-V9-bYK"/>
                 <constraint firstItem="rHu-zd-Nwy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WOh-2Y-8qc" secondAttribute="trailing" constant="5" id="XDy-GK-Puy"/>
                 <constraint firstItem="v01-nh-X3S" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="YuF-p7-WDq"/>
-                <constraint firstItem="rHu-zd-Nwy" firstAttribute="trailing" secondItem="bOX-fj-DeG" secondAttribute="trailing" id="avD-qf-kva"/>
-                <constraint firstItem="bOX-fj-DeG" firstAttribute="leading" secondItem="45v-II-OSi" secondAttribute="leading" id="gEw-L5-Yhw"/>
+                <constraint firstAttribute="centerX" secondItem="bOX-fj-DeG" secondAttribute="centerX" id="g7u-IS-myN"/>
+                <constraint firstItem="bOX-fj-DeG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="izr-xb-wOD"/>
                 <constraint firstItem="rHu-zd-Nwy" firstAttribute="centerY" secondItem="WOh-2Y-8qc" secondAttribute="centerY" id="jLm-pM-ljK"/>
-                <constraint firstItem="WOh-2Y-8qc" firstAttribute="leading" secondItem="bOX-fj-DeG" secondAttribute="leading" id="lVx-8K-1yd"/>
                 <constraint firstItem="45v-II-OSi" firstAttribute="top" secondItem="GkD-eS-Y7G" secondAttribute="bottom" constant="3" id="lgb-8F-I0e"/>
+                <constraint firstAttribute="trailing" secondItem="rHu-zd-Nwy" secondAttribute="trailing" constant="8" id="mAl-Yq-sTx"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bOX-fj-DeG" secondAttribute="trailing" constant="8" id="mAm-lM-b3P"/>
                 <constraint firstItem="v01-nh-X3S" firstAttribute="top" secondItem="GkD-eS-Y7G" secondAttribute="bottom" constant="8" symbolic="YES" id="mqU-9j-rQv"/>
-                <constraint firstItem="bOX-fj-DeG" firstAttribute="trailing" secondItem="v01-nh-X3S" secondAttribute="trailing" id="n2C-V4-eQL"/>
                 <constraint firstItem="ObU-7M-zjC" firstAttribute="centerX" secondItem="v01-nh-X3S" secondAttribute="centerX" id="pLy-Wu-0w0"/>
                 <constraint firstItem="bOX-fj-DeG" firstAttribute="top" secondItem="v01-nh-X3S" secondAttribute="bottom" constant="8" symbolic="YES" id="wh5-j2-zzq"/>
             </constraints>
@@ -102,6 +103,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Mealtime" width="750" height="500"/>
+        <image name="Portrait" width="341" height="416"/>
     </resources>
 </document>
