@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommentTVC" customModule="Formative" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" rowHeight="125" id="0Fq-3t-2RG">
+            <rect key="frame" x="0.0" y="0.0" width="459" height="125"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Fq-3t-2RG" id="NnX-Gu-NDP">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BwD-AH-GFY">
+                        <rect key="frame" x="8" y="8" width="324" height="108"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Portrait" translatesAutoresizingMaskIntoConstraints="NO" id="JPX-JL-a9C" customClass="CircularImageView" customModule="Formative" customModuleProvider="target">
+                        <rect key="frame" x="340" y="5" width="114" height="114"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="JPX-JL-a9C" secondAttribute="height" multiplier="1:1" id="Nn1-ed-OZX"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="JPX-JL-a9C" firstAttribute="leading" secondItem="BwD-AH-GFY" secondAttribute="trailing" constant="8" id="2y3-h1-Aae"/>
+                    <constraint firstItem="BwD-AH-GFY" firstAttribute="leading" secondItem="NnX-Gu-NDP" secondAttribute="leading" constant="8" id="3k6-uh-ThD"/>
+                    <constraint firstItem="JPX-JL-a9C" firstAttribute="top" secondItem="NnX-Gu-NDP" secondAttribute="top" constant="5" id="Ja4-ca-2Ra"/>
+                    <constraint firstItem="BwD-AH-GFY" firstAttribute="top" secondItem="NnX-Gu-NDP" secondAttribute="top" constant="8" id="fSd-bp-uCy"/>
+                    <constraint firstAttribute="bottom" secondItem="JPX-JL-a9C" secondAttribute="bottom" constant="5" id="kdl-GL-veL"/>
+                    <constraint firstAttribute="bottom" secondItem="BwD-AH-GFY" secondAttribute="bottom" constant="8" id="xLH-py-fSp"/>
+                    <constraint firstAttribute="trailing" secondItem="JPX-JL-a9C" secondAttribute="trailing" constant="5" id="xhz-k1-gin"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="319.5" y="393.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Portrait" width="341" height="416"/>
+    </resources>
+</document>

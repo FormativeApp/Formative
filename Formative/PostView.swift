@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class PostView: UIReusableView  {
+@IBDesignable class PostView: UIReusableView, UITableViewDataSource  {
 
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var postTextView: UITextView!
@@ -16,6 +16,7 @@ import UIKit
     @IBOutlet weak var commentTextBox: UITextView!
     
     @IBOutlet weak var textViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var buttonToCommentsConstraint: NSLayoutConstraint!
     @IBOutlet weak var buttonToBottomConstraint: NSLayoutConstraint!
     
@@ -47,6 +48,12 @@ import UIKit
         commentTextBox.hidden = true
         
         buttonToBottomConstraint.constant = 5
+        
+        commentsTableView.registerNib(UINib(nibName: "CommentTVC", bundle: nil), forCellReuseIdentifier: "commentCell")
+        
+        commentsTableView.dataSource = self
+        commentsTableView.estimatedRowHeight = commentsTableView.rowHeight
+        commentsTableView.rowHeight = UITableViewAutomaticDimension
     }
     
     override func awakeFromNib() {
@@ -60,7 +67,8 @@ import UIKit
         {
             commentsHidden = false
             
-            buttonToBottomConstraint.constant = 253
+            tableViewHeight.constant = commentsTableView.contentSize.height
+            buttonToBottomConstraint.constant = commentTextBox.frame.height + tableViewHeight.constant + 30
             
             UIView.animateWithDuration(0.5, animations: {
                 self.superview?.layoutIfNeeded()
@@ -85,6 +93,22 @@ import UIKit
         
         
     }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete method implementation.
+        // Return the number of rows in the section.
+        return 4
+    }
+
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("commentCell", forIndexPath: indexPath) as! UITableViewCell
+        
+        // Configure the cell...
+
+        return cell
+    }
+
 
 
 }
