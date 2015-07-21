@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class PostView: UIReusableView {
+@IBDesignable class PostView: UIReusableView  {
 
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var postTextView: UITextView!
@@ -25,8 +25,7 @@ import UIKit
     
     func setup(){
         postTextView.sizeToFit()
-        textViewHeight.constant = postTextView.bounds.height
-        postImage.image?.size.width
+        textViewHeight.constant = postTextView.bounds.height-20
         
         var aspectRatioConstraint = NSLayoutConstraint(
             item: postImage,
@@ -44,6 +43,9 @@ import UIKit
         setup()
     }
     
+    @IBAction func revealOrHideComments(sender: UIButton) {
+        
+    }
 
 
 }

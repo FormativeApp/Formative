@@ -15,9 +15,6 @@ extension UIView {
         }
         set {
             layer.cornerRadius = newValue
-            if (newValue == -1){
-                layer.cornerRadius = bounds.height/2-50
-            }
             self.clipsToBounds = true
         }
     }

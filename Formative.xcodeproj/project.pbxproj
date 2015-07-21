@@ -15,6 +15,7 @@
 		A145857F1B4E29BF00C1BD30 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A145857D1B4E29BF00C1BD30 /* LaunchScreen.xib */; };
 		A145858B1B4E29BF00C1BD30 /* FormativeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A145858A1B4E29BF00C1BD30 /* FormativeTests.swift */; };
 		A14E2D6A1B5D6D8A001666E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14E2D691B5D6D8A001666E8 /* Main.storyboard */; };
+		A1D42DBC1B5DD9410035A5C7 /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D42DBB1B5DD9410035A5C7 /* CircularImageView.swift */; };
 		A1FBAFAF1B5D6ED400980086 /* PostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FBAFAE1B5D6ED400980086 /* PostView.xib */; };
 		A1FBAFB11B5D748300980086 /* PostProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FBAFB01B5D748300980086 /* PostProfileView.swift */; };
 		A1FBAFB31B5D749200980086 /* PostProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FBAFB21B5D749200980086 /* PostProfileView.xib */; };
@@ -46,6 +47,7 @@
 		A14585891B4E29BF00C1BD30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A145858A1B4E29BF00C1BD30 /* FormativeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormativeTests.swift; sourceTree = "<group>"; };
 		A14E2D691B5D6D8A001666E8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A1D42DBB1B5DD9410035A5C7 /* CircularImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
 		A1FBAFAE1B5D6ED400980086 /* PostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostView.xib; sourceTree = "<group>"; };
 		A1FBAFB01B5D748300980086 /* PostProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostProfileView.swift; sourceTree = "<group>"; };
 		A1FBAFB21B5D749200980086 /* PostProfileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostProfileView.xib; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				A1FBAFB41B5D76A800980086 /* UIView+RoundCorners.swift */,
+				A1D42DBB1B5DD9410035A5C7 /* CircularImageView.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				A1FBAFB91B5D7CB400980086 /* PostFavoritesView.swift in Sources */,
 				A14585751B4E29BF00C1BD30 /* AppDelegate.swift in Sources */,
 				A1FBAFB11B5D748300980086 /* PostProfileView.swift in Sources */,
+				A1D42DBC1B5DD9410035A5C7 /* CircularImageView.swift in Sources */,
 				A14503E71B4F008B006AC555 /* PostView.swift in Sources */,
 				A14503E91B4F04DB006AC555 /* UIReusableView.swift in Sources */,
 			);

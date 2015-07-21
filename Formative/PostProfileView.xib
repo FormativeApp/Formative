@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="433" height="136"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="hCY-o0-dVz">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="hCY-o0-dVz" customClass="CircularImageView" customModule="Formative" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="136" height="136"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="hCY-o0-dVz" secondAttribute="height" multiplier="1:1" id="DdV-Wz-RmH"/>
@@ -24,8 +24,8 @@
                     </userDefinedRuntimeAttributes>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjG-a5-EM1">
-                    <rect key="frame" x="144" y="59" width="281" height="17"/>
-                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
+                    <rect key="frame" x="144" y="58" width="281" height="20"/>
+                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
