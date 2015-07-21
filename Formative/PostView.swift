@@ -12,8 +12,14 @@ import UIKit
 
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var postTextView: UITextView!
+    @IBOutlet weak var commentsTableView: UITableView!
+    @IBOutlet weak var commentTextBox: UITextView!
     
     @IBOutlet weak var textViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var buttonToCommentsConstraint: NSLayoutConstraint!
+    @IBOutlet weak var buttonToBottomConstraint: NSLayoutConstraint!
+    
+    
     override var className: String {
         get {
             return "PostView"
@@ -36,6 +42,11 @@ import UIKit
             multiplier: postImage.image!.aspectRatio,
             constant: 0)
         postImage.addConstraint(aspectRatioConstraint)
+        
+        commentsTableView.hidden = true
+        commentTextBox.hidden = true
+        
+        buttonToBottomConstraint.constant = 5
     }
     
     override func awakeFromNib() {
@@ -43,7 +54,35 @@ import UIKit
         setup()
     }
     
+    var commentsHidden = true
     @IBAction func revealOrHideComments(sender: UIButton) {
+        if (commentsHidden)
+        {
+            commentsHidden = false
+            
+            buttonToBottomConstraint.constant = 253
+            
+            UIView.animateWithDuration(0.5, animations: {
+                self.superview?.layoutIfNeeded()
+            }, completion: { (completed) -> Void in
+                self.commentsTableView.hidden = false
+                self.commentTextBox.hidden = false
+            })
+        }
+        else
+        {
+            commentsHidden = true
+            
+            self.commentsTableView.hidden = true
+            self.commentTextBox.hidden = true
+            
+            buttonToBottomConstraint.constant = 5
+            
+            UIView.animateWithDuration(0.5, animations: {
+                self.superview?.layoutIfNeeded()
+            })
+        }
+        
         
     }
 

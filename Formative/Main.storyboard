@@ -94,8 +94,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b1d-sE-gvr" customClass="PostView" customModule="Formative" customModuleProvider="target">
-                                <rect key="frame" x="16" y="50" width="382" height="502"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b1d-sE-gvr" customClass="PostView" customModule="Formative" customModuleProvider="target">
+                                <rect key="frame" x="16" y="50" width="382" height="549"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -116,6 +116,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" id="LMk-iN-ITh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="postView" destination="b1d-sE-gvr" id="1a2-Un-G81"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
