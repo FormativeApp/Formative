@@ -133,6 +133,10 @@ import UIKit
         
     }
     
+    @IBAction func imageTapped(sender: UITapGestureRecognizer) {
+        println("Image Tapped")
+    }
+    
     // MARK: - UITableViewDelegate
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

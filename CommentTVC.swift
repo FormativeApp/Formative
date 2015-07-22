@@ -12,8 +12,8 @@ class CommentTVC: UITableViewCell {
     
     var view: UIView!
     
-    @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var textViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var profileImage: CircularImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

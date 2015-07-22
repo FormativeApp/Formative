@@ -9,7 +9,11 @@
 import UIKit
 
 @IBDesignable class PostFavoritesView: UIReusableView {
-
+    
+    
+    @IBOutlet weak var starImage: UIImageView!
+    var starred:Bool = false
+    
     override var className: String {
         get {
             return "PostFavoritesView"
@@ -19,4 +23,13 @@ import UIKit
         }
     }
     
+    @IBAction func tap(sender: UITapGestureRecognizer) {
+        if (starred){
+            starred = false
+            starImage.image = UIImage(named: "Star")
+        }else {
+            starred = true
+            starImage.image = UIImage(named: "FilledStar")
+        }
+    }
 }
