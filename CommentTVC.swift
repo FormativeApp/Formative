@@ -9,10 +9,16 @@
 import UIKit
 
 class CommentTVC: UITableViewCell {
-
+    
+    var view: UIView!
+    
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textViewHeightConstraint: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        //textView.sizeToFit()
+        //textViewHeightConstraint.constant = textView.bounds.height-20
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -20,5 +26,4 @@ class CommentTVC: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

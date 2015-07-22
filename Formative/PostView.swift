@@ -8,16 +8,16 @@
 
 import UIKit
 
-@IBDesignable class PostView: UIReusableView, UITableViewDataSource  {
+@IBDesignable class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
 
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var postTextView: UITextView!
     @IBOutlet weak var commentsTableView: UITableView!
-    @IBOutlet weak var commentTextBox: UITextView!
+    @IBOutlet weak var commentTextView: UITextView!
     
-    @IBOutlet weak var textViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var buttonToCommentsConstraint: NSLayoutConstraint!
+    @IBOutlet weak var messageTextViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var commentTextViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var buttonToBottomConstraint: NSLayoutConstraint!
     
     
@@ -30,9 +30,10 @@ import UIKit
         }
     }
     
+    // MARK: - Initialization
     func setup(){
         postTextView.sizeToFit()
-        textViewHeight.constant = postTextView.bounds.height-20
+        messageTextViewHeightConstraint.constant = postTextView.bounds.height-20
         
         var aspectRatioConstraint = NSLayoutConstraint(
             item: postImage,
@@ -45,44 +46,82 @@ import UIKit
         postImage.addConstraint(aspectRatioConstraint)
         
         commentsTableView.hidden = true
-        commentTextBox.hidden = true
+        commentTextView.hidden = true
         
         buttonToBottomConstraint.constant = 5
         
         commentsTableView.registerNib(UINib(nibName: "CommentTVC", bundle: nil), forCellReuseIdentifier: "commentCell")
         
         commentsTableView.dataSource = self
-        commentsTableView.estimatedRowHeight = commentsTableView.rowHeight
+        
+        commentsTableView.estimatedRowHeight = 60
         commentsTableView.rowHeight = UITableViewAutomaticDimension
+        
+        commentTextView.delegate = self
+        
+        commentsTableView.reloadData()
+        commentsTableView.setNeedsLayout()
+        commentsTableView.layoutIfNeeded()
+        commentsTableView.reloadData()
     }
     
+
     override func awakeFromNib() {
         super.awakeFromNib()
         setup()
     }
     
+    // MARK: - UITextViewDelegate
+    func textViewDidBeginEditing(textView: UITextView) {
+        if (commentTextView.text == "Add a comment"){
+            textView.text = ""
+        }
+        commentTextViewHeightConstraint.constant = 80
+        buttonToBottomConstraint.constant = 80 + tableViewHeightConstraint.constant + 30
+        UIView.animateWithDuration(0.5, animations: {
+            self.superview?.layoutIfNeeded()
+        })
+        commentTextView.becomeFirstResponder()
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        if (commentTextView.text == ""){
+            textView.text = "Add a comment"
+        }
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if (text == "\n"){
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
+    // MARK: - Comments Animation
     var commentsHidden = true
     @IBAction func revealOrHideComments(sender: UIButton) {
         if (commentsHidden)
         {
             commentsHidden = false
             
-            tableViewHeight.constant = commentsTableView.contentSize.height
-            buttonToBottomConstraint.constant = commentTextBox.frame.height + tableViewHeight.constant + 30
+            sender.setTitle("Collapse 7 Comments", forState: UIControlState.Normal)
+            tableViewHeightConstraint.constant = commentsTableView.contentSize.height
+            buttonToBottomConstraint.constant = commentTextView.frame.height + tableViewHeightConstraint.constant + 30
             
             UIView.animateWithDuration(0.5, animations: {
                 self.superview?.layoutIfNeeded()
             }, completion: { (completed) -> Void in
                 self.commentsTableView.hidden = false
-                self.commentTextBox.hidden = false
+                self.commentTextView.hidden = false
             })
         }
         else
         {
             commentsHidden = true
-            
+            sender.setTitle("Show 7 Comments", forState: UIControlState.Normal)
             self.commentsTableView.hidden = true
-            self.commentTextBox.hidden = true
+            self.commentTextView.hidden = true
             
             buttonToBottomConstraint.constant = 5
             
@@ -94,10 +133,10 @@ import UIKit
         
     }
     
+    // MARK: - UITableViewDelegate
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 4
+        return 2
     }
 
 
