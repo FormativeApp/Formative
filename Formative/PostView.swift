@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol PostViewDelegate {
+    static func heightWillChange()
+    static func heightDidChange()
+}
+
 @IBDesignable class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
 
     @IBOutlet weak var postImage: UIImageView!
@@ -20,6 +25,8 @@ import UIKit
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var buttonToBottomConstraint: NSLayoutConstraint!
     
+    var superTableView: UITableView?
+    var delegate: PostViewDelegate?
     
     override var className: String {
         get {
@@ -76,8 +83,8 @@ import UIKit
         if (commentTextView.text == "Add a comment"){
             textView.text = ""
         }
-        commentTextViewHeightConstraint.constant = 80
-        buttonToBottomConstraint.constant = 80 + tableViewHeightConstraint.constant + 30
+        //commentTextViewHeightConstraint.constant = 80
+        //buttonToBottomConstraint.constant = 80 + tableViewHeightConstraint.constant + 30
         UIView.animateWithDuration(0.5, animations: {
             self.superview?.layoutIfNeeded()
         })
@@ -104,16 +111,18 @@ import UIKit
         if (commentsHidden)
         {
             commentsHidden = false
-            
             sender.setTitle("Collapse 7 Comments", forState: UIControlState.Normal)
+            superTableView?.beginUpdates()
+            
             tableViewHeightConstraint.constant = commentsTableView.contentSize.height
             buttonToBottomConstraint.constant = commentTextView.frame.height + tableViewHeightConstraint.constant + 30
             
             UIView.animateWithDuration(0.5, animations: {
                 self.superview?.layoutIfNeeded()
-            }, completion: { (completed) -> Void in
-                self.commentsTableView.hidden = false
-                self.commentTextView.hidden = false
+                self.superTableView?.endUpdates()
+                }, completion: { (completed) -> Void in
+                    self.commentsTableView.hidden = false
+                    self.commentTextView.hidden = false
             })
         }
         else
@@ -122,11 +131,13 @@ import UIKit
             sender.setTitle("Show 7 Comments", forState: UIControlState.Normal)
             self.commentsTableView.hidden = true
             self.commentTextView.hidden = true
+            superTableView?.beginUpdates()
             
             buttonToBottomConstraint.constant = 5
             
             UIView.animateWithDuration(0.5, animations: {
                 self.superview?.layoutIfNeeded()
+                self.superTableView?.endUpdates()
             })
         }
         

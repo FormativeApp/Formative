@@ -26,11 +26,11 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjG-a5-EM1">
                     <rect key="frame" x="144" y="58" width="281" height="20"/>
                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="rjG-a5-EM1" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="FnU-Gc-3Rm"/>
                 <constraint firstItem="hCY-o0-dVz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Q1Y-Gb-qdz"/>

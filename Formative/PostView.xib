@@ -25,9 +25,6 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mealtimes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkD-eS-Y7G">
                     <rect key="frame" x="8" y="8" width="66" height="48"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="48" id="TWK-TF-e94"/>
-                    </constraints>
                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                     <color key="textColor" red="0.36078431372549019" green="0.36078431372549019" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -48,12 +45,12 @@
                         <constraint firstAttribute="height" constant="1" id="KI4-sX-jXx"/>
                     </constraints>
                 </view>
-                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="panorama" translatesAutoresizingMaskIntoConstraints="NO" id="bOX-fj-DeG">
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Portrait" translatesAutoresizingMaskIntoConstraints="NO" id="bOX-fj-DeG">
                     <rect key="frame" x="8" y="125" width="338" height="200"/>
                     <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <gestureRecognizers/>
                     <constraints>
-                        <constraint firstAttribute="height" priority="900" constant="200" id="EDB-nu-BJc"/>
+                        <constraint firstAttribute="height" constant="200" id="EDB-nu-BJc"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -66,7 +63,7 @@
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WOh-2Y-8qc" customClass="PostProfileView" customModule="Formative" customModuleProvider="target">
                     <rect key="frame" x="8" y="335" width="88" height="40"/>
-                    <color key="backgroundColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="0.0" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="4jB-Ei-70Y"/>
                     </constraints>
@@ -87,7 +84,7 @@
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rHu-zd-Nwy" customClass="PostFavoritesView" customModule="Formative" customModuleProvider="target">
                     <rect key="frame" x="221" y="335" width="125" height="40"/>
-                    <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="0.0" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="sAf-zH-mdL"/>
                     </constraints>
@@ -121,7 +118,7 @@
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tg0-6e-kQd">
                     <rect key="frame" x="0.0" y="436" width="346" height="138"/>
-                    <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="138" id="8qd-GD-vpy"/>
                         <constraint firstAttribute="height" constant="138" id="gpj-2y-WYF"/>
@@ -151,7 +148,7 @@
                 <constraint firstAttribute="trailing" secondItem="v01-nh-X3S" secondAttribute="trailing" constant="8" id="Soz-I9-hvo"/>
                 <constraint firstItem="45v-II-OSi" firstAttribute="width" secondItem="GkD-eS-Y7G" secondAttribute="width" multiplier="0.75" id="Vsc-V9-bYK"/>
                 <constraint firstItem="rHu-zd-Nwy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WOh-2Y-8qc" secondAttribute="trailing" constant="5" id="XDy-GK-Puy"/>
-                <constraint firstAttribute="bottom" secondItem="ObU-7M-zjC" secondAttribute="bottom" constant="225" id="eXJ-sn-kSi"/>
+                <constraint firstAttribute="bottom" secondItem="ObU-7M-zjC" secondAttribute="bottom" priority="900" constant="225" id="eXJ-sn-kSi"/>
                 <constraint firstItem="bOX-fj-DeG" firstAttribute="trailing" secondItem="uYT-xO-bgv" secondAttribute="trailing" constant="5" id="hfn-l7-LeG"/>
                 <constraint firstItem="rHu-zd-Nwy" firstAttribute="centerY" secondItem="WOh-2Y-8qc" secondAttribute="centerY" id="jLm-pM-ljK"/>
                 <constraint firstAttribute="bottom" secondItem="Q46-YW-rj5" secondAttribute="bottom" constant="8" id="kFT-CE-F9K"/>
@@ -168,7 +165,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="758" y="502"/>
+            <point key="canvasLocation" x="802" y="597"/>
         </view>
         <tapGestureRecognizer id="0jX-pi-KvS">
             <connections>
@@ -177,7 +174,7 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
+        <image name="Portrait" width="341" height="416"/>
         <image name="Right Arrow" width="57" height="90"/>
-        <image name="panorama" width="426" height="91"/>
     </resources>
 </document>
