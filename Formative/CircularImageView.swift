@@ -15,10 +15,16 @@ import UIKit
             setup()
         }
     }
+    
     func setup() {
         cornerRadius = bounds.height/2
     }
+    
     override func awakeFromNib() {
+        setup()
+    }
+    
+    override func prepareForInterfaceBuilder() {
         setup()
     }
 

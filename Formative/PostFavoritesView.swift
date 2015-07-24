@@ -23,6 +23,7 @@ import UIKit
         }
     }
     
+    // Toggle star fill
     @IBAction func tap(sender: UITapGestureRecognizer) {
         if (starred){
             starred = false

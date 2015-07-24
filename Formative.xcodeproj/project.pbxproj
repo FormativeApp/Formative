@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A116B10D1B61943200B10061 /* PostTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A116B10C1B61943200B10061 /* PostTVC.swift */; };
+		A116B10F1B61D83400B10061 /* TeamProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A116B10E1B61D83400B10061 /* TeamProfileView.swift */; };
+		A116B1111B61D84700B10061 /* TeamProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A116B1101B61D84700B10061 /* TeamProfileView.xib */; };
+		A116B1131B61DD1A00B10061 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A116B1121B61DD1A00B10061 /* ImageViewController.swift */; };
 		A14503E71B4F008B006AC555 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14503E61B4F008B006AC555 /* PostView.swift */; };
 		A14503E91B4F04DB006AC555 /* UIReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14503E81B4F04DB006AC555 /* UIReusableView.swift */; };
 		A14585751B4E29BF00C1BD30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14585741B4E29BF00C1BD30 /* AppDelegate.swift */; };
@@ -44,6 +47,9 @@
 
 /* Begin PBXFileReference section */
 		A116B10C1B61943200B10061 /* PostTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTVC.swift; sourceTree = "<group>"; };
+		A116B10E1B61D83400B10061 /* TeamProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamProfileView.swift; sourceTree = "<group>"; };
+		A116B1101B61D84700B10061 /* TeamProfileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamProfileView.xib; sourceTree = "<group>"; };
+		A116B1121B61DD1A00B10061 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		A14503E61B4F008B006AC555 /* PostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		A14503E81B4F04DB006AC555 /* UIReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIReusableView.swift; sourceTree = "<group>"; };
 		A145856F1B4E29BF00C1BD30 /* Formative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Formative.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,7 +68,7 @@
 		A1A2CD791B6020FE00A327DB /* CommentTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTVC.swift; sourceTree = "<group>"; };
 		A1A2CD7B1B60212B00A327DB /* browser_content.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = browser_content.htm; sourceTree = "<group>"; };
 		A1A2CD7D1B60514400A327DB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		A1A2CD7F1B6062B500A327DB /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewUserViewController.swift; path = Formative/NewUserViewController.swift; sourceTree = "<group>"; };
+		A1A2CD7F1B6062B500A327DB /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		A1D42DBB1B5DD9410035A5C7 /* CircularImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
 		A1FBAFAE1B5D6ED400980086 /* PostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostView.xib; sourceTree = "<group>"; };
 		A1FBAFB01B5D748300980086 /* PostProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostProfileView.swift; sourceTree = "<group>"; };
@@ -93,10 +99,9 @@
 		A14585661B4E29BF00C1BD30 = {
 			isa = PBXGroup;
 			children = (
-				A1A2CD7F1B6062B500A327DB /* NewUserViewController.swift */,
 				A14585711B4E29BF00C1BD30 /* Formative */,
-				A14585871B4E29BF00C1BD30 /* FormativeTests */,
 				A14585701B4E29BF00C1BD30 /* Products */,
+				A14585871B4E29BF00C1BD30 /* FormativeTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +117,8 @@
 		A14585711B4E29BF00C1BD30 /* Formative */ = {
 			isa = PBXGroup;
 			children = (
+				A116B1121B61DD1A00B10061 /* ImageViewController.swift */,
+				A1A2CD7F1B6062B500A327DB /* NewUserViewController.swift */,
 				A14585761B4E29BF00C1BD30 /* ViewController.swift */,
 				A14E2D691B5D6D8A001666E8 /* Main.storyboard */,
 				A116B10C1B61943200B10061 /* PostTVC.swift */,
@@ -166,6 +173,8 @@
 				A16984461B5EC47600FD90C9 /* CommentTVC.xib */,
 				A1A2CD791B6020FE00A327DB /* CommentTVC.swift */,
 				A1A2CD7B1B60212B00A327DB /* browser_content.htm */,
+				A116B10E1B61D83400B10061 /* TeamProfileView.swift */,
+				A116B1101B61D84700B10061 /* TeamProfileView.xib */,
 			);
 			name = Xibs;
 			sourceTree = "<group>";
@@ -266,6 +275,7 @@
 				A14E2D6A1B5D6D8A001666E8 /* Main.storyboard in Resources */,
 				A1FBAFBD1B5D7E5100980086 /* PostFavoritesView.xib in Resources */,
 				A1FBAFAF1B5D6ED400980086 /* PostView.xib in Resources */,
+				A116B1111B61D84700B10061 /* TeamProfileView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +296,8 @@
 				A1A2CD7E1B60514400A327DB /* LoginViewController.swift in Sources */,
 				A1A2CD801B6062B500A327DB /* NewUserViewController.swift in Sources */,
 				A1FBAFB51B5D76A800980086 /* UIView+RoundCorners.swift in Sources */,
+				A116B1131B61DD1A00B10061 /* ImageViewController.swift in Sources */,
+				A116B10F1B61D83400B10061 /* TeamProfileView.swift in Sources */,
 				A14585771B4E29BF00C1BD30 /* ViewController.swift in Sources */,
 				A1FBAFB91B5D7CB400980086 /* PostFavoritesView.swift in Sources */,
 				A1A2CD7A1B6020FE00A327DB /* CommentTVC.swift in Sources */,

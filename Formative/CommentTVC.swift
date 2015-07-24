@@ -14,16 +14,5 @@ class CommentTVC: UITableViewCell {
     
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var profileImage: CircularImageView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        //textView.sizeToFit()
-        //textViewHeightConstraint.constant = textView.bounds.height-20
-    }
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 }

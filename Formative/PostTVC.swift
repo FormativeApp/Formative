@@ -11,6 +11,7 @@ import UIKit
 class PostTVC: UITableViewCell {
 
     @IBOutlet weak var postView: PostView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

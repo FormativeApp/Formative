@@ -8,11 +8,6 @@
 
 import UIKit
 
-protocol PostViewDelegate {
-    static func heightWillChange()
-    static func heightDidChange()
-}
-
 @IBDesignable class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
 
     @IBOutlet weak var postImage: UIImageView!
@@ -25,8 +20,7 @@ protocol PostViewDelegate {
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var buttonToBottomConstraint: NSLayoutConstraint!
     
-    var superTableView: UITableView?
-    var delegate: PostViewDelegate?
+    var superTableView: UITableView? // Table view that the post is in set by FeedViewController
     
     override var className: String {
         get {
@@ -78,16 +72,40 @@ protocol PostViewDelegate {
         setup()
     }
     
+    override func prepareForInterfaceBuilder() {
+        var aspectRatioConstraint = NSLayoutConstraint(
+            item: postImage,
+            attribute: .Width,
+            relatedBy: .Equal,
+            toItem: postImage,
+            attribute: .Height,
+            multiplier: postImage.image!.aspectRatio,
+            constant: 0)
+        postImage.addConstraint(aspectRatioConstraint)
+        
+        commentsTableView.hidden = true
+        commentTextView.hidden = true
+        
+        buttonToBottomConstraint.constant = 5
+        
+        postTextView.sizeToFit()
+        messageTextViewHeightConstraint.constant = postTextView.bounds.height-20
+    }
+    
     // MARK: - UITextViewDelegate
     func textViewDidBeginEditing(textView: UITextView) {
+        
+        // Configure placeholder text
         if (commentTextView.text == "Add a comment"){
             textView.text = ""
         }
-        //commentTextViewHeightConstraint.constant = 80
-        //buttonToBottomConstraint.constant = 80 + tableViewHeightConstraint.constant + 30
+        
+        /*commentTextViewHeightConstraint.constant = 80
+        buttonToBottomConstraint.constant = 80 + tableViewHeightConstraint.constant + 30
         UIView.animateWithDuration(0.5, animations: {
             self.superview?.layoutIfNeeded()
-        })
+        })*/
+        
         commentTextView.becomeFirstResponder()
     }
     
@@ -129,9 +147,10 @@ protocol PostViewDelegate {
         {
             commentsHidden = true
             sender.setTitle("Show 7 Comments", forState: UIControlState.Normal)
+            superTableView?.beginUpdates()
+            
             self.commentsTableView.hidden = true
             self.commentTextView.hidden = true
-            superTableView?.beginUpdates()
             
             buttonToBottomConstraint.constant = 5
             
@@ -143,6 +162,8 @@ protocol PostViewDelegate {
         
         
     }
+    
+    // MARK: - Gesture Recognizers
     
     @IBAction func imageTapped(sender: UITapGestureRecognizer) {
         println("Image Tapped")
@@ -167,6 +188,7 @@ protocol PostViewDelegate {
 
 }
 
+// MARK: - Extensions
 extension UIImage
 {
     var aspectRatio: CGFloat {
