@@ -33,6 +33,12 @@
 		A1FBAFB51B5D76A800980086 /* UIView+RoundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FBAFB41B5D76A800980086 /* UIView+RoundCorners.swift */; };
 		A1FBAFB91B5D7CB400980086 /* PostFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FBAFB81B5D7CB400980086 /* PostFavoritesView.swift */; };
 		A1FBAFBD1B5D7E5100980086 /* PostFavoritesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FBAFBC1B5D7E5100980086 /* PostFavoritesView.xib */; };
+		F806200C1B6462CE00D30C5E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80620061B6462CE00D30C5E /* Bolts.framework */; };
+		F806200D1B6462CE00D30C5E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80620071B6462CE00D30C5E /* Parse.framework */; };
+		F806200E1B6462CE00D30C5E /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80620081B6462CE00D30C5E /* ParseCrashReporting.framework */; };
+		F806200F1B6462CE00D30C5E /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80620091B6462CE00D30C5E /* ParseFacebookUtils.framework */; };
+		F80620101B6462CE00D30C5E /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F806200A1B6462CE00D30C5E /* ParseFacebookUtilsV4.framework */; };
+		F80620111B6462CE00D30C5E /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F806200B1B6462CE00D30C5E /* ParseUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +82,12 @@
 		A1FBAFB41B5D76A800980086 /* UIView+RoundCorners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+RoundCorners.swift"; sourceTree = "<group>"; };
 		A1FBAFB81B5D7CB400980086 /* PostFavoritesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostFavoritesView.swift; sourceTree = "<group>"; };
 		A1FBAFBC1B5D7E5100980086 /* PostFavoritesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostFavoritesView.xib; sourceTree = "<group>"; };
+		F80620061B6462CE00D30C5E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../Desktop/Formative.care/Parse/ParseSwiftStarterProject/Bolts.framework; sourceTree = "<group>"; };
+		F80620071B6462CE00D30C5E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../Desktop/Formative.care/Parse/ParseSwiftStarterProject/Parse.framework; sourceTree = "<group>"; };
+		F80620081B6462CE00D30C5E /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseCrashReporting.framework; path = ../../Desktop/Formative.care/Parse/ParseSwiftStarterProject/ParseCrashReporting.framework; sourceTree = "<group>"; };
+		F80620091B6462CE00D30C5E /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = ../../Desktop/Formative.care/Parse/ParseSwiftStarterProject/ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		F806200A1B6462CE00D30C5E /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = ../../Desktop/Formative.care/Parse/ParseSwiftStarterProject/ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		F806200B1B6462CE00D30C5E /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = ../../Desktop/Formative.care/Parse/ParseSwiftStarterProject/ParseUI.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +95,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F806200C1B6462CE00D30C5E /* Bolts.framework in Frameworks */,
+				F806200D1B6462CE00D30C5E /* Parse.framework in Frameworks */,
+				F806200E1B6462CE00D30C5E /* ParseCrashReporting.framework in Frameworks */,
+				F806200F1B6462CE00D30C5E /* ParseFacebookUtils.framework in Frameworks */,
+				F80620101B6462CE00D30C5E /* ParseFacebookUtilsV4.framework in Frameworks */,
+				F80620111B6462CE00D30C5E /* ParseUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				A14585711B4E29BF00C1BD30 /* Formative */,
+				F80620121B6462DE00D30C5E /* Frameworks */,
 				A14585701B4E29BF00C1BD30 /* Products */,
 				A14585871B4E29BF00C1BD30 /* FormativeTests */,
 			);
@@ -186,6 +205,19 @@
 				A1D42DBB1B5DD9410035A5C7 /* CircularImageView.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		F80620121B6462DE00D30C5E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F80620061B6462CE00D30C5E /* Bolts.framework */,
+				F80620071B6462CE00D30C5E /* Parse.framework */,
+				F80620081B6462CE00D30C5E /* ParseCrashReporting.framework */,
+				F80620091B6462CE00D30C5E /* ParseFacebookUtils.framework */,
+				F806200A1B6462CE00D30C5E /* ParseFacebookUtilsV4.framework */,
+				F806200B1B6462CE00D30C5E /* ParseUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,6 +463,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/HoonJi/Desktop/Formative.care/Parse/ParseSwiftStarterProject,
+				);
 				INFOPLIST_FILE = Formative/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -442,6 +478,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/HoonJi/Desktop/Formative.care/Parse/ParseSwiftStarterProject,
+				);
 				INFOPLIST_FILE = Formative/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
