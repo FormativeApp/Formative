@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Bolts
+import Parse
 
 class NewUserViewController: UIViewController {
 
@@ -54,6 +56,25 @@ class NewUserViewController: UIViewController {
         return true
     }
 
+    @IBAction func signUpButtonPressed() {
+        var user = PFUser()
+        user.username = nameTextField.text
+        user.password = passwordTextField.text
+        
+        user.signUpInBackgroundWithBlock {
+            (succeeded: Bool, error: NSError?) -> Void in
+            if let error = error {
+                let errorString = error.userInfo?["error"] as? NSString
+                
+                var alert = UIAlertController(title: "Signup Failed", message: error.userInfo?.description, preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+                
+            } else {
+                self.performSegueWithIdentifier("goToProfileSetup", sender: nil)
+            }
+        }
+    }
     
 
     /*

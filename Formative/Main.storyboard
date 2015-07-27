@@ -249,7 +249,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="7ev-id-1WQ" kind="presentation" id="GDb-Io-kOh"/>
+                                    <action selector="loginButtonTouched" destination="ljV-ZM-zEc" eventType="touchUpInside" id="vhz-F4-yp5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEH-3I-Fbb">
@@ -284,6 +284,7 @@
                         <outlet property="nameTextField" destination="yft-Me-O6N" id="CWR-bj-ByF"/>
                         <outlet property="passwordFieldYConstraint" destination="rUV-B2-AI4" id="RFv-4Z-hQe"/>
                         <outlet property="passwordTextField" destination="U8h-7M-g3X" id="Ghg-9s-lYH"/>
+                        <segue destination="7ev-id-1WQ" kind="presentation" identifier="goToProfileSetup" id="OxL-7j-Jq0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QmB-fy-Vr0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -336,7 +337,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="7ev-id-1WQ" kind="presentation" id="n1S-aB-VJ9"/>
+                                    <action selector="signUpButtonPressed" destination="Ubq-DB-IgL" eventType="touchUpInside" id="fXa-eg-m1S"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Invitation Code (Optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jdf-RA-lrz">
@@ -372,6 +373,7 @@
                         <outlet property="newUserLabel" destination="d6R-4D-iYe" id="cTU-xt-Kxp"/>
                         <outlet property="passwordFieldYConstraint" destination="pfI-hX-ke9" id="BWq-ZB-Lkf"/>
                         <outlet property="passwordTextField" destination="PEX-9I-irs" id="90d-ap-4EJ"/>
+                        <segue destination="7ev-id-1WQ" kind="presentation" identifier="goToProfileSetup" id="Ws1-FF-5qG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4rm-D7-UKI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -684,6 +686,6 @@
         <image name="User" width="448" height="460"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GDb-Io-kOh"/>
+        <segue reference="Ws1-FF-5qG"/>
     </inferredMetricsTieBreakers>
 </document>

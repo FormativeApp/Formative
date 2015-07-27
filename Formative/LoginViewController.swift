@@ -17,13 +17,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    override func viewDidLoad() {
-        let testObject = PFObject(className: "TestObject")
-        testObject["foo"] = "bar"
-        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            println("Object has been saved.")
-        }
-    }
     // Called whenever a user taps on a text field
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         if (passwordFieldYConstraint.constant == 0) {
@@ -62,6 +55,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 
+    @IBAction func loginButtonTouched() {
+        PFUser.logInWithUsernameInBackground(nameTextField.text, password:passwordTextField.text) {
+            (user: PFUser?, error: NSError?) -> Void in
+            if user != nil {
+                self.performSegueWithIdentifier("goToProfileSetup", sender: nil)
+            } else {
+                var alert = UIAlertController(title: "Login Failed", message: error?.userInfo?.description, preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+                
+            }
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
