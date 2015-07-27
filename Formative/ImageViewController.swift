@@ -1,9 +1,9 @@
 //
 //  ImageViewController.swift
-//  Cassini
+//  Formative
 //
-//  Created by CS193p Instructor.
-//  Copyright (c) 2015 Stanford University. All rights reserved.
+//  Created by Andrew Ke on 7/22/15.
+//  Copyright (c) 2015 Andrew Ke. All rights reserved.
 //
 
 import UIKit
@@ -26,11 +26,6 @@ class ImageViewController: UIViewController, UIScrollViewDelegate
     }
     
     
-    // fetches the image at imageURL
-    // does so off the main thread
-    // then puts a closure back on the main queue
-    //   to handle putting the image in the UI
-    //   (since we aren't allowed to do UI anywhere but main queue)
     private func fetchImage()
     {
         if let url = imageURL {
