@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
@@ -15,6 +17,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    override func viewDidLoad() {
+        let testObject = PFObject(className: "TestObject")
+        testObject["foo"] = "bar"
+        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            println("Object has been saved.")
+        }
+    }
     // Called whenever a user taps on a text field
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         if (passwordFieldYConstraint.constant == 0) {
