@@ -59,7 +59,9 @@ class NewUserViewController: UIViewController {
     @IBAction func signUpButtonPressed() {
         var user = PFUser()
         user.username = nameTextField.text
+        user.email = nameTextField.text
         user.password = passwordTextField.text
+        user["PWDid"] = invitationTextField.text
         
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in

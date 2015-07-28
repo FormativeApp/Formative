@@ -1,0 +1,63 @@
+{"Category":
+  {
+    "title": "Mealtimes",
+    "keywords":
+     [
+     {
+      "title": "enjoyable meals",
+      "strategies": 
+      [
+       { "strategy":"Attractive - Be sure to present food in an attractive manner (ie bright green vegetable with spaghetti gives color contrast)" },
+       { "strategy":"Rims - A dish with a rim helps the patient keep food on the plate" },
+       { "strategy":"Hydrate - They may not drink enough water, so try adding a flavor enhancer like orange or strawberry" },
+       { "strategy":"Consistent - Sameness is security to people with Alzheimer's.  Try to keep things like walls and table cloths the same color" },
+       { "strategy":"Calm Environment - Minimize confusion by ensuring appropriate lighting and eliminating loud noises, such as TV" },
+       { "strategy":"Photos - Place old photos around the table as conversation pieces" },
+       { "strategy":"Music - Play some old music that your loved one enjoys at mealtimes" },
+       { "strategy":"Cook Together - Include your loved one in meal preparation" }
+      ]
+     },
+     {
+     "title": "under-eating",
+     "strategies": 
+      [ 
+       { "strategy":"Red Plates - A study showed that people with dementia ate 25% more off a red plate than a white plate" },
+       { "strategy":"More Meals - Provide frequent small meals throughout the day" },
+       { "strategy":"Sweets - Incorporate (healthy amounts) of sweet flavors into meals since many people with dementia retain sweet taste buds" },
+       { "strategy":"Patience - You may have to come and go during the meal if you have other duties to avoid rushing your loved one" },
+       { "strategy":"Order - Place food out in logical way.  If you want them to eat soup then salad, put it out first and limit other items" },
+       { "strategy":"Calm Environment - Minimize confusion by ensuring appropriate lighting and eliminating loud noises, such as TV" }
+      ]
+      },
+      {
+      "title": "over-eating",
+      "strategies":
+      [
+       { "strategy":"Distract - Provide an activity away from the sight and smell of food" },
+       { "strategy":"Healthy Snacks - Keep healthy food like fruit around for your loved one to snack on" },
+       { "strategy":"Stay Engaged - Go for a walk together outside or engage in other activities to keep your loved one engaged and not thinking about food" }
+      ]
+      },
+      {
+      "title": "dinner conversation",
+      "strategies": 
+      [
+       { "strategy":"Senses - Focus conversation on things your table-mates can see, hear, touch, taste, and/or smell" },
+       { "strategy":"Wait - Instead of asking questions, try making a brief comment and smiling at your loved one as you wait to see if they reciprocate" },
+       { "strategy":"Reminisce - Remember your loved one has lost short term memory but still has many long term memories.  Talk about old days and don't correct inaccuracies" },
+       { "strategy":"Encourage - Never argue or correct.  On some level, your loved one realizes his/her confusion and you will reinforce anxiety by correcting.  Just smile and encourage him/her to talk maybe by holding his/her hand" }
+      ]
+      },
+      {
+      "title": "healthy eating",
+      "strategies":
+      [
+       { "strategy":"Bowls around house - Leave fruit or healthy choices in bowls where your loved one will find them" }
+      ]
+      }
+    ]
+  }
+}
+
+
+

@@ -16,7 +16,6 @@
 		A14585751B4E29BF00C1BD30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14585741B4E29BF00C1BD30 /* AppDelegate.swift */; };
 		A14585771B4E29BF00C1BD30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14585761B4E29BF00C1BD30 /* ViewController.swift */; };
 		A145857C1B4E29BF00C1BD30 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A145857B1B4E29BF00C1BD30 /* Images.xcassets */; };
-		A145857F1B4E29BF00C1BD30 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A145857D1B4E29BF00C1BD30 /* LaunchScreen.xib */; };
 		A145858B1B4E29BF00C1BD30 /* FormativeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A145858A1B4E29BF00C1BD30 /* FormativeTests.swift */; };
 		A14E2D6A1B5D6D8A001666E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14E2D691B5D6D8A001666E8 /* Main.storyboard */; };
 		A16984471B5EC47600FD90C9 /* CommentTVC.xib in Sources */ = {isa = PBXBuildFile; fileRef = A16984461B5EC47600FD90C9 /* CommentTVC.xib */; };
@@ -34,8 +33,10 @@
 		A199AD251B6163B6004FE514 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A199AD241B6163B6004FE514 /* FeedViewController.swift */; };
 		A1A2C2021B66CCAF000AC5C8 /* BrowseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2C2011B66CCAF000AC5C8 /* BrowseTableViewController.swift */; };
 		A1A2C2041B66D29D000AC5C8 /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2C2031B66D29D000AC5C8 /* JSONManager.swift */; };
+		A1A2C20B1B66E4E9000AC5C8 /* browser.json in Resources */ = {isa = PBXBuildFile; fileRef = A1A2C20A1B66E4E9000AC5C8 /* browser.json */; };
+		A1A2C20D1B66EC60000AC5C8 /* BrowsePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2C20C1B66EC60000AC5C8 /* BrowsePhotoCell.swift */; };
+		A1A2C2111B66FA53000AC5C8 /* ProfileSetupTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2C2101B66FA53000AC5C8 /* ProfileSetupTVC.swift */; };
 		A1A2CD7A1B6020FE00A327DB /* CommentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2CD791B6020FE00A327DB /* CommentTVC.swift */; };
-		A1A2CD7C1B60212B00A327DB /* browser_content.htm in Resources */ = {isa = PBXBuildFile; fileRef = A1A2CD7B1B60212B00A327DB /* browser_content.htm */; };
 		A1A2CD7E1B60514400A327DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2CD7D1B60514400A327DB /* LoginViewController.swift */; };
 		A1A2CD801B6062B500A327DB /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2CD7F1B6062B500A327DB /* NewUserViewController.swift */; };
 		A1C84EC41B66936C005BE8CC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C84EBE1B66936C005BE8CC /* Bolts.framework */; };
@@ -95,8 +96,10 @@
 		A199AD241B6163B6004FE514 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		A1A2C2011B66CCAF000AC5C8 /* BrowseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseTableViewController.swift; sourceTree = "<group>"; };
 		A1A2C2031B66D29D000AC5C8 /* JSONManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
+		A1A2C20A1B66E4E9000AC5C8 /* browser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = browser.json; sourceTree = "<group>"; };
+		A1A2C20C1B66EC60000AC5C8 /* BrowsePhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowsePhotoCell.swift; sourceTree = "<group>"; };
+		A1A2C2101B66FA53000AC5C8 /* ProfileSetupTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSetupTVC.swift; sourceTree = "<group>"; };
 		A1A2CD791B6020FE00A327DB /* CommentTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTVC.swift; sourceTree = "<group>"; };
-		A1A2CD7B1B60212B00A327DB /* browser_content.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = browser_content.htm; sourceTree = "<group>"; };
 		A1A2CD7D1B60514400A327DB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A1A2CD7F1B6062B500A327DB /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		A1C84EBE1B66936C005BE8CC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -173,10 +176,13 @@
 				A116B1121B61DD1A00B10061 /* ImageViewController.swift */,
 				A1A2CD7F1B6062B500A327DB /* NewUserViewController.swift */,
 				A14585761B4E29BF00C1BD30 /* ViewController.swift */,
+				A1A2C2101B66FA53000AC5C8 /* ProfileSetupTVC.swift */,
 				A14E2D691B5D6D8A001666E8 /* Main.storyboard */,
+				A1A2C20C1B66EC60000AC5C8 /* BrowsePhotoCell.swift */,
 				A1A2C2051B66D2A3000AC5C8 /* Model */,
 				A1A2C2011B66CCAF000AC5C8 /* BrowseTableViewController.swift */,
 				A116B10C1B61943200B10061 /* PostTVC.swift */,
+				A1A2C20A1B66E4E9000AC5C8 /* browser.json */,
 				A199AD241B6163B6004FE514 /* FeedViewController.swift */,
 				A1A2CD7D1B60514400A327DB /* LoginViewController.swift */,
 				A145857B1B4E29BF00C1BD30 /* Images.xcassets */,
@@ -235,7 +241,6 @@
 				A1FBAFBC1B5D7E5100980086 /* PostFavoritesView.xib */,
 				A16984461B5EC47600FD90C9 /* CommentTVC.xib */,
 				A1A2CD791B6020FE00A327DB /* CommentTVC.swift */,
-				A1A2CD7B1B60212B00A327DB /* browser_content.htm */,
 				A116B10E1B61D83400B10061 /* TeamProfileView.swift */,
 				A116B1101B61D84700B10061 /* TeamProfileView.xib */,
 			);
@@ -354,10 +359,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A145857F1B4E29BF00C1BD30 /* LaunchScreen.xib in Resources */,
-				A1A2CD7C1B60212B00A327DB /* browser_content.htm in Resources */,
 				A145857C1B4E29BF00C1BD30 /* Images.xcassets in Resources */,
 				A1FBAFB31B5D749200980086 /* PostProfileView.xib in Resources */,
+				A1A2C20B1B66E4E9000AC5C8 /* browser.json in Resources */,
 				A14E2D6A1B5D6D8A001666E8 /* Main.storyboard in Resources */,
 				A1FBAFBD1B5D7E5100980086 /* PostFavoritesView.xib in Resources */,
 				A1FBAFAF1B5D6ED400980086 /* PostView.xib in Resources */,
@@ -387,8 +391,10 @@
 				A116B10F1B61D83400B10061 /* TeamProfileView.swift in Sources */,
 				A14585771B4E29BF00C1BD30 /* ViewController.swift in Sources */,
 				A1FBAFB91B5D7CB400980086 /* PostFavoritesView.swift in Sources */,
+				A1A2C20D1B66EC60000AC5C8 /* BrowsePhotoCell.swift in Sources */,
 				A1A2CD7A1B6020FE00A327DB /* CommentTVC.swift in Sources */,
 				A199AD251B6163B6004FE514 /* FeedViewController.swift in Sources */,
+				A1A2C2111B66FA53000AC5C8 /* ProfileSetupTVC.swift in Sources */,
 				A16984491B5EC61000FD90C9 /* TableViewController.swift in Sources */,
 				A16984471B5EC47600FD90C9 /* CommentTVC.xib in Sources */,
 				A14585751B4E29BF00C1BD30 /* AppDelegate.swift in Sources */,

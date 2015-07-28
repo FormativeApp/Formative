@@ -10,9 +10,12 @@ import UIKit
 
 class BrowseTableViewController: UITableViewController {
 
+    var browserContent: NSDictionary!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var browerContentData = NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("browser", ofType: "json")!)
+        browserContent = parseJSON(browerContentData!)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -41,7 +44,7 @@ class BrowseTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("categoryCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("categoryCell", forIndexPath: indexPath) as! BrowsePhotoCell
 
         // Configure the cell...
 

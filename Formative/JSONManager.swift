@@ -10,7 +10,7 @@ import Foundation
 
 func parseJSON(inputData: NSData) -> NSDictionary{
     var error: NSError?
-    let jsonDic = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error: &error) as! NSDictionary;
+    let jsonDic = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.AllowFragments, error: nil) as! NSDictionary;
     
     return jsonDic
 }
