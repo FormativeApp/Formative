@@ -15,7 +15,7 @@ class BrowseTableViewController: UITableViewController {
         super.viewDidLoad()
         
         var browerContentData = NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("browser", ofType: "json")!)
-        browserContent = parseJSON(browerContentData!)
+        browserContent = parseJSON(browerContentData!) as! NSArray
         //println(browserContent)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

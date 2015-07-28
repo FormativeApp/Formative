@@ -1,0 +1,8 @@
+[
+ ["name", "Full Name"],
+ ["PWDName", "Who do you care for?"],
+ ["PWDAge", "Patients age?"],
+ ["PWDDuration", "How long has your person had dementia?"],
+ ["paidServices", "Hours of paid care services per week?"],
+ ["ADLEating", ["Eats appropriately using correct cutlery", "Eats appropriately if food made manageable and /or uses spoon", "Uses fingers to eat food", "Needs to be fed"]]
+]
