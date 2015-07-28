@@ -66,11 +66,9 @@ class NewUserViewController: UIViewController {
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
             if let error = error {
-                let errorString = error.userInfo?["error"] as? NSString
+                let errorString = error.userInfo?["error"] as? String
                 
-                var alert = UIAlertController(title: "Signup Failed", message: error.userInfo?.description, preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-                self.presentViewController(alert, animated: true, completion: nil)
+                alertErrorWithTitle("Account Creation Failed", message: errorString, inViewController: self)
                 
             } else {
                 self.performSegueWithIdentifier("goToProfileSetup", sender: nil)

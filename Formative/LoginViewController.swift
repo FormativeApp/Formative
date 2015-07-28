@@ -58,13 +58,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func loginButtonTouched() {
         PFUser.logInWithUsernameInBackground(nameTextField.text, password:passwordTextField.text) {
             (user: PFUser?, error: NSError?) -> Void in
-            if user != nil {
-                self.performSegueWithIdentifier("goToProfileSetup", sender: nil)
-            } else {
-                var alert = UIAlertController(title: "Login Failed", message: error?.userInfo?.description, preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-                self.presentViewController(alert, animated: true, completion: nil)
+            if let error = error {
+                let errorString = error.userInfo?["error"] as? String
                 
+                alertErrorWithTitle("Login Failed", message: errorString, inViewController: self)
+                
+            } else {
+                self.performSegueWithIdentifier("goToProfileSetup", sender: nil)
             }
         }
     }

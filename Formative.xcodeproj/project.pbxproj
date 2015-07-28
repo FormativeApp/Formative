@@ -20,6 +20,7 @@
 		A14E2D6A1B5D6D8A001666E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14E2D691B5D6D8A001666E8 /* Main.storyboard */; };
 		A16984471B5EC47600FD90C9 /* CommentTVC.xib in Sources */ = {isa = PBXBuildFile; fileRef = A16984461B5EC47600FD90C9 /* CommentTVC.xib */; };
 		A16984491B5EC61000FD90C9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16984481B5EC61000FD90C9 /* TableViewController.swift */; };
+		A16C358C1B672186009BABD2 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16C358B1B672186009BABD2 /* AlertManager.swift */; };
 		A1808CD61B669248006771CF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1808CD51B669248006771CF /* AudioToolbox.framework */; };
 		A1808CD81B66924E006771CF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1808CD71B66924E006771CF /* CFNetwork.framework */; };
 		A1808CDA1B669254006771CF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1808CD91B669254006771CF /* CoreGraphics.framework */; };
@@ -83,6 +84,7 @@
 		A14E2D691B5D6D8A001666E8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A16984461B5EC47600FD90C9 /* CommentTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTVC.xib; sourceTree = "<group>"; };
 		A16984481B5EC61000FD90C9 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		A16C358B1B672186009BABD2 /* AlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		A1808CD51B669248006771CF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A1808CD71B66924E006771CF /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		A1808CD91B669254006771CF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -174,7 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				A116B1121B61DD1A00B10061 /* ImageViewController.swift */,
-				A1A2CD7F1B6062B500A327DB /* NewUserViewController.swift */,
+				A16C358D1B67232D009BABD2 /* Login And Registration */,
 				A14585761B4E29BF00C1BD30 /* ViewController.swift */,
 				A1A2C2101B66FA53000AC5C8 /* ProfileSetupTVC.swift */,
 				A14E2D691B5D6D8A001666E8 /* Main.storyboard */,
@@ -182,9 +184,7 @@
 				A1A2C2051B66D2A3000AC5C8 /* Model */,
 				A1A2C2011B66CCAF000AC5C8 /* BrowseTableViewController.swift */,
 				A116B10C1B61943200B10061 /* PostTVC.swift */,
-				A1A2C20A1B66E4E9000AC5C8 /* browser.json */,
 				A199AD241B6163B6004FE514 /* FeedViewController.swift */,
-				A1A2CD7D1B60514400A327DB /* LoginViewController.swift */,
 				A145857B1B4E29BF00C1BD30 /* Images.xcassets */,
 				A1FBAFBA1B5D7E1700980086 /* Xibs */,
 				A1FBAFBB1B5D7E2500980086 /* Extensions */,
@@ -220,10 +220,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A16C358D1B67232D009BABD2 /* Login And Registration */ = {
+			isa = PBXGroup;
+			children = (
+				A1A2CD7F1B6062B500A327DB /* NewUserViewController.swift */,
+				A1A2CD7D1B60514400A327DB /* LoginViewController.swift */,
+			);
+			name = "Login And Registration";
+			sourceTree = "<group>";
+		};
 		A1A2C2051B66D2A3000AC5C8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				A1A2C2031B66D29D000AC5C8 /* JSONManager.swift */,
+				A16C358B1B672186009BABD2 /* AlertManager.swift */,
+				A1A2C20A1B66E4E9000AC5C8 /* browser.json */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -395,6 +406,7 @@
 				A1A2CD7A1B6020FE00A327DB /* CommentTVC.swift in Sources */,
 				A199AD251B6163B6004FE514 /* FeedViewController.swift in Sources */,
 				A1A2C2111B66FA53000AC5C8 /* ProfileSetupTVC.swift in Sources */,
+				A16C358C1B672186009BABD2 /* AlertManager.swift in Sources */,
 				A16984491B5EC61000FD90C9 /* TableViewController.swift in Sources */,
 				A16984471B5EC47600FD90C9 /* CommentTVC.xib in Sources */,
 				A14585751B4E29BF00C1BD30 /* AppDelegate.swift in Sources */,
