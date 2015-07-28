@@ -1,16 +1,17 @@
 //
-//  FeedViewController.swift
+//  KeywordsTVC.swift
 //  Formative
 //
-//  Created by Andrew Ke on 7/23/15.
+//  Created by Andrew Ke on 7/27/15.
 //  Copyright (c) 2015 Andrew Ke. All rights reserved.
 //
 
 import UIKit
 
-class FeedViewController: UIViewController, UITableViewDataSource {
-
-    @IBOutlet weak var tableView: UITableView!
+class KeywordsTVC: UITableViewController {
+    
+    var keywordsArray: NSArray!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,14 +22,6 @@ class FeedViewController: UIViewController, UITableViewDataSource {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        tableView.dataSource = self
-        
-        tableView.estimatedRowHeight = 300
-        tableView.rowHeight = UITableViewAutomaticDimension
-        
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -36,27 +29,28 @@ class FeedViewController: UIViewController, UITableViewDataSource {
     
     // MARK: - Table view data source
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 1
-        
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 4
+        return keywordsArray.count
     }
     
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! PostTVC
-        cell.postView.superTableView = self.tableView
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("keywordCell", forIndexPath: indexPath) as! UITableViewCell
+        var keywordDictionary = keywordsArray[indexPath.row] as! NSDictionary
+        cell.textLabel?.text = keywordDictionary["title"] as? String
         // Configure the cell...
-        
+    
         return cell
     }
+    
     
     /*
     // Override to support conditional editing of the table view.
@@ -93,15 +87,14 @@ class FeedViewController: UIViewController, UITableViewDataSource {
     }
     */
     
-    
+    /*
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-        var keywordsVC = segue.destinationViewController as! KeywordsTVC
     }
-    
+    */
 
 }

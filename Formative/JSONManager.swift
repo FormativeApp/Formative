@@ -8,9 +8,9 @@
 
 import Foundation
 
-func parseJSON(inputData: NSData) -> NSDictionary{
+func parseJSON(inputData: NSData) -> NSArray{
     var error: NSError?
-    let jsonDic = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.AllowFragments, error: nil) as! NSDictionary;
+    let jsonDic = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.AllowFragments, error: nil) as! NSArray;
     
     return jsonDic
 }

@@ -10,13 +10,13 @@ import UIKit
 
 class BrowseTableViewController: UITableViewController {
 
-    var browserContent: NSDictionary!
+    var browserContent: NSArray!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         var browerContentData = NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("browser", ofType: "json")!)
         browserContent = parseJSON(browerContentData!)
-        println(browserContent)
+        //println(browserContent)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -40,13 +40,18 @@ class BrowseTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //#warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 4
+        return browserContent.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("categoryCell", forIndexPath: indexPath) as! BrowsePhotoCell
-
+        
+        let category = browserContent[indexPath.row] as! NSDictionary
+        println(category)
+        
+        cell.categoryLabel.text = category["title"] as? String
+        cell.backgroundImage.image = UIImage(named: category["title"] as! String + ".png")
         // Configure the cell...
 
         return cell
@@ -88,14 +93,14 @@ class BrowseTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        var keywordsVC = segue.destinationViewController as! KeywordsTVC
     }
-    */
 
 }
