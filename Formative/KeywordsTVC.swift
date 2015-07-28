@@ -87,14 +87,22 @@ class KeywordsTVC: UITableViewController {
     }
     */
     
-    /*
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
+        var strategiesVC = segue.destinationViewController as! StrategiesTVC
+        var row = tableView.indexPathForSelectedRow()?.row
+        var keywordDictionary = keywordsArray[row!] as! NSDictionary
+        strategiesVC.strategiesArray = keywordDictionary["strategies"] as! NSArray
+        
+        strategiesVC.title = self.title
+        strategiesVC.navigationItem.leftBarButtonItem?.title = "Back"
+        
     }
-    */
+    
 
 }

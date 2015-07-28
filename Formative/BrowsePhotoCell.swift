@@ -13,4 +13,5 @@ class BrowsePhotoCell: UITableViewCell {
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var categoryLabel: UILabel!
     
+    
 }
