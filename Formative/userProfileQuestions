@@ -6,13 +6,10 @@
  "PWDAge": "Age?",
  "PWDDuration": "How long has your person had dementia?",
  "paidServices": "How many hours of paid care services do you have per week?"
- }
-int ADL_ eating;  	// at first will be 1 or 0 to indicate ability to do this independently
-int ADL _hygiene;
-int ADL_communication; 
-int ADL_mobility; 
-int ADL_spaceOrientation; 
-int ADL_timeOrientation; 
-int paidHelpHours; 
-array[int] careTeam; 	//array of members’ ID numbers
+ "ADLEating":
+ "ADLHygiene":
+ "ADLCommunication":
+ "ADLMobility":
+ "ADLSpaceOrientation":
+ "ADLTimeOrientation":
 } 
