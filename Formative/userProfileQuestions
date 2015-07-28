@@ -1,0 +1,15 @@
+{"name": "name",
+ "email": "email",
+ "password": "password",
+ "picture": "Upload your profile picture",
+ "PWDName": "Who do you care for?",
+ "PWDAge": "Age?",
+ "PWDDuration": "How long has your person had dementia?",
+ "paidServices": "How many hours of paid care services do you have per week?"
+ "ADLEating":
+ "ADLHygiene":
+ "ADLCommunication":
+ "ADLMobility":
+ "ADLSpaceOrientation":
+ "ADLTimeOrientation":
+} 
