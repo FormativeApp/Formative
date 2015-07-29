@@ -64,7 +64,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 alertErrorWithTitle("Login Failed", message: errorString, inViewController: self)
                 
             } else {
-                self.performSegueWithIdentifier("goToProfileSetup", sender: nil)
+                self.performSegueWithIdentifier("goToTabBar", sender: nil)
             }
         }
     }

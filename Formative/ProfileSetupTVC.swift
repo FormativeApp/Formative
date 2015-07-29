@@ -17,6 +17,9 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
     
     var questions: NSArray!
     
+    var textCells: Array<TextFieldCell> = []
+    var multipleChoiceCells: Array<MultipleChoiceCell> = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         var questionsData = NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("userProfileQuestions", ofType: "json")!)
@@ -37,13 +40,32 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func profileSetupFInished(sender: AnyObject) {
+        var user = PFUser.currentUser()!
+        println(textCells.count)
+        for cell in textCells{
+            if (cell.textField.text == "")
+            {
+                alertErrorWithTitle("Incomplete Profile", message: "Required field \(cell.textField.placeholder!) was not filled in", inViewController: self)
+                return
+            }
+            user["\(cell.key!)"] = cell.textField.text
+        }
         
+        for cell in multipleChoiceCells{
+            if cell.selection == -1 {
+                alertErrorWithTitle("Incomplete Profile", message: "Required multiple choice question \(cell.title) was not filled in", inViewController: self)
+                return
+            }
+            user["\(cell.title)"] = cell.selection
+        }
+        
+        performSegueWithIdentifier("goToMain", sender: nil)
     }
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var user = PFUser.currentUser()
-        //user["name"] = nameTextField.text
+        user?.save()
     }
     
     // MARK: - Table view data source
@@ -62,7 +84,7 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
+        println("LOAD!!!!!")
         if (indexPath.row == 0)
         {
             let cell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! UITableViewCell
@@ -72,6 +94,8 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
         {
             let cell = tableView.dequeueReusableCellWithIdentifier("questionCell", forIndexPath: indexPath) as! TextFieldCell
             cell.textField.placeholder = questions[indexPath.row-1][1] as? String
+            cell.key = questions[indexPath.row-1][0] as? String
+            textCells.append(cell)
             return cell
         }
         else
@@ -79,6 +103,7 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
             let cell = tableView.dequeueReusableCellWithIdentifier("multipleCell", forIndexPath: indexPath) as! MultipleChoiceCell
             cell.array = questions[indexPath.row-1][1] as! Array<String>
             cell.title = questions[indexPath.row-1][0] as! String
+            multipleChoiceCells.append(cell)
             return cell
         }
         

@@ -16,6 +16,8 @@ class MultipleChoiceCell: UITableViewCell, UITableViewDataSource, UITableViewDel
     var array: Array<String>!
     var title: String!
     
+    var key: String?
+    
     var selection = -1
     
     override func awakeFromNib() {

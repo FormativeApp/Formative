@@ -21,4 +21,5 @@ class TextFieldCell: UITableViewCell, UITextFieldDelegate {
         return true
     }
     
+    var key: String?
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mcD-fX-bvj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7ev-id-1WQ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -138,6 +138,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="mcD-fX-bvj" kind="presentation" identifier="goToMain" id="eqJ-ac-Okq"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i74-uB-nWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="8bU-WY-YEr">
@@ -146,7 +149,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="255" y="1199"/>
+            <point key="canvasLocation" x="1104" y="1893"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="zof-Gg-Ace">
@@ -360,7 +363,7 @@
                                 <rect key="frame" x="36" y="231" width="528" height="30"/>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
                                 <connections>
                                     <outlet property="delegate" destination="ljV-ZM-zEc" id="hTk-C7-Lqf"/>
                                 </connections>
@@ -369,7 +372,7 @@
                                 <rect key="frame" x="36" y="285" width="528" height="30"/>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="ljV-ZM-zEc" id="Jld-3k-WrH"/>
                                 </connections>
@@ -419,12 +422,12 @@
                         <outlet property="nameTextField" destination="yft-Me-O6N" id="CWR-bj-ByF"/>
                         <outlet property="passwordFieldYConstraint" destination="rUV-B2-AI4" id="RFv-4Z-hQe"/>
                         <outlet property="passwordTextField" destination="U8h-7M-g3X" id="Ghg-9s-lYH"/>
-                        <segue destination="7ev-id-1WQ" kind="presentation" identifier="goToProfileSetup" id="OxL-7j-Jq0"/>
+                        <segue destination="mcD-fX-bvj" kind="show" identifier="goToTabBar" id="eQi-dj-j3m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QmB-fy-Vr0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-678" y="526"/>
+            <point key="canvasLocation" x="-644" y="402"/>
         </scene>
         <!--New User View Controller-->
         <scene sceneID="Ess-iJ-EKO">
@@ -448,7 +451,7 @@
                                 <rect key="frame" x="36" y="220" width="528" height="30"/>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
                                 <connections>
                                     <outlet property="delegate" destination="Ubq-DB-IgL" id="QMU-cA-jer"/>
                                 </connections>
@@ -457,7 +460,7 @@
                                 <rect key="frame" x="36" y="275" width="528" height="30"/>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="Ubq-DB-IgL" id="n2R-yO-l1f"/>
                                 </connections>
@@ -771,7 +774,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eQf-OG-DUn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1579" y="987"/>
+            <point key="canvasLocation" x="1867" y="1035"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Fel-Nq-dAA">
@@ -837,6 +840,6 @@
         <image name="User" width="448" height="460"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OxL-7j-Jq0"/>
+        <segue reference="eqJ-ac-Okq"/>
     </inferredMetricsTieBreakers>
 </document>
