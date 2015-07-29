@@ -16,6 +16,7 @@
 		A135CC8E1B68072200445C21 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A135CC8D1B68072200445C21 /* TextFieldCell.swift */; };
 		A1398AAF1B681412007867B1 /* MultipleChoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1398AAE1B681412007867B1 /* MultipleChoiceCell.swift */; };
 		A1398AB11B6823B7007867B1 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1398AB01B6823B7007867B1 /* AddPostViewController.swift */; };
+		A1398AB31B686143007867B1 /* ProfilePictureSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1398AB21B686143007867B1 /* ProfilePictureSelectionCell.swift */; };
 		A14503E71B4F008B006AC555 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14503E61B4F008B006AC555 /* PostView.swift */; };
 		A14503E91B4F04DB006AC555 /* UIReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14503E81B4F04DB006AC555 /* UIReusableView.swift */; };
 		A14585751B4E29BF00C1BD30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14585741B4E29BF00C1BD30 /* AppDelegate.swift */; };
@@ -81,6 +82,7 @@
 		A135CC8D1B68072200445C21 /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		A1398AAE1B681412007867B1 /* MultipleChoiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleChoiceCell.swift; sourceTree = "<group>"; };
 		A1398AB01B6823B7007867B1 /* AddPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
+		A1398AB21B686143007867B1 /* ProfilePictureSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePictureSelectionCell.swift; sourceTree = "<group>"; };
 		A14503E61B4F008B006AC555 /* PostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		A14503E81B4F04DB006AC555 /* UIReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIReusableView.swift; sourceTree = "<group>"; };
 		A145856F1B4E29BF00C1BD30 /* Formative.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Formative.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -255,6 +257,7 @@
 			children = (
 				A135CC8D1B68072200445C21 /* TextFieldCell.swift */,
 				A1A2C2101B66FA53000AC5C8 /* ProfileSetupTVC.swift */,
+				A1398AB21B686143007867B1 /* ProfilePictureSelectionCell.swift */,
 				A1A2CD7F1B6062B500A327DB /* NewUserViewController.swift */,
 				A1A2CD7D1B60514400A327DB /* LoginViewController.swift */,
 				A1398AAE1B681412007867B1 /* MultipleChoiceCell.swift */,
@@ -430,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1A2CD7E1B60514400A327DB /* LoginViewController.swift in Sources */,
+				A1398AB31B686143007867B1 /* ProfilePictureSelectionCell.swift in Sources */,
 				A1A2CD801B6062B500A327DB /* NewUserViewController.swift in Sources */,
 				A1A2C2041B66D29D000AC5C8 /* JSONManager.swift in Sources */,
 				A1FBAFB51B5D76A800980086 /* UIView+RoundCorners.swift in Sources */,
@@ -583,6 +587,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Formative/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -599,6 +604,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Formative/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import Bolts
+import MobileCoreServices
 
 class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -17,9 +18,13 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
     
     var questions: NSArray!
     
+    var patient = PFObject(className: "Patient")
+    
     var textCells: Array<TextFieldCell> = []
     var multipleChoiceCells: Array<MultipleChoiceCell> = []
+    var profileImageCell: ProfilePictureSelectionCell!
     
+    // MARK: - VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         var questionsData = NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("userProfileQuestions", ofType: "json")!)
@@ -39,36 +44,7 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func profileSetupFInished(sender: AnyObject) {
-        var user = PFUser.currentUser()!
-        println(textCells.count)
-        for cell in textCells{
-            if (cell.textField.text == "")
-            {
-                alertErrorWithTitle("Incomplete Profile", message: "Required field \(cell.textField.placeholder!) was not filled in", inViewController: self)
-                return
-            }
-            user["\(cell.key!)"] = cell.textField.text
-        }
-        
-        for cell in multipleChoiceCells{
-            if cell.selection == -1 {
-                alertErrorWithTitle("Incomplete Profile", message: "Required multiple choice question \(cell.title) was not filled in", inViewController: self)
-                return
-            }
-            user["\(cell.title)"] = cell.selection
-        }
-        
-        performSegueWithIdentifier("goToMain", sender: nil)
-    }
-    
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var user = PFUser.currentUser()
-        user?.save()
-    }
-    
-    // MARK: - Table view data source
+    // MARK: - Table View Data Source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
@@ -84,10 +60,10 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        println("LOAD!!!!!")
         if (indexPath.row == 0)
         {
-            let cell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as! ProfilePictureSelectionCell
+            profileImageCell = cell
             return cell
         }
         else if (indexPath.row < 6)
@@ -113,56 +89,80 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
         if (indexPath.row == 0){
             println("YES!")
             var alert = UIAlertController(title: "Choose A Source", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Camera Roll", style: .Default, handler: nil))
-            alert.addAction(UIAlertAction(title: "Camera", style: .Default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Camera", style: .Default, handler: { (action) in
+                self.takePhoto()
+            }))
+            alert.addAction(UIAlertAction(title: "Photo Library", style: .Default, handler: { (action) in
+                self.photoFromCameraRoll()
+            }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .Destructive, handler: nil))
             presentViewController(alert, animated: true, completion: nil)
         }
     }
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return NO if you do not want the specified item to be editable.
-    return true
+    func takePhoto()
+    {
+        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+            let picker = UIImagePickerController()
+            picker.sourceType = .Camera
+            // if we were looking for video, we'd check availableMediaTypes
+            picker.mediaTypes = [kUTTypeImage]
+            picker.delegate = self
+            picker.allowsEditing = true
+            presentViewController(picker, animated: true, completion: nil)
+        }
     }
-    */
     
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    if editingStyle == .Delete {
-    // Delete the row from the data source
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    } else if editingStyle == .Insert {
-    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    func photoFromCameraRoll()
+    {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+            println("Sucess!")
+            let picker = UIImagePickerController()
+            picker.sourceType = .PhotoLibrary
+            picker.mediaTypes = [kUTTypeImage]
+            picker.delegate = self
+            picker.allowsEditing = true
+            presentViewController(picker, animated: true, completion: nil)
+        }
     }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        var image = info[UIImagePickerControllerEditedImage] as? UIImage
+        if image == nil {
+            image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        }
+        profileImageCell.profileImage.image = image
+        dismissViewControllerAnimated(true, completion: nil)
     }
-    */
     
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-    
+    // MARK: - Parse Integration
+    @IBAction func profileSetupFInished(sender: AnyObject) {
+        var user = PFUser.currentUser()!
+        /*println(textCells.count)
+        for cell in textCells{
+        if (cell.textField.text == "")
+        {
+        alertErrorWithTitle("Incomplete Profile", message: "Required field \(cell.textField.placeholder!) was not filled in", inViewController: self)
+        return
+        }
+        user["\(cell.key!)"] = cell.textField.text
+        }
+        
+        for cell in multipleChoiceCells{
+        if cell.selection == -1 {
+        alertErrorWithTitle("Incomplete Profile", message: "Required multiple choice question \(cell.title) was not filled in", inViewController: self)
+        return
+        }
+        user["\(cell.title)"] = cell.selection
+        }*/
+        
+        performSegueWithIdentifier("goToMain", sender: nil)
     }
-    */
     
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return NO if you do not want the item to be re-orderable.
-    return true
-    }
-    */
     
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+        var user = PFUser.currentUser()!
+        user.save()
     }
-    */
 
 }

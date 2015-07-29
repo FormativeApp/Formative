@@ -4,5 +4,6 @@
  ["PWDAge", "Patients age?"],
  ["PWDDuration", "How long has your person had dementia?"],
  ["paidServices", "Hours of paid care services per week?"],
- ["ADLEating", ["Eats appropriately using correct cutlery", "Eats appropriately if food made manageable and /or uses spoon", "Uses fingers to eat food", "Needs to be fed"]]
+ ["ADLEating", ["Eats appropriately using correct cutlery", "Eats appropriately if food made manageable and /or uses spoon", "Uses fingers to eat food", "Needs to be fed", "Not Applicable"]],
+ ["Hygiene", ["Washes regularly and independently", "Can wash self if given soap, flannel, towel, etc.", "Can wash self if prompted and supervised", "Unable to wash self and needs full assistance", "Not applicable"]]
 ]
