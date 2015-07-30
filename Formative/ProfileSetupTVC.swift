@@ -55,7 +55,7 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return questions.count + 1
+        return questions.count
     }
     
     
@@ -87,7 +87,6 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if (indexPath.row == 0){
-            println("YES!")
             var alert = UIAlertController(title: "Choose A Source", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Camera", style: .Default, handler: { (action) in
                 self.takePhoto()
@@ -132,6 +131,10 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
             image = info[UIImagePickerControllerOriginalImage] as? UIImage
         }
         profileImageCell.profileImage.image = image
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
     

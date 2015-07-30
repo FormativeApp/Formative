@@ -13,7 +13,17 @@ class MultipleChoiceCell: UITableViewCell, UITableViewDataSource, UITableViewDel
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
-    var array: Array<String>!
+    var array: Array<String>!{
+        didSet{
+            contentView.bounds = CGRect(x: 0.0, y: 0.0, width: 99999.0, height: 99999.0)
+            /*tableView.reloadData()
+            tableView.setNeedsLayout()
+            tableView.layoutIfNeeded()
+            tableView.updateConstraints()
+            tableView.reloadData()*/
+        }
+    }
+    
     var title: String!
     
     var key: String?
@@ -21,11 +31,20 @@ class MultipleChoiceCell: UITableViewCell, UITableViewDataSource, UITableViewDel
     var selection = -1
     
     override func awakeFromNib() {
+        self.layoutSubviews()
+        
         tableView.dataSource = self
         tableView.delegate = self
         
         tableView.estimatedRowHeight = 40
         tableView.rowHeight = UITableViewAutomaticDimension
+
+        
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        //heightConstraint.constant = tableView.contentSize.height
     }
     // MARK: - Table view data source
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -45,7 +64,11 @@ class MultipleChoiceCell: UITableViewCell, UITableViewDataSource, UITableViewDel
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! MultilineCell
         cell.multilineText.text = array[indexPath.row]
         // Configure the cell...
-        heightConstraint.constant = tableView.contentSize.height + 50
+        if (indexPath.row == array.count-3){
+            println("Laying out")
+            heightConstraint.constant = 600
+        }
+        
         return cell
     }
     
@@ -58,6 +81,7 @@ class MultipleChoiceCell: UITableViewCell, UITableViewDataSource, UITableViewDel
         println(selection)
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
+        tableView.reloadData()
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
