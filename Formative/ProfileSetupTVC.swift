@@ -27,35 +27,24 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
     // MARK: - VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // load questions from .json file
         var questionsData = NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("userProfileQuestions", ofType: "json")!)
         questions = parseJSON(questionsData!) as! NSArray
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
         
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
+        // Configure for self sizing cells
         tableView.estimatedRowHeight = 40
         tableView.rowHeight = UITableViewAutomaticDimension
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Table View Data Source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
         return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return questions.count
+        return questions.count-1
     }
     
     
@@ -66,7 +55,7 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
             profileImageCell = cell
             return cell
         }
-        else if (indexPath.row < 6)
+        else //if (indexPath.row < 6)
         {
             let cell = tableView.dequeueReusableCellWithIdentifier("questionCell", forIndexPath: indexPath) as! TextFieldCell
             cell.textField.placeholder = questions[indexPath.row-1][1] as? String
@@ -74,19 +63,22 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
             textCells.append(cell)
             return cell
         }
-        else
+        // ADL Checking Disabled Temporarily (@Jihoon, can you maybe take a look at this)
+        /*else
         {
             let cell = tableView.dequeueReusableCellWithIdentifier("multipleCell", forIndexPath: indexPath) as! MultipleChoiceCell
             cell.array = questions[indexPath.row-1][1] as! Array<String>
             cell.title = questions[indexPath.row-1][0] as! String
             multipleChoiceCells.append(cell)
             return cell
-        }
-        
+        }*/
+
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if (indexPath.row == 0){
+        if (indexPath.row == 0){ // Photo cell touched
+            
+            // Create an alert
             var alert = UIAlertController(title: "Choose A Source", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Camera", style: .Default, handler: { (action) in
                 self.takePhoto()
@@ -98,6 +90,8 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
             presentViewController(alert, animated: true, completion: nil)
         }
     }
+    
+    // MARK: - Image Picker
     
     func takePhoto()
     {
@@ -132,7 +126,7 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
         } else {
             // [Jihoon]: convert the image to binary, and save to the Parse cloud
             let imageData = UIImagePNGRepresentation(image) //takes the image and converts it to the binary code
-            let imageFile:PFFile = PFFile(data: imageData)
+            let imageFile = PFFile(data: imageData)
             PFUser.currentUser()?.setObject(imageFile, forKey: "profileImage")
             PFUser.currentUser()?.saveInBackground()
             
@@ -145,20 +139,25 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    // MARK: - Parse Integration
+    // MARK: - Seguing
     @IBAction func profileSetupFInished(sender: AnyObject) {
+        
+        // I'm blocking the main thread here, I'll fix it later
         var user = PFUser.currentUser()!
-        /*println(textCells.count)
+        patient.save()
+        user["PWDid"] = patient.objectId
+        user.save()
+        
         for cell in textCells{
-        if (cell.textField.text == "")
-        {
-        alertErrorWithTitle("Incomplete Profile", message: "Required field \(cell.textField.placeholder!) was not filled in", inViewController: self)
-        return
-        }
-        user["\(cell.key!)"] = cell.textField.text
+            if (cell.textField.text == "")
+            {
+                alertErrorWithTitle("Incomplete Profile", message: "Required field \(cell.textField.placeholder!) was not filled in", inViewController: self)
+                return
+            }
+            //user["\(cell.key!)"] = cell.textField.text
         }
         
-        for cell in multipleChoiceCells{
+        /*for cell in multipleChoiceCells{
         if cell.selection == -1 {
         alertErrorWithTitle("Incomplete Profile", message: "Required multiple choice question \(cell.title) was not filled in", inViewController: self)
         return

@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import Bolts
+import Parse
 
 class FeedViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (PFUser.currentUser() == nil){
+            println("Auto logging in!")
+            PFUser.logInWithUsername("andrew@andrewke.org", password: "andrew")
+        }
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -100,7 +107,7 @@ class FeedViewController: UIViewController, UITableViewDataSource {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-        var keywordsVC = segue.destinationViewController as! KeywordsTVC
+        //var keywordsVC = segue.destinationViewController as! KeywordsTVC
     }
     
 

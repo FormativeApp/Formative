@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 func alertErrorWithTitle(title: String, #message: String?, inViewController vc: UIViewController){
-    var alert = UIAlertController(title: title, message: message ?? "No Error Message Availibe", preferredStyle: UIAlertControllerStyle.Alert)
+    var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
     alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
     vc.presentViewController(alert, animated: true, completion: nil)
 }
