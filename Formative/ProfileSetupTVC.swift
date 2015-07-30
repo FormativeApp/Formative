@@ -129,6 +129,13 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
         var image = info[UIImagePickerControllerEditedImage] as? UIImage
         if image == nil {
             image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        } else {
+            // [Jihoon]: convert the image to binary, and save to the Parse cloud
+            let imageData = UIImagePNGRepresentation(image) //takes the image and converts it to the binary code
+            let imageFile:PFFile = PFFile(data: imageData)
+            PFUser.currentUser()?.setObject(imageFile, forKey: "profileImage")
+            PFUser.currentUser()?.saveInBackground()
+            
         }
         profileImageCell.profileImage.image = image
         dismissViewControllerAnimated(true, completion: nil)
