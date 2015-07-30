@@ -589,10 +589,25 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="whiteSpaceCell" rowHeight="64" id="lK4-BF-WLT">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="whiteSpaceCell" rowHeight="100" id="lK4-BF-WLT">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lK4-BF-WLT" id="7Aw-L3-Qsq">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SOb-gS-qQt">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="99" id="dZq-QC-Ekx"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="SOb-gS-qQt" secondAttribute="trailing" id="AXn-Qb-mne"/>
+                                                <constraint firstItem="SOb-gS-qQt" firstAttribute="top" secondItem="7Aw-L3-Qsq" secondAttribute="top" id="UTG-Id-UqN"/>
+                                                <constraint firstItem="SOb-gS-qQt" firstAttribute="leading" secondItem="7Aw-L3-Qsq" secondAttribute="leading" id="dIV-O3-iFf"/>
+                                                <constraint firstAttribute="bottom" secondItem="SOb-gS-qQt" secondAttribute="bottom" id="rxt-Fi-9QH"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="postCell" rowHeight="421" id="opL-qT-CSc" customClass="PostTVC" customModule="Formative" customModuleProvider="target">
@@ -616,18 +631,34 @@
                                             <outlet property="postView" destination="xfP-3h-3MR" id="sNz-G2-rv7"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="spinnerCell" rowHeight="70" id="qze-s9-dmi">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="spinnerCell" rowHeight="150" id="qze-s9-dmi">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qze-s9-dmi" id="SSD-bC-tv4">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="lgm-GD-PcP">
-                                                    <rect key="frame" x="290" y="25" width="20" height="20"/>
-                                                </activityIndicatorView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u2N-jE-NSR">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="149"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading more posts..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxs-Rh-7H3">
+                                                            <rect key="frame" x="216" y="63" width="168" height="24"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="centerY" secondItem="fxs-Rh-7H3" secondAttribute="centerY" id="2ov-US-IkK"/>
+                                                        <constraint firstAttribute="centerX" secondItem="fxs-Rh-7H3" secondAttribute="centerX" id="h1t-Xx-gF4"/>
+                                                        <constraint firstAttribute="height" constant="149" id="lpI-ST-J0M"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="centerX" secondItem="lgm-GD-PcP" secondAttribute="centerX" id="DZO-rX-haY"/>
-                                                <constraint firstAttribute="centerY" secondItem="lgm-GD-PcP" secondAttribute="centerY" constant="-0.5" id="hfa-yI-YCY"/>
+                                                <constraint firstItem="u2N-jE-NSR" firstAttribute="leading" secondItem="SSD-bC-tv4" secondAttribute="leading" id="DBl-5S-rqq"/>
+                                                <constraint firstItem="u2N-jE-NSR" firstAttribute="top" secondItem="SSD-bC-tv4" secondAttribute="top" id="bz6-o8-gsK"/>
+                                                <constraint firstAttribute="bottom" secondItem="u2N-jE-NSR" secondAttribute="bottom" id="gET-eM-dQx"/>
+                                                <constraint firstAttribute="trailing" secondItem="u2N-jE-NSR" secondAttribute="trailing" id="rlu-d3-ETH"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -650,6 +681,25 @@
                                     </segue>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCA-aO-ARR">
+                                <rect key="frame" x="0.0" y="15" width="91" height="95"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="91" id="HaJ-Tw-9uQ"/>
+                                    <constraint firstAttribute="height" constant="95" id="wIT-OA-A0i"/>
+                                </constraints>
+                                <state key="normal" image="Add Post">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="MfQ-4j-XFd" kind="show" id="g1t-Bq-4Jj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -659,10 +709,14 @@
                             <constraint firstAttribute="trailing" secondItem="ydS-72-1nP" secondAttribute="trailing" id="VhK-YB-Fvd"/>
                             <constraint firstItem="L4U-vN-Gkd" firstAttribute="top" secondItem="8bh-DP-Z9G" secondAttribute="bottom" constant="10" id="cnu-cZ-oYJ"/>
                             <constraint firstItem="GB2-wO-Xnf" firstAttribute="top" secondItem="ydS-72-1nP" secondAttribute="bottom" id="jFV-7A-g2U"/>
+                            <constraint firstItem="eCA-aO-ARR" firstAttribute="leading" secondItem="IHF-gR-vAo" secondAttribute="leading" id="nXY-8t-y4d"/>
+                            <constraint firstItem="eCA-aO-ARR" firstAttribute="top" secondItem="IHF-gR-vAo" secondAttribute="top" constant="15" id="npa-9a-MHA"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" id="0D9-rg-X3b"/>
                     <connections>
+                        <outlet property="addAPostButton" destination="L4U-vN-Gkd" id="7tp-sn-Md7"/>
+                        <outlet property="secondaryAddPostButton" destination="eCA-aO-ARR" id="jHE-pa-Qdl"/>
                         <outlet property="tableView" destination="ydS-72-1nP" id="P26-50-qK9"/>
                         <segue destination="Y6t-RU-ub3" kind="presentation" id="hJT-Dd-iVS"/>
                     </connections>
@@ -878,11 +932,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Add Post" width="243" height="255"/>
         <image name="Bathing" width="750" height="500"/>
         <image name="Login-1" width="444" height="135"/>
         <image name="User" width="448" height="460"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eqJ-ac-Okq"/>
+        <segue reference="8GO-YP-izv"/>
     </inferredMetricsTieBreakers>
 </document>

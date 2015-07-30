@@ -7,11 +7,32 @@
 //
 
 import UIKit
+import Bolts
+import Parse
 
 @IBDesignable class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
 
-    @IBOutlet weak var postImage: UIImageView!
-    @IBOutlet weak var postTextView: UITextView!
+    @IBOutlet weak var postImage: UIImageView! {
+        didSet{
+            var aspectRatioConstraint = NSLayoutConstraint(
+                item: postImage,
+                attribute: .Width,
+                relatedBy: .Equal,
+                toItem: postImage,
+                attribute: .Height,
+                multiplier: postImage.image!.aspectRatio,
+                constant: 0)
+            postImage.addConstraint(aspectRatioConstraint)
+        }
+    }
+    
+    @IBOutlet weak var postTextView: UITextView! {
+        didSet {
+            postTextView.sizeToFit()
+            messageTextViewHeightConstraint.constant = postTextView.bounds.height-20
+        }
+    }
+    
     @IBOutlet weak var commentsTableView: UITableView!
     @IBOutlet weak var commentTextView: UITextView!
     
@@ -21,6 +42,8 @@ import UIKit
     @IBOutlet weak var buttonToBottomConstraint: NSLayoutConstraint!
     
     var superTableView: UITableView? // Table view that the post is in set by FeedViewController
+    
+    var post: PFObject!
     
     override var className: String {
         get {
@@ -33,19 +56,6 @@ import UIKit
     
     // MARK: - Initialization
     func setup(){
-        postTextView.sizeToFit()
-        messageTextViewHeightConstraint.constant = postTextView.bounds.height-20
-        
-        var aspectRatioConstraint = NSLayoutConstraint(
-            item: postImage,
-            attribute: .Width,
-            relatedBy: .Equal,
-            toItem: postImage,
-            attribute: .Height,
-            multiplier: postImage.image!.aspectRatio,
-            constant: 0)
-        postImage.addConstraint(aspectRatioConstraint)
-        
         commentsTableView.hidden = true
         commentTextView.hidden = true
         
@@ -118,9 +128,15 @@ import UIKit
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         if (text == "\n"){
             textView.resignFirstResponder()
+            postComment()
             return false
         }
         return true
+    }
+    
+    // MARK: - Parse
+    func postComment() {
+        
     }
     
     // MARK: - Comments Animation
