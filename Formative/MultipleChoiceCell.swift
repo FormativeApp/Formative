@@ -15,7 +15,6 @@ class MultipleChoiceCell: UITableViewCell, UITableViewDataSource, UITableViewDel
     
     var array: Array<String>!{
         didSet{
-            contentView.bounds = CGRect(x: 0.0, y: 0.0, width: 99999.0, height: 99999.0)
             /*tableView.reloadData()
             tableView.setNeedsLayout()
             tableView.layoutIfNeeded()

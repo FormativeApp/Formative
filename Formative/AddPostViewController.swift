@@ -130,6 +130,7 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
         post["recipientID"] = PFUser.currentUser()!["PWDid"]
         post["tags"] = ["\(categoryButton.titleLabel!.text!)"]
         post["userID"] = PFUser.currentUser()?.objectId
+        post["user"] = PFUser.currentUser()
         if let image = photoButton.imageView?.image {
             let imageData = UIImagePNGRepresentation(image) //takes the image and converts it to the binary code
             let imageFile = PFFile(data: imageData)

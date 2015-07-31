@@ -529,30 +529,11 @@
                         <outlet property="newUserLabel" destination="d6R-4D-iYe" id="cTU-xt-Kxp"/>
                         <outlet property="passwordFieldYConstraint" destination="pfI-hX-ke9" id="BWq-ZB-Lkf"/>
                         <outlet property="passwordTextField" destination="PEX-9I-irs" id="90d-ap-4EJ"/>
-                        <segue destination="7ev-id-1WQ" kind="presentation" identifier="goToProfileSetup" id="Ws1-FF-5qG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4rm-D7-UKI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-678" y="1279"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="5LH-S3-pcN">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7ev-id-1WQ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7vx-cr-f8V">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="7uo-GR-gGq" kind="relationship" relationship="rootViewController" id="22R-7D-k1b"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ppx-a2-nLD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="127" y="526"/>
         </scene>
         <!--Browse-->
         <scene sceneID="deM-RT-b6B">
@@ -650,7 +631,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="centerY" secondItem="fxs-Rh-7H3" secondAttribute="centerY" id="2ov-US-IkK"/>
                                                         <constraint firstAttribute="centerX" secondItem="fxs-Rh-7H3" secondAttribute="centerX" id="h1t-Xx-gF4"/>
-                                                        <constraint firstAttribute="height" constant="149" id="lpI-ST-J0M"/>
+                                                        <constraint firstAttribute="height" priority="900" constant="149" id="lpI-ST-J0M"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -715,7 +696,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" id="0D9-rg-X3b"/>
                     <connections>
-                        <outlet property="addAPostButton" destination="L4U-vN-Gkd" id="7tp-sn-Md7"/>
+                        <outlet property="addPostButton" destination="L4U-vN-Gkd" id="7tp-sn-Md7"/>
                         <outlet property="secondaryAddPostButton" destination="eCA-aO-ARR" id="jHE-pa-Qdl"/>
                         <outlet property="tableView" destination="ydS-72-1nP" id="P26-50-qK9"/>
                         <segue destination="Y6t-RU-ub3" kind="presentation" id="hJT-Dd-iVS"/>
@@ -939,6 +920,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eqJ-ac-Okq"/>
-        <segue reference="8GO-YP-izv"/>
+        <segue reference="g1t-Bq-4Jj"/>
     </inferredMetricsTieBreakers>
 </document>

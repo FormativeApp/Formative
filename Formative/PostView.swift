@@ -9,10 +9,12 @@
 import UIKit
 import Bolts
 import Parse
+import ParseUI
 
 @IBDesignable class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
 
-    @IBOutlet weak var postImage: UIImageView! {
+
+    @IBOutlet weak var postImage: PFImageView!{
         didSet{
             var aspectRatioConstraint = NSLayoutConstraint(
                 item: postImage,
@@ -26,24 +28,24 @@ import Parse
         }
     }
     
-    @IBOutlet weak var postTextView: UITextView! {
-        didSet {
-            postTextView.sizeToFit()
-            messageTextViewHeightConstraint.constant = postTextView.bounds.height-20
-        }
-    }
     
+    @IBOutlet weak var postTextLabel: UILabel!
     @IBOutlet weak var commentsTableView: UITableView!
     @IBOutlet weak var commentTextView: UITextView!
-    
-    @IBOutlet weak var messageTextViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var commentTextViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var buttonToBottomConstraint: NSLayoutConstraint!
     
     var superTableView: UITableView? // Table view that the post is in set by FeedViewController
     
-    var post: PFObject!
+    var post: PFObject! {
+        didSet{
+            postTextLabel.text = post["text"] as? String
+            //postImage.file = post["photo"] as? PFFile
+            //postImage.loadInBackground()
+            
+        }
+    }
     
     override var className: String {
         get {
@@ -56,6 +58,7 @@ import Parse
     
     // MARK: - Initialization
     func setup(){
+        
         commentsTableView.hidden = true
         commentTextView.hidden = true
         
@@ -98,8 +101,8 @@ import Parse
         
         buttonToBottomConstraint.constant = 5
         
-        postTextView.sizeToFit()
-        messageTextViewHeightConstraint.constant = postTextView.bounds.height-20
+        //postTextView.sizeToFit()
+        //messageTextViewHeightConstraint.constant = postTextView.bounds.height-20
     }
     
     // MARK: - UITextViewDelegate

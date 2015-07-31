@@ -44,7 +44,7 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return questions.count-1
+        return questions.count
     }
     
     
@@ -55,7 +55,7 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
             profileImageCell = cell
             return cell
         }
-        else //if (indexPath.row < 6)
+        else if (indexPath.row < 6)
         {
             let cell = tableView.dequeueReusableCellWithIdentifier("questionCell", forIndexPath: indexPath) as! TextFieldCell
             cell.textField.placeholder = questions[indexPath.row-1][1] as? String
@@ -64,14 +64,15 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
             return cell
         }
         // ADL Checking Disabled Temporarily (@Jihoon, can you maybe take a look at this)
-        /*else
+        else
         {
             let cell = tableView.dequeueReusableCellWithIdentifier("multipleCell", forIndexPath: indexPath) as! MultipleChoiceCell
             cell.array = questions[indexPath.row-1][1] as! Array<String>
             cell.title = questions[indexPath.row-1][0] as! String
+            cell.layoutIfNeeded()
             multipleChoiceCells.append(cell)
             return cell
-        }*/
+        }
 
     }
     

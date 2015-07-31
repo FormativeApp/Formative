@@ -13,8 +13,8 @@ import Parse
 class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var addAPostButton: UIButton!
-    @IBOutlet weak var secondaryAddPostButton: UIButton!
+    @IBOutlet weak var addPostButton: UIButton! // Main bar
+    @IBOutlet weak var secondaryAddPostButton: UIButton! // Mini circle
     
     var posts: Array<PFObject> = []
     var user: PFUser!
@@ -23,11 +23,14 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.hidden = true
         super.viewDidLoad()
         
+        
+        self.secondaryAddPostButton.alpha = 0
+        
         if (PFUser.currentUser() == nil){
             println("Auto logging in!")
             PFUser.logInWithUsername("andrew@andrewke.org", password: "andrew")
         }
-        self.secondaryAddPostButton.alpha = 0
+
         
         user = PFUser.currentUser()
         
@@ -53,6 +56,26 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
+    // MARK: - Scroll view data source
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if (scrollView.contentOffset.y < 30 && addPostButton.alpha != 1)
+        {
+            UIView.animateWithDuration(0.25, animations: {
+                self.addPostButton.alpha = 1
+                self.secondaryAddPostButton.alpha = 0
+            })
+        }
+        
+        if (scrollView.contentOffset.y >= 30 && addPostButton.alpha != 0)
+        {
+            UIView.animateWithDuration(0.25, animations: {
+                self.addPostButton.alpha = 0
+                self.secondaryAddPostButton.alpha = 0.6
+            })
+        }
+    }
+    
     // MARK: - Table view data source
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -64,27 +87,9 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return posts.count > 0 ? posts.count + 2 : 0
     }
     
-    
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        if (scrollView.contentOffset.y < 30 && addAPostButton.alpha != 1)
-        {
-            UIView.animateWithDuration(0.25, animations: {
-                self.addAPostButton.alpha = 1
-                self.secondaryAddPostButton.alpha = 0
-            })
-        }
-        
-        if (scrollView.contentOffset.y >= 30 && addAPostButton.alpha != 0)
-        {
-            UIView.animateWithDuration(0.25, animations: {
-                self.addAPostButton.alpha = 0
-                self.secondaryAddPostButton.alpha = 0.6
-            })
-        }
-    }
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        // Special cells
         if (indexPath.row == 0)
         {
             let cell = tableView.dequeueReusableCellWithIdentifier("whiteSpaceCell", forIndexPath: indexPath) as! UITableViewCell
@@ -95,10 +100,13 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let cell = tableView.dequeueReusableCellWithIdentifier("spinnerCell", forIndexPath: indexPath) as! UITableViewCell
             return cell
         }
+        
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! PostTVC
         cell.postView.superTableView = self.tableView
+        cell.postView.post = posts[indexPath.row-1]
         // Configure the cell...
-        
+        //cell.layoutIfNeeded()
         return cell
     }
     
