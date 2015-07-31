@@ -10,6 +10,7 @@ import UIKit
 
 class ImageViewController: UIViewController, UIScrollViewDelegate
 {
+    
     // our Model
     // publicly settable
     // when it changes (but only if we are on screen)
@@ -92,6 +93,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate
     
     // Code to make image fully fill the screen
     private func positionImage(){
+        println("AAAAAH")
         if (imageView.bounds.width > 0 && scrollView != nil)
         {
             var aspectRatio = scrollView.bounds.width/scrollView.bounds.height
@@ -108,12 +110,17 @@ class ImageViewController: UIViewController, UIScrollViewDelegate
         }
     }
     
+    @IBAction func done(sender: AnyObject) {
+        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+
     // put our imageView into the view hierarchy
     // as a subview of the scrollView
     // (will install it into the content area of the scroll view)
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.addSubview(imageView)
+        positionImage()
     }
     
     // for efficiency, we will only actually fetch the image

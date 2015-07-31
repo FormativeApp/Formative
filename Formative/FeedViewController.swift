@@ -19,10 +19,17 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var posts: Array<PFObject> = []
     var user: PFUser!
     
+    struct TableViewConstants {
+        static let numberOfCellsPerLoad = 4
+    }
     override func viewDidLoad() {
-        tableView.hidden = true
         super.viewDidLoad()
         
+        tableView.hidden = true
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "refresh:", forControlEvents: .ValueChanged)
+        tableView.addSubview(refreshControl)
         
         self.secondaryAddPostButton.alpha = 0
         
@@ -30,13 +37,19 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             println("Auto logging in!")
             PFUser.logInWithUsername("andrew@andrewke.org", password: "andrew")
         }
-
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        tableView.estimatedRowHeight = 300
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         user = PFUser.currentUser()
-        
         let postsQuery = PFQuery(className: "Post")
         postsQuery.whereKey("recipientID", equalTo: user["PWDid"]!)
-        postsQuery.limit = 10
+        postsQuery.limit = TableViewConstants.numberOfCellsPerLoad
+        postsQuery.orderByAscending("updatedAt")
+        postsQuery.includeKey("user")
         postsQuery.findObjectsInBackgroundWithBlock({(objects:[AnyObject]?, error:NSError?) -> Void in
             if (objects != nil) {
                 self.posts = objects as! Array<PFObject>
@@ -47,13 +60,36 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         })
     }
     
+    func refresh(refreshControl: UIRefreshControl) {
+        // Do your job, when done:
+        let postsQuery = PFQuery(className: "Post")
+        postsQuery.whereKey("recipientID", equalTo: user["PWDid"]!)
+        postsQuery.limit = TableViewConstants.numberOfCellsPerLoad
+        postsQuery.orderByDescending("updatedAt")
+        postsQuery.findObjectsInBackgroundWithBlock({(objects:[AnyObject]?, error:NSError?) -> Void in
+            if (objects != nil) {
+                self.posts = objects as! Array<PFObject>
+                //print(self.posts)
+                self.tableView.reloadData()
+                self.tableView.hidden = false
+                refreshControl.endRefreshing()
+            }
+        })
+    }
+    
     override func viewDidAppear(animated: Bool) {
-        tableView.dataSource = self
-        tableView.delegate = self
-        
-        tableView.estimatedRowHeight = 300
-        tableView.rowHeight = UITableViewAutomaticDimension
-        
+        let postsQuery = PFQuery(className: "Post")
+        postsQuery.whereKey("recipientID", equalTo: user["PWDid"]!)
+        postsQuery.limit = TableViewConstants.numberOfCellsPerLoad
+        postsQuery.orderByDescending("updatedAt")
+        postsQuery.findObjectsInBackgroundWithBlock({(objects:[AnyObject]?, error:NSError?) -> Void in
+            if (objects != nil) {
+                self.posts = objects as! Array<PFObject>
+                //print(self.posts)
+                self.tableView.reloadData()
+                self.tableView.hidden = false
+            }
+        })
     }
     
     // MARK: - Scroll view data source
@@ -101,13 +137,25 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return cell
         }
         
-        
+        //var image = UIImage(data: (posts[indexPath.row-1]["photo"] as! PFFile).getData()!)
         let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! PostTVC
         cell.postView.superTableView = self.tableView
+        cell.postView.viewController = self
         cell.postView.post = posts[indexPath.row-1]
-        // Configure the cell...
-        //cell.layoutIfNeeded()
+        cell.postView.reset()
         return cell
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (indexPath.row == posts.count+1){
+            println("reached end")
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let vc = segue.destinationViewController as! UINavigationController
+        let imageVC = vc.viewControllers[0] as! ImageViewController
+        imageVC.image = sender as? UIImage
     }
     
     

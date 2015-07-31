@@ -14,36 +14,84 @@ import ParseUI
 @IBDesignable class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
 
 
-    @IBOutlet weak var postImage: PFImageView!{
+    @IBOutlet weak var postImage: PFImageView! {
         didSet{
-            var aspectRatioConstraint = NSLayoutConstraint(
-                item: postImage,
-                attribute: .Width,
-                relatedBy: .Equal,
-                toItem: postImage,
-                attribute: .Height,
-                multiplier: postImage.image!.aspectRatio,
-                constant: 0)
-            postImage.addConstraint(aspectRatioConstraint)
+            
         }
     }
     
-    
+    @IBOutlet weak var profileView: PostProfileView!
     @IBOutlet weak var postTextLabel: UILabel!
     @IBOutlet weak var commentsTableView: UITableView!
     @IBOutlet weak var commentTextView: UITextView!
     @IBOutlet weak var commentTextViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var buttonToBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var categoryLabel: UILabel!
     
     var superTableView: UITableView? // Table view that the post is in set by FeedViewController
+    var viewController: UIViewController?
+    
+    var aspectRatioConstraint: NSLayoutConstraint?
     
     var post: PFObject! {
         didSet{
             postTextLabel.text = post["text"] as? String
-            //postImage.file = post["photo"] as? PFFile
-            //postImage.loadInBackground()
+            categoryLabel.text = (post["tags"] as! NSArray)[0] as? String
+            var user = (post["user"] as! PFUser)
+            profileView.nameLabel.text = user["name"] as? String
             
+            
+            if let file = post["photo"] as? PFFile {
+                
+                self.postImage.image = nil
+                self.postImage.backgroundColor = UIColor.greenColor()
+                postImage.file = file
+                
+                postImage.loadInBackground { (image, error) -> Void in
+                    var aspectRatioConstraint = NSLayoutConstraint(
+                        item: self.postImage,
+                        attribute: .Width,
+                        relatedBy: .Equal,
+                        toItem: self.postImage,
+                        attribute: .Height,
+                        multiplier: self.postImage.image!.aspectRatio,
+                        constant: 0)
+                    if (self.aspectRatioConstraint != nil)
+                    {
+                        self.postImage.removeConstraint(self.aspectRatioConstraint!)
+                    }
+                    self.postImage.addConstraint(aspectRatioConstraint)
+                    UIView.animateWithDuration(0.5, animations: {
+                        self.layoutIfNeeded()
+                    })
+                    self.aspectRatioConstraint = aspectRatioConstraint
+                }
+            }
+            else
+            {
+                self.postImage.image = nil
+                var aspectRatioConstraint = NSLayoutConstraint(
+                    item: self.postImage,
+                    attribute: .Height,
+                    relatedBy: .Equal,
+                    toItem: self.postImage,
+                    attribute: .Height,
+                    multiplier: 0,
+                    constant: 0)
+                if (self.aspectRatioConstraint != nil)
+                {
+                    self.postImage.removeConstraint(self.aspectRatioConstraint!)
+                }
+                self.postImage.addConstraint(aspectRatioConstraint)
+                self.aspectRatioConstraint = aspectRatioConstraint
+                
+            }
+            
+            profileView.profileImage.file = user["profileImage"] as? PFFile
+            profileView.profileImage.loadInBackground()
+
+
         }
     }
     
@@ -58,7 +106,7 @@ import ParseUI
     
     // MARK: - Initialization
     func setup(){
-        
+        println("Hello!")
         commentsTableView.hidden = true
         commentTextView.hidden = true
         
@@ -73,12 +121,18 @@ import ParseUI
         
         commentTextView.delegate = self
         
-        commentsTableView.reloadData()
+        /*commentsTableView.reloadData()
         commentsTableView.setNeedsLayout()
-        commentsTableView.layoutIfNeeded()
-        commentsTableView.reloadData()
+        //commentsTableView.layoutIfNeeded()
+        commentsTableView.reloadData()*/
     }
     
+    func reset(){
+        commentsTableView.hidden = true
+        commentTextView.hidden = true
+        
+        buttonToBottomConstraint.constant = 5
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -186,6 +240,8 @@ import ParseUI
     
     @IBAction func imageTapped(sender: UITapGestureRecognizer) {
         println("Image Tapped")
+        viewController?.performSegueWithIdentifier("goToImage", sender: postImage.image)
+        
     }
     
     // MARK: - UITableViewDelegate
@@ -202,6 +258,7 @@ import ParseUI
 
         return cell
     }
+    
 
 
 

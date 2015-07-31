@@ -12,6 +12,8 @@ import UIKit
     
     
     @IBOutlet weak var starImage: UIImageView!
+    @IBOutlet weak var favoritesLabel: UILabel!
+    
     var starred:Bool = false
     
     override var className: String {

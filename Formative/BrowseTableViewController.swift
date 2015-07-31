@@ -16,6 +16,9 @@ class BrowseTableViewController: UITableViewController {
         
         var browerContentData = NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("browser", ofType: "json")!)
         browserContent = parseJSON(browerContentData!) as! NSArray
+        
+        tableView.estimatedRowHeight = 300
+        tableView.rowHeight = UITableViewAutomaticDimension
         //println(browserContent)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -48,7 +51,6 @@ class BrowseTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("categoryCell", forIndexPath: indexPath) as! BrowsePhotoCell
         
         let category = browserContent[indexPath.row] as! NSDictionary
-        println(category)
         
         cell.categoryLabel.text = category["title"] as? String
         cell.backgroundImage.image = UIImage(named: category["title"] as! String + ".png")
@@ -56,7 +58,6 @@ class BrowseTableViewController: UITableViewController {
 
         return cell
     }
-    
 
     /*
     // Override to support conditional editing of the table view.

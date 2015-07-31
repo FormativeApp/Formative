@@ -6,7 +6,12 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostProfileView" customModule="Formative" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostProfileView" customModule="Formative" customModuleProvider="target">
+            <connections>
+                <outlet property="nameLabel" destination="rjG-a5-EM1" id="Wx1-hE-gOL"/>
+                <outlet property="profileImage" destination="hCY-o0-dVz" id="jVf-0K-he5"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="433" height="136"/>

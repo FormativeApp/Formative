@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import ParseUI
+import Parse
+import Bolts
 
-@IBDesignable class CircularImageView: UIImageView {
+@IBDesignable class CircularImageView: PFImageView {
     
     override var bounds:CGRect {
         didSet{

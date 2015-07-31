@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostFavoritesView" customModule="Formative" customModuleProvider="target">
             <connections>
+                <outlet property="favoritesLabel" destination="6cB-iX-FgS" id="QAK-HU-5Ul"/>
                 <outlet property="starImage" destination="uEi-DB-hX4" id="LJp-mV-C13"/>
             </connections>
         </placeholder>
@@ -44,7 +45,7 @@
             <connections>
                 <outletCollection property="gestureRecognizers" destination="oLD-ds-1J2" appends="YES" id="CWT-At-YKG"/>
             </connections>
-            <point key="canvasLocation" x="401" y="322"/>
+            <point key="canvasLocation" x="312" y="380"/>
         </view>
         <tapGestureRecognizer id="oLD-ds-1J2">
             <connections>

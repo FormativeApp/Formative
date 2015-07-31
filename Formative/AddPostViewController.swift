@@ -70,7 +70,7 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
             picker.sourceType = .Camera
             picker.mediaTypes = [kUTTypeImage]
             picker.delegate = self
-            picker.allowsEditing = true
+            picker.allowsEditing = false
             presentViewController(picker, animated: true, completion: nil)
         }
     }

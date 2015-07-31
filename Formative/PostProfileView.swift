@@ -10,6 +10,9 @@ import UIKit
 
 @IBDesignable class PostProfileView: UIReusableView {
     
+    @IBOutlet weak var profileImage: CircularImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
     override var className: String {
         get {
             return "PostProfileView"

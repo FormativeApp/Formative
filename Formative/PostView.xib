@@ -9,11 +9,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostView">
             <connections>
                 <outlet property="buttonToBottomConstraint" destination="eXJ-sn-kSi" id="Idr-r7-BuO"/>
+                <outlet property="categoryLabel" destination="GkD-eS-Y7G" id="28l-PS-Ycp"/>
                 <outlet property="commentTextView" destination="Q46-YW-rj5" id="jsw-wf-clj"/>
                 <outlet property="commentTextViewHeightConstraint" destination="osK-ig-kxz" id="HbY-Ze-3Kv"/>
                 <outlet property="commentsTableView" destination="tg0-6e-kQd" id="L1c-sl-Pbv"/>
                 <outlet property="postImage" destination="bOX-fj-DeG" id="bdI-HW-oFd"/>
                 <outlet property="postTextLabel" destination="SpW-8E-vMX" id="96b-Me-V0S"/>
+                <outlet property="profileView" destination="WOh-2Y-8qc" id="Wyi-Gy-ZoH"/>
                 <outlet property="tableViewHeightConstraint" destination="gpj-2y-WYF" id="9cO-KG-TVB"/>
             </connections>
         </placeholder>
@@ -43,7 +45,7 @@
                     <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <gestureRecognizers/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="200" id="EDB-nu-BJc"/>
+                        <constraint firstAttribute="height" priority="900" constant="200" id="EDB-nu-BJc"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -119,7 +121,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SpW-8E-vMX">
                     <rect key="frame" x="8" y="53" width="338" height="64"/>
                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
