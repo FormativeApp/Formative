@@ -61,11 +61,10 @@ import ParseUI
                     {
                         self.postImage.removeConstraint(self.aspectRatioConstraint!)
                     }
+                    //self.superTableView?.beginUpdates()
                     self.postImage.addConstraint(aspectRatioConstraint)
-                    UIView.animateWithDuration(0.5, animations: {
-                        self.layoutIfNeeded()
-                    })
                     self.aspectRatioConstraint = aspectRatioConstraint
+                    //self.superTableView?.endUpdates()
                 }
             }
             else
@@ -90,8 +89,6 @@ import ParseUI
             
             profileView.profileImage.file = user["profileImage"] as? PFFile
             profileView.profileImage.loadInBackground()
-
-
         }
     }
     
@@ -106,7 +103,6 @@ import ParseUI
     
     // MARK: - Initialization
     func setup(){
-        println("Hello!")
         commentsTableView.hidden = true
         commentTextView.hidden = true
         

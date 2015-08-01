@@ -12,7 +12,10 @@ import Parse
 
 class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var loadingLabel: UILabel! // (At bottom) "Loading more posts ..."
+    @IBOutlet weak var mainSpinner: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
+    
     @IBOutlet weak var addPostButton: UIButton! // Main bar
     @IBOutlet weak var secondaryAddPostButton: UIButton! // Mini circle
     
@@ -20,7 +23,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var user: PFUser!
     
     struct TableViewConstants {
-        static let numberOfCellsPerLoad = 4
+        static let numberOfInitialCells = 4
+        static let numberOfCellsPerLoad = 2
     }
     
     override func viewDidLoad() {
@@ -48,15 +52,22 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         user = PFUser.currentUser()
         let postsQuery = PFQuery(className: "Post")
         postsQuery.whereKey("recipientID", equalTo: user["PWDid"]!)
-        postsQuery.limit = TableViewConstants.numberOfCellsPerLoad
+        postsQuery.limit = TableViewConstants.numberOfInitialCells
         postsQuery.orderByDescending("updatedAt")
         postsQuery.includeKey("user")
+        
         postsQuery.findObjectsInBackgroundWithBlock({(objects:[AnyObject]?, error:NSError?) -> Void in
+            
             if (objects != nil) {
+                
                 self.posts = objects as! Array<PFObject>
-                print(self.posts)
+                //print(self.posts)
                 self.tableView.reloadData()
                 self.tableView.hidden = false
+                self.mainSpinner.stopAnimating()
+            }
+            else {
+                alertErrorWithTitle("No internet connection", message: nil, inViewController: self)
             }
         })
     }
@@ -65,16 +76,22 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Do your job, when done:
         let postsQuery = PFQuery(className: "Post")
         postsQuery.whereKey("recipientID", equalTo: user["PWDid"]!)
-        postsQuery.limit = TableViewConstants.numberOfCellsPerLoad
+        postsQuery.limit = TableViewConstants.numberOfInitialCells
         postsQuery.orderByDescending("updatedAt")
         postsQuery.includeKey("user")
+        
         postsQuery.findObjectsInBackgroundWithBlock({(objects:[AnyObject]?, error:NSError?) -> Void in
+            
             if (objects != nil) {
+                
                 self.posts = objects as! Array<PFObject>
                 //print(self.posts)
                 self.tableView.reloadData()
                 self.tableView.hidden = false
                 refreshControl.endRefreshing()
+            }
+            else {
+                alertErrorWithTitle("No internet connection", message: nil, inViewController: self)
             }
         })
     }
@@ -83,8 +100,10 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: - Scroll view data source
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
+        
         if (scrollView.contentOffset.y < 30 && addPostButton.alpha != 1)
         {
+            
             UIView.animateWithDuration(0.25, animations: {
                 self.addPostButton.alpha = 1
                 self.secondaryAddPostButton.alpha = 0
@@ -93,6 +112,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         if (scrollView.contentOffset.y >= 30 && addPostButton.alpha != 0)
         {
+            
             UIView.animateWithDuration(0.25, animations: {
                 self.addPostButton.alpha = 0
                 self.secondaryAddPostButton.alpha = 0.6
@@ -104,53 +124,73 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
-        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count > 0 ? posts.count + 2 : 0
+        return posts.count > 0 ? posts.count + 1 : 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        // Special cells
+        // Special Whitespace Cell
         if (indexPath.row == 0)
         {
             let cell = tableView.dequeueReusableCellWithIdentifier("whiteSpaceCell", forIndexPath: indexPath) as! UITableViewCell
             return cell
         }
-        if (indexPath.row == posts.count+1)
-        {
-            let cell = tableView.dequeueReusableCellWithIdentifier("spinnerCell", forIndexPath: indexPath) as! UITableViewCell
-            return cell
-        }
-        
-        //var image = UIImage(data: (posts[indexPath.row-1]["photo"] as! PFFile).getData()!)
+
         let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! PostTVC
         cell.postView.superTableView = self.tableView
         cell.postView.viewController = self
         cell.postView.post = posts[indexPath.row-1]
         cell.postView.reset()
+        loadInProgress = false
         return cell
     }
     
+    var loadInProgress = false
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if (indexPath.row == posts.count+1){
-            let postsQuery = PFQuery(className: "Post")
-            postsQuery.whereKey("recipientID", equalTo: user["PWDid"]!)
-            postsQuery.limit = TableViewConstants.numberOfCellsPerLoad
-            postsQuery.orderByDescending("updatedAt")
-            postsQuery.includeKey("user")
-            println(posts[posts.endIndex-1])
-            postsQuery.whereKey("updatedAt", lessThan: posts[posts.endIndex-1].updatedAt!)
-            postsQuery.findObjectsInBackgroundWithBlock({(objects:[AnyObject]?, error:NSError?) -> Void in
-                if (objects != nil) {
-                    self.posts = objects as! Array<PFObject>
-                    print("Query: \(objects?.description)")
-                    self.tableView.reloadData()
-                    self.tableView.hidden = false
-                }
-            })
+
+        if (indexPath.row == posts.count){
+            if (!loadInProgress) {
+                
+                println("Load more posts")
+                loadInProgress = true
+                
+                let postsQuery = PFQuery(className: "Post")
+                postsQuery.whereKey("recipientID", equalTo: user["PWDid"]!)
+                postsQuery.limit = 1
+                postsQuery.orderByDescending("updatedAt")
+                postsQuery.includeKey("user")
+                postsQuery.whereKey("updatedAt", lessThan: posts[posts.endIndex-1].updatedAt!)
+                
+                self.loadingLabel.text = "Loading more posts ..."
+                
+                postsQuery.findObjectsInBackgroundWithBlock({(objects:[AnyObject]?, error:NSError?) -> Void in
+                    
+                    if (objects != nil && objects?.count != 0) {
+                        
+                        for object in objects as! Array<PFObject> {
+                            if !contains(self.posts, object){
+                                self.posts.append(object)
+                            }
+                        }
+                        
+                        self.tableView.reloadData()
+                        /*var indexPaths: Array<NSIndexPath> = [NSIndexPath(forRow: 2, inSection: 0)]
+                        
+                        for i in 1...(objects!.count-1){
+                            indexPaths.append(NSIndexPath(forRow: self.posts.count - objects!.count + i, inSection: 1))
+                        }*/
+            
+                        //self.tableView.beginUpdates()
+                        //self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.None)
+                        //self.tableView.endUpdates()
+                    }
+                    else {
+                        self.loadingLabel.text = "No more posts to be loaded"
+                    }
+                })
+            }
         }
     }
     

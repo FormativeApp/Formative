@@ -93,7 +93,6 @@ class ImageViewController: UIViewController, UIScrollViewDelegate
     
     // Code to make image fully fill the screen
     private func positionImage(){
-        println("AAAAAH")
         if (imageView.bounds.width > 0 && scrollView != nil)
         {
             var aspectRatio = scrollView.bounds.width/scrollView.bounds.height
@@ -120,6 +119,10 @@ class ImageViewController: UIViewController, UIScrollViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.addSubview(imageView)
+        positionImage()
+    }
+    
+    override func viewDidLayoutSubviews() {
         positionImage()
     }
     
