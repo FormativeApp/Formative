@@ -136,7 +136,21 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         if (indexPath.row == posts.count+1){
-            println("reached end")
+            let postsQuery = PFQuery(className: "Post")
+            postsQuery.whereKey("recipientID", equalTo: user["PWDid"]!)
+            postsQuery.limit = TableViewConstants.numberOfCellsPerLoad
+            postsQuery.orderByDescending("updatedAt")
+            postsQuery.includeKey("user")
+            println(posts[posts.endIndex-1])
+            postsQuery.whereKey("updatedAt", lessThan: posts[posts.endIndex-1].updatedAt!)
+            postsQuery.findObjectsInBackgroundWithBlock({(objects:[AnyObject]?, error:NSError?) -> Void in
+                if (objects != nil) {
+                    self.posts = objects as! Array<PFObject>
+                    print("Query: \(objects?.description)")
+                    self.tableView.reloadData()
+                    self.tableView.hidden = false
+                }
+            })
         }
     }
     

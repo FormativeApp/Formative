@@ -17,8 +17,8 @@ class BrowseTableViewController: UITableViewController {
         var browerContentData = NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("browser", ofType: "json")!)
         browserContent = parseJSON(browerContentData!) as! NSArray
         
-        tableView.estimatedRowHeight = 300
-        tableView.rowHeight = UITableViewAutomaticDimension
+        /*tableView.estimatedRowHeight = 300
+        tableView.rowHeight = UITableViewAutomaticDimension*/
         //println(browserContent)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
