@@ -1,4 +1,4 @@
-//
+//cir
 //  CommentTVC.swift
 //  Formative
 //
@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ParseUI
 
 class CommentTVC: UITableViewCell {
     

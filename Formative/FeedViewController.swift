@@ -55,6 +55,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         postsQuery.limit = TableViewConstants.numberOfInitialCells
         postsQuery.orderByDescending("updatedAt")
         postsQuery.includeKey("user")
+        postsQuery.includeKey("comments")
         
         postsQuery.findObjectsInBackgroundWithBlock({(objects:[AnyObject]?, error:NSError?) -> Void in
             
@@ -79,6 +80,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         postsQuery.limit = TableViewConstants.numberOfInitialCells
         postsQuery.orderByDescending("updatedAt")
         postsQuery.includeKey("user")
+        postsQuery.includeKey("comments")
         
         postsQuery.findObjectsInBackgroundWithBlock({(objects:[AnyObject]?, error:NSError?) -> Void in
             
@@ -161,6 +163,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 postsQuery.limit = 1
                 postsQuery.orderByDescending("updatedAt")
                 postsQuery.includeKey("user")
+                postsQuery.includeKey("comments")
                 postsQuery.whereKey("updatedAt", lessThan: posts[posts.endIndex-1].updatedAt!)
                 
                 self.loadingLabel.text = "Loading more posts ..."

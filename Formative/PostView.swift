@@ -13,13 +13,9 @@ import ParseUI
 
 @IBDesignable class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
 
-
-    @IBOutlet weak var postImage: PFImageView! {
-        didSet{
-            
-        }
-    }
+    // MARK: - Outlets
     
+    @IBOutlet weak var postImage: PFImageView!
     @IBOutlet weak var profileView: PostProfileView!
     @IBOutlet weak var postTextLabel: UILabel!
     @IBOutlet weak var commentsTableView: UITableView!
@@ -28,11 +24,17 @@ import ParseUI
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var buttonToBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var viewCommentsButton: UIButton!
     
+    // MARK: - Properties
     var superTableView: UITableView? // Table view that the post is in set by FeedViewController
     var viewController: UIViewController?
     
     var aspectRatioConstraint: NSLayoutConstraint?
+    var commentsString: String!
+    
+    // MARK: - Reuse
     
     var post: PFObject! {
         didSet{
@@ -41,6 +43,16 @@ import ParseUI
             var user = (post["user"] as! PFUser)
             profileView.nameLabel.text = user["name"] as? String
             
+            if (post["comments"] as! Array<PFObject>).count == 0 {
+                commentsString = "No Comments (Add your own)"
+            }
+            else {
+                var count = (post["comments"] as! Array<PFObject>).count
+                var str = count == 1 ? "Comment" : "Comments"
+                commentsString = "\(count) \(str)"
+            }
+            
+            viewCommentsButton.setTitle(commentsString, forState: UIControlState.Normal)
             
             if let file = post["photo"] as? PFFile {
                 
@@ -61,10 +73,9 @@ import ParseUI
                     {
                         self.postImage.removeConstraint(self.aspectRatioConstraint!)
                     }
-                    //self.superTableView?.beginUpdates()
                     self.postImage.addConstraint(aspectRatioConstraint)
                     self.aspectRatioConstraint = aspectRatioConstraint
-                    //self.superTableView?.endUpdates()
+ 
                 }
             }
             else
@@ -84,12 +95,19 @@ import ParseUI
                 }
                 self.postImage.addConstraint(aspectRatioConstraint)
                 self.aspectRatioConstraint = aspectRatioConstraint
-                
             }
             
             profileView.profileImage.file = user["profileImage"] as? PFFile
             profileView.profileImage.loadInBackground()
         }
+    }
+    
+    func reset(){
+        commentsTableView.hidden = true
+        commentTextView.hidden = true
+        doneButton.hidden = true
+        
+        buttonToBottomConstraint.constant = 5
     }
     
     override var className: String {
@@ -105,6 +123,7 @@ import ParseUI
     func setup(){
         commentsTableView.hidden = true
         commentTextView.hidden = true
+        doneButton.hidden = true
         
         buttonToBottomConstraint.constant = 5
         
@@ -116,19 +135,8 @@ import ParseUI
         commentsTableView.rowHeight = UITableViewAutomaticDimension
         
         commentTextView.delegate = self
-        
-        /*commentsTableView.reloadData()
-        commentsTableView.setNeedsLayout()
-        //commentsTableView.layoutIfNeeded()
-        commentsTableView.reloadData()*/
     }
-    
-    func reset(){
-        commentsTableView.hidden = true
-        commentTextView.hidden = true
-        
-        buttonToBottomConstraint.constant = 5
-    }
+
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -148,11 +156,9 @@ import ParseUI
         
         commentsTableView.hidden = true
         commentTextView.hidden = true
+        doneButton.hidden = true
         
         buttonToBottomConstraint.constant = 5
-        
-        //postTextView.sizeToFit()
-        //messageTextViewHeightConstraint.constant = postTextView.bounds.height-20
     }
     
     // MARK: - UITextViewDelegate
@@ -162,12 +168,6 @@ import ParseUI
         if (commentTextView.text == "Add a comment"){
             textView.text = ""
         }
-        
-        /*commentTextViewHeightConstraint.constant = 80
-        buttonToBottomConstraint.constant = 80 + tableViewHeightConstraint.constant + 30
-        UIView.animateWithDuration(0.5, animations: {
-            self.superview?.layoutIfNeeded()
-        })*/
         
         commentTextView.becomeFirstResponder()
     }
@@ -181,28 +181,31 @@ import ParseUI
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         if (text == "\n"){
             textView.resignFirstResponder()
-            postComment()
             return false
         }
         return true
     }
     
     // MARK: - Parse
-    func postComment() {
-        
-    }
     
-    // MARK: - Comments Animation
-    var commentsHidden = true
-    @IBAction func revealOrHideComments(sender: UIButton) {
-        if (commentsHidden)
-        {
-            commentsHidden = false
-            sender.setTitle("Collapse 7 Comments", forState: UIControlState.Normal)
-            superTableView?.beginUpdates()
+    @IBAction func postComment() {
+        
+        if commentTextView.text == "Add a comment" {
+            alertErrorWithTitle("Please add a comment body", message: nil, inViewController: viewController!)
+            return
+        }
+        
+        var comment = PFObject(className: "Comment")
+        comment["text"] = commentTextView.text
+        comment["user"] = PFUser.currentUser()!
+        post["comments"]  = (post["comments"] as! Array<PFObject>) + [comment]
+        commentTextView.text = "Add a comment"
+        post.saveInBackgroundWithBlock { (sucess, error) -> Void in
+            self.commentsTableView.reloadData()
+            self.superTableView?.beginUpdates()
             
-            tableViewHeightConstraint.constant = commentsTableView.contentSize.height
-            buttonToBottomConstraint.constant = commentTextView.frame.height + tableViewHeightConstraint.constant + 30
+            self.tableViewHeightConstraint.constant = self.commentsTableView.contentSize.height
+            self.buttonToBottomConstraint.constant = self.commentTextView.frame.height + self.tableViewHeightConstraint.constant + 50
             
             UIView.animateWithDuration(0.5, animations: {
                 self.superview?.layoutIfNeeded()
@@ -210,16 +213,46 @@ import ParseUI
                 }, completion: { (completed) -> Void in
                     self.commentsTableView.hidden = false
                     self.commentTextView.hidden = false
+                    self.doneButton.hidden = false
+            })
+        }
+        
+    }
+    
+    // MARK: - Comments Animation
+    
+    var commentsHidden = true
+    @IBAction func revealOrHideComments(sender: UIButton) {
+        println(post["comments"] as! Array<PFObject>)
+        if (commentsHidden)
+        {
+            commentsHidden = false
+            sender.setTitle("Hide Comments", forState: UIControlState.Normal)
+            commentsTableView.reloadData()
+            
+            superTableView?.beginUpdates()
+            
+            tableViewHeightConstraint.constant = commentsTableView.contentSize.height
+            buttonToBottomConstraint.constant = commentTextView.frame.height + tableViewHeightConstraint.constant + 50
+            
+            UIView.animateWithDuration(0.5, animations: {
+                self.superview?.layoutIfNeeded()
+                self.superTableView?.endUpdates()
+                }, completion: { (completed) -> Void in
+                    self.commentsTableView.hidden = false
+                    self.commentTextView.hidden = false
+                    self.doneButton.hidden = false
             })
         }
         else
         {
             commentsHidden = true
-            sender.setTitle("Show 7 Comments", forState: UIControlState.Normal)
+            sender.setTitle(commentsString, forState: UIControlState.Normal)
             superTableView?.beginUpdates()
             
             self.commentsTableView.hidden = true
             self.commentTextView.hidden = true
+            doneButton.hidden = true
             
             buttonToBottomConstraint.constant = 5
             
@@ -243,15 +276,25 @@ import ParseUI
     // MARK: - UITableViewDelegate
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return (post["comments"] as! Array<PFObject>).count
     }
 
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("commentCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("commentCell", forIndexPath: indexPath) as! CommentTVC
         
         // Configure the cell...
-
+        cell.commentLabel.text = (post["comments"] as! Array<PFObject>)[indexPath.row]["text"] as? String
+        var commentPoster = (post["comments"] as! Array<PFObject>)[indexPath.row]["user"] as! PFUser
+        cell.profileImage.file = commentPoster["profileImage"] as? PFFile
+        cell.profileImage.loadInBackground()
+        
+        superTableView?.beginUpdates()
+        
+        tableViewHeightConstraint.constant = commentsTableView.contentSize.height
+        self.superview?.layoutIfNeeded()
+        self.superTableView?.endUpdates()
+        
         return cell
     }
     
