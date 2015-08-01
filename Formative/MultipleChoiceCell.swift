@@ -15,11 +15,7 @@ class MultipleChoiceCell: UITableViewCell, UITableViewDataSource, UITableViewDel
     
     var array: Array<String>!{
         didSet{
-            /*tableView.reloadData()
-            tableView.setNeedsLayout()
-            tableView.layoutIfNeeded()
-            tableView.updateConstraints()
-            tableView.reloadData()*/
+            tableView.reloadData()
         }
     }
     
@@ -30,21 +26,15 @@ class MultipleChoiceCell: UITableViewCell, UITableViewDataSource, UITableViewDel
     var selection = -1
     
     override func awakeFromNib() {
-        self.layoutSubviews()
         
         tableView.dataSource = self
         tableView.delegate = self
         
         tableView.estimatedRowHeight = 40
         tableView.rowHeight = UITableViewAutomaticDimension
-
         
     }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        //heightConstraint.constant = tableView.contentSize.height
-    }
+
     // MARK: - Table view data source
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
@@ -62,12 +52,7 @@ class MultipleChoiceCell: UITableViewCell, UITableViewDataSource, UITableViewDel
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! MultilineCell
         cell.multilineText.text = array[indexPath.row]
-        // Configure the cell...
-        if (indexPath.row == array.count-3){
-            println("Laying out")
-            heightConstraint.constant = 600
-        }
-        
+        cell.selected = false
         return cell
     }
     
@@ -80,7 +65,6 @@ class MultipleChoiceCell: UITableViewCell, UITableViewDataSource, UITableViewDel
         println(selection)
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
-        tableView.reloadData()
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {

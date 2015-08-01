@@ -5,5 +5,10 @@
  ["PWDDuration", "How long has your person had dementia?"],
  ["paidServices", "Hours of paid care services per week?"],
  ["ADLEating", ["Eats appropriately using correct cutlery", "Eats appropriately if food made manageable and /or uses spoon", "Uses fingers to eat food", "Needs to be fed", "Not Applicable"]],
- ["Hygiene", ["Washes regularly and independently", "Can wash self if given soap, flannel, towel, etc.", "Can wash self if prompted and supervised", "Unable to wash self and needs full assistance", "Not applicable"]]
+ ["ADLHygiene", ["Washes regularly and independently", "Can wash self if given soap, flannel, towel, etc.", "Can wash self if prompted and supervised", "Unable to wash self and needs full assistance", "Not applicable"]],
+ ["ADLMobility", ["Walks independently", "Walks with assistance i.e. furniture, arm for support", "Uses aids to mobilise i.e. frame, sticks etc.", "Unable to walk", "Not applicable"]],
+  ["ADLTime", ["Fully orientated to time/day/date etc.", "Unaware of time/day etc but seems unconcerned", "Repeatedly asks the time/day/date", "Mixes up night and day", "Not applicable"]],
+  ["ADLSpace", ["Fully orientated to surroundings", "Orientated to familiar surroundings only", "Gets lost in he, needs reminding where bathroom is, etc." , "Does not recognise home as own and attempts to leave", "Not applicable"]],
+ ["ADLCommunication", ["Able to hold appropriate conversation", "Shows understanding and attempts to respond verbally with gestures", "Can make self understood but difficulty understanding others", "Does not respond to, or communicate with others", "Not Applicable"]]
+ 
 ]

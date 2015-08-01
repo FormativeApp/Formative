@@ -31,7 +31,6 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
         // load questions from .json file
         var questionsData = NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("userProfileQuestions", ofType: "json")!)
         questions = parseJSON(questionsData!) as! NSArray
-        
         // Configure for self sizing cells
         tableView.estimatedRowHeight = 40
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -44,7 +43,7 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return questions.count
+        return questions.count + 1
     }
     
     
@@ -63,13 +62,12 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
             textCells.append(cell)
             return cell
         }
-        // ADL Checking Disabled Temporarily (@Jihoon, can you maybe take a look at this)
         else
         {
             let cell = tableView.dequeueReusableCellWithIdentifier("multipleCell", forIndexPath: indexPath) as! MultipleChoiceCell
             cell.array = questions[indexPath.row-1][1] as! Array<String>
-            cell.title = questions[indexPath.row-1][0] as! String
-            cell.layoutIfNeeded()
+            cell.title = (questions[indexPath.row-1][0] as! NSString).substringFromIndex(3)
+            cell.heightConstraint.constant = 325
             multipleChoiceCells.append(cell)
             return cell
         }
