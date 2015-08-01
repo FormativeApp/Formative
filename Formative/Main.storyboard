@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7uo-GR-gGq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mcD-fX-bvj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -212,7 +212,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eSc-jW-aKo" id="EuS-L9-HJo">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bathing" translatesAutoresizingMaskIntoConstraints="NO" id="GeG-2T-lGM">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bathing" translatesAutoresizingMaskIntoConstraints="NO" id="GeG-2T-lGM">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="239"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="239" id="BfL-BS-nak"/>
@@ -545,7 +545,7 @@
         <scene sceneID="deM-RT-b6B">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xpD-Dh-z5T" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Browse" id="fTl-LO-ebd"/>
+                    <tabBarItem key="tabBarItem" title="Browse" image="browse" id="fTl-LO-ebd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Td-Aq-EF9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -700,7 +700,7 @@
                             <constraint firstItem="eCA-aO-ARR" firstAttribute="top" secondItem="IHF-gR-vAo" secondAttribute="top" constant="15" id="npa-9a-MHA"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Feed" id="0D9-rg-X3b"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="feed" id="0D9-rg-X3b"/>
                     <connections>
                         <outlet property="addPostButton" destination="L4U-vN-Gkd" id="7tp-sn-Md7"/>
                         <outlet property="secondaryAddPostButton" destination="eCA-aO-ARR" id="jHE-pa-Qdl"/>
@@ -949,6 +949,8 @@
         <image name="Bathing" width="750" height="500"/>
         <image name="Login-1" width="444" height="135"/>
         <image name="User" width="448" height="460"/>
+        <image name="browse" width="28" height="28"/>
+        <image name="feed" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eqJ-ac-Okq"/>

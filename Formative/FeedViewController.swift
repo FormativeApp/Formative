@@ -22,6 +22,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     struct TableViewConstants {
         static let numberOfCellsPerLoad = 4
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,7 +49,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let postsQuery = PFQuery(className: "Post")
         postsQuery.whereKey("recipientID", equalTo: user["PWDid"]!)
         postsQuery.limit = TableViewConstants.numberOfCellsPerLoad
-        postsQuery.orderByAscending("updatedAt")
+        postsQuery.orderByDescending("updatedAt")
         postsQuery.includeKey("user")
         postsQuery.findObjectsInBackgroundWithBlock({(objects:[AnyObject]?, error:NSError?) -> Void in
             if (objects != nil) {
@@ -66,6 +67,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         postsQuery.whereKey("recipientID", equalTo: user["PWDid"]!)
         postsQuery.limit = TableViewConstants.numberOfCellsPerLoad
         postsQuery.orderByDescending("updatedAt")
+        postsQuery.includeKey("user")
         postsQuery.findObjectsInBackgroundWithBlock({(objects:[AnyObject]?, error:NSError?) -> Void in
             if (objects != nil) {
                 self.posts = objects as! Array<PFObject>
@@ -77,20 +79,6 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         })
     }
     
-    override func viewDidAppear(animated: Bool) {
-        let postsQuery = PFQuery(className: "Post")
-        postsQuery.whereKey("recipientID", equalTo: user["PWDid"]!)
-        postsQuery.limit = TableViewConstants.numberOfCellsPerLoad
-        postsQuery.orderByDescending("updatedAt")
-        postsQuery.findObjectsInBackgroundWithBlock({(objects:[AnyObject]?, error:NSError?) -> Void in
-            if (objects != nil) {
-                self.posts = objects as! Array<PFObject>
-                //print(self.posts)
-                self.tableView.reloadData()
-                self.tableView.hidden = false
-            }
-        })
-    }
     
     // MARK: - Scroll view data source
     
@@ -153,9 +141,12 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let vc = segue.destinationViewController as! UINavigationController
-        let imageVC = vc.viewControllers[0] as! ImageViewController
-        imageVC.image = sender as? UIImage
+        if (segue.identifier == "goToImage")
+        {
+            let vc = segue.destinationViewController as! UINavigationController
+            let imageVC = vc.viewControllers[0] as! ImageViewController
+            imageVC.image = sender as? UIImage
+        }
     }
     
     
