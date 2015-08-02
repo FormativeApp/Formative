@@ -13,6 +13,7 @@ class AdminViewViewController: UIViewController {
     @IBOutlet weak var sendToSelected: UIButton!
     @IBOutlet weak var sendToAll: UIButton!
     
+    
     @IBOutlet weak var postQuestions: UIView!
     @IBOutlet weak var postUpdates: UIView!
     override func viewDidLoad() {
@@ -39,10 +40,10 @@ class AdminViewViewController: UIViewController {
 
     @IBAction func ChangeLbl(sender: UISegmentedControl) {
         switch controller.selectedSegmentIndex {
-        case 0:
+        case 0:         // Post questions
             postQuestions.hidden = false
             postUpdates.hidden = true
-        case 1:
+        case 1:         // Post Updates
             postQuestions.hidden = true
             postUpdates.hidden = false
         default:
