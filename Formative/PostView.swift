@@ -36,78 +36,79 @@ import ParseUI
     
     // MARK: - Reuse
     
-    var post: PFObject! {
-        didSet{
-            postTextLabel.text = post["text"] as? String
-            categoryLabel.text = (post["tags"] as! NSArray)[0] as? String
-            var user = (post["user"] as! PFUser)
-            profileView.nameLabel.text = user["name"] as? String
+    var post: PFObject!
+    
+    func reset(){
+        println("reset")
+        commentsTableView.hidden = true
+        commentTextView.hidden = true
+        doneButton.hidden = true
+        
+        buttonToBottomConstraint.constant = 5
+        
+        postTextLabel.text = post["text"] as? String
+        categoryLabel.text = (post["tags"] as! NSArray)[0] as? String
+        var user = (post["user"] as! PFUser)
+        profileView.nameLabel.text = user["name"] as? String
+        
+        if (post["comments"] as! Array<PFObject>).count == 0 {
+            commentsString = "No Comments (Add your own)"
+        }
+        else {
+            var count = (post["comments"] as! Array<PFObject>).count
+            var str = count == 1 ? "Comment" : "Comments"
+            commentsString = "\(count) \(str)"
+        }
+        
+        viewCommentsButton.setTitle(commentsString, forState: UIControlState.Normal)
+        
+        if let file = post["photo"] as? PFFile {
             
-            if (post["comments"] as! Array<PFObject>).count == 0 {
-                commentsString = "No Comments (Add your own)"
-            }
-            else {
-                var count = (post["comments"] as! Array<PFObject>).count
-                var str = count == 1 ? "Comment" : "Comments"
-                commentsString = "\(count) \(str)"
-            }
+            self.postImage.image = nil
+            self.postImage.backgroundColor = UIColor.greenColor()
+            postImage.file = file
             
-            viewCommentsButton.setTitle(commentsString, forState: UIControlState.Normal)
-            
-            if let file = post["photo"] as? PFFile {
-                
-                self.postImage.image = nil
-                self.postImage.backgroundColor = UIColor.greenColor()
-                postImage.file = file
-                
-                postImage.loadInBackground { (image, error) -> Void in
-                    var aspectRatioConstraint = NSLayoutConstraint(
-                        item: self.postImage,
-                        attribute: .Width,
-                        relatedBy: .Equal,
-                        toItem: self.postImage,
-                        attribute: .Height,
-                        multiplier: self.postImage.image!.aspectRatio,
-                        constant: 0)
-                    if (self.aspectRatioConstraint != nil)
-                    {
-                        self.postImage.removeConstraint(self.aspectRatioConstraint!)
-                    }
-                    self.postImage.addConstraint(aspectRatioConstraint)
-                    self.aspectRatioConstraint = aspectRatioConstraint
- 
-                }
-            }
-            else
-            {
-                self.postImage.image = nil
+            postImage.loadInBackground { (image, error) -> Void in
                 var aspectRatioConstraint = NSLayoutConstraint(
                     item: self.postImage,
-                    attribute: .Height,
+                    attribute: .Width,
                     relatedBy: .Equal,
                     toItem: self.postImage,
                     attribute: .Height,
-                    multiplier: 0,
+                    multiplier: self.postImage.image!.aspectRatio,
                     constant: 0)
                 if (self.aspectRatioConstraint != nil)
                 {
                     self.postImage.removeConstraint(self.aspectRatioConstraint!)
                 }
                 self.postImage.addConstraint(aspectRatioConstraint)
+                println("snap!")
                 self.aspectRatioConstraint = aspectRatioConstraint
+                
             }
-            
-            profileView.profileImage.file = user["profileImage"] as? PFFile
-            profileView.profileImage.loadInBackground()
         }
-    }
-    
-    func reset(){
-        commentsTableView.hidden = true
-        commentTextView.hidden = true
-        doneButton.hidden = true
+        else
+        {
+            self.postImage.image = nil
+            var aspectRatioConstraint = NSLayoutConstraint(
+                item: self.postImage,
+                attribute: .Height,
+                relatedBy: .Equal,
+                toItem: self.postImage,
+                attribute: .Height,
+                multiplier: 0,
+                constant: 0)
+            if (self.aspectRatioConstraint != nil)
+            {
+                self.postImage.removeConstraint(self.aspectRatioConstraint!)
+            }
+            self.postImage.addConstraint(aspectRatioConstraint)
+            println("snap")
+            self.aspectRatioConstraint = aspectRatioConstraint
+        }
         
-        buttonToBottomConstraint.constant = 5
+        profileView.profileImage.file = user["profileImage"] as? PFFile
+        profileView.profileImage.loadInBackground()
     }
     
     override var className: String {
@@ -289,11 +290,11 @@ import ParseUI
         cell.profileImage.file = commentPoster["profileImage"] as? PFFile
         cell.profileImage.loadInBackground()
         
-        superTableView?.beginUpdates()
+        //superTableView?.beginUpdates()
         
         tableViewHeightConstraint.constant = commentsTableView.contentSize.height
         self.superview?.layoutIfNeeded()
-        self.superTableView?.endUpdates()
+        //self.superTableView?.endUpdates()
         
         return cell
     }

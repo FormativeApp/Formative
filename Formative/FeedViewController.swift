@@ -1,7 +1,8 @@
 //
 //  FeedViewController.swift
 //  Formative
-//
+//0
+
 //  Created by Andrew Ke on 7/23/15.
 //  Copyright (c) 2015 Andrew Ke. All rights reserved.
 //
@@ -144,6 +145,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.postView.superTableView = self.tableView
         cell.postView.viewController = self
         cell.postView.post = posts[indexPath.row-1]
+        println("Cell created")
         cell.postView.reset()
         loadInProgress = false
         return cell
