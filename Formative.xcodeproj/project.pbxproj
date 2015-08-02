@@ -61,6 +61,8 @@
 		A1FBAFB51B5D76A800980086 /* UIView+RoundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FBAFB41B5D76A800980086 /* UIView+RoundCorners.swift */; };
 		A1FBAFB91B5D7CB400980086 /* PostFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FBAFB81B5D7CB400980086 /* PostFavoritesView.swift */; };
 		A1FBAFBD1B5D7E5100980086 /* PostFavoritesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FBAFBC1B5D7E5100980086 /* PostFavoritesView.xib */; };
+		F81A48671B6DA4F00060288F /* AdminViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81A48661B6DA4F00060288F /* AdminViewViewController.swift */; };
+		F86A8EFB1B6DB7880086E3D8 /* ADLTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A8EFA1B6DB7880086E3D8 /* ADLTableTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +135,8 @@
 		A1FBAFB41B5D76A800980086 /* UIView+RoundCorners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+RoundCorners.swift"; sourceTree = "<group>"; };
 		A1FBAFB81B5D7CB400980086 /* PostFavoritesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostFavoritesView.swift; sourceTree = "<group>"; };
 		A1FBAFBC1B5D7E5100980086 /* PostFavoritesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostFavoritesView.xib; sourceTree = "<group>"; };
+		F81A48661B6DA4F00060288F /* AdminViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminViewViewController.swift; sourceTree = "<group>"; };
+		F86A8EFA1B6DB7880086E3D8 /* ADLTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ADLTableTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +220,8 @@
 		A14585711B4E29BF00C1BD30 /* Formative */ = {
 			isa = PBXGroup;
 			children = (
+				F81A48661B6DA4F00060288F /* AdminViewViewController.swift */,
+				F86A8EFA1B6DB7880086E3D8 /* ADLTableTableViewController.swift */,
 				A14E2D691B5D6D8A001666E8 /* Main.storyboard */,
 				A16C358D1B67232D009BABD2 /* Login And Registration */,
 				A1A2C2051B66D2A3000AC5C8 /* Model */,
@@ -447,6 +453,7 @@
 				A1FBAFB91B5D7CB400980086 /* PostFavoritesView.swift in Sources */,
 				A1A2C20D1B66EC60000AC5C8 /* BrowsePhotoCell.swift in Sources */,
 				A1A2CD7A1B6020FE00A327DB /* CommentTVC.swift in Sources */,
+				F81A48671B6DA4F00060288F /* AdminViewViewController.swift in Sources */,
 				A199AD251B6163B6004FE514 /* FeedViewController.swift in Sources */,
 				A1A2C2111B66FA53000AC5C8 /* ProfileSetupTVC.swift in Sources */,
 				A16C358C1B672186009BABD2 /* AlertManager.swift in Sources */,
@@ -464,6 +471,7 @@
 				A1A2C2021B66CCAF000AC5C8 /* BrowseTableViewController.swift in Sources */,
 				A1398AAF1B681412007867B1 /* MultipleChoiceCell.swift in Sources */,
 				A135CC8A1B67EDA500445C21 /* MultilineCell.swift in Sources */,
+				F86A8EFB1B6DB7880086E3D8 /* ADLTableTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
