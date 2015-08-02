@@ -9,12 +9,12 @@
 import UIKit
 
 class AdminViewViewController: UIViewController {
-    
     @IBOutlet weak var controller: UISegmentedControl!
     @IBOutlet weak var sendToSelected: UIButton!
     @IBOutlet weak var sendToAll: UIButton!
     
-    @IBOutlet weak var test: UILabel!
+    @IBOutlet weak var postQuestions: UIView!
+    @IBOutlet weak var postUpdates: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,13 +37,16 @@ class AdminViewViewController: UIViewController {
     }
     */
 
-    @IBAction func ChangeLbl(sender: AnyObject) {
-        if controller.selectedSegmentIndex == 0 {   // Posting Questions
-            // Show table view
-            test.text = "1: questions"
-        }
-        if controller.selectedSegmentIndex == 1 {    // Posting Updates
-            test.text = "2: update"
+    @IBAction func ChangeLbl(sender: UISegmentedControl) {
+        switch controller.selectedSegmentIndex {
+        case 0:
+            postQuestions.hidden = false
+            postUpdates.hidden = true
+        case 1:
+            postQuestions.hidden = true
+            postUpdates.hidden = false
+        default:
+            break
         }
     }
 }
