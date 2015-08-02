@@ -16,6 +16,10 @@ class AdminViewViewController: UIViewController {
     
     @IBOutlet weak var postQuestions: UIView!
     @IBOutlet weak var postUpdates: UIView!
+    
+    @IBOutlet weak var ImageToPost: UIImageView!
+    @IBOutlet weak var TextToPost: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

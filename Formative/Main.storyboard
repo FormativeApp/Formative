@@ -310,16 +310,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="449"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SECOND TAB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ff9-WJ-Hrj">
-                                <rect key="frame" x="231" y="194" width="108" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="This is the editable text-field that describes the Admins' communication to the selected group of (or all) users" translatesAutoresizingMaskIntoConstraints="NO" id="FDQ-fk-vUN">
+                                <rect key="frame" x="16" y="205" width="536" height="139"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Communication" translatesAutoresizingMaskIntoConstraints="NO" id="NPm-Sf-KXN">
+                                <rect key="frame" x="110" y="80" width="100" height="100"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FDQ-fk-vUN" firstAttribute="trailing" secondItem="DEn-Jr-4PP" secondAttribute="trailingMargin" id="ghT-hu-N9Q"/>
+                            <constraint firstItem="FDQ-fk-vUN" firstAttribute="leading" secondItem="DEn-Jr-4PP" secondAttribute="leadingMargin" id="zpz-f4-H8N"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="ImageToPost" destination="NPm-Sf-KXN" id="jW9-dF-I9b"/>
+                        <outlet property="TextToPost" destination="FDQ-fk-vUN" id="XmA-xI-2K0"/>
                         <outlet property="postUpdates" destination="DEn-Jr-4PP" id="KSH-DT-6t2"/>
                     </connections>
                 </viewController>
@@ -1139,6 +1148,7 @@
     <resources>
         <image name="Add Post" width="243" height="255"/>
         <image name="Bathing" width="750" height="500"/>
+        <image name="Communication" width="750" height="748"/>
         <image name="Login-1" width="444" height="135"/>
         <image name="User" width="448" height="460"/>
         <image name="browse" width="28" height="28"/>
