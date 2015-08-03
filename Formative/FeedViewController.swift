@@ -14,6 +14,7 @@ import Parse
 class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var loadingLabel: UILabel! // (At bottom) "Loading more posts ..."
+    @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var mainSpinner: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     
@@ -130,6 +131,12 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (posts.count == 0){
+            loadingLabel.hidden = true
+        }
+        else {
+            loadingLabel.hidden = false
+        }
         return posts.count > 0 ? posts.count + 1 : 0
     }
     

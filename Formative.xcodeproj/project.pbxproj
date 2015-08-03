@@ -50,6 +50,8 @@
 		A1A789381B6EE23200A6674A /* TermsOfServiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A789371B6EE23200A6674A /* TermsOfServiceVC.swift */; };
 		A1A7893A1B6EE51100A6674A /* InstructionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A789391B6EE51100A6674A /* InstructionsVC.swift */; };
 		A1A7893C1B6EE8DA00A6674A /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A7893B1B6EE8DA00A6674A /* ForgotPasswordVC.swift */; };
+		A1A7893E1B6EED8700A6674A /* InviteSenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A7893D1B6EED8700A6674A /* InviteSenderViewController.swift */; };
+		A1A789401B6EEE3300A6674A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A7893F1B6EEE3300A6674A /* MessageUI.framework */; };
 		A1C84EC41B66936C005BE8CC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C84EBE1B66936C005BE8CC /* Bolts.framework */; };
 		A1C84EC51B66936C005BE8CC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C84EBF1B66936C005BE8CC /* Parse.framework */; };
 		A1C84EC61B66936C005BE8CC /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C84EC01B66936C005BE8CC /* ParseCrashReporting.framework */; };
@@ -126,7 +128,9 @@
 		A1A2CD7F1B6062B500A327DB /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		A1A789371B6EE23200A6674A /* TermsOfServiceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsOfServiceVC.swift; sourceTree = "<group>"; };
 		A1A789391B6EE51100A6674A /* InstructionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstructionsVC.swift; path = ../InstructionsVC.swift; sourceTree = "<group>"; };
-		A1A7893B1B6EE8DA00A6674A /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		A1A7893B1B6EE8DA00A6674A /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordVC.swift; path = ../ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		A1A7893D1B6EED8700A6674A /* InviteSenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteSenderViewController.swift; sourceTree = "<group>"; };
+		A1A7893F1B6EEE3300A6674A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A1C84EBE1B66936C005BE8CC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A1C84EBF1B66936C005BE8CC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A1C84EC01B66936C005BE8CC /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1A789401B6EEE3300A6674A /* MessageUI.framework in Frameworks */,
 				A1C84EC71B66936C005BE8CC /* ParseFacebookUtils.framework in Frameworks */,
 				A1808CE81B669285006771CF /* libsqlite3.dylib in Frameworks */,
 				A1808CE61B66927B006771CF /* libz.dylib in Frameworks */,
@@ -206,7 +211,6 @@
 		A14585661B4E29BF00C1BD30 = {
 			isa = PBXGroup;
 			children = (
-				A1A7893B1B6EE8DA00A6674A /* ForgotPasswordVC.swift */,
 				A14585711B4E29BF00C1BD30 /* Formative */,
 				A145857B1B4E29BF00C1BD30 /* Images.xcassets */,
 				F80620121B6462DE00D30C5E /* Frameworks */,
@@ -271,11 +275,13 @@
 		A16C358D1B67232D009BABD2 /* Login And Registration */ = {
 			isa = PBXGroup;
 			children = (
+				A1A7893B1B6EE8DA00A6674A /* ForgotPasswordVC.swift */,
 				A135CC8D1B68072200445C21 /* TextFieldCell.swift */,
 				A1A2C2101B66FA53000AC5C8 /* ProfileSetupTVC.swift */,
 				A1398AB21B686143007867B1 /* ProfilePictureSelectionCell.swift */,
 				A1A2CD7F1B6062B500A327DB /* NewUserViewController.swift */,
 				A1A2CD7D1B60514400A327DB /* LoginViewController.swift */,
+				A1A7893D1B6EED8700A6674A /* InviteSenderViewController.swift */,
 				A1398AAE1B681412007867B1 /* MultipleChoiceCell.swift */,
 				A1A789371B6EE23200A6674A /* TermsOfServiceVC.swift */,
 				A1A789391B6EE51100A6674A /* InstructionsVC.swift */,
@@ -325,6 +331,7 @@
 		F80620121B6462DE00D30C5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A1A7893F1B6EEE3300A6674A /* MessageUI.framework */,
 				A1C84EBE1B66936C005BE8CC /* Bolts.framework */,
 				A1C84EBF1B66936C005BE8CC /* Parse.framework */,
 				A1C84EC01B66936C005BE8CC /* ParseCrashReporting.framework */,
@@ -455,6 +462,7 @@
 				A1A2CD801B6062B500A327DB /* NewUserViewController.swift in Sources */,
 				A1D1E0691B6AB4CD007611AB /* CategorySelectionViewController.swift in Sources */,
 				A1A2C2041B66D29D000AC5C8 /* JSONManager.swift in Sources */,
+				A1A7893E1B6EED8700A6674A /* InviteSenderViewController.swift in Sources */,
 				A1FBAFB51B5D76A800980086 /* UIView+RoundCorners.swift in Sources */,
 				A1A7893C1B6EE8DA00A6674A /* ForgotPasswordVC.swift in Sources */,
 				A116B1131B61DD1A00B10061 /* ImageViewController.swift in Sources */,

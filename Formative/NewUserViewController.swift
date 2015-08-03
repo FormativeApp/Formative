@@ -63,6 +63,7 @@ class NewUserViewController: UIViewController {
 
     @IBAction func signUpButtonPressed() {
         var user = PFUser()
+        user["completedSetup"] = false
         user.username = emailTextField.text
         user.email = emailTextField.text
         user.password = passwordTextField.text
@@ -82,7 +83,7 @@ class NewUserViewController: UIViewController {
                 
             } else {
                 self.spinner.stopAnimating()
-                self.performSegueWithIdentifier("goToProfileSetup", sender: nil)
+                self.performSegueWithIdentifier("goToSetup", sender: nil)
             }
         }
     }

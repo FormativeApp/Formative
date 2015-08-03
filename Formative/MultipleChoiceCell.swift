@@ -25,6 +25,9 @@ class MultipleChoiceCell: UITableViewCell, UITableViewDataSource, UITableViewDel
     
     var selection = -1
     
+    var index: Int!
+    var selections: Array<Int>!
+    
     override func awakeFromNib() {
         
         tableView.dataSource = self
@@ -32,7 +35,6 @@ class MultipleChoiceCell: UITableViewCell, UITableViewDataSource, UITableViewDel
         
         tableView.estimatedRowHeight = 40
         tableView.rowHeight = UITableViewAutomaticDimension
-        
     }
 
     // MARK: - Table view data source
@@ -56,18 +58,37 @@ class MultipleChoiceCell: UITableViewCell, UITableViewDataSource, UITableViewDel
         return cell
     }
     
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (indexPath.row == selection){
+            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            cell.setSelected(true, animated: true)
+        } else {
+            cell.accessoryType = UITableViewCellAccessoryType.None
+            cell.selected = false
+        }
+    }
+    
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return title
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selection = indexPath.row
+        selections[index] = indexPath.row
         println(selection)
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
+        for i in 0..<array.count {
+            if (i != indexPath.row){
+                let cell2 = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: i, inSection: 0))
+                cell2?.selected = false
+                cell2?.accessoryType = UITableViewCellAccessoryType.None
+            }
+        }
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        println("deselecting!")
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         cell?.accessoryType = UITableViewCellAccessoryType.None
     }

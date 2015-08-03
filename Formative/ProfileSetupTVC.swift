@@ -18,10 +18,11 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
     
     var questions: NSArray!
     
+    var selections = [-1, -1, -1, -1, -1, -1]
+    
     var patient = PFObject(className: "Patient")
     
     var textCells: Array<TextFieldCell> = []
-    var multipleChoiceCells: Array<MultipleChoiceCell> = []
     var profileImageCell: ProfilePictureSelectionCell!
     
     // MARK: - VC Lifecycle
@@ -34,9 +35,11 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
         // Configure for self sizing cells
         tableView.estimatedRowHeight = 40
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        clearsSelectionOnViewWillAppear = false
     }
     
-    // MARK: - Table View Data Source
+    // MARK: - Table View Data Source/ Delegate
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -67,11 +70,20 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
             let cell = tableView.dequeueReusableCellWithIdentifier("multipleCell", forIndexPath: indexPath) as! MultipleChoiceCell
             cell.array = questions[indexPath.row-1][1] as! Array<String>
             cell.title = (questions[indexPath.row-1][0] as! NSString).substringFromIndex(3)
+            cell.selection = selections[indexPath.row-6]
             cell.heightConstraint.constant = 325
-            multipleChoiceCells.append(cell)
+            cell.selections = selections
+            cell.index = indexPath.row-6
             return cell
         }
 
+    }
+    
+    override func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        println(selections)
+        if (indexPath.row >= 6) {
+            selections[indexPath.row-6] = (cell as! MultipleChoiceCell).selection
+        }
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -137,40 +149,73 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
-    
+
     // MARK: - Seguing
-    @IBAction func profileSetupFInished(sender: AnyObject) {
+    @IBAction func profileSetupFinished(sender: AnyObject) {
+        println(selections)
         
-        // I'm blocking the main thread here, I'll fix it later
         var user = PFUser.currentUser()!
-        patient.save()
-        user["PWDid"] = patient.objectId
-        user.save()
         
         for cell in textCells{
             if (cell.textField.text == "")
             {
-                alertErrorWithTitle("Incomplete Profile", message: "Required field \(cell.textField.placeholder!) was not filled in", inViewController: self)
+                alertErrorWithTitle("Incomplete Profile", message: "Required field \"\(cell.textField.placeholder!)\" was not filled in.", inViewController: self)
                 return
             }
-            //user["\(cell.key!)"] = cell.textField.text
+            if (cell.key == "name")
+            {
+                var nameSplit = split(cell.textField.text) {$0 == " "}
+                println(nameSplit)
+                
+                if (nameSplit.count != 2) {
+                    alertErrorWithTitle("Invalid Name", message: "Please add both your first and last name.", inViewController: self)
+                    return
+                }
+                
+                user["name"] = nameSplit[0]
+                user["fullName"] = cell.textField.text
+                
+                
+            }
+            else {
+                patient["\(cell.key!)"] = cell.textField.text
+            }
         }
         
-        /*for cell in multipleChoiceCells{
-        if cell.selection == -1 {
-        alertErrorWithTitle("Incomplete Profile", message: "Required multiple choice question \(cell.title) was not filled in", inViewController: self)
-        return
-        }
-        user["\(cell.title)"] = cell.selection
-        }*/
+        println(selections)
         
-        performSegueWithIdentifier("goToMain", sender: nil)
-    }
-    
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var user = PFUser.currentUser()!
-        user.save()
+        for i in 6..<selections.count+6 {
+            var cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: i, inSection: 0)) as? MultipleChoiceCell
+            if let cell = cell {
+                selections[i-6] = cell.selection
+            }
+            if (selections[i-6] == -1) {
+                alertErrorWithTitle("Please Complete the multiple choice section", message: nil, inViewController: self)
+                return
+            }
+            else {
+                patient[questions[i-1][0] as! String] = selections[i-6]
+            }
+        }
+        
+        println(selections)
+        
+        println(patient)
+        patient.saveInBackgroundWithBlock { (success, error) -> Void in
+            if (success) {
+                user["PWDid"] = self.patient.objectId
+                user.saveInBackgroundWithBlock({ (success, error) -> Void in
+                    if (success){
+                        user["completedSetup"] = true
+                        self.performSegueWithIdentifier("goToInvite", sender: nil)
+                    }else {
+                        alertErrorWithTitle(error!.userInfo?["error"] as! String, message: nil, inViewController: self)
+                    }
+                })
+            } else {
+                alertErrorWithTitle(error!.userInfo?["error"] as! String, message: nil, inViewController: self)
+            }
+        }
     }
 
 }
