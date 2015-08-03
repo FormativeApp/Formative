@@ -108,7 +108,7 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
     func photoFromCameraRoll()
     {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
-            println("Sucess!")
+            println("success!")
             let picker = UIImagePickerController()
             picker.sourceType = .PhotoLibrary
             picker.mediaTypes = [kUTTypeImage]

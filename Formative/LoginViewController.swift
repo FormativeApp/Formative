@@ -16,6 +16,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordFieldYConstraint: NSLayoutConstraint!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     // Called whenever a user taps on a text field
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
@@ -56,8 +57,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func loginButtonTouched() {
+        spinner.startAnimating()
         PFUser.logInWithUsernameInBackground(nameTextField.text, password:passwordTextField.text) {
             (user: PFUser?, error: NSError?) -> Void in
+            self.spinner.stopAnimating()
             if let error = error {
                 let errorString = error.userInfo?["error"] as? String
                 

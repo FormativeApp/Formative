@@ -201,7 +201,7 @@ import ParseUI
         comment["user"] = PFUser.currentUser()!
         post["comments"]  = (post["comments"] as! Array<PFObject>) + [comment]
         commentTextView.text = "Add a comment"
-        post.saveInBackgroundWithBlock { (sucess, error) -> Void in
+        post.saveInBackgroundWithBlock { (success, error) -> Void in
             self.commentsTableView.reloadData()
             self.superTableView?.beginUpdates()
             
