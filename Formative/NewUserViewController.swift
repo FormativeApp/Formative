@@ -60,9 +60,11 @@ class NewUserViewController: UIViewController {
         
         return true
     }
-
+    
+    
     @IBAction func signUpButtonPressed() {
         var user = PFUser()
+        
         user["completedSetup"] = false
         user.username = emailTextField.text
         user.email = emailTextField.text
@@ -71,9 +73,34 @@ class NewUserViewController: UIViewController {
         
         if (passwordTextField.text != confirmPasswordTextField.text) {
             alertErrorWithTitle("Passwords do not match", message: "Please double check you password confirmation.", inViewController: self)
+            return
         }
         
         spinner.startAnimating()
+        
+        if (invitationTextField.text != "")
+        {
+            var query = PFQuery(className: "Patient")
+            println("Verifying...")
+            query.getObjectInBackgroundWithId(invitationTextField.text, block: { (first, error) -> Void in
+                println("Done \(error) \(first)")
+                if (first == nil){
+                    alertErrorWithTitle("Invitation Code Invalid", message: nil, inViewController: self)
+                    self.spinner.stopAnimating()
+                    return
+                }
+                if (error == nil){
+                    user["invited"] = true
+                    println("Invitation Code Valid!")
+                    self.signUpUser(user)
+                }
+            })
+        }else {
+            signUpUser(user)
+        }
+    }
+    
+    func signUpUser(user: PFUser){
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
             if let error = error {

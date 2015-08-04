@@ -138,9 +138,7 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
             // [Jihoon]: convert the image to binary, and save to the Parse cloud
             let imageData = UIImagePNGRepresentation(image) //takes the image and converts it to the binary code
             let imageFile = PFFile(data: imageData)
-            PFUser.currentUser()?.setObject(imageFile, forKey: "profileImage")
-            PFUser.currentUser()?.saveInBackground()
-            
+            PFUser.currentUser()!["profileImage"] = imageFile
         }
         profileImageCell.profileImage.image = image
         dismissViewControllerAnimated(true, completion: nil)

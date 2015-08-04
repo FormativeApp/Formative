@@ -896,23 +896,23 @@ For information about how to contact Google, please visit our contact page.</str
                     <navigationItem key="navigationItem" title="Get Started!" id="K6S-0y-fvO">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="ysr-dN-3F6">
                             <connections>
-                                <action selector="nextPressed:" destination="TJq-kP-Ebu" id="KtS-NS-Coi"/>
-                                <segue destination="7uo-GR-gGq" kind="show" id="lvG-NO-btg"/>
+                                <action selector="nextPressed:" destination="XlI-rD-apb" id="duf-Ll-fDC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="bJK-Ga-P9P" kind="show" id="1ND-Xq-3xG"/>
+                        <segue destination="7uo-GR-gGq" kind="show" identifier="goToFullSetup" id="h3z-wU-6Ox"/>
+                        <segue destination="bJK-Ga-P9P" kind="show" identifier="goToInvitedSetup" id="ai8-hE-crN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A8s-Og-DtX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1718" y="1918"/>
         </scene>
-        <!--View Controller-->
+        <!--Your Profile-->
         <scene sceneID="JvN-xo-yKt">
             <objects>
-                <viewController id="bJK-Ga-P9P" sceneMemberID="viewController">
+                <viewController id="bJK-Ga-P9P" customClass="InviteSetupVC" customModule="Formative" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6FQ-nS-bjs"/>
                         <viewControllerLayoutGuide type="bottom" id="L07-FS-LcI"/>
@@ -934,12 +934,18 @@ For information about how to contact Google, please visit our contact page.</str
                                     <constraint firstAttribute="width" secondItem="0NN-UT-cVN" secondAttribute="height" multiplier="1:1" id="btr-V5-DKB"/>
                                     <constraint firstAttribute="height" constant="148" id="qpx-of-ySx"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="D8g-3A-Dlb" appends="YES" id="RgR-a8-Aic"/>
+                                </connections>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OPp-fP-Muf">
                                 <rect key="frame" x="90" y="292" width="420" height="30"/>
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="bJK-Ga-P9P" id="8Ip-2Z-2N2"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -953,10 +959,27 @@ For information about how to contact Google, please visit our contact page.</str
                             <constraint firstItem="pSs-kM-yr5" firstAttribute="top" secondItem="0NN-UT-cVN" secondAttribute="bottom" constant="8" id="iGs-oW-V2a"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Your Profile" id="4mg-hi-wQ8">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="oJH-qg-Zzr">
+                            <connections>
+                                <action selector="done:" destination="bJK-Ga-P9P" id="v83-dM-mmq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="OPp-fP-Muf" id="5R8-LO-ifa"/>
+                        <outlet property="profileImage" destination="0NN-UT-cVN" id="GhV-x9-Svw"/>
+                        <segue destination="mae-a7-kJl" kind="show" identifier="goToInvite" id="XYp-0f-2My"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rCG-mX-4wK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="D8g-3A-Dlb">
+                    <connections>
+                        <action selector="imageTapped:" destination="bJK-Ga-P9P" id="k9d-4w-yrb"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1718" y="2580"/>
+            <point key="canvasLocation" x="1718" y="2622"/>
         </scene>
         <!--Browse-->
         <scene sceneID="deM-RT-b6B">
@@ -1382,7 +1405,7 @@ For information about how to contact Google, please visit our contact page.</str
         <!--Your Profile-->
         <scene sceneID="gdE-hq-SwC">
             <objects>
-                <tableViewController id="VzK-34-mGY" sceneMemberID="viewController">
+                <tableViewController id="VzK-34-mGY" customClass="ProfileSettingsTVC" customModule="Formative" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6iF-9u-LzZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1406,28 +1429,26 @@ For information about how to contact Google, please visit our contact page.</str
                                                 </label>
                                                 <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="d5s-f2-8SH" customClass="CircularImageView" customModule="Formative" customModuleProvider="target">
                                                     <rect key="frame" x="238" y="35" width="125" height="125"/>
-                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.60000002384185791" green="0.60000002384185791" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="d5s-f2-8SH" secondAttribute="height" multiplier="1:1" id="wGf-W6-lX6"/>
                                                     </constraints>
                                                 </imageView>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Foj-KD-yuH">
+                                                    <rect key="frame" x="282" y="79" width="37" height="37"/>
+                                                    <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="d5s-f2-8SH" firstAttribute="top" secondItem="1qJ-Br-J4V" secondAttribute="top" constant="20" id="5wY-J1-FX5"/>
                                                 <constraint firstItem="d5s-f2-8SH" firstAttribute="top" secondItem="1qJ-Br-J4V" secondAttribute="topMargin" constant="27" id="72v-vX-15B"/>
                                                 <constraint firstAttribute="centerX" secondItem="d5s-f2-8SH" secondAttribute="centerX" id="8co-RV-cak"/>
+                                                <constraint firstItem="Foj-KD-yuH" firstAttribute="centerY" secondItem="d5s-f2-8SH" secondAttribute="centerY" id="EsB-Fk-pQK"/>
                                                 <constraint firstAttribute="bottom" secondItem="CLz-gJ-Vae" secondAttribute="bottom" constant="30" id="KzA-3f-a2H"/>
-                                                <constraint firstItem="d5s-f2-8SH" firstAttribute="top" secondItem="1qJ-Br-J4V" secondAttribute="topMargin" constant="27" id="PQb-YB-y49"/>
+                                                <constraint firstItem="Foj-KD-yuH" firstAttribute="centerX" secondItem="d5s-f2-8SH" secondAttribute="centerX" id="P6p-Hx-huo"/>
                                                 <constraint firstItem="CLz-gJ-Vae" firstAttribute="top" secondItem="d5s-f2-8SH" secondAttribute="bottom" constant="18" id="UlC-d5-B3v"/>
                                                 <constraint firstAttribute="centerX" secondItem="CLz-gJ-Vae" secondAttribute="centerX" id="kNn-0R-gEL"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="5wY-J1-FX5"/>
-                                                    <exclude reference="PQb-YB-y49"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
@@ -1460,6 +1481,10 @@ For information about how to contact Google, please visit our contact page.</str
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Your Profile" id="OoL-6C-olM"/>
+                    <connections>
+                        <outlet property="profileImage" destination="d5s-f2-8SH" id="go4-Ya-1wf"/>
+                        <outlet property="spinner" destination="Foj-KD-yuH" id="wRK-Li-4lh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1G-tT-XmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1468,7 +1493,7 @@ For information about how to contact Google, please visit our contact page.</str
         <!--Change Password-->
         <scene sceneID="Gbq-0L-mb3">
             <objects>
-                <viewController title="Change Password" id="s1v-N5-8sZ" sceneMemberID="viewController">
+                <viewController title="Change Password" id="s1v-N5-8sZ" customClass="ChangePasswordVC" customModule="Formative" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zye-Hy-8eJ"/>
                         <viewControllerLayoutGuide type="bottom" id="uYw-KL-fWD"/>
@@ -1481,41 +1506,46 @@ For information about how to contact Google, please visit our contact page.</str
                                 <rect key="frame" x="16" y="132" width="568" height="30"/>
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="s1v-N5-8sZ" id="NC7-Pi-pwD"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm New Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w6r-VY-FPM">
                                 <rect key="frame" x="16" y="177" width="568" height="30"/>
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Old Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ddb-EP-Ddp">
-                                <rect key="frame" x="16" y="87" width="568" height="30"/>
-                                <color key="backgroundColor" red="0.98039215690000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="s1v-N5-8sZ" id="KnW-Ba-Sqi"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="w6r-VY-FPM" firstAttribute="top" secondItem="8z5-OU-rJX" secondAttribute="bottom" constant="15" id="ByL-B4-rir"/>
                             <constraint firstItem="w6r-VY-FPM" firstAttribute="leading" secondItem="8z5-OU-rJX" secondAttribute="leading" id="CAk-LB-sn4"/>
-                            <constraint firstItem="8z5-OU-rJX" firstAttribute="top" secondItem="Ddb-EP-Ddp" secondAttribute="bottom" constant="15" id="Ejh-Lf-fbV"/>
-                            <constraint firstItem="w6r-VY-FPM" firstAttribute="trailing" secondItem="Ddb-EP-Ddp" secondAttribute="trailing" id="KFx-is-VkC"/>
-                            <constraint firstItem="Ddb-EP-Ddp" firstAttribute="leading" secondItem="8fN-3O-oYO" secondAttribute="leading" constant="16" id="USy-lp-j0L"/>
-                            <constraint firstAttribute="trailing" secondItem="Ddb-EP-Ddp" secondAttribute="trailing" constant="16" id="ZYB-Fz-WLx"/>
-                            <constraint firstItem="w6r-VY-FPM" firstAttribute="leading" secondItem="Ddb-EP-Ddp" secondAttribute="leading" id="iWE-3t-UaW"/>
-                            <constraint firstItem="Ddb-EP-Ddp" firstAttribute="top" secondItem="Zye-Hy-8eJ" secondAttribute="bottom" constant="23" id="nZR-IF-vsQ"/>
+                            <constraint firstItem="8z5-OU-rJX" firstAttribute="leading" secondItem="8fN-3O-oYO" secondAttribute="leadingMargin" id="e17-5A-grm"/>
+                            <constraint firstItem="8z5-OU-rJX" firstAttribute="trailing" secondItem="8fN-3O-oYO" secondAttribute="trailingMargin" id="n50-Wv-jqf"/>
                             <constraint firstItem="w6r-VY-FPM" firstAttribute="trailing" secondItem="8z5-OU-rJX" secondAttribute="trailing" id="tL2-J0-5TA"/>
+                            <constraint firstItem="8z5-OU-rJX" firstAttribute="top" secondItem="Zye-Hy-8eJ" secondAttribute="bottom" constant="68" id="zTF-tP-5t9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Change Password" id="yyi-pX-8pf">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="74v-CU-YuG"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="74v-CU-YuG">
+                            <connections>
+                                <action selector="donePressed:" destination="s1v-N5-8sZ" id="AAk-YY-YEB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="confirmNewPassword" destination="w6r-VY-FPM" id="KOs-ya-l2n"/>
+                        <outlet property="newPassword" destination="8z5-OU-rJX" id="ckM-3e-nvK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uoZ-Sf-sfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4986" y="2519"/>
+            <point key="canvasLocation" x="4961" y="2519"/>
         </scene>
         <!--Send Invitations-->
         <scene sceneID="KIW-uM-zRo">
@@ -1755,8 +1785,9 @@ For information about how to contact Google, please visit our contact page.</str
         <image name="feed" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="ILZ-Ct-zbN"/>
+        <segue reference="alp-Nj-AUb"/>
         <segue reference="OYV-yk-lUv"/>
-        <segue reference="JOu-9E-LMZ"/>
         <segue reference="g1t-Bq-4Jj"/>
     </inferredMetricsTieBreakers>
 </document>

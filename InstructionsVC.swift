@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class InstructionsVC: UIViewController {
     
@@ -14,4 +15,14 @@ class InstructionsVC: UIViewController {
     override func viewDidLoad() {
         navigationItem.setHidesBackButton(true, animated: false)
     }
+    
+    @IBAction func nextPressed(sender: AnyObject) {
+        if (PFUser.currentUser()!["invited"] as! Bool == true) {
+            performSegueWithIdentifier("goToInvitedSetup", sender: nil)
+        }
+        else {
+            performSegueWithIdentifier("goToFullSetup", sender: nil)
+        }
+    }
+    
 }
