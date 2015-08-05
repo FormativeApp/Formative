@@ -22,6 +22,7 @@
 		A14585751B4E29BF00C1BD30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14585741B4E29BF00C1BD30 /* AppDelegate.swift */; };
 		A145857C1B4E29BF00C1BD30 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A145857B1B4E29BF00C1BD30 /* Images.xcassets */; };
 		A145858B1B4E29BF00C1BD30 /* FormativeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A145858A1B4E29BF00C1BD30 /* FormativeTests.swift */; };
+		A14C750C1B728E240025DE4B /* CaregiversViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14C750B1B728E240025DE4B /* CaregiversViewController.swift */; };
 		A14E2D6A1B5D6D8A001666E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14E2D691B5D6D8A001666E8 /* Main.storyboard */; };
 		A16984471B5EC47600FD90C9 /* CommentTVC.xib in Sources */ = {isa = PBXBuildFile; fileRef = A16984461B5EC47600FD90C9 /* CommentTVC.xib */; };
 		A16984491B5EC61000FD90C9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16984481B5EC61000FD90C9 /* TableViewController.swift */; };
@@ -106,6 +107,7 @@
 		A14585841B4E29BF00C1BD30 /* FormativeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FormativeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14585891B4E29BF00C1BD30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A145858A1B4E29BF00C1BD30 /* FormativeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormativeTests.swift; sourceTree = "<group>"; };
+		A14C750B1B728E240025DE4B /* CaregiversViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaregiversViewController.swift; sourceTree = "<group>"; };
 		A14E2D691B5D6D8A001666E8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A16984461B5EC47600FD90C9 /* CommentTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTVC.xib; sourceTree = "<group>"; };
 		A16984481B5EC61000FD90C9 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 		A14585661B4E29BF00C1BD30 = {
 			isa = PBXGroup;
 			children = (
+				A14C750B1B728E240025DE4B /* CaregiversViewController.swift */,
 				A19F32261B715FD500E428D3 /* ChangePasswordVC.swift */,
 				A14585711B4E29BF00C1BD30 /* Formative */,
 				A145857B1B4E29BF00C1BD30 /* Images.xcassets */,
@@ -500,6 +503,7 @@
 				A14585751B4E29BF00C1BD30 /* AppDelegate.swift in Sources */,
 				A1FBAFB11B5D748300980086 /* PostProfileView.swift in Sources */,
 				A1D42DBC1B5DD9410035A5C7 /* CircularImageView.swift in Sources */,
+				A14C750C1B728E240025DE4B /* CaregiversViewController.swift in Sources */,
 				A1398AB11B6823B7007867B1 /* AddPostViewController.swift in Sources */,
 				A19F32251B715F8A00E428D3 /* ProfileSettingsTVC.swift in Sources */,
 				A135CC8E1B68072200445C21 /* TextFieldCell.swift in Sources */,
