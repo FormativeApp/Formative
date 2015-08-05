@@ -42,6 +42,8 @@
 		A19F32231B71589300E428D3 /* InviteSetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F32221B71589300E428D3 /* InviteSetupVC.swift */; };
 		A19F32251B715F8A00E428D3 /* ProfileSettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F32241B715F8A00E428D3 /* ProfileSettingsTVC.swift */; };
 		A19F32271B715FD500E428D3 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F32261B715FD500E428D3 /* ChangePasswordVC.swift */; };
+		A19F322B1B71913C00E428D3 /* InstructionsContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F322A1B71913C00E428D3 /* InstructionsContentVC.swift */; };
+		A19F322D1B71980100E428D3 /* InstructionsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F322C1B71980100E428D3 /* InstructionsPageViewController.swift */; };
 		A1A2C2021B66CCAF000AC5C8 /* BrowseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2C2011B66CCAF000AC5C8 /* BrowseTableViewController.swift */; };
 		A1A2C2041B66D29D000AC5C8 /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2C2031B66D29D000AC5C8 /* JSONManager.swift */; };
 		A1A2C20B1B66E4E9000AC5C8 /* browser.json in Resources */ = {isa = PBXBuildFile; fileRef = A1A2C20A1B66E4E9000AC5C8 /* browser.json */; };
@@ -51,7 +53,6 @@
 		A1A2CD7E1B60514400A327DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2CD7D1B60514400A327DB /* LoginViewController.swift */; };
 		A1A2CD801B6062B500A327DB /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2CD7F1B6062B500A327DB /* NewUserViewController.swift */; };
 		A1A789381B6EE23200A6674A /* TermsOfServiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A789371B6EE23200A6674A /* TermsOfServiceVC.swift */; };
-		A1A7893A1B6EE51100A6674A /* InstructionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A789391B6EE51100A6674A /* InstructionsVC.swift */; };
 		A1A7893C1B6EE8DA00A6674A /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A7893B1B6EE8DA00A6674A /* ForgotPasswordVC.swift */; };
 		A1A7893E1B6EED8700A6674A /* InviteSenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A7893D1B6EED8700A6674A /* InviteSenderViewController.swift */; };
 		A1A789401B6EEE3300A6674A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A7893F1B6EEE3300A6674A /* MessageUI.framework */; };
@@ -124,6 +125,8 @@
 		A19F32221B71589300E428D3 /* InviteSetupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteSetupVC.swift; sourceTree = "<group>"; };
 		A19F32241B715F8A00E428D3 /* ProfileSettingsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingsTVC.swift; sourceTree = "<group>"; };
 		A19F32261B715FD500E428D3 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
+		A19F322A1B71913C00E428D3 /* InstructionsContentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsContentVC.swift; sourceTree = "<group>"; };
+		A19F322C1B71980100E428D3 /* InstructionsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsPageViewController.swift; sourceTree = "<group>"; };
 		A1A2C2011B66CCAF000AC5C8 /* BrowseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseTableViewController.swift; sourceTree = "<group>"; };
 		A1A2C2031B66D29D000AC5C8 /* JSONManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
 		A1A2C20A1B66E4E9000AC5C8 /* browser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = browser.json; sourceTree = "<group>"; };
@@ -133,7 +136,6 @@
 		A1A2CD7D1B60514400A327DB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A1A2CD7F1B6062B500A327DB /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		A1A789371B6EE23200A6674A /* TermsOfServiceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsOfServiceVC.swift; sourceTree = "<group>"; };
-		A1A789391B6EE51100A6674A /* InstructionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstructionsVC.swift; path = ../InstructionsVC.swift; sourceTree = "<group>"; };
 		A1A7893B1B6EE8DA00A6674A /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordVC.swift; path = ../ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		A1A7893D1B6EED8700A6674A /* InviteSenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteSenderViewController.swift; sourceTree = "<group>"; };
 		A1A7893F1B6EEE3300A6674A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -241,6 +243,7 @@
 				F81A48661B6DA4F00060288F /* AdminViewViewController.swift */,
 				F86A8EFA1B6DB7880086E3D8 /* ADLTableTableViewController.swift */,
 				A14E2D691B5D6D8A001666E8 /* Main.storyboard */,
+				A19F322C1B71980100E428D3 /* InstructionsPageViewController.swift */,
 				A16C358D1B67232D009BABD2 /* Login And Registration */,
 				A1A2C2051B66D2A3000AC5C8 /* Model */,
 				A135CC8B1B6802B700445C21 /* Browse */,
@@ -293,7 +296,7 @@
 				A1A7893D1B6EED8700A6674A /* InviteSenderViewController.swift */,
 				A1398AAE1B681412007867B1 /* MultipleChoiceCell.swift */,
 				A1A789371B6EE23200A6674A /* TermsOfServiceVC.swift */,
-				A1A789391B6EE51100A6674A /* InstructionsVC.swift */,
+				A19F322A1B71913C00E428D3 /* InstructionsContentVC.swift */,
 			);
 			name = "Login And Registration";
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				A1A2C2041B66D29D000AC5C8 /* JSONManager.swift in Sources */,
 				A1A7893E1B6EED8700A6674A /* InviteSenderViewController.swift in Sources */,
 				A1FBAFB51B5D76A800980086 /* UIView+RoundCorners.swift in Sources */,
+				A19F322B1B71913C00E428D3 /* InstructionsContentVC.swift in Sources */,
 				A1A7893C1B6EE8DA00A6674A /* ForgotPasswordVC.swift in Sources */,
 				A116B1131B61DD1A00B10061 /* ImageViewController.swift in Sources */,
 				A16C35911B6732DF009BABD2 /* KeywordsTVC.swift in Sources */,
@@ -486,10 +490,10 @@
 				A16C358C1B672186009BABD2 /* AlertManager.swift in Sources */,
 				A135CC881B67EBA200445C21 /* StrategiesTVC.swift in Sources */,
 				A19F32271B715FD500E428D3 /* ChangePasswordVC.swift in Sources */,
+				A19F322D1B71980100E428D3 /* InstructionsPageViewController.swift in Sources */,
 				A16984491B5EC61000FD90C9 /* TableViewController.swift in Sources */,
 				A16984471B5EC47600FD90C9 /* CommentTVC.xib in Sources */,
 				A14585751B4E29BF00C1BD30 /* AppDelegate.swift in Sources */,
-				A1A7893A1B6EE51100A6674A /* InstructionsVC.swift in Sources */,
 				A1FBAFB11B5D748300980086 /* PostProfileView.swift in Sources */,
 				A1D42DBC1B5DD9410035A5C7 /* CircularImageView.swift in Sources */,
 				A1398AB11B6823B7007867B1 /* AddPostViewController.swift in Sources */,
