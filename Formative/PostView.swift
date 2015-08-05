@@ -26,6 +26,7 @@ import ParseUI
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var viewCommentsButton: UIButton!
+    @IBOutlet weak var favoritesView: PostFavoritesView!
     
     // MARK: - Properties
     var superTableView: UITableView? // Table view that the post is in set by FeedViewController
@@ -40,6 +41,14 @@ import ParseUI
     
     func reset(){
         println("reset")
+        
+        var numFavorites = (post["stars"] as! Array<String>).count
+        favoritesView.favoritesLabel.text = "\(numFavorites) Favorites"
+        if (contains((post["stars"] as! Array<String>),PFUser.currentUser()!["PWDid"] as! String))
+        {
+            favoritesView.starred = true
+        }
+        
         commentsTableView.hidden = true
         commentTextView.hidden = true
         doneButton.hidden = true
@@ -218,6 +227,21 @@ import ParseUI
             })
         }
         
+    }
+    
+    @IBAction func starTapped(sender: UITapGestureRecognizer) {
+        if (favoritesView.starred)
+        {
+            favoritesView.starred = false
+            post["stars"] = (post["stars"] as! Array<String>).filter({$0 != PFUser.currentUser()!["PWDid"] as! String})
+        }else{
+            favoritesView.starred = true
+            post["stars"] = (post["stars"]! as! Array<String>) + [PFUser.currentUser()!["PWDid"] as! String]
+            post.saveInBackground()
+        }
+        
+        var numFavorites = (post["stars"] as! Array<String>).count
+        favoritesView.favoritesLabel.text = "\(numFavorites) Favorites"
     }
     
     // MARK: - Comments Animation

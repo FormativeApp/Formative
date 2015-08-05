@@ -14,7 +14,15 @@ import UIKit
     @IBOutlet weak var starImage: UIImageView!
     @IBOutlet weak var favoritesLabel: UILabel!
     
-    var starred:Bool = false
+    var starred:Bool = false {
+        didSet{
+            if (starred){
+                starImage.image = UIImage(named: "FilledStar")
+            }else {
+                starImage.image = UIImage(named: "Star")
+            }
+        }
+    }
     
     override var className: String {
         get {
@@ -22,17 +30,6 @@ import UIKit
         }
         set {
             self.className = newValue
-        }
-    }
-    
-    // Toggle star fill
-    @IBAction func tap(sender: UITapGestureRecognizer) {
-        if (starred){
-            starred = false
-            starImage.image = UIImage(named: "Star")
-        }else {
-            starred = true
-            starImage.image = UIImage(named: "FilledStar")
         }
     }
 }

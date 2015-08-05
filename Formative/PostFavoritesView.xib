@@ -42,16 +42,8 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outletCollection property="gestureRecognizers" destination="oLD-ds-1J2" appends="YES" id="CWT-At-YKG"/>
-            </connections>
             <point key="canvasLocation" x="312" y="380"/>
         </view>
-        <tapGestureRecognizer id="oLD-ds-1J2">
-            <connections>
-                <action selector="tap:" destination="-1" id="3BP-RD-930"/>
-            </connections>
-        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="Star" width="78" height="75"/>

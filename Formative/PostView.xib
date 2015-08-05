@@ -14,6 +14,7 @@
                 <outlet property="commentTextViewHeightConstraint" destination="osK-ig-kxz" id="HbY-Ze-3Kv"/>
                 <outlet property="commentsTableView" destination="tg0-6e-kQd" id="L1c-sl-Pbv"/>
                 <outlet property="doneButton" destination="G7c-Pr-fSD" id="FrV-7O-iHz"/>
+                <outlet property="favoritesView" destination="rHu-zd-Nwy" id="15S-nf-Rr2"/>
                 <outlet property="postImage" destination="bOX-fj-DeG" id="bdI-HW-oFd"/>
                 <outlet property="postTextLabel" destination="SpW-8E-vMX" id="96b-Me-V0S"/>
                 <outlet property="profileView" destination="WOh-2Y-8qc" id="Wyi-Gy-ZoH"/>
@@ -82,9 +83,13 @@
                 <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rHu-zd-Nwy" customClass="PostFavoritesView" customModule="Formative" customModuleProvider="target">
                     <rect key="frame" x="221" y="382" width="125" height="40"/>
                     <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="0.0" colorSpace="calibratedRGB"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="sAf-zH-mdL"/>
                     </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="pFE-Nf-pTq" appends="YES" id="I32-Hv-o3V"/>
+                    </connections>
                 </view>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add a comment" translatesAutoresizingMaskIntoConstraints="NO" id="Q46-YW-rj5">
                     <rect key="frame" x="8" y="593" width="338" height="50"/>
@@ -178,6 +183,11 @@
         <tapGestureRecognizer id="0jX-pi-KvS">
             <connections>
                 <action selector="imageTapped:" destination="-1" id="pBa-Qd-Dht"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="pFE-Nf-pTq">
+            <connections>
+                <action selector="starTapped:" destination="-1" id="8hC-4v-dHB"/>
             </connections>
         </tapGestureRecognizer>
     </objects>

@@ -125,7 +125,7 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
         var post = PFObject(className: "Post")
         post["text"] = messageTextView.text
         post["type"] = sender.titleLabel!.text == "Post as Update" ? "Update" : "Question"
-        post["stars"] = 0
+        post["stars"] = []
         post["comments"] = []
         post["recipientID"] = PFUser.currentUser()!["PWDid"]
         post["tags"] = ["\(categoryButton.titleLabel!.text!)"]
