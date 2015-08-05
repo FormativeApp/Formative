@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="U5k-G7-CF1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nxV-c9-B2j">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -156,7 +156,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2496" y="1910"/>
+            <point key="canvasLocation" x="2425" y="1910"/>
         </scene>
         <!--Categories-->
         <scene sceneID="zof-Gg-Ace">
@@ -725,33 +725,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ubt-Lt-rEK">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ubt-Lt-rEK">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAS-fM-zCV">
-                                <rect key="frame" x="279" y="289" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAS-fM-zCV">
+                                <rect key="frame" x="75" y="289" width="450" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.50196081399917603" green="0.0" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTC-JS-g15">
-                                <rect key="frame" x="275" y="260" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <rect key="frame" x="264" y="251" width="72" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.50196081399917603" green="0.0" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="uDQ-mD-r7F" firstAttribute="top" secondItem="ubt-Lt-rEK" secondAttribute="bottom" id="Bgf-Pu-f5X"/>
                             <constraint firstAttribute="centerY" secondItem="xAS-fM-zCV" secondAttribute="centerY" id="BxC-Nl-b7z"/>
                             <constraint firstAttribute="centerX" secondItem="kTC-JS-g15" secondAttribute="centerX" id="I08-Uj-l0T"/>
+                            <constraint firstAttribute="trailing" secondItem="ubt-Lt-rEK" secondAttribute="trailing" id="JQI-Lw-Riv"/>
                             <constraint firstItem="xAS-fM-zCV" firstAttribute="top" secondItem="kTC-JS-g15" secondAttribute="bottom" constant="8" id="Q30-he-xsY"/>
                             <constraint firstAttribute="centerX" secondItem="xAS-fM-zCV" secondAttribute="centerX" id="RGl-uI-aMK"/>
+                            <constraint firstItem="xAS-fM-zCV" firstAttribute="width" secondItem="Wp4-Qs-BZ2" secondAttribute="width" multiplier="0.75" id="UAF-Lh-t2a"/>
+                            <constraint firstItem="ubt-Lt-rEK" firstAttribute="top" secondItem="Wp4-Qs-BZ2" secondAttribute="top" id="XPU-Do-Cq9"/>
+                            <constraint firstItem="ubt-Lt-rEK" firstAttribute="leading" secondItem="Wp4-Qs-BZ2" secondAttribute="leading" id="gsy-xD-U2T"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bakcgroundImageView" destination="ubt-Lt-rEK" id="dMp-Sp-hAk"/>
-                        <outlet property="stepsLabel" destination="kTC-JS-g15" id="IKs-v2-DQj"/>
+                        <outlet property="backgroundImageView" destination="ubt-Lt-rEK" id="dMp-Sp-hAk"/>
+                        <outlet property="mainText" destination="xAS-fM-zCV" id="imk-LY-0M5"/>
+                        <outlet property="titleLabel" destination="kTC-JS-g15" id="IKs-v2-DQj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOq-tj-hFE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -766,7 +772,7 @@
             </objects>
             <point key="canvasLocation" x="-494" y="2262"/>
         </scene>
-        <!--Instructions Page View Controller-->
+        <!--Instructions-->
         <scene sceneID="7xy-1u-HXj">
             <objects>
                 <viewController id="U5k-G7-CF1" customClass="InstructionsPageViewController" customModule="Formative" customModuleProvider="target" sceneMemberID="viewController">
@@ -779,10 +785,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Instructions" id="ypn-e3-xfo">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="CsP-7g-qCE">
+                            <connections>
+                                <action selector="donePressed:" destination="U5k-G7-CF1" id="7xu-Y8-cPd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="7uo-GR-gGq" kind="show" identifier="goToFullSetup" id="nuD-RC-DWu"/>
+                        <segue destination="bJK-Ga-P9P" kind="show" identifier="goToInvitationSetup" id="x7R-yY-aCM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17E-fx-lIK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-422" y="2957"/>
+            <point key="canvasLocation" x="1710" y="1910"/>
         </scene>
         <!--Terms of Service-->
         <scene sceneID="NTp-HB-PQ9">
@@ -932,53 +949,12 @@ For information about how to contact Google, please visit our contact page.</str
                     </navigationItem>
                     <connections>
                         <outlet property="agreementSegmentedControl" destination="5Hs-Pb-Jdh" id="6kd-9Z-x9g"/>
-                        <segue destination="XlI-rD-apb" kind="show" identifier="goToInstructions" id="PxT-RX-wXL"/>
+                        <segue destination="U5k-G7-CF1" kind="show" identifier="goToInstructions" id="zWl-Es-BCj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPq-IN-ZH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="980" y="1918"/>
-        </scene>
-        <!--Get Started!-->
-        <scene sceneID="ejT-pD-TYZ">
-            <objects>
-                <viewController title="Get Started!" id="XlI-rD-apb" customClass="InstructionsContentVC" customModule="Formative" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Rpm-Bo-Y4K"/>
-                        <viewControllerLayoutGuide type="bottom" id="5x2-nd-bkf"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vnw-L3-jGB">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here are some instructions!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zav-0b-ZaM">
-                                <rect key="frame" x="195" y="289" width="210" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="zav-0b-ZaM" secondAttribute="centerX" id="Ba1-oc-zbw"/>
-                            <constraint firstAttribute="centerY" secondItem="zav-0b-ZaM" secondAttribute="centerY" id="XAz-sU-asB"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Get Started!" id="K6S-0y-fvO">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="ysr-dN-3F6">
-                            <connections>
-                                <action selector="nextPressed:" destination="XlI-rD-apb" id="duf-Ll-fDC"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <segue destination="7uo-GR-gGq" kind="show" identifier="goToFullSetup" id="h3z-wU-6Ox"/>
-                        <segue destination="bJK-Ga-P9P" kind="show" identifier="goToInvitedSetup" id="ai8-hE-crN"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A8s-Og-DtX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1718" y="1918"/>
         </scene>
         <!--Your Profile-->
         <scene sceneID="JvN-xo-yKt">
@@ -1856,9 +1832,9 @@ For information about how to contact Google, please visit our contact page.</str
         <image name="feed" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ILZ-Ct-zbN"/>
-        <segue reference="alp-Nj-AUb"/>
         <segue reference="OYV-yk-lUv"/>
+        <segue reference="alp-Nj-AUb"/>
         <segue reference="g1t-Bq-4Jj"/>
+        <segue reference="ILZ-Ct-zbN"/>
     </inferredMetricsTieBreakers>
 </document>

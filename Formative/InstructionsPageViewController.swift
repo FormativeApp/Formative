@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import Parse
 
 class InstructionsPageViewController: UIViewController, UIPageViewControllerDataSource {
     
     var pageViewController: UIPageViewController!
-    var pageTitles = ["hello", "hi", "yeah"]
+    var pageData = parseJSON(NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("instructions", ofType: "json")!)!) as! Array<Array<String>>
     
     override func viewDidLoad() {
+        print(pageData)
         var pageViewController = storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
         pageViewController.dataSource = self
         
@@ -43,7 +45,7 @@ class InstructionsPageViewController: UIViewController, UIPageViewControllerData
         
         var index = (viewController as! InstructionsContentVC).pageIndex
         index = index + 1
-        if (index >= pageTitles.count)
+        if (index >= pageData.count)
         {
             return nil
         }
@@ -54,17 +56,29 @@ class InstructionsPageViewController: UIViewController, UIPageViewControllerData
     func viewControllerAtIndex(index: Int) -> InstructionsContentVC
     {
         var vc = storyboard?.instantiateViewControllerWithIdentifier("InstructionsContentVC") as! InstructionsContentVC
-        vc.titleText = pageTitles[index];
+        vc.pageData = pageData[index];
         vc.pageIndex = index
         
         return vc
     }
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return pageTitles.count
+        return pageData.count
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
         return 0
+    }
+    
+    @IBAction func donePressed(sender: AnyObject) {
+        var user = PFUser.currentUser()!
+        if (user["invited"] as! Bool == true)
+        {
+            performSegueWithIdentifier("goToInvitationSetup", sender: nil)
+        }
+        else
+        {
+            performSegueWithIdentifier("goToFullSetup", sender: nil)
+        }
     }
 }
