@@ -107,7 +107,7 @@
 		A14585841B4E29BF00C1BD30 /* FormativeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FormativeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14585891B4E29BF00C1BD30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A145858A1B4E29BF00C1BD30 /* FormativeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormativeTests.swift; sourceTree = "<group>"; };
-		A14C750B1B728E240025DE4B /* CaregiversViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaregiversViewController.swift; sourceTree = "<group>"; };
+		A14C750B1B728E240025DE4B /* CaregiversViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CaregiversViewController.swift; path = ../CaregiversViewController.swift; sourceTree = "<group>"; };
 		A14E2D691B5D6D8A001666E8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A16984461B5EC47600FD90C9 /* CommentTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTVC.xib; sourceTree = "<group>"; };
 		A16984481B5EC61000FD90C9 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		A199AD241B6163B6004FE514 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		A19F32221B71589300E428D3 /* InviteSetupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteSetupVC.swift; sourceTree = "<group>"; };
 		A19F32241B715F8A00E428D3 /* ProfileSettingsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingsTVC.swift; sourceTree = "<group>"; };
-		A19F32261B715FD500E428D3 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
+		A19F32261B715FD500E428D3 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangePasswordVC.swift; path = ../ChangePasswordVC.swift; sourceTree = "<group>"; };
 		A19F322A1B71913C00E428D3 /* InstructionsContentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsContentVC.swift; sourceTree = "<group>"; };
 		A19F322C1B71980100E428D3 /* InstructionsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsPageViewController.swift; sourceTree = "<group>"; };
 		A19F322E1B7272D900E428D3 /* instructions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = instructions.json; sourceTree = "<group>"; };
@@ -223,8 +223,6 @@
 		A14585661B4E29BF00C1BD30 = {
 			isa = PBXGroup;
 			children = (
-				A14C750B1B728E240025DE4B /* CaregiversViewController.swift */,
-				A19F32261B715FD500E428D3 /* ChangePasswordVC.swift */,
 				A14585711B4E29BF00C1BD30 /* Formative */,
 				A145857B1B4E29BF00C1BD30 /* Images.xcassets */,
 				F80620121B6462DE00D30C5E /* Frameworks */,
@@ -245,9 +243,10 @@
 		A14585711B4E29BF00C1BD30 /* Formative */ = {
 			isa = PBXGroup;
 			children = (
-				F81A48661B6DA4F00060288F /* AdminViewViewController.swift */,
-				F86A8EFA1B6DB7880086E3D8 /* ADLTableTableViewController.swift */,
 				A14E2D691B5D6D8A001666E8 /* Main.storyboard */,
+				A1CD91C51B72AA39005E9875 /* Care Team */,
+				A1CD91C41B72AA1C005E9875 /* Settings */,
+				A1CD91C61B72AA41005E9875 /* Admin */,
 				A16C358D1B67232D009BABD2 /* Login And Registration */,
 				A1A2C2051B66D2A3000AC5C8 /* Model */,
 				A135CC8B1B6802B700445C21 /* Browse */,
@@ -293,7 +292,6 @@
 				A1A7893B1B6EE8DA00A6674A /* ForgotPasswordVC.swift */,
 				A135CC8D1B68072200445C21 /* TextFieldCell.swift */,
 				A1A2C2101B66FA53000AC5C8 /* ProfileSetupTVC.swift */,
-				A19F32241B715F8A00E428D3 /* ProfileSettingsTVC.swift */,
 				A1398AB21B686143007867B1 /* ProfilePictureSelectionCell.swift */,
 				A1A2CD7F1B6062B500A327DB /* NewUserViewController.swift */,
 				A1A2CD7D1B60514400A327DB /* LoginViewController.swift */,
@@ -316,6 +314,32 @@
 				A19F322E1B7272D900E428D3 /* instructions.json */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		A1CD91C41B72AA1C005E9875 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A19F32241B715F8A00E428D3 /* ProfileSettingsTVC.swift */,
+				A19F32261B715FD500E428D3 /* ChangePasswordVC.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		A1CD91C51B72AA39005E9875 /* Care Team */ = {
+			isa = PBXGroup;
+			children = (
+				A14C750B1B728E240025DE4B /* CaregiversViewController.swift */,
+			);
+			name = "Care Team";
+			sourceTree = "<group>";
+		};
+		A1CD91C61B72AA41005E9875 /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				F81A48661B6DA4F00060288F /* AdminViewViewController.swift */,
+				F86A8EFA1B6DB7880086E3D8 /* ADLTableTableViewController.swift */,
+			);
+			name = Admin;
 			sourceTree = "<group>";
 		};
 		A1FBAFBA1B5D7E1700980086 /* Xibs */ = {

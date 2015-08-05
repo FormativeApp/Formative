@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mcD-fX-bvj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ljV-ZM-zEc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -433,7 +433,7 @@
         <!--Login View Controller-->
         <scene sceneID="PzG-B2-SNh">
             <objects>
-                <viewController id="ljV-ZM-zEc" customClass="LoginViewController" customModule="Formative" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="ljV-ZM-zEc" customClass="LoginViewController" customModule="Formative" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ejf-R3-LF5"/>
                         <viewControllerLayoutGuide type="bottom" id="KJ3-ug-LvW"/>
@@ -1528,15 +1528,22 @@ For information about how to contact Google, please visit our contact page.</str
                             <outlet property="delegate" destination="VzK-34-mGY" id="iA4-r9-hJE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Your Profile" id="OoL-6C-olM"/>
+                    <navigationItem key="navigationItem" title="Your Profile" id="OoL-6C-olM">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="Psc-tV-rMA">
+                            <connections>
+                                <action selector="logout:" destination="VzK-34-mGY" id="cdZ-Wk-B3g"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="profileImage" destination="d5s-f2-8SH" id="go4-Ya-1wf"/>
                         <outlet property="spinner" destination="Foj-KD-yuH" id="wRK-Li-4lh"/>
+                        <segue destination="ljV-ZM-zEc" kind="presentation" identifier="logOut" id="4K5-Lm-iET"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1G-tT-XmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4311" y="2519"/>
+            <point key="canvasLocation" x="221" y="3361"/>
         </scene>
         <!--Change Password-->
         <scene sceneID="Gbq-0L-mb3">
@@ -1593,7 +1600,7 @@ For information about how to contact Google, please visit our contact page.</str
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uoZ-Sf-sfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5017" y="2519"/>
+            <point key="canvasLocation" x="-629" y="3353"/>
         </scene>
         <!--Send Invitations-->
         <scene sceneID="KIW-uM-zRo">
@@ -1911,7 +1918,7 @@ For information about how to contact Google, please visit our contact page.</str
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wsy-qj-HAQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3499" y="2519"/>
+            <point key="canvasLocation" x="1287" y="3345"/>
         </scene>
     </scenes>
     <resources>
@@ -1927,9 +1934,9 @@ For information about how to contact Google, please visit our contact page.</str
         <image name="feed" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OYV-yk-lUv"/>
+        <segue reference="eQi-dj-j3m"/>
+        <segue reference="JOu-9E-LMZ"/>
         <segue reference="XYp-0f-2My"/>
-        <segue reference="ILZ-Ct-zbN"/>
         <segue reference="g1t-Bq-4Jj"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -20,6 +20,11 @@ class ProfileSettingsTVC: UITableViewController, UIImagePickerControllerDelegate
         profileImage.loadInBackground()
     }
     
+    @IBAction func logout(sender: AnyObject) {
+        PFUser.logOut()
+        var loginVC = storyboard?.instantiateViewControllerWithIdentifier("Login") as! LoginViewController
+        presentViewController(loginVC, animated: true, completion: nil)
+    }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if (indexPath.row == 0) {
             // Create an alert

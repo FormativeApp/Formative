@@ -18,6 +18,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        print(PFUser.currentUser())
+        if let user = PFUser.currentUser()
+        {
+            println("ding!")
+            if (user["completedSetup"] as! Bool) {
+                self.performSegueWithIdentifier("goToTabBar", sender: nil)
+            }
+            else {
+                self.performSegueWithIdentifier("resumeSetup", sender: nil)
+            }
+        }
+
+    }
     // Called whenever a user taps on a text field
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         if (passwordFieldYConstraint.constant == 0) {

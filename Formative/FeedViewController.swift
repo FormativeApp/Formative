@@ -51,7 +51,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.estimatedRowHeight = 300
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        user = PFUser.currentUser()
+        user = PFUser.currentUser()!
         let postsQuery = PFQuery(className: "Post")
         postsQuery.whereKey("recipientID", equalTo: user["PWDid"]!)
         postsQuery.limit = TableViewConstants.numberOfInitialCells
