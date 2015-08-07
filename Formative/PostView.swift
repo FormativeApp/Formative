@@ -47,6 +47,8 @@ import ParseUI
         if (contains((post["stars"] as! Array<String>),PFUser.currentUser()!["PWDid"] as! String))
         {
             favoritesView.starred = true
+        }else{
+            favoritesView.starred = false
         }
         
         commentsTableView.hidden = true
@@ -71,7 +73,7 @@ import ParseUI
         
         viewCommentsButton.setTitle(commentsString, forState: UIControlState.Normal)
         
-        if let file = post["photo"] as? PFFile {
+        /*if let file = post["photo"] as? PFFile {
             
             self.postImage.image = nil
             self.postImage.backgroundColor = UIColor.greenColor()
@@ -114,10 +116,11 @@ import ParseUI
             self.postImage.addConstraint(aspectRatioConstraint)
             println("snap")
             self.aspectRatioConstraint = aspectRatioConstraint
-        }
+        }*/
         
-        profileView.profileImage.file = user["profileImage"] as? PFFile
-        profileView.profileImage.loadInBackground()
+        //profileView.profileImage.file = user["profileImage"] as? PFFile
+        //profileView.profileImage.loadInBackground()
+        println("Rest Done")
     }
     
     override var className: String {
@@ -131,6 +134,7 @@ import ParseUI
     
     // MARK: - Initialization
     func setup(){
+        println("Setup")
         commentsTableView.hidden = true
         commentTextView.hidden = true
         doneButton.hidden = true
@@ -145,6 +149,7 @@ import ParseUI
         commentsTableView.rowHeight = UITableViewAutomaticDimension
         
         commentTextView.delegate = self
+        println("Setup Done")
     }
 
 
@@ -311,8 +316,8 @@ import ParseUI
         // Configure the cell...
         cell.commentLabel.text = (post["comments"] as! Array<PFObject>)[indexPath.row]["text"] as? String
         var commentPoster = (post["comments"] as! Array<PFObject>)[indexPath.row]["user"] as! PFUser
-        cell.profileImage.file = commentPoster["profileImage"] as? PFFile
-        cell.profileImage.loadInBackground()
+        //cell.profileImage.file = commentPoster["profileImage"] as? PFFile
+        //cell.profileImage.loadInBackground()
         
         //superTableView?.beginUpdates()
         

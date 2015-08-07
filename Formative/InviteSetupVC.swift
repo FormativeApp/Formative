@@ -96,10 +96,10 @@ class InviteSetupVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         
         user["name"] = nameSplit[0]
         user["fullName"] = nameTextField.text
+        user["completedSetup"] = true
         
         user.saveInBackgroundWithBlock { (success, error) -> Void in
             if (success){
-                user["completedSetup"] = true
                 self.performSegueWithIdentifier("goToInvite", sender: nil)
             }else {
                 alertErrorWithTitle("Submission failed.", message: error!.userInfo?["error"] as? String, inViewController: self)

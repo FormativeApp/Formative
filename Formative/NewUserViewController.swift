@@ -96,6 +96,7 @@ class NewUserViewController: UIViewController {
                 }
             })
         }else {
+            user["invited"] = false
             signUpUser(user)
         }
     }

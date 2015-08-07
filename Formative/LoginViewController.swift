@@ -24,6 +24,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if let user = PFUser.currentUser()
         {
             println("ding!")
+            user.fetch()
             if (user["completedSetup"] as! Bool) {
                 self.performSegueWithIdentifier("goToTabBar", sender: nil)
             }
@@ -73,13 +74,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func loginButtonTouched() {
         spinner.startAnimating()
+        println("\(nameTextField.text), \(passwordTextField.text)")
         PFUser.logInWithUsernameInBackground(nameTextField.text, password:passwordTextField.text) {
             (user: PFUser?, error: NSError?) -> Void in
             self.spinner.stopAnimating()
             if let error = error {
                 let errorString = error.userInfo?["error"] as? String
                 
-                alertErrorWithTitle("Login Failed", message: errorString, inViewController: self)
+                alertErrorWithTitle("Login Failed", message: error.description, inViewController: self)
                 
             } else {
                 if (user!["completedSetup"] as! Bool) {

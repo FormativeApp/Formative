@@ -72,6 +72,8 @@ class InstructionsPageViewController: UIViewController, UIPageViewControllerData
     
     @IBAction func donePressed(sender: AnyObject) {
         var user = PFUser.currentUser()!
+        user.fetch()
+        println(user["invited"])
         if (user["invited"] as! Bool == true)
         {
             performSegueWithIdentifier("goToInvitationSetup", sender: nil)

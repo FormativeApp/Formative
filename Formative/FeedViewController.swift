@@ -44,11 +44,14 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             println("Auto logging in!")
             PFUser.logInWithUsername("andrew@andrewke.org", password: "andrew")
         }
+        println("\(user)")
+        user = PFUser.currentUser()
+        user.fetchIfNeeded()
         
         tableView.dataSource = self
         tableView.delegate = self
         
-        tableView.estimatedRowHeight = 300
+        tableView.estimatedRowHeight = 2.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
         user = PFUser.currentUser()!
@@ -64,7 +67,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             if (objects != nil) {
                 
                 self.posts = objects as! Array<PFObject>
-                //print(self.posts)
+                print(self.posts)
                 self.tableView.reloadData()
                 self.tableView.hidden = false
                 self.mainSpinner.stopAnimating()
@@ -76,7 +79,6 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func refresh(refreshControl: UIRefreshControl) {
-        // Do your job, when done:
         let postsQuery = PFQuery(className: "Post")
         postsQuery.whereKey("recipientID", equalTo: user["PWDid"]!)
         postsQuery.limit = TableViewConstants.numberOfInitialCells
@@ -126,6 +128,21 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // MARK: - Table view data source
     
+    
+    /*func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+
+        if (indexPath.row == 0)
+        {
+            println("Start")
+            return 100
+        }
+        else
+        {
+            println("Middle")
+            return 405
+        }
+    }*/
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -137,13 +154,14 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         else {
             loadingLabel.hidden = false
         }
-        return posts.count > 0 ? posts.count + 1 : 0
+        return posts.count > 0 ? posts.count + 1: 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // Special Whitespace Cell
         if (indexPath.row == 0)
         {
+            println("White space!")
             let cell = tableView.dequeueReusableCellWithIdentifier("whiteSpaceCell", forIndexPath: indexPath) as! UITableViewCell
             return cell
         }
@@ -151,17 +169,20 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! PostTVC
         cell.postView.superTableView = self.tableView
         cell.postView.viewController = self
-        cell.postView.post = posts[indexPath.row-1]
-        println("Cell created")
+        var post = posts[indexPath.row-1]
+        cell.postView.post = post
+        //cell.postView.aspectRatioConstraint?.constant = 4
+        //println(cell.postView.aspectRatioConstraint?.constant)
+        //println("Cell created")
         cell.postView.reset()
-        loadInProgress = false
+        //loadInProgress = false
         return cell
     }
     
     var loadInProgress = false
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
 
-        if (indexPath.row == posts.count){
+        /*if (indexPath.row == posts.count){
             if (!loadInProgress) {
                 
                 println("Load more posts")
@@ -203,7 +224,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     }
                 })
             }
-        }
+        }*/
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
