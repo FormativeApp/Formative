@@ -43,8 +43,8 @@
                         <constraint firstAttribute="height" constant="1" id="KI4-sX-jXx"/>
                     </constraints>
                 </view>
-                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Portrait" translatesAutoresizingMaskIntoConstraints="NO" id="bOX-fj-DeG" customClass="PFImageView">
-                    <rect key="frame" x="8" y="172" width="338" height="200"/>
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Portrait" translatesAutoresizingMaskIntoConstraints="NO" id="bOX-fj-DeG" customClass="PFImageView">
+                    <rect key="frame" x="20" y="172" width="314" height="200"/>
                     <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <gestureRecognizers/>
                     <constraints>
@@ -59,7 +59,7 @@
                         <outletCollection property="gestureRecognizers" destination="0jX-pi-KvS" appends="YES" id="sN9-vn-sxg"/>
                     </connections>
                 </imageView>
-                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WOh-2Y-8qc" customClass="PostProfileView" customModule="Formative" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WOh-2Y-8qc" customClass="PostProfileView" customModule="Formative" customModuleProvider="target">
                     <rect key="frame" x="8" y="382" width="88" height="40"/>
                     <color key="backgroundColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="0.0" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -80,7 +80,7 @@
                         <action selector="revealOrHideComments:" destination="-1" eventType="touchUpInside" id="jDP-Sn-dxA"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rHu-zd-Nwy" customClass="PostFavoritesView" customModule="Formative" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rHu-zd-Nwy" customClass="PostFavoritesView" customModule="Formative" customModuleProvider="target">
                     <rect key="frame" x="221" y="382" width="125" height="40"/>
                     <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="0.0" colorSpace="calibratedRGB"/>
                     <gestureRecognizers/>
@@ -112,7 +112,7 @@
                     </variation>
                 </textView>
                 <imageView userInteractionEnabled="NO" alpha="0.74999999999999978" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Right Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="uYT-xO-bgv">
-                    <rect key="frame" x="316" y="253" width="25" height="38"/>
+                    <rect key="frame" x="304" y="253" width="25" height="38"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="25" id="77h-fw-WMK"/>
                         <constraint firstAttribute="height" constant="38" id="xVe-Cg-J8H"/>
@@ -148,7 +148,7 @@
                 <constraint firstItem="45v-II-OSi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="0e1-k6-RIf"/>
                 <constraint firstItem="Q46-YW-rj5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="28e-J3-She"/>
                 <constraint firstItem="bOX-fj-DeG" firstAttribute="centerY" secondItem="uYT-xO-bgv" secondAttribute="centerY" id="9SE-2B-7TX"/>
-                <constraint firstItem="bOX-fj-DeG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="DOS-y3-58p"/>
+                <constraint firstItem="bOX-fj-DeG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="DOS-y3-58p"/>
                 <constraint firstItem="GkD-eS-Y7G" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="ERd-Pl-dFy"/>
                 <constraint firstItem="WOh-2Y-8qc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Gus-kh-Dv5"/>
                 <constraint firstAttribute="bottom" secondItem="G7c-Pr-fSD" secondAttribute="bottom" id="H2U-dz-7OJ"/>
@@ -168,7 +168,7 @@
                 <constraint firstItem="rHu-zd-Nwy" firstAttribute="centerY" secondItem="WOh-2Y-8qc" secondAttribute="centerY" id="jLm-pM-ljK"/>
                 <constraint firstItem="45v-II-OSi" firstAttribute="top" secondItem="GkD-eS-Y7G" secondAttribute="bottom" id="lgb-8F-I0e"/>
                 <constraint firstAttribute="trailing" secondItem="rHu-zd-Nwy" secondAttribute="trailing" constant="8" id="mAl-Yq-sTx"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bOX-fj-DeG" secondAttribute="trailing" constant="8" id="mGb-zE-5IL"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bOX-fj-DeG" secondAttribute="trailing" constant="20" id="mGb-zE-5IL"/>
                 <constraint firstAttribute="trailing" secondItem="tg0-6e-kQd" secondAttribute="trailing" constant="8" id="oRG-dg-Nfa"/>
                 <constraint firstAttribute="centerX" secondItem="bOX-fj-DeG" secondAttribute="centerX" id="p0r-mE-a9F"/>
                 <constraint firstItem="Q46-YW-rj5" firstAttribute="top" secondItem="tg0-6e-kQd" secondAttribute="bottom" constant="8" id="sp5-jw-slH"/>

@@ -38,9 +38,9 @@ import ParseUI
     // MARK: - Reuse
     
     var post: PFObject!
+    var aspectRatio: Double?
     
     func reset(){
-        println("reset")
         
         var numFavorites = (post["stars"] as! Array<String>).count
         favoritesView.favoritesLabel.text = "\(numFavorites) Favorites"
@@ -73,30 +73,31 @@ import ParseUI
         
         viewCommentsButton.setTitle(commentsString, forState: UIControlState.Normal)
         
-        /*if let file = post["photo"] as? PFFile {
+        if let file = post["photo"] as? PFFile {
             
-            self.postImage.image = nil
-            self.postImage.backgroundColor = UIColor.greenColor()
+            postImage.image = nil
+            postImage.backgroundColor = UIColor.greenColor()
             postImage.file = file
             
-            postImage.loadInBackground { (image, error) -> Void in
-                var aspectRatioConstraint = NSLayoutConstraint(
+            
+            if let aspectRatio = post["aspectRatio"] as? Double {
+                var newAspectRatioConstraint = NSLayoutConstraint(
                     item: self.postImage,
                     attribute: .Width,
                     relatedBy: .Equal,
                     toItem: self.postImage,
                     attribute: .Height,
-                    multiplier: self.postImage.image!.aspectRatio,
-                    constant: 0)
-                if (self.aspectRatioConstraint != nil)
+                    multiplier: CGFloat(aspectRatio),
+                    constant: CGFloat(0))
+                if (aspectRatioConstraint != nil)
                 {
-                    self.postImage.removeConstraint(self.aspectRatioConstraint!)
+                    postImage.removeConstraint(self.aspectRatioConstraint!)
                 }
-                self.postImage.addConstraint(aspectRatioConstraint)
-                println("snap!")
-                self.aspectRatioConstraint = aspectRatioConstraint
-                
+                postImage.addConstraint(newAspectRatioConstraint)
+                aspectRatioConstraint = newAspectRatioConstraint
             }
+            
+            postImage.loadInBackground()
         }
         else
         {
@@ -114,13 +115,11 @@ import ParseUI
                 self.postImage.removeConstraint(self.aspectRatioConstraint!)
             }
             self.postImage.addConstraint(aspectRatioConstraint)
-            println("snap")
             self.aspectRatioConstraint = aspectRatioConstraint
-        }*/
+        }
         
-        //profileView.profileImage.file = user["profileImage"] as? PFFile
-        //profileView.profileImage.loadInBackground()
-        println("Rest Done")
+        profileView.profileImage.file = user["profileImage"] as? PFFile
+        profileView.profileImage.loadInBackground()
     }
     
     override var className: String {
@@ -134,7 +133,6 @@ import ParseUI
     
     // MARK: - Initialization
     func setup(){
-        println("Setup")
         commentsTableView.hidden = true
         commentTextView.hidden = true
         doneButton.hidden = true
@@ -149,7 +147,6 @@ import ParseUI
         commentsTableView.rowHeight = UITableViewAutomaticDimension
         
         commentTextView.delegate = self
-        println("Setup Done")
     }
 
 
@@ -260,11 +257,10 @@ import ParseUI
             sender.setTitle("Hide Comments", forState: UIControlState.Normal)
             commentsTableView.reloadData()
             
-            superTableView?.beginUpdates()
-            
+            println(superview)
             tableViewHeightConstraint.constant = commentsTableView.contentSize.height
             buttonToBottomConstraint.constant = commentTextView.frame.height + tableViewHeightConstraint.constant + 50
-            
+            superTableView?.beginUpdates()
             UIView.animateWithDuration(0.5, animations: {
                 self.superview?.layoutIfNeeded()
                 self.superTableView?.endUpdates()
@@ -278,18 +274,19 @@ import ParseUI
         {
             commentsHidden = true
             sender.setTitle(commentsString, forState: UIControlState.Normal)
-            superTableView?.beginUpdates()
-            
             self.commentsTableView.hidden = true
             self.commentTextView.hidden = true
             doneButton.hidden = true
-            
+            superTableView?.beginUpdates()
+
             buttonToBottomConstraint.constant = 5
-            
             UIView.animateWithDuration(0.5, animations: {
                 self.superview?.layoutIfNeeded()
                 self.superTableView?.endUpdates()
+            }, completion: { (success) -> Void in
             })
+
+
         }
         
         
@@ -316,8 +313,8 @@ import ParseUI
         // Configure the cell...
         cell.commentLabel.text = (post["comments"] as! Array<PFObject>)[indexPath.row]["text"] as? String
         var commentPoster = (post["comments"] as! Array<PFObject>)[indexPath.row]["user"] as! PFUser
-        //cell.profileImage.file = commentPoster["profileImage"] as? PFFile
-        //cell.profileImage.loadInBackground()
+        cell.profileImage.file = commentPoster["profileImage"] as? PFFile
+        cell.profileImage.loadInBackground()
         
         //superTableView?.beginUpdates()
         

@@ -129,12 +129,12 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
         post["comments"] = []
         post["recipientID"] = PFUser.currentUser()!["PWDid"]
         post["tags"] = ["\(categoryButton.titleLabel!.text!)"]
-        post["userID"] = PFUser.currentUser()?.objectId
         post["user"] = PFUser.currentUser()
         if let image = photoButton.imageView?.image {
             let imageData = UIImagePNGRepresentation(image) //takes the image and converts it to the binary code
             let imageFile = PFFile(data: imageData)
             post["photo"] = imageFile
+            post["aspectRatio"] = image.aspectRatio
         }
         spinner.startAnimating()
         post.saveInBackgroundWithBlock { (success, error) -> Void in

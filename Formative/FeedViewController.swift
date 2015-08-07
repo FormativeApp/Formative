@@ -46,7 +46,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         println("\(user)")
         user = PFUser.currentUser()
-        user.fetchIfNeeded()
+        //user.fetchIfNeeded()
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -67,7 +67,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             if (objects != nil) {
                 
                 self.posts = objects as! Array<PFObject>
-                print(self.posts)
+                //print(self.posts)
                 self.tableView.reloadData()
                 self.tableView.hidden = false
                 self.mainSpinner.stopAnimating()
@@ -133,12 +133,10 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         if (indexPath.row == 0)
         {
-            println("Start")
             return 100
         }
         else
         {
-            println("Middle")
             return 405
         }
     }*/
@@ -161,7 +159,6 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Special Whitespace Cell
         if (indexPath.row == 0)
         {
-            println("White space!")
             let cell = tableView.dequeueReusableCellWithIdentifier("whiteSpaceCell", forIndexPath: indexPath) as! UITableViewCell
             return cell
         }
@@ -180,8 +177,9 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     var loadInProgress = false
+    
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-
+        //println(indexPath.row)
         /*if (indexPath.row == posts.count){
             if (!loadInProgress) {
                 
@@ -224,6 +222,9 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     }
                 })
             }
+        }
+        else if (indexPath.row == posts.count-1){
+            loadInProgress = false
         }*/
     }
     
