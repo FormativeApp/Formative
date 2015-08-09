@@ -51,8 +51,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.dataSource = self
         tableView.delegate = self
         
-        tableView.estimatedRowHeight = 2.0
-        tableView.rowHeight = UITableViewAutomaticDimension
+        //tableView.estimatedRowHeight = 200.0
+        //tableView.rowHeight = UITableViewAutomaticDimension
         
         user = PFUser.currentUser()!
         let postsQuery = PFQuery(className: "Post")
@@ -124,22 +124,38 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.secondaryAddPostButton.alpha = 0.6
             })
         }
+        
+        var currentOffset = scrollView.contentOffset.y
+        var maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        
+        if (maximumOffset - currentOffset <= 150.0) {
+            if (loadInProgress == false){
+                loadMorePosts()
+                //println("Load!")
+                loadInProgress = true
+            }
+        }
+    }
+    
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        loadInProgress = false
     }
     
     // MARK: - Table view data source
     
     
     /*func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-
-        if (indexPath.row == 0)
-        {
-            return 100
-        }
-        else
-        {
-            return 405
+            return 200
         }
     }*/
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 400
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.layoutSubviews()
+    }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -152,81 +168,77 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         else {
             loadingLabel.hidden = false
         }
-        return posts.count > 0 ? posts.count + 1: 0
+        return posts.count// > 0 ? posts.count + 1: 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // Special Whitespace Cell
-        if (indexPath.row == 0)
+        /*if (indexPath.row == 0)
         {
             let cell = tableView.dequeueReusableCellWithIdentifier("whiteSpaceCell", forIndexPath: indexPath) as! UITableViewCell
             return cell
-        }
+        }*/
 
         let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! PostTVC
         cell.postView.superTableView = self.tableView
         cell.postView.viewController = self
-        var post = posts[indexPath.row-1]
+        var post = posts[indexPath.row]
         cell.postView.post = post
         //cell.postView.aspectRatioConstraint?.constant = 4
         //println(cell.postView.aspectRatioConstraint?.constant)
         //println("Cell created")
         cell.postView.reset()
-        //loadInProgress = false
         return cell
     }
     
     var loadInProgress = false
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        //println(indexPath.row)
-        /*if (indexPath.row == posts.count){
-            if (!loadInProgress) {
-                
-                println("Load more posts")
-                loadInProgress = true
-                
-                let postsQuery = PFQuery(className: "Post")
-                postsQuery.whereKey("recipientID", equalTo: user["PWDid"]!)
-                postsQuery.limit = 1
-                postsQuery.orderByDescending("updatedAt")
-                postsQuery.includeKey("user")
-                postsQuery.includeKey("comments")
-                postsQuery.whereKey("updatedAt", lessThan: posts[posts.endIndex-1].updatedAt!)
-                
-                self.loadingLabel.text = "Loading more posts ..."
-                
-                postsQuery.findObjectsInBackgroundWithBlock({(objects:[AnyObject]?, error:NSError?) -> Void in
-                    
-                    if (objects != nil && objects?.count != 0) {
-                        
-                        for object in objects as! Array<PFObject> {
-                            if !contains(self.posts, object){
-                                self.posts.append(object)
-                            }
-                        }
-                        
-                        self.tableView.reloadData()
-                        /*var indexPaths: Array<NSIndexPath> = [NSIndexPath(forRow: 2, inSection: 0)]
-                        
-                        for i in 1...(objects!.count-1){
-                            indexPaths.append(NSIndexPath(forRow: self.posts.count - objects!.count + i, inSection: 1))
-                        }*/
+    func loadMorePosts() {
+        println("Load more posts")
+        loadInProgress = true
+        
+        let postsQuery = PFQuery(className: "Post")
+        postsQuery.whereKey("recipientID", equalTo: user["PWDid"]!)
+        postsQuery.limit = TableViewConstants.numberOfCellsPerLoad
+        postsQuery.orderByDescending("updatedAt")
+        postsQuery.includeKey("user")
+        postsQuery.includeKey("comments")
+        postsQuery.whereKey("updatedAt", lessThan: posts[posts.endIndex-1].updatedAt!)
+        
+        self.loadingLabel.text = "Loading more posts ..."
+        
+        postsQuery.findObjectsInBackgroundWithBlock({(objects:[AnyObject]?, error:NSError?) -> Void in
             
-                        //self.tableView.beginUpdates()
-                        //self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.None)
-                        //self.tableView.endUpdates()
+            if (objects != nil && objects?.count != 0) {
+                
+                for object in objects as! Array<PFObject> {
+                    if !contains(self.posts, object){
+                        self.posts.append(object)
                     }
-                    else {
-                        self.loadingLabel.text = "No more posts to be loaded"
-                    }
-                })
+                }
+                //var offset = self.tableView.contentOffset
+                self.tableView.reloadData()
+                self.tableView.layoutSubviews()
+                //self.tableView.layoutIfNeeded()
+                //self.tableView.reloadData()
+                //self.tableView.setContentOffset(offset, animated: false)
+                /*var indexPaths: Array<NSIndexPath> = [NSIndexPath(forRow: 2, inSection: 0)]
+                
+                for i in 1...(objects!.count-1){
+                    indexPaths.append(NSIndexPath(forRow: self.posts.count - objects!.count + i, inSection: 1))
+                }*/
+
+                /*self.tableView.beginUpdates()
+                self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 2, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Bottom)
+                self.tableView.endUpdates()*/
             }
-        }
-        else if (indexPath.row == posts.count-1){
-            loadInProgress = false
-        }*/
+            else {
+                self.loadingLabel.text = "No more posts to be loaded"
+            }
+        })
     }
+    
+
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "goToImage")
@@ -236,7 +248,6 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             imageVC.image = sender as? UIImage
         }
     }
-    
     
 
 }

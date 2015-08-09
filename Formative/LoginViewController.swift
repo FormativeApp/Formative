@@ -24,7 +24,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if let user = PFUser.currentUser()
         {
             println("ding!")
-            user.fetch()
             if (user["completedSetup"] as! Bool) {
                 self.performSegueWithIdentifier("goToTabBar", sender: nil)
             }

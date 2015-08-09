@@ -1159,6 +1159,11 @@ For information about how to contact Google, please visit our contact page.</str
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="681" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ydS-72-1nP">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="T0Y-0K-hgA">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="0.0" colorSpace="calibratedRGB"/>
+                                </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="K73-Ex-cwK">
                                     <rect key="frame" x="0.0" y="693" width="600" height="150"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1177,27 +1182,6 @@ For information about how to contact Google, please visit our contact page.</str
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="whiteSpaceCell" rowHeight="100" id="lK4-BF-WLT">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lK4-BF-WLT" id="7Aw-L3-Qsq">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SOb-gS-qQt">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
-                                                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="100" id="kzh-8O-PKf"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="SOb-gS-qQt" firstAttribute="top" secondItem="7Aw-L3-Qsq" secondAttribute="top" id="BFG-mZ-fvO"/>
-                                                <constraint firstItem="SOb-gS-qQt" firstAttribute="leading" secondItem="7Aw-L3-Qsq" secondAttribute="leading" id="BWD-oh-yhU"/>
-                                                <constraint firstAttribute="bottom" secondItem="SOb-gS-qQt" secondAttribute="bottom" id="IUD-Xd-WTU"/>
-                                                <constraint firstAttribute="trailing" secondItem="SOb-gS-qQt" secondAttribute="trailing" id="a2u-VU-k2h"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="postCell" rowHeight="421" id="opL-qT-CSc" customClass="PostTVC" customModule="Formative" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="opL-qT-CSc" id="wKa-hz-Eq5">
