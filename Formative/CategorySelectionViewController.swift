@@ -28,7 +28,6 @@ class CategorySelectionViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
         cell.textLabel!.text = categories[indexPath.row]
-        
         return cell
     }
     
@@ -37,8 +36,14 @@ class CategorySelectionViewController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var dvc = segue.destinationViewController as! AddPostViewController
-        dvc.categoryButton.setTitle(sender as? String, forState: UIControlState.Normal)
+        if segue.destinationViewController .isKindOfClass(AddPostViewController) {
+            var dvc = segue.destinationViewController as! AddPostViewController
+            dvc.categoryButton.setTitle(sender as? String, forState: UIControlState.Normal)
+        } else if segue.destinationViewController .isKindOfClass(AdminViewViewController) {
+            // [Jihoon]: allowing the selection to show up in adminview as well
+            var dvc = segue.destinationViewController as! AdminViewViewController
+            dvc.adminPostCategory.setTitle(sender as? String, forState: UIControlState.Normal)
+        }
     }
 
 }

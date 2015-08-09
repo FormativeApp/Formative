@@ -109,7 +109,6 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
     // MARK: - Parse
     
     @IBAction func post(sender: UIButton) {
-        
         if (messageTextView.text == "Add a message")
         {
             alertErrorWithTitle("Please add a message body", message: nil, inViewController: self)
@@ -152,6 +151,7 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
     
     // MARK: - Storyboard Navigation
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
+        println("is this called?")
         // Placeholder for unwind segue from category vc.
     }
     
@@ -159,4 +159,5 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
     @IBAction func cancel(sender: AnyObject) {
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
+    
 }
