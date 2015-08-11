@@ -93,7 +93,6 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
         
         if let file = post["photo"] as? PFFile {
             
-            postImage.image = nil
             postImage.backgroundColor = UIColor.clearColor()
             postImage.file = file
             
@@ -331,8 +330,8 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
         // Configure the cell...
         cell.commentLabel.text = (post["comments"] as! Array<PFObject>)[indexPath.row]["text"] as? String
         var commentPoster = (post["comments"] as! Array<PFObject>)[indexPath.row]["user"] as! PFUser
-        //cell.profileImage.file = commentPoster["profileImage"] as? PFFile
-        //cell.profileImage.loadInBackground()
+        cell.profileImage.file = commentPoster["profileImage"] as? PFFile
+        cell.profileImage.loadInBackground()
         
         //superTableView?.beginUpdates()
         

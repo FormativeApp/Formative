@@ -10,16 +10,18 @@ import UIKit
 
 class TextFieldCell: UITableViewCell, UITextFieldDelegate {
 
+    @IBOutlet weak var label: UILabel!
+    
     @IBOutlet weak var textField: UITextField! {
         didSet{
             textField.delegate = self
         }
     }
     
+    var key: String!
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-    
-    var key: String?
 }

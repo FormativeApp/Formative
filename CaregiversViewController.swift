@@ -13,6 +13,7 @@ import MessageUI
 class CaregiversViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var invitationTextView: UITextView!
     
     var users: Array<PFUser> = []
     
@@ -22,6 +23,7 @@ class CaregiversViewController: UIViewController, MFMailComposeViewControllerDel
         // Do any additional setup after loading the view.
         var user = PFUser.currentUser()!
         
+        invitationTextView.text = "Invitation Code: " + (user["PWDid"] as! String)
         var query = PFUser.query()
         query?.whereKey("PWDid", equalTo: user["PWDid"] as! String)
         query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in

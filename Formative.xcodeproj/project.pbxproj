@@ -68,6 +68,7 @@
 		A1C84EC91B66936C005BE8CC /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C84EC31B66936C005BE8CC /* ParseUI.framework */; };
 		A1D1E0691B6AB4CD007611AB /* CategorySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D1E0681B6AB4CD007611AB /* CategorySelectionViewController.swift */; };
 		A1D42DBC1B5DD9410035A5C7 /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D42DBB1B5DD9410035A5C7 /* CircularImageView.swift */; };
+		A1D4A3131B7A679F00633AEF /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D4A3121B7A679F00633AEF /* SettingsTableViewController.swift */; };
 		A1FBAFAF1B5D6ED400980086 /* PostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FBAFAE1B5D6ED400980086 /* PostView.xib */; };
 		A1FBAFB11B5D748300980086 /* PostProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FBAFB01B5D748300980086 /* PostProfileView.swift */; };
 		A1FBAFB31B5D749200980086 /* PostProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FBAFB21B5D749200980086 /* PostProfileView.xib */; };
@@ -155,6 +156,7 @@
 		A1C84EC31B66936C005BE8CC /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		A1D1E0681B6AB4CD007611AB /* CategorySelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySelectionViewController.swift; sourceTree = "<group>"; };
 		A1D42DBB1B5DD9410035A5C7 /* CircularImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
+		A1D4A3121B7A679F00633AEF /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		A1FBAFAE1B5D6ED400980086 /* PostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostView.xib; sourceTree = "<group>"; };
 		A1FBAFB01B5D748300980086 /* PostProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostProfileView.swift; sourceTree = "<group>"; };
 		A1FBAFB21B5D749200980086 /* PostProfileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostProfileView.xib; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				A116B10C1B61943200B10061 /* PostTVC.swift */,
 				A199AD241B6163B6004FE514 /* FeedViewController.swift */,
 				A116B1121B61DD1A00B10061 /* ImageViewController.swift */,
+				A1D4A3121B7A679F00633AEF /* SettingsTableViewController.swift */,
 				A1398AB01B6823B7007867B1 /* AddPostViewController.swift */,
 				A1D1E0681B6AB4CD007611AB /* CategorySelectionViewController.swift */,
 			);
@@ -527,6 +530,7 @@
 				A1A2C2111B66FA53000AC5C8 /* ProfileSetupTVC.swift in Sources */,
 				A16C358C1B672186009BABD2 /* AlertManager.swift in Sources */,
 				A135CC881B67EBA200445C21 /* StrategiesTVC.swift in Sources */,
+				A1D4A3131B7A679F00633AEF /* SettingsTableViewController.swift in Sources */,
 				A19F32271B715FD500E428D3 /* ChangePasswordVC.swift in Sources */,
 				A19F322D1B71980100E428D3 /* InstructionsPageViewController.swift in Sources */,
 				A16984491B5EC61000FD90C9 /* TableViewController.swift in Sources */,

@@ -21,12 +21,9 @@ class MultipleChoiceCell: UITableViewCell, UITableViewDataSource, UITableViewDel
     
     var title: String!
     
-    var key: String?
+    var key: String!
     
     var selection = -1
-    
-    var index: Int!
-    var selections: Array<Int>!
     
     override func awakeFromNib() {
         
@@ -74,8 +71,6 @@ class MultipleChoiceCell: UITableViewCell, UITableViewDataSource, UITableViewDel
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selection = indexPath.row
-        selections[index] = indexPath.row
-        println(selection)
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
         for i in 0..<array.count {

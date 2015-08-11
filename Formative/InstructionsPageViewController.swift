@@ -69,18 +69,4 @@ class InstructionsPageViewController: UIViewController, UIPageViewControllerData
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
         return 0
     }
-    
-    @IBAction func donePressed(sender: AnyObject) {
-        var user = PFUser.currentUser()!
-        user.fetch()
-        println(user["invited"])
-        if (user["invited"] as! Bool == true)
-        {
-            performSegueWithIdentifier("goToInvitationSetup", sender: nil)
-        }
-        else
-        {
-            performSegueWithIdentifier("goToFullSetup", sender: nil)
-        }
-    }
 }

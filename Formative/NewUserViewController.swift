@@ -10,7 +10,7 @@ import UIKit
 import Bolts
 import Parse
 
-class NewUserViewController: UIViewController {
+class NewUserViewController: UIViewController, UIDocumentInteractionControllerDelegate {
 
     @IBOutlet weak var newUserLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
@@ -19,7 +19,22 @@ class NewUserViewController: UIViewController {
     @IBOutlet weak var invitationTextField: UITextField!
     @IBOutlet weak var passwordFieldYConstraint: NSLayoutConstraint!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    var documentInteractionController: UIDocumentInteractionController?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        var url = NSBundle.mainBundle().URLForResource("TermsOfUse", withExtension: "pdf")
+        
+        documentInteractionController = UIDocumentInteractionController(URL: url!)
+        
+        documentInteractionController!.delegate = self
+    }
+    
+    func documentInteractionControllerViewControllerForPreview(controller: UIDocumentInteractionController) -> UIViewController {
+        return self
+    }
+
     // Called whenever a user taps on a text field
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         if (passwordFieldYConstraint.constant == 40) {
@@ -116,6 +131,9 @@ class NewUserViewController: UIViewController {
         }
     }
     
+    @IBAction func viewDocument(sender: AnyObject) {
+        documentInteractionController?.presentPreviewAnimated(true)
+    }
 
     /*
     // MARK: - Navigation

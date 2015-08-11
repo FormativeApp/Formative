@@ -10,11 +10,15 @@ import UIKit
 import Parse
 import MobileCoreServices
 
-class InviteSetupVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate{
+class InviteSetupVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate{
 
     @IBOutlet weak var profileImage: CircularImageView!
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var relationPicker: UIPickerView!
     
+    override func viewDidLoad() {
+        relationPicker.selectRow(3, inComponent: 0, animated: true)
+    }
     
     @IBAction func imageTapped(sender: UITapGestureRecognizer) {
         
@@ -84,6 +88,20 @@ class InviteSetupVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    // MARK: - UIPickerDataSource
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 7
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return ["Spouse", "Parent", "Grandparent", "Friend", "Neighbor", "Client", "Other"][row]
+    }
+    
     @IBAction func done(sender: AnyObject) {
         var user = PFUser.currentUser()!
         var nameSplit = split(nameTextField.text) {$0 == " "}
@@ -97,13 +115,30 @@ class InviteSetupVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         user["name"] = nameSplit[0]
         user["fullName"] = nameTextField.text
         user["completedSetup"] = true
-        
-        user.saveInBackgroundWithBlock { (success, error) -> Void in
-            if (success){
-                self.performSegueWithIdentifier("goToInvite", sender: nil)
-            }else {
-                alertErrorWithTitle("Submission failed.", message: error!.userInfo?["error"] as? String, inViewController: self)
+        user["PWDrelation"] = ["Spouse", "Parent", "Grandparent", "Friend", "Neighbor", "Client", "Other"][relationPicker.selectedRowInComponent(0)]
+        if (user["invited"] as? Bool == false)
+        {
+            var patient = PFObject(className: "Patient")
+            patient.saveInBackgroundWithBlock({ (success, error) -> Void in
+                user["PWDid"] = patient.objectId
+                user.saveInBackgroundWithBlock { (success, error) -> Void in
+                    if (success){
+                        self.performSegueWithIdentifier("goToInstructions", sender: nil)
+                    }else {
+                        alertErrorWithTitle("Submission failed.", message: error!.userInfo?["error"] as? String, inViewController: self)
+                    }
+                }
+            })
+        }
+        else {
+            user.saveInBackgroundWithBlock { (success, error) -> Void in
+                if (success){
+                    self.performSegueWithIdentifier("goToInstructions", sender: nil)
+                }else {
+                    alertErrorWithTitle("Submission failed.", message: error!.userInfo?["error"] as? String, inViewController: self)
+                }
             }
         }
+
     }
 }
