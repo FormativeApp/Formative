@@ -17,7 +17,13 @@ class ChangePasswordVC: UIViewController, UITextFieldDelegate {
 
     @IBAction func donePressed(sender: AnyObject) {
         
-        if (newPassword.text != confirmNewPassword.text || newPassword.text == ""){
+        if (newPassword.text == "")
+        {
+            navigationController?.popViewControllerAnimated(true)
+            return
+        }
+        
+        if (newPassword.text != confirmNewPassword.text){
             alertErrorWithTitle("Passwords do not match", message: nil, inViewController: self)
             return
         }

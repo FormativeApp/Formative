@@ -193,7 +193,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vkd-GR-Ucf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4594" y="172"/>
+            <point key="canvasLocation" x="7842" y="172"/>
         </scene>
         <!--Browse-->
         <scene sceneID="xtI-xW-mtO">
@@ -265,72 +265,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zhv-Re-dxG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4270" y="999"/>
-        </scene>
-        <!--Activities of Daily Living-->
-        <scene sceneID="dkW-hL-BzS">
-            <objects>
-                <tableViewController id="PDD-af-D7X" customClass="ADLTableTableViewController" customModule="Formative" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9tB-2h-3y0">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="449"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="ZZB-nk-tPh">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZZB-nk-tPh" id="BSB-bK-XC3">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="PDD-af-D7X" id="0YU-mQ-J1d"/>
-                            <outlet property="delegate" destination="PDD-af-D7X" id="D1i-va-9nK"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Activities of Daily Living" id="Fs7-aw-lmm"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="87X-nY-EUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5830" y="1607.5"/>
-        </scene>
-        <!--Admin View View Controller-->
-        <scene sceneID="LSu-lz-4v0">
-            <objects>
-                <viewController id="O6t-vE-aAf" customClass="AdminViewViewController" customModule="Formative" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="aVc-HV-4EV"/>
-                        <viewControllerLayoutGuide type="bottom" id="W7y-DG-QbV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DEn-Jr-4PP">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="449"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="This is the editable text-field that describes the Admins' communication to the selected group of (or all) users" translatesAutoresizingMaskIntoConstraints="NO" id="FDQ-fk-vUN">
-                                <rect key="frame" x="16" y="205" width="536" height="139"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Communication" translatesAutoresizingMaskIntoConstraints="NO" id="NPm-Sf-KXN">
-                                <rect key="frame" x="110" y="80" width="100" height="100"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="FDQ-fk-vUN" firstAttribute="trailing" secondItem="DEn-Jr-4PP" secondAttribute="trailingMargin" id="ghT-hu-N9Q"/>
-                            <constraint firstItem="FDQ-fk-vUN" firstAttribute="leading" secondItem="DEn-Jr-4PP" secondAttribute="leadingMargin" id="zpz-f4-H8N"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="ImageToPost" destination="NPm-Sf-KXN" id="jW9-dF-I9b"/>
-                        <outlet property="TextToPost" destination="FDQ-fk-vUN" id="XmA-xI-2K0"/>
-                        <outlet property="postUpdates" destination="DEn-Jr-4PP" id="KSH-DT-6t2"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rXN-HJ-lED" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5862" y="2119.5"/>
+            <point key="canvasLocation" x="5894" y="999"/>
         </scene>
         <!--KeywordsTVC-->
         <scene sceneID="Bsi-uQ-hys">
@@ -384,7 +319,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ov-Cb-1Qc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5023" y="987"/>
+            <point key="canvasLocation" x="6647" y="987"/>
         </scene>
         <!--StrategiesTVC-->
         <scene sceneID="ixF-oo-T8V">
@@ -428,7 +363,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IUX-zZ-2n8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5700" y="987"/>
+            <point key="canvasLocation" x="7324" y="987"/>
         </scene>
         <!--Login-->
         <scene sceneID="PzG-B2-SNh">
@@ -530,13 +465,13 @@
                         <outlet property="passwordFieldYConstraint" destination="rUV-B2-AI4" id="RFv-4Z-hQe"/>
                         <outlet property="passwordTextField" destination="U8h-7M-g3X" id="Ghg-9s-lYH"/>
                         <outlet property="spinner" destination="j9p-7c-cA1" id="bnz-to-hO4"/>
-                        <segue destination="mcD-fX-bvj" kind="show" identifier="goToTabBar" id="eQi-dj-j3m"/>
+                        <segue destination="mcD-fX-bvj" kind="presentation" identifier="goToTabBar" id="eQi-dj-j3m"/>
                         <segue destination="nxV-c9-B2j" kind="show" identifier="resumeSetup" id="JOu-9E-LMZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QmB-fy-Vr0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="168" y="402"/>
+            <point key="canvasLocation" x="2604" y="402"/>
         </scene>
         <!--Forgot PasswordVC-->
         <scene sceneID="lLa-ik-S9p">
@@ -612,7 +547,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vIE-AN-RXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="856" y="416"/>
+            <point key="canvasLocation" x="3292" y="416"/>
         </scene>
         <!--New User View Controller-->
         <scene sceneID="Ess-iJ-EKO">
@@ -693,7 +628,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Usu-aV-d5z" kind="presentation" id="pBh-yL-LHe"/>
+                                    <segue destination="bQ5-as-WWU" kind="show" id="cLx-49-17b"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -738,7 +673,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4rm-D7-UKI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="1165"/>
+            <point key="canvasLocation" x="973" y="1146"/>
         </scene>
         <!--Instructions ContentVC-->
         <scene sceneID="B7b-l7-C35">
@@ -827,161 +762,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17E-fx-lIK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="898" y="1917"/>
-        </scene>
-        <!--Terms of Service-->
-        <scene sceneID="NTp-HB-PQ9">
-            <objects>
-                <viewController id="TJq-kP-Ebu" customClass="TermsOfServiceVC" customModule="Formative" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8qx-pL-D8a"/>
-                        <viewControllerLayoutGuide type="bottom" id="4Vb-ls-iz5"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cNk-DF-qXH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="5Hs-Pb-Jdh">
-                                <rect key="frame" x="225" y="552" width="151" height="29"/>
-                                <segments>
-                                    <segment title="I Agree"/>
-                                    <segment title="I Disagree"/>
-                                </segments>
-                            </segmentedControl>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mka-NC-ir6">
-                                <rect key="frame" x="16" y="72" width="568" height="464"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <string key="text">Google Terms of Service
-
-Last modified: April 14, 2014 (view archived versions)
-
-Welcome to Google!
-
-Thanks for using our products and services (“Services”). The Services are provided by Google Inc. (“Google”), located at 1600 Amphitheatre Parkway, Mountain View, CA 94043, United States.
-
-By using our Services, you are agreeing to these terms. Please read them carefully.
-
-Our Services are very diverse, so sometimes additional terms or product requirements (including age requirements) may apply. Additional terms will be available with the relevant Services, and those additional terms become part of your agreement with us if you use those Services.
-
-Using our Services
-
-You must follow any policies made available to you within the Services.
-
-Don’t misuse our Services. For example, don’t interfere with our Services or try to access them using a method other than the interface and the instructions that we provide. You may use our Services only as permitted by law, including applicable export and re-export control laws and regulations. We may suspend or stop providing our Services to you if you do not comply with our terms or policies or if we are investigating suspected misconduct.
-
-Using our Services does not give you ownership of any intellectual property rights in our Services or the content you access. You may not use content from our Services unless you obtain permission from its owner or are otherwise permitted by law. These terms do not grant you the right to use any branding or logos used in our Services. Don’t remove, obscure, or alter any legal notices displayed in or along with our Services.
-
-Our Services display some content that is not Google’s. This content is the sole responsibility of the entity that makes it available. We may review content to determine whether it is illegal or violates our policies, and we may remove or refuse to display content that we reasonably believe violates our policies or the law. But that does not necessarily mean that we review content, so please don’t assume that we do.
-
-In connection with your use of the Services, we may send you service announcements, administrative messages, and other information. You may opt out of some of those communications.
-
-Some of our Services are available on mobile devices. Do not use such Services in a way that distracts you and prevents you from obeying traffic or safety laws.
-
-Your Google Account
-
-You may need a Google Account in order to use some of our Services. You may create your own Google Account, or your Google Account may be assigned to you by an administrator, such as your employer or educational institution. If you are using a Google Account assigned to you by an administrator, different or additional terms may apply and your administrator may be able to access or disable your account.
-
-To protect your Google Account, keep your password confidential. You are responsible for the activity that happens on or through your Google Account. Try not to reuse your Google Account password on third-party applications. If you learn of any unauthorized use of your password or Google Account, follow these instructions.
-
-Privacy and Copyright Protection
-
-Google’s privacy policies explain how we treat your personal data and protect your privacy when you use our Services. By using our Services, you agree that Google can use such data in accordance with our privacy policies.
-
-We respond to notices of alleged copyright infringement and terminate accounts of repeat infringers according to the process set out in the U.S. Digital Millennium Copyright Act.
-
-We provide information to help copyright holders manage their intellectual property online. If you think somebody is violating your copyrights and want to notify us, you can find information about submitting notices and Google’s policy about responding to notices in our Help Center.
-
-Your Content in our Services
-
-Some of our Services allow you to upload, submit, store, send or receive content. You retain ownership of any intellectual property rights that you hold in that content. In short, what belongs to you stays yours.
-
-When you upload, submit, store, send or receive content to or through our Services, you give Google (and those we work with) a worldwide license to use, host, store, reproduce, modify, create derivative works (such as those resulting from translations, adaptations or other changes we make so that your content works better with our Services), communicate, publish, publicly perform, publicly display and distribute such content. The rights you grant in this license are for the limited purpose of operating, promoting, and improving our Services, and to develop new ones. This license continues even if you stop using our Services (for example, for a business listing you have added to Google Maps). Some Services may offer you ways to access and remove content that has been provided to that Service. Also, in some of our Services, there are terms or settings that narrow the scope of our use of the content submitted in those Services. Make sure you have the necessary rights to grant us this license for any content that you submit to our Services.
-
-Our automated systems analyze your content (including emails) to provide you personally relevant product features, such as customized search results, tailored advertising, and spam and malware detection. This analysis occurs as the content is sent, received, and when it is stored.
-
-If you have a Google Account, we may display your Profile name, Profile photo, and actions you take on Google or on third-party applications connected to your Google Account (such as +1’s, reviews you write and comments you post) in our Services, including displaying in ads and other commercial contexts. We will respect the choices you make to limit sharing or visibility settings in your Google Account. For example, you can choose your settings so your name and photo do not appear in an ad.
-
-You can find more information about how Google uses and stores content in the privacy policy or additional terms for particular Services. If you submit feedback or suggestions about our Services, we may use your feedback or suggestions without obligation to you.
-
-About Software in our Services
-
-When a Service requires or includes downloadable software, this software may update automatically on your device once a new version or feature is available. Some Services may let you adjust your automatic update settings.
-
-Google gives you a personal, worldwide, royalty-free, non-assignable and non-exclusive license to use the software provided to you by Google as part of the Services. This license is for the sole purpose of enabling you to use and enjoy the benefit of the Services as provided by Google, in the manner permitted by these terms. You may not copy, modify, distribute, sell, or lease any part of our Services or included software, nor may you reverse engineer or attempt to extract the source code of that software, unless laws prohibit those restrictions or you have our written permission.
-
-Open source software is important to us. Some software used in our Services may be offered under an open source license that we will make available to you. There may be provisions in the open source license that expressly override some of these terms.
-
-Modifying and Terminating our Services
-
-We are constantly changing and improving our Services. We may add or remove functionalities or features, and we may suspend or stop a Service altogether.
-
-You can stop using our Services at any time, although we’ll be sorry to see you go. Google may also stop providing Services to you, or add or create new limits to our Services at any time.
-
-We believe that you own your data and preserving your access to such data is important. If we discontinue a Service, where reasonably possible, we will give you reasonable advance notice and a chance to get information out of that Service.
-
-Our Warranties and Disclaimers
-
-We provide our Services using a commercially reasonable level of skill and care and we hope that you will enjoy using them. But there are certain things that we don’t promise about our Services.
-
-OTHER THAN AS EXPRESSLY SET OUT IN THESE TERMS OR ADDITIONAL TERMS, NEITHER GOOGLE NOR ITS SUPPLIERS OR DISTRIBUTORS MAKE ANY SPECIFIC PROMISES ABOUT THE SERVICES. FOR EXAMPLE, WE DON’T MAKE ANY COMMITMENTS ABOUT THE CONTENT WITHIN THE SERVICES, THE SPECIFIC FUNCTIONS OF THE SERVICES, OR THEIR RELIABILITY, AVAILABILITY, OR ABILITY TO MEET YOUR NEEDS. WE PROVIDE THE SERVICES “AS IS”.
-
-SOME JURISDICTIONS PROVIDE FOR CERTAIN WARRANTIES, LIKE THE IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. TO THE EXTENT PERMITTED BY LAW, WE EXCLUDE ALL WARRANTIES.
-
-Liability for our Services
-
-WHEN PERMITTED BY LAW, GOOGLE, AND GOOGLE’S SUPPLIERS AND DISTRIBUTORS, WILL NOT BE RESPONSIBLE FOR LOST PROFITS, REVENUES, OR DATA, FINANCIAL LOSSES OR INDIRECT, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES.
-
-TO THE EXTENT PERMITTED BY LAW, THE TOTAL LIABILITY OF GOOGLE, AND ITS SUPPLIERS AND DISTRIBUTORS, FOR ANY CLAIMS UNDER THESE TERMS, INCLUDING FOR ANY IMPLIED WARRANTIES, IS LIMITED TO THE AMOUNT YOU PAID US TO USE THE SERVICES (OR, IF WE CHOOSE, TO SUPPLYING YOU THE SERVICES AGAIN).
-
-IN ALL CASES, GOOGLE, AND ITS SUPPLIERS AND DISTRIBUTORS, WILL NOT BE LIABLE FOR ANY LOSS OR DAMAGE THAT IS NOT REASONABLY FORESEEABLE.
-
-Business uses of our Services
-
-If you are using our Services on behalf of a business, that business accepts these terms. It will hold harmless and indemnify Google and its affiliates, officers, agents, and employees from any claim, suit or action arising from or related to the use of the Services or violation of these terms, including any liability or expense arising from claims, losses, damages, suits, judgments, litigation costs and attorneys’ fees.
-
-About these Terms
-
-We may modify these terms or any additional terms that apply to a Service to, for example, reflect changes to the law or changes to our Services. You should look at the terms regularly. We’ll post notice of modifications to these terms on this page. We’ll post notice of modified additional terms in the applicable Service. Changes will not apply retroactively and will become effective no sooner than fourteen days after they are posted. However, changes addressing new functions for a Service or changes made for legal reasons will be effective immediately. If you do not agree to the modified terms for a Service, you should discontinue your use of that Service.
-
-If there is a conflict between these terms and the additional terms, the additional terms will control for that conflict.
-
-These terms control the relationship between Google and you. They do not create any third party beneficiary rights.
-
-If you do not comply with these terms, and we don’t take action right away, this doesn’t mean that we are giving up any rights that we may have (such as taking action in the future).
-
-If it turns out that a particular term is not enforceable, this will not affect any other terms.
-
-The laws of California, U.S.A., excluding California’s conflict of laws rules, will apply to any disputes arising out of or relating to these terms or the Services. All claims arising out of or relating to these terms or the Services will be litigated exclusively in the federal or state courts of Santa Clara County, California, USA, and you and Google consent to personal jurisdiction in those courts.
-
-For information about how to contact Google, please visit our contact page.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="5Hs-Pb-Jdh" secondAttribute="centerX" constant="-0.5" id="546-DD-Cy2"/>
-                            <constraint firstItem="Mka-NC-ir6" firstAttribute="leading" secondItem="cNk-DF-qXH" secondAttribute="leadingMargin" id="LUj-UH-9Uf"/>
-                            <constraint firstItem="4Vb-ls-iz5" firstAttribute="top" secondItem="5Hs-Pb-Jdh" secondAttribute="bottom" constant="20" id="UWm-AZ-QTa"/>
-                            <constraint firstItem="Mka-NC-ir6" firstAttribute="trailing" secondItem="cNk-DF-qXH" secondAttribute="trailingMargin" id="axc-3H-NoY"/>
-                            <constraint firstItem="5Hs-Pb-Jdh" firstAttribute="top" secondItem="Mka-NC-ir6" secondAttribute="bottom" constant="16" id="kT2-kt-4wj"/>
-                            <constraint firstItem="Mka-NC-ir6" firstAttribute="top" secondItem="8qx-pL-D8a" secondAttribute="bottom" constant="8" id="t4v-yt-2sA"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Terms of Service" id="fPL-Ee-hY8">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="GFg-Je-yd0">
-                            <connections>
-                                <action selector="nextPressed:" destination="TJq-kP-Ebu" id="ShZ-yE-Epy"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="agreementSegmentedControl" destination="5Hs-Pb-Jdh" id="6kd-9Z-x9g"/>
-                        <segue destination="U5k-G7-CF1" kind="show" identifier="goToInstructions" id="zWl-Es-BCj"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dPq-IN-ZH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="144" y="1917"/>
         </scene>
         <!--Your Profile-->
         <scene sceneID="JvN-xo-yKt">
@@ -1072,77 +852,7 @@ For information about how to contact Google, please visit our contact page.</str
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uta-XK-Psf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3601" y="999"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="RVJ-Ch-W7N">
-            <objects>
-                <viewController id="IdV-IA-Mbw" customClass="AdminViewViewController" customModule="Formative" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yjg-xl-0yp"/>
-                        <viewControllerLayoutGuide type="bottom" id="KxH-eo-crp"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="VH3-eQ-0Hi">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mui-9G-fbb">
-                                <rect key="frame" x="16" y="513" width="175" height="30"/>
-                                <state key="normal" title="Send to Selected Groups">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hys-Ya-564">
-                                <rect key="frame" x="200" y="513" width="175" height="30"/>
-                                <state key="normal" title="Send to All">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="go2-03-Xah">
-                                <rect key="frame" x="89" y="20" width="201" height="29"/>
-                                <segments>
-                                    <segment title="Post Question" width="100"/>
-                                    <segment title="Post Update" width="100"/>
-                                </segments>
-                                <connections>
-                                    <action selector="ChangeLbl:" destination="IdV-IA-Mbw" eventType="valueChanged" id="XFc-m9-ToH"/>
-                                </connections>
-                            </segmentedControl>
-                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8aj-Xl-ZWa">
-                                <rect key="frame" x="16" y="56" width="568" height="449"/>
-                                <connections>
-                                    <segue destination="O6t-vE-aAf" kind="embed" id="GQh-QM-QQc"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nq8-HS-Uw9">
-                                <rect key="frame" x="16" y="56" width="568" height="449"/>
-                                <connections>
-                                    <segue destination="WQh-5l-pEv" kind="embed" id="npU-Fi-IQ8"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="8aj-Xl-ZWa" firstAttribute="leading" secondItem="VH3-eQ-0Hi" secondAttribute="leadingMargin" id="0wg-4B-GCk"/>
-                            <constraint firstItem="mui-9G-fbb" firstAttribute="leading" secondItem="VH3-eQ-0Hi" secondAttribute="leadingMargin" id="KJl-Zb-QER"/>
-                            <constraint firstItem="go2-03-Xah" firstAttribute="leading" secondItem="VH3-eQ-0Hi" secondAttribute="leadingMargin" constant="73" id="MRL-Fh-QPY"/>
-                            <constraint firstItem="8aj-Xl-ZWa" firstAttribute="trailing" secondItem="VH3-eQ-0Hi" secondAttribute="trailingMargin" id="eHU-wf-5UL"/>
-                            <constraint firstItem="nq8-HS-Uw9" firstAttribute="leading" secondItem="VH3-eQ-0Hi" secondAttribute="leadingMargin" id="qIq-QX-6fE"/>
-                            <constraint firstItem="nq8-HS-Uw9" firstAttribute="trailing" secondItem="VH3-eQ-0Hi" secondAttribute="trailingMargin" id="uvD-s3-Cb3"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="7Oh-rw-O59"/>
-                    <connections>
-                        <outlet property="controller" destination="go2-03-Xah" id="KNw-LU-9db"/>
-                        <outlet property="postQuestions" destination="nq8-HS-Uw9" id="I1i-aJ-ra0"/>
-                        <outlet property="postUpdates" destination="8aj-Xl-ZWa" id="WJq-qx-GfO"/>
-                        <outlet property="sendToAll" destination="Hys-Ya-564" id="3VD-WD-1Cc"/>
-                        <outlet property="sendToSelected" destination="mui-9G-fbb" id="OLp-Sh-4A0"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TJ3-UW-XYJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4351" y="1852"/>
+            <point key="canvasLocation" x="5225" y="999"/>
         </scene>
         <!--Feed-->
         <scene sceneID="qpk-FQ-e7G">
@@ -1278,7 +988,7 @@ For information about how to contact Google, please visit our contact page.</str
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DHZ-w9-P7b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1866" y="999"/>
+            <point key="canvasLocation" x="3490" y="999"/>
         </scene>
         <!--Add a Post-->
         <scene sceneID="msu-Tt-e9H">
@@ -1422,7 +1132,7 @@ For information about how to contact Google, please visit our contact page.</str
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NhX-4G-qQO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="EY3-Xc-3oe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3905" y="178"/>
+            <point key="canvasLocation" x="7153" y="178"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Asx-Q8-lyJ">
@@ -1440,7 +1150,7 @@ For information about how to contact Google, please visit our contact page.</str
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eQf-OG-DUn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2679" y="1035"/>
+            <point key="canvasLocation" x="3491" y="1035"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Fel-Nq-dAA">
@@ -1455,14 +1165,14 @@ For information about how to contact Google, please visit our contact page.</str
                     <connections>
                         <segue destination="Q10-M1-Xr9" kind="relationship" relationship="viewControllers" id="Gmw-sx-CpI"/>
                         <segue destination="xpD-Dh-z5T" kind="relationship" relationship="viewControllers" id="RT0-oE-qcr"/>
-                        <segue destination="IdV-IA-Mbw" kind="relationship" relationship="viewControllers" id="jyu-0l-GOH"/>
                         <segue destination="vaf-Gq-Fs3" kind="relationship" relationship="viewControllers" id="hOb-cE-pM7"/>
-                        <segue destination="0AH-4f-bxj" kind="relationship" relationship="viewControllers" id="E7R-kJ-MdK"/>
+                        <segue destination="0AH-4f-bxj" kind="relationship" relationship="viewControllers" id="hsn-pl-aYj"/>
+                        <segue destination="XoJ-ZS-evA" kind="relationship" relationship="viewControllers" id="x0C-J7-am4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gc7-Lk-iAk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3231" y="1812"/>
+            <point key="canvasLocation" x="3278" y="1810"/>
         </scene>
         <!--Your Profile-->
         <scene sceneID="gdE-hq-SwC">
@@ -1517,47 +1227,6 @@ For information about how to contact Google, please visit our contact page.</str
                                             <outlet property="profileImage" destination="d5s-f2-8SH" id="P5t-iM-u48"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Xb9-02-bzj" rowHeight="60" style="IBUITableViewCellStyleDefault" id="59o-oD-Dep">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="59o-oD-Dep" id="Ixo-Or-Lb2">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Change Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xb9-02-bzj">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="s1v-N5-8sZ" kind="show" id="VFf-76-hvb"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="4OH-ZF-6he">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4OH-ZF-6he" id="2rA-qn-CfR">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d05-XH-d2R">
-                                                    <rect key="frame" x="543" y="14" width="51" height="31"/>
-                                                </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGr-zP-olZ">
-                                                    <rect key="frame" x="12" y="18" width="523" height="24"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="oGr-zP-olZ" firstAttribute="leading" secondItem="2rA-qn-CfR" secondAttribute="leadingMargin" constant="4" id="GT9-AN-IxM"/>
-                                                <constraint firstItem="d05-XH-d2R" firstAttribute="leading" secondItem="oGr-zP-olZ" secondAttribute="trailing" constant="8" id="OMd-1Y-V8F"/>
-                                                <constraint firstAttribute="centerY" secondItem="oGr-zP-olZ" secondAttribute="centerY" id="Wv4-Ec-ryc"/>
-                                                <constraint firstAttribute="centerY" secondItem="d05-XH-d2R" secondAttribute="centerY" id="t8z-A5-x71"/>
-                                                <constraint firstItem="d05-XH-d2R" firstAttribute="trailing" secondItem="2rA-qn-CfR" secondAttribute="trailingMargin" id="z7U-cC-1hp"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -1576,12 +1245,111 @@ For information about how to contact Google, please visit our contact page.</str
                     <connections>
                         <outlet property="profileImage" destination="d5s-f2-8SH" id="go4-Ya-1wf"/>
                         <outlet property="spinner" destination="Foj-KD-yuH" id="wRK-Li-4lh"/>
-                        <segue destination="ljV-ZM-zEc" kind="presentation" identifier="logOut" id="4K5-Lm-iET"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1G-tT-XmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="221" y="3361"/>
+            <point key="canvasLocation" x="3439" y="3656"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="Onb-6Y-Jut">
+            <objects>
+                <tableViewController id="GUc-ar-AX2" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0Dg-36-jGD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="RDv-lE-ID6">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="DGb-Jj-VCt">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DGb-Jj-VCt" id="Fde-8g-H27">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kYM-oV-xNp">
+                                                    <rect key="frame" x="543" y="14" width="51" height="31"/>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0G-Jf-fG8">
+                                                    <rect key="frame" x="12" y="18" width="523" height="24"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="b0G-Jf-fG8" firstAttribute="leading" secondItem="Fde-8g-H27" secondAttribute="leadingMargin" constant="4" id="PA6-u0-zYi"/>
+                                                <constraint firstItem="kYM-oV-xNp" firstAttribute="leading" secondItem="b0G-Jf-fG8" secondAttribute="trailing" constant="8" id="ZTN-sk-zj7"/>
+                                                <constraint firstAttribute="centerY" secondItem="b0G-Jf-fG8" secondAttribute="centerY" id="fvK-5X-bJN"/>
+                                                <constraint firstItem="kYM-oV-xNp" firstAttribute="trailing" secondItem="Fde-8g-H27" secondAttribute="trailingMargin" id="hG2-v5-RLU"/>
+                                                <constraint firstAttribute="centerY" secondItem="kYM-oV-xNp" secondAttribute="centerY" id="lA7-eG-11m"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="gSo-Tv-zvi" rowHeight="60" style="IBUITableViewCellStyleDefault" id="8wt-2b-zZi">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8wt-2b-zZi" id="ftJ-em-Pod">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Change Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gSo-Tv-zvi">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="s1v-N5-8sZ" kind="show" id="B3a-aM-GFK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="lJF-RA-ogf" rowHeight="60" style="IBUITableViewCellStyleDefault" id="dBn-If-ppf">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dBn-If-ppf" id="yUH-ez-CFy">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Join a Different Care Team" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lJF-RA-ogf">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="2wd-mJ-hSf" kind="show" id="YL8-Jf-Uhv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="L6O-w5-qsV" rowHeight="60" style="IBUITableViewCellStyleDefault" id="nVG-am-fuv">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nVG-am-fuv" id="2zI-ih-ACJ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Terms of Service" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="L6O-w5-qsV">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="bQ5-as-WWU" kind="presentation" id="7Sg-p5-nDB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="GUc-ar-AX2" id="sWF-RL-qg9"/>
+                            <outlet property="delegate" destination="GUc-ar-AX2" id="Lhj-hX-Eiq"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="UXT-Bg-uZP"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LiR-Hp-xCW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4083" y="2879"/>
         </scene>
         <!--Change Password-->
         <scene sceneID="Gbq-0L-mb3">
@@ -1595,19 +1363,19 @@ For information about how to contact Google, please visit our contact page.</str
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8z5-OU-rJX">
-                                <rect key="frame" x="16" y="132" width="568" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8z5-OU-rJX">
+                                <rect key="frame" x="16" y="88" width="568" height="30"/>
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="s1v-N5-8sZ" id="NC7-Pi-pwD"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm New Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w6r-VY-FPM">
-                                <rect key="frame" x="16" y="177" width="568" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm New Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w6r-VY-FPM">
+                                <rect key="frame" x="16" y="133" width="568" height="30"/>
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="s1v-N5-8sZ" id="KnW-Ba-Sqi"/>
@@ -1638,7 +1406,59 @@ For information about how to contact Google, please visit our contact page.</str
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uoZ-Sf-sfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-629" y="3353"/>
+            <point key="canvasLocation" x="4816" y="2866"/>
+        </scene>
+        <!--Change Care Team-->
+        <scene sceneID="cWv-Wk-4t5">
+            <objects>
+                <viewController title="Change Care Team" id="2wd-mJ-hSf" customClass="ChangeCareTeamVC" customModule="Formative" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZZy-0q-WWd"/>
+                        <viewControllerLayoutGuide type="bottom" id="GX1-1v-HvW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oeN-Gm-ETP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Invitation Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zua-gG-TcG">
+                                <rect key="frame" x="16" y="285" width="568" height="30"/>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2wd-mJ-hSf" id="CKQ-ug-wFP"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invitation Code" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMl-Yz-V0I">
+                                <rect key="frame" x="241" y="253" width="119" height="24"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zua-gG-TcG" firstAttribute="trailing" secondItem="oeN-Gm-ETP" secondAttribute="trailingMargin" id="2vx-7t-AoT"/>
+                            <constraint firstAttribute="centerY" secondItem="zua-gG-TcG" secondAttribute="centerY" id="P9O-kH-QC1"/>
+                            <constraint firstItem="zua-gG-TcG" firstAttribute="top" secondItem="jMl-Yz-V0I" secondAttribute="bottom" constant="8" id="XeE-lA-6Ck"/>
+                            <constraint firstAttribute="centerX" secondItem="jMl-Yz-V0I" secondAttribute="centerX" id="ZaL-7T-VFR"/>
+                            <constraint firstItem="zua-gG-TcG" firstAttribute="leading" secondItem="oeN-Gm-ETP" secondAttribute="leadingMargin" id="esj-e5-WXl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Change Care Team" id="LCy-gj-cul">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="co4-BE-1SE">
+                            <connections>
+                                <action selector="donePressed:" destination="2wd-mJ-hSf" id="pG6-Re-A28"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="invitationTextField" destination="zua-gG-TcG" id="t9t-En-fxG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UYb-Ce-GLY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4336" y="3614"/>
         </scene>
         <!--Send Invitations-->
         <scene sceneID="KIW-uM-zRo">
@@ -1713,8 +1533,8 @@ For information about how to contact Google, please visit our contact page.</str
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ja0-Sj-If6">
-                                <rect key="frame" x="234" y="562" width="132" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ja0-Sj-If6">
+                                <rect key="frame" x="234" y="513" width="132" height="30"/>
                                 <state key="normal" title="Add New Members">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1722,8 +1542,8 @@ For information about how to contact Google, please visit our contact page.</str
                                     <action selector="addNewMembers" destination="0AH-4f-bxj" eventType="touchUpInside" id="sCw-4f-u49"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cJU-4G-UhM">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="554"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cJU-4G-UhM">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="505"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xnG-dh-Rta">
                                     <size key="itemSize" width="134" height="160"/>
@@ -1786,14 +1606,15 @@ For information about how to contact Google, please visit our contact page.</str
                             <constraint firstAttribute="trailing" secondItem="cJU-4G-UhM" secondAttribute="trailing" id="wwa-Zp-nqA"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Care Team" id="2oS-mW-C9F"/>
+                    <tabBarItem key="tabBarItem" title="Care Team" image="people" id="JfT-x8-lf5"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="cJU-4G-UhM" id="vcf-Zo-VYD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zo6-47-S9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3147" y="3207"/>
+            <point key="canvasLocation" x="2437" y="1491"/>
         </scene>
         <!--Image Scroller-->
         <scene sceneID="YDu-80-ZfV">
@@ -1839,7 +1660,7 @@ For information about how to contact Google, please visit our contact page.</str
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zz8-mz-zqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3211" y="178"/>
+            <point key="canvasLocation" x="6459" y="178"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VUq-ou-AtN">
@@ -1857,25 +1678,25 @@ For information about how to contact Google, please visit our contact page.</str
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TjC-rr-TR9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2399" y="178"/>
+            <point key="canvasLocation" x="5647" y="178"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="x3L-vd-4oY">
+        <!--Document View Controller-->
+        <scene sceneID="etp-CS-Zy6">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WQh-5l-pEv" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fOQ-bk-IAf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="PDD-af-D7X" kind="relationship" relationship="rootViewController" id="bNL-PV-bKW"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jzz-KT-jvp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="bQ5-as-WWU" customClass="DocumentViewController" customModule="Formative" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gtf-35-AJR"/>
+                        <viewControllerLayoutGuide type="bottom" id="juF-Pu-rsb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sV6-pf-aXa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U8a-CT-csW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5050" y="1607.5"/>
+            <point key="canvasLocation" x="3783" y="4302"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="o0E-6D-8HU">
@@ -1888,7 +1709,7 @@ For information about how to contact Google, please visit our contact page.</str
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="TJq-kP-Ebu" kind="relationship" relationship="rootViewController" id="eHc-Bh-Wk7"/>
+                        <segue destination="U5k-G7-CF1" kind="relationship" relationship="rootViewController" id="9Hp-VA-avq"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="esL-yv-hWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1937,7 +1758,7 @@ For information about how to contact Google, please visit our contact page.</str
                     </connections>
                 </tableViewCell>
             </objects>
-            <point key="canvasLocation" x="-644" y="1917"/>
+            <point key="canvasLocation" x="194" y="1945"/>
         </scene>
         <!--User Profile-->
         <scene sceneID="aEj-SH-kNe">
@@ -1956,304 +1777,41 @@ For information about how to contact Google, please visit our contact page.</str
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wsy-qj-HAQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1287" y="3345"/>
+            <point key="canvasLocation" x="2185" y="3679"/>
         </scene>
-        <!--Terms of Service-->
-        <scene sceneID="7mQ-sN-vto">
+        <!--Settings-->
+        <scene sceneID="dV5-ZQ-aMq">
             <objects>
-                <viewController id="bDt-Sm-kPJ" customClass="TermsOfServiceVC" customModule="Formative" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fqP-9f-x6g"/>
-                        <viewControllerLayoutGuide type="bottom" id="U9L-gS-G49"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Det-Bk-Mva">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cl9-dg-CO3">
-                                <rect key="frame" x="16" y="64" width="568" height="516"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <string key="text">Google Terms of Service
-
-Last modified: April 14, 2014 (view archived versions)
-
-Welcome to Google!
-
-Thanks for using our products and services (“Services”). The Services are provided by Google Inc. (“Google”), located at 1600 Amphitheatre Parkway, Mountain View, CA 94043, United States.
-
-By using our Services, you are agreeing to these terms. Please read them carefully.
-
-Our Services are very diverse, so sometimes additional terms or product requirements (including age requirements) may apply. Additional terms will be available with the relevant Services, and those additional terms become part of your agreement with us if you use those Services.
-
-Using our Services
-
-You must follow any policies made available to you within the Services.
-
-Don’t misuse our Services. For example, don’t interfere with our Services or try to access them using a method other than the interface and the instructions that we provide. You may use our Services only as permitted by law, including applicable export and re-export control laws and regulations. We may suspend or stop providing our Services to you if you do not comply with our terms or policies or if we are investigating suspected misconduct.
-
-Using our Services does not give you ownership of any intellectual property rights in our Services or the content you access. You may not use content from our Services unless you obtain permission from its owner or are otherwise permitted by law. These terms do not grant you the right to use any branding or logos used in our Services. Don’t remove, obscure, or alter any legal notices displayed in or along with our Services.
-
-Our Services display some content that is not Google’s. This content is the sole responsibility of the entity that makes it available. We may review content to determine whether it is illegal or violates our policies, and we may remove or refuse to display content that we reasonably believe violates our policies or the law. But that does not necessarily mean that we review content, so please don’t assume that we do.
-
-In connection with your use of the Services, we may send you service announcements, administrative messages, and other information. You may opt out of some of those communications.
-
-Some of our Services are available on mobile devices. Do not use such Services in a way that distracts you and prevents you from obeying traffic or safety laws.
-
-Your Google Account
-
-You may need a Google Account in order to use some of our Services. You may create your own Google Account, or your Google Account may be assigned to you by an administrator, such as your employer or educational institution. If you are using a Google Account assigned to you by an administrator, different or additional terms may apply and your administrator may be able to access or disable your account.
-
-To protect your Google Account, keep your password confidential. You are responsible for the activity that happens on or through your Google Account. Try not to reuse your Google Account password on third-party applications. If you learn of any unauthorized use of your password or Google Account, follow these instructions.
-
-Privacy and Copyright Protection
-
-Google’s privacy policies explain how we treat your personal data and protect your privacy when you use our Services. By using our Services, you agree that Google can use such data in accordance with our privacy policies.
-
-We respond to notices of alleged copyright infringement and terminate accounts of repeat infringers according to the process set out in the U.S. Digital Millennium Copyright Act.
-
-We provide information to help copyright holders manage their intellectual property online. If you think somebody is violating your copyrights and want to notify us, you can find information about submitting notices and Google’s policy about responding to notices in our Help Center.
-
-Your Content in our Services
-
-Some of our Services allow you to upload, submit, store, send or receive content. You retain ownership of any intellectual property rights that you hold in that content. In short, what belongs to you stays yours.
-
-When you upload, submit, store, send or receive content to or through our Services, you give Google (and those we work with) a worldwide license to use, host, store, reproduce, modify, create derivative works (such as those resulting from translations, adaptations or other changes we make so that your content works better with our Services), communicate, publish, publicly perform, publicly display and distribute such content. The rights you grant in this license are for the limited purpose of operating, promoting, and improving our Services, and to develop new ones. This license continues even if you stop using our Services (for example, for a business listing you have added to Google Maps). Some Services may offer you ways to access and remove content that has been provided to that Service. Also, in some of our Services, there are terms or settings that narrow the scope of our use of the content submitted in those Services. Make sure you have the necessary rights to grant us this license for any content that you submit to our Services.
-
-Our automated systems analyze your content (including emails) to provide you personally relevant product features, such as customized search results, tailored advertising, and spam and malware detection. This analysis occurs as the content is sent, received, and when it is stored.
-
-If you have a Google Account, we may display your Profile name, Profile photo, and actions you take on Google or on third-party applications connected to your Google Account (such as +1’s, reviews you write and comments you post) in our Services, including displaying in ads and other commercial contexts. We will respect the choices you make to limit sharing or visibility settings in your Google Account. For example, you can choose your settings so your name and photo do not appear in an ad.
-
-You can find more information about how Google uses and stores content in the privacy policy or additional terms for particular Services. If you submit feedback or suggestions about our Services, we may use your feedback or suggestions without obligation to you.
-
-About Software in our Services
-
-When a Service requires or includes downloadable software, this software may update automatically on your device once a new version or feature is available. Some Services may let you adjust your automatic update settings.
-
-Google gives you a personal, worldwide, royalty-free, non-assignable and non-exclusive license to use the software provided to you by Google as part of the Services. This license is for the sole purpose of enabling you to use and enjoy the benefit of the Services as provided by Google, in the manner permitted by these terms. You may not copy, modify, distribute, sell, or lease any part of our Services or included software, nor may you reverse engineer or attempt to extract the source code of that software, unless laws prohibit those restrictions or you have our written permission.
-
-Open source software is important to us. Some software used in our Services may be offered under an open source license that we will make available to you. There may be provisions in the open source license that expressly override some of these terms.
-
-Modifying and Terminating our Services
-
-We are constantly changing and improving our Services. We may add or remove functionalities or features, and we may suspend or stop a Service altogether.
-
-You can stop using our Services at any time, although we’ll be sorry to see you go. Google may also stop providing Services to you, or add or create new limits to our Services at any time.
-
-We believe that you own your data and preserving your access to such data is important. If we discontinue a Service, where reasonably possible, we will give you reasonable advance notice and a chance to get information out of that Service.
-
-Our Warranties and Disclaimers
-
-We provide our Services using a commercially reasonable level of skill and care and we hope that you will enjoy using them. But there are certain things that we don’t promise about our Services.
-
-OTHER THAN AS EXPRESSLY SET OUT IN THESE TERMS OR ADDITIONAL TERMS, NEITHER GOOGLE NOR ITS SUPPLIERS OR DISTRIBUTORS MAKE ANY SPECIFIC PROMISES ABOUT THE SERVICES. FOR EXAMPLE, WE DON’T MAKE ANY COMMITMENTS ABOUT THE CONTENT WITHIN THE SERVICES, THE SPECIFIC FUNCTIONS OF THE SERVICES, OR THEIR RELIABILITY, AVAILABILITY, OR ABILITY TO MEET YOUR NEEDS. WE PROVIDE THE SERVICES “AS IS”.
-
-SOME JURISDICTIONS PROVIDE FOR CERTAIN WARRANTIES, LIKE THE IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. TO THE EXTENT PERMITTED BY LAW, WE EXCLUDE ALL WARRANTIES.
-
-Liability for our Services
-
-WHEN PERMITTED BY LAW, GOOGLE, AND GOOGLE’S SUPPLIERS AND DISTRIBUTORS, WILL NOT BE RESPONSIBLE FOR LOST PROFITS, REVENUES, OR DATA, FINANCIAL LOSSES OR INDIRECT, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES.
-
-TO THE EXTENT PERMITTED BY LAW, THE TOTAL LIABILITY OF GOOGLE, AND ITS SUPPLIERS AND DISTRIBUTORS, FOR ANY CLAIMS UNDER THESE TERMS, INCLUDING FOR ANY IMPLIED WARRANTIES, IS LIMITED TO THE AMOUNT YOU PAID US TO USE THE SERVICES (OR, IF WE CHOOSE, TO SUPPLYING YOU THE SERVICES AGAIN).
-
-IN ALL CASES, GOOGLE, AND ITS SUPPLIERS AND DISTRIBUTORS, WILL NOT BE LIABLE FOR ANY LOSS OR DAMAGE THAT IS NOT REASONABLY FORESEEABLE.
-
-Business uses of our Services
-
-If you are using our Services on behalf of a business, that business accepts these terms. It will hold harmless and indemnify Google and its affiliates, officers, agents, and employees from any claim, suit or action arising from or related to the use of the Services or violation of these terms, including any liability or expense arising from claims, losses, damages, suits, judgments, litigation costs and attorneys’ fees.
-
-About these Terms
-
-We may modify these terms or any additional terms that apply to a Service to, for example, reflect changes to the law or changes to our Services. You should look at the terms regularly. We’ll post notice of modifications to these terms on this page. We’ll post notice of modified additional terms in the applicable Service. Changes will not apply retroactively and will become effective no sooner than fourteen days after they are posted. However, changes addressing new functions for a Service or changes made for legal reasons will be effective immediately. If you do not agree to the modified terms for a Service, you should discontinue your use of that Service.
-
-If there is a conflict between these terms and the additional terms, the additional terms will control for that conflict.
-
-These terms control the relationship between Google and you. They do not create any third party beneficiary rights.
-
-If you do not comply with these terms, and we don’t take action right away, this doesn’t mean that we are giving up any rights that we may have (such as taking action in the future).
-
-If it turns out that a particular term is not enforceable, this will not affect any other terms.
-
-The laws of California, U.S.A., excluding California’s conflict of laws rules, will apply to any disputes arising out of or relating to these terms or the Services. All claims arising out of or relating to these terms or the Services will be litigated exclusively in the federal or state courts of Santa Clara County, California, USA, and you and Google consent to personal jurisdiction in those courts.
-
-For information about how to contact Google, please visit our contact page.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="U9L-gS-G49" firstAttribute="top" secondItem="cl9-dg-CO3" secondAttribute="bottom" constant="20" id="Hw1-9G-6PI"/>
-                            <constraint firstItem="cl9-dg-CO3" firstAttribute="leading" secondItem="Det-Bk-Mva" secondAttribute="leadingMargin" id="RCC-ke-cVg"/>
-                            <constraint firstItem="cl9-dg-CO3" firstAttribute="top" secondItem="fqP-9f-x6g" secondAttribute="bottom" id="gfk-O8-jua"/>
-                            <constraint firstItem="cl9-dg-CO3" firstAttribute="trailing" secondItem="Det-Bk-Mva" secondAttribute="trailingMargin" id="jW9-xy-8zu"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Terms of Service" id="dPl-D3-9hf">
-                        <barButtonItem key="rightBarButtonItem" title="Privacy Policy" id="Btw-Q7-a1N">
-                            <connections>
-                                <action selector="nextPressed:" destination="bDt-Sm-kPJ" id="FIe-eC-GOa"/>
-                                <segue destination="6qe-Iu-G7c" kind="show" id="CGg-pX-Re3"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b0y-3Y-A3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1333" y="689"/>
-        </scene>
-        <!--Privacy Policy-->
-        <scene sceneID="Uae-OL-a33">
-            <objects>
-                <viewController id="6qe-Iu-G7c" customClass="TermsOfServiceVC" customModule="Formative" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Gun-Mw-Acg"/>
-                        <viewControllerLayoutGuide type="bottom" id="Yad-jZ-fG6"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="o5I-Lr-e8v">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QdY-c7-BKD">
-                                <rect key="frame" x="16" y="64" width="568" height="516"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <string key="text">Google Terms of Service
-
-Last modified: April 14, 2014 (view archived versions)
-
-Welcome to Google!
-
-Thanks for using our products and services (“Services”). The Services are provided by Google Inc. (“Google”), located at 1600 Amphitheatre Parkway, Mountain View, CA 94043, United States.
-
-By using our Services, you are agreeing to these terms. Please read them carefully.
-
-Our Services are very diverse, so sometimes additional terms or product requirements (including age requirements) may apply. Additional terms will be available with the relevant Services, and those additional terms become part of your agreement with us if you use those Services.
-
-Using our Services
-
-You must follow any policies made available to you within the Services.
-
-Don’t misuse our Services. For example, don’t interfere with our Services or try to access them using a method other than the interface and the instructions that we provide. You may use our Services only as permitted by law, including applicable export and re-export control laws and regulations. We may suspend or stop providing our Services to you if you do not comply with our terms or policies or if we are investigating suspected misconduct.
-
-Using our Services does not give you ownership of any intellectual property rights in our Services or the content you access. You may not use content from our Services unless you obtain permission from its owner or are otherwise permitted by law. These terms do not grant you the right to use any branding or logos used in our Services. Don’t remove, obscure, or alter any legal notices displayed in or along with our Services.
-
-Our Services display some content that is not Google’s. This content is the sole responsibility of the entity that makes it available. We may review content to determine whether it is illegal or violates our policies, and we may remove or refuse to display content that we reasonably believe violates our policies or the law. But that does not necessarily mean that we review content, so please don’t assume that we do.
-
-In connection with your use of the Services, we may send you service announcements, administrative messages, and other information. You may opt out of some of those communications.
-
-Some of our Services are available on mobile devices. Do not use such Services in a way that distracts you and prevents you from obeying traffic or safety laws.
-
-Your Google Account
-
-You may need a Google Account in order to use some of our Services. You may create your own Google Account, or your Google Account may be assigned to you by an administrator, such as your employer or educational institution. If you are using a Google Account assigned to you by an administrator, different or additional terms may apply and your administrator may be able to access or disable your account.
-
-To protect your Google Account, keep your password confidential. You are responsible for the activity that happens on or through your Google Account. Try not to reuse your Google Account password on third-party applications. If you learn of any unauthorized use of your password or Google Account, follow these instructions.
-
-Privacy and Copyright Protection
-
-Google’s privacy policies explain how we treat your personal data and protect your privacy when you use our Services. By using our Services, you agree that Google can use such data in accordance with our privacy policies.
-
-We respond to notices of alleged copyright infringement and terminate accounts of repeat infringers according to the process set out in the U.S. Digital Millennium Copyright Act.
-
-We provide information to help copyright holders manage their intellectual property online. If you think somebody is violating your copyrights and want to notify us, you can find information about submitting notices and Google’s policy about responding to notices in our Help Center.
-
-Your Content in our Services
-
-Some of our Services allow you to upload, submit, store, send or receive content. You retain ownership of any intellectual property rights that you hold in that content. In short, what belongs to you stays yours.
-
-When you upload, submit, store, send or receive content to or through our Services, you give Google (and those we work with) a worldwide license to use, host, store, reproduce, modify, create derivative works (such as those resulting from translations, adaptations or other changes we make so that your content works better with our Services), communicate, publish, publicly perform, publicly display and distribute such content. The rights you grant in this license are for the limited purpose of operating, promoting, and improving our Services, and to develop new ones. This license continues even if you stop using our Services (for example, for a business listing you have added to Google Maps). Some Services may offer you ways to access and remove content that has been provided to that Service. Also, in some of our Services, there are terms or settings that narrow the scope of our use of the content submitted in those Services. Make sure you have the necessary rights to grant us this license for any content that you submit to our Services.
-
-Our automated systems analyze your content (including emails) to provide you personally relevant product features, such as customized search results, tailored advertising, and spam and malware detection. This analysis occurs as the content is sent, received, and when it is stored.
-
-If you have a Google Account, we may display your Profile name, Profile photo, and actions you take on Google or on third-party applications connected to your Google Account (such as +1’s, reviews you write and comments you post) in our Services, including displaying in ads and other commercial contexts. We will respect the choices you make to limit sharing or visibility settings in your Google Account. For example, you can choose your settings so your name and photo do not appear in an ad.
-
-You can find more information about how Google uses and stores content in the privacy policy or additional terms for particular Services. If you submit feedback or suggestions about our Services, we may use your feedback or suggestions without obligation to you.
-
-About Software in our Services
-
-When a Service requires or includes downloadable software, this software may update automatically on your device once a new version or feature is available. Some Services may let you adjust your automatic update settings.
-
-Google gives you a personal, worldwide, royalty-free, non-assignable and non-exclusive license to use the software provided to you by Google as part of the Services. This license is for the sole purpose of enabling you to use and enjoy the benefit of the Services as provided by Google, in the manner permitted by these terms. You may not copy, modify, distribute, sell, or lease any part of our Services or included software, nor may you reverse engineer or attempt to extract the source code of that software, unless laws prohibit those restrictions or you have our written permission.
-
-Open source software is important to us. Some software used in our Services may be offered under an open source license that we will make available to you. There may be provisions in the open source license that expressly override some of these terms.
-
-Modifying and Terminating our Services
-
-We are constantly changing and improving our Services. We may add or remove functionalities or features, and we may suspend or stop a Service altogether.
-
-You can stop using our Services at any time, although we’ll be sorry to see you go. Google may also stop providing Services to you, or add or create new limits to our Services at any time.
-
-We believe that you own your data and preserving your access to such data is important. If we discontinue a Service, where reasonably possible, we will give you reasonable advance notice and a chance to get information out of that Service.
-
-Our Warranties and Disclaimers
-
-We provide our Services using a commercially reasonable level of skill and care and we hope that you will enjoy using them. But there are certain things that we don’t promise about our Services.
-
-OTHER THAN AS EXPRESSLY SET OUT IN THESE TERMS OR ADDITIONAL TERMS, NEITHER GOOGLE NOR ITS SUPPLIERS OR DISTRIBUTORS MAKE ANY SPECIFIC PROMISES ABOUT THE SERVICES. FOR EXAMPLE, WE DON’T MAKE ANY COMMITMENTS ABOUT THE CONTENT WITHIN THE SERVICES, THE SPECIFIC FUNCTIONS OF THE SERVICES, OR THEIR RELIABILITY, AVAILABILITY, OR ABILITY TO MEET YOUR NEEDS. WE PROVIDE THE SERVICES “AS IS”.
-
-SOME JURISDICTIONS PROVIDE FOR CERTAIN WARRANTIES, LIKE THE IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. TO THE EXTENT PERMITTED BY LAW, WE EXCLUDE ALL WARRANTIES.
-
-Liability for our Services
-
-WHEN PERMITTED BY LAW, GOOGLE, AND GOOGLE’S SUPPLIERS AND DISTRIBUTORS, WILL NOT BE RESPONSIBLE FOR LOST PROFITS, REVENUES, OR DATA, FINANCIAL LOSSES OR INDIRECT, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES.
-
-TO THE EXTENT PERMITTED BY LAW, THE TOTAL LIABILITY OF GOOGLE, AND ITS SUPPLIERS AND DISTRIBUTORS, FOR ANY CLAIMS UNDER THESE TERMS, INCLUDING FOR ANY IMPLIED WARRANTIES, IS LIMITED TO THE AMOUNT YOU PAID US TO USE THE SERVICES (OR, IF WE CHOOSE, TO SUPPLYING YOU THE SERVICES AGAIN).
-
-IN ALL CASES, GOOGLE, AND ITS SUPPLIERS AND DISTRIBUTORS, WILL NOT BE LIABLE FOR ANY LOSS OR DAMAGE THAT IS NOT REASONABLY FORESEEABLE.
-
-Business uses of our Services
-
-If you are using our Services on behalf of a business, that business accepts these terms. It will hold harmless and indemnify Google and its affiliates, officers, agents, and employees from any claim, suit or action arising from or related to the use of the Services or violation of these terms, including any liability or expense arising from claims, losses, damages, suits, judgments, litigation costs and attorneys’ fees.
-
-About these Terms
-
-We may modify these terms or any additional terms that apply to a Service to, for example, reflect changes to the law or changes to our Services. You should look at the terms regularly. We’ll post notice of modifications to these terms on this page. We’ll post notice of modified additional terms in the applicable Service. Changes will not apply retroactively and will become effective no sooner than fourteen days after they are posted. However, changes addressing new functions for a Service or changes made for legal reasons will be effective immediately. If you do not agree to the modified terms for a Service, you should discontinue your use of that Service.
-
-If there is a conflict between these terms and the additional terms, the additional terms will control for that conflict.
-
-These terms control the relationship between Google and you. They do not create any third party beneficiary rights.
-
-If you do not comply with these terms, and we don’t take action right away, this doesn’t mean that we are giving up any rights that we may have (such as taking action in the future).
-
-If it turns out that a particular term is not enforceable, this will not affect any other terms.
-
-The laws of California, U.S.A., excluding California’s conflict of laws rules, will apply to any disputes arising out of or relating to these terms or the Services. All claims arising out of or relating to these terms or the Services will be litigated exclusively in the federal or state courts of Santa Clara County, California, USA, and you and Google consent to personal jurisdiction in those courts.
-
-For information about how to contact Google, please visit our contact page.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="QdY-c7-BKD" firstAttribute="top" secondItem="Gun-Mw-Acg" secondAttribute="bottom" id="NpU-M6-JpV"/>
-                            <constraint firstItem="Yad-jZ-fG6" firstAttribute="top" secondItem="QdY-c7-BKD" secondAttribute="bottom" constant="20" id="ZzA-m0-yLQ"/>
-                            <constraint firstItem="QdY-c7-BKD" firstAttribute="trailing" secondItem="o5I-Lr-e8v" secondAttribute="trailingMargin" id="jhe-jm-Syh"/>
-                            <constraint firstItem="QdY-c7-BKD" firstAttribute="leading" secondItem="o5I-Lr-e8v" secondAttribute="leadingMargin" id="ohY-27-w0W"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Privacy Policy" id="ryZ-6Z-0jR"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wQx-sR-HOM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1082" y="-101"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="utg-jz-Df7">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Usu-aV-d5z" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XoJ-ZS-evA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="K2f-2Z-cIL"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1gn-hB-hT7">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tOT-EE-nli">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="bDt-Sm-kPJ" kind="relationship" relationship="rootViewController" id="W6R-Pk-OWa"/>
+                        <segue destination="GUc-ar-AX2" kind="relationship" relationship="rootViewController" id="Ms2-uS-PYG"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HgU-E4-5CJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sWU-lL-u3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="giZ-3v-oqK" rowHeight="60" style="IBUITableViewCellStyleDefault" id="PGu-Mf-l6t">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PGu-Mf-l6t" id="kZn-Ia-qn0">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Change Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="giZ-3v-oqK">
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </tableViewCellContentView>
+                </tableViewCell>
             </objects>
-            <point key="canvasLocation" x="-588" y="689"/>
+            <point key="canvasLocation" x="3278" y="2866"/>
         </scene>
     </scenes>
     <resources>
@@ -2261,18 +1819,19 @@ For information about how to contact Google, please visit our contact page.</str
         <image name="Add a Post-1" width="861" height="147"/>
         <image name="Bathing" width="750" height="500"/>
         <image name="Choose Picture" width="90" height="90"/>
-        <image name="Communication" width="750" height="748"/>
         <image name="Login-1" width="444" height="135"/>
         <image name="User" width="448" height="460"/>
         <image name="browse" width="28" height="28"/>
         <image name="contacts" width="22" height="22"/>
         <image name="feed" width="25" height="25"/>
+        <image name="people" width="40" height="40"/>
+        <image name="settings" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eQi-dj-j3m"/>
-        <segue reference="4K5-Lm-iET"/>
         <segue reference="JOu-9E-LMZ"/>
         <segue reference="XYp-0f-2My"/>
+        <segue reference="7Sg-p5-nDB"/>
         <segue reference="g1t-Bq-4Jj"/>
     </inferredMetricsTieBreakers>
 </document>

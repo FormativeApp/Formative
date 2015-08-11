@@ -39,30 +39,31 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.addSubview(refreshControl)
         
         self.secondaryAddPostButton.alpha = 0
-        
-        if (PFUser.currentUser() == nil){
-            println("Auto logging in!")
-            PFUser.logInWithUsername("andrew@andrewke.org", password: "andrew")
-        }
-        println("\(user)")
+
         user = PFUser.currentUser()
-        //user.fetchIfNeeded()
+        user.fetchIfNeededInBackground()
         
         tableView.dataSource = self
         tableView.delegate = self
         
-        //tableView.estimatedRowHeight = 200.0
-        //tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 200.0
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         user = PFUser.currentUser()!
         let postsQuery = PFQuery(className: "Post")
         postsQuery.whereKey("recipientID", equalTo: user["PWDid"]!)
-        postsQuery.limit = TableViewConstants.numberOfInitialCells
-        postsQuery.orderByDescending("updatedAt")
-        postsQuery.includeKey("user")
-        postsQuery.includeKey("comments")
         
-        postsQuery.findObjectsInBackgroundWithBlock({(objects:[AnyObject]?, error:NSError?) -> Void in
+        let adminPostsQuery = PFQuery(className: "Post")
+        adminPostsQuery.whereKey("recipientID", equalTo: "admin")
+        
+        let combinedQuery = PFQuery.orQueryWithSubqueries([adminPostsQuery, postsQuery])
+        
+        combinedQuery.limit = TableViewConstants.numberOfInitialCells
+        combinedQuery.orderByDescending("updatedAt")
+        combinedQuery.includeKey("user")
+        combinedQuery.includeKey("comments")
+        
+        combinedQuery.findObjectsInBackgroundWithBlock({(objects:[AnyObject]?, error:NSError?) -> Void in
             
             if (objects != nil) {
                 
@@ -79,14 +80,21 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func refresh(refreshControl: UIRefreshControl) {
+        user = PFUser.currentUser()!
         let postsQuery = PFQuery(className: "Post")
         postsQuery.whereKey("recipientID", equalTo: user["PWDid"]!)
-        postsQuery.limit = TableViewConstants.numberOfInitialCells
-        postsQuery.orderByDescending("updatedAt")
-        postsQuery.includeKey("user")
-        postsQuery.includeKey("comments")
         
-        postsQuery.findObjectsInBackgroundWithBlock({(objects:[AnyObject]?, error:NSError?) -> Void in
+        let adminPostsQuery = PFQuery(className: "Post")
+        adminPostsQuery.whereKey("recipientID", equalTo: "admin")
+        
+        let combinedQuery = PFQuery.orQueryWithSubqueries([adminPostsQuery, postsQuery])
+        
+        combinedQuery.limit = TableViewConstants.numberOfInitialCells
+        combinedQuery.orderByDescending("updatedAt")
+        combinedQuery.includeKey("user")
+        combinedQuery.includeKey("comments")
+        
+        combinedQuery.findObjectsInBackgroundWithBlock({(objects:[AnyObject]?, error:NSError?) -> Void in
             
             if (objects != nil) {
                 
@@ -129,7 +137,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         var maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
         
         if (maximumOffset - currentOffset <= 150.0) {
-            if (loadInProgress == false){
+            if (loadInProgress == false && posts.count > 0){
                 loadMorePosts()
                 //println("Load!")
                 loadInProgress = true
@@ -148,14 +156,6 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return 200
         }
     }*/
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 400
-    }
-    
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.layoutSubviews()
-    }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -197,25 +197,34 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         println("Load more posts")
         loadInProgress = true
         
+        user = PFUser.currentUser()!
         let postsQuery = PFQuery(className: "Post")
         postsQuery.whereKey("recipientID", equalTo: user["PWDid"]!)
-        postsQuery.limit = TableViewConstants.numberOfCellsPerLoad
-        postsQuery.orderByDescending("updatedAt")
-        postsQuery.includeKey("user")
-        postsQuery.includeKey("comments")
-        postsQuery.whereKey("updatedAt", lessThan: posts[posts.endIndex-1].updatedAt!)
+        
+        let adminPostsQuery = PFQuery(className: "Post")
+        adminPostsQuery.whereKey("recipientID", equalTo: "admin")
+        
+        let combinedQuery = PFQuery.orQueryWithSubqueries([adminPostsQuery, postsQuery])
+        
+        combinedQuery.limit = TableViewConstants.numberOfCellsPerLoad
+        combinedQuery.orderByDescending("updatedAt")
+        combinedQuery.includeKey("user")
+        combinedQuery.includeKey("comments")
+        combinedQuery.whereKey("updatedAt", lessThan: posts[posts.endIndex-1].updatedAt!)
         
         self.loadingLabel.text = "Loading more posts ..."
         
-        postsQuery.findObjectsInBackgroundWithBlock({(objects:[AnyObject]?, error:NSError?) -> Void in
+        combinedQuery.findObjectsInBackgroundWithBlock({(objects:[AnyObject]?, error:NSError?) -> Void in
             
             if (objects != nil && objects?.count != 0) {
                 
+                println("\(objects?.count)")
                 for object in objects as! Array<PFObject> {
                     if !contains(self.posts, object){
                         self.posts.append(object)
                     }
                 }
+                println(self.posts.count)
                 //var offset = self.tableView.contentOffset
                 self.tableView.reloadData()
                 self.tableView.layoutSubviews()

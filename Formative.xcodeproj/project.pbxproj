@@ -29,6 +29,7 @@
 		A16C358C1B672186009BABD2 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16C358B1B672186009BABD2 /* AlertManager.swift */; };
 		A16C358F1B672ADF009BABD2 /* userProfileQuestions.json in Resources */ = {isa = PBXBuildFile; fileRef = A16C358E1B672ADF009BABD2 /* userProfileQuestions.json */; };
 		A16C35911B6732DF009BABD2 /* KeywordsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16C35901B6732DF009BABD2 /* KeywordsTVC.swift */; };
+		A16F9ACF1B791B91004A3669 /* ChangeCareTeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16F9ACE1B791B91004A3669 /* ChangeCareTeamVC.swift */; };
 		A1808CD61B669248006771CF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1808CD51B669248006771CF /* AudioToolbox.framework */; };
 		A1808CD81B66924E006771CF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1808CD71B66924E006771CF /* CFNetwork.framework */; };
 		A1808CDA1B669254006771CF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1808CD91B669254006771CF /* CoreGraphics.framework */; };
@@ -54,10 +55,11 @@
 		A1A2CD7A1B6020FE00A327DB /* CommentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2CD791B6020FE00A327DB /* CommentTVC.swift */; };
 		A1A2CD7E1B60514400A327DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2CD7D1B60514400A327DB /* LoginViewController.swift */; };
 		A1A2CD801B6062B500A327DB /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2CD7F1B6062B500A327DB /* NewUserViewController.swift */; };
-		A1A789381B6EE23200A6674A /* TermsOfServiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A789371B6EE23200A6674A /* TermsOfServiceVC.swift */; };
 		A1A7893C1B6EE8DA00A6674A /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A7893B1B6EE8DA00A6674A /* ForgotPasswordVC.swift */; };
 		A1A7893E1B6EED8700A6674A /* InviteSenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A7893D1B6EED8700A6674A /* InviteSenderViewController.swift */; };
 		A1A789401B6EEE3300A6674A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A7893F1B6EEE3300A6674A /* MessageUI.framework */; };
+		A1B256841B796E730077B8B6 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B256831B796E730077B8B6 /* DocumentViewController.swift */; };
+		A1B256861B796EB50077B8B6 /* TermsOfUse.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A1B256851B796EB50077B8B6 /* TermsOfUse.pdf */; };
 		A1C84EC41B66936C005BE8CC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C84EBE1B66936C005BE8CC /* Bolts.framework */; };
 		A1C84EC51B66936C005BE8CC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C84EBF1B66936C005BE8CC /* Parse.framework */; };
 		A1C84EC61B66936C005BE8CC /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C84EC01B66936C005BE8CC /* ParseCrashReporting.framework */; };
@@ -114,6 +116,7 @@
 		A16C358B1B672186009BABD2 /* AlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		A16C358E1B672ADF009BABD2 /* userProfileQuestions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = userProfileQuestions.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.javascript; };
 		A16C35901B6732DF009BABD2 /* KeywordsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeywordsTVC.swift; sourceTree = "<group>"; };
+		A16F9ACE1B791B91004A3669 /* ChangeCareTeamVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangeCareTeamVC.swift; path = ../ChangeCareTeamVC.swift; sourceTree = "<group>"; };
 		A1808CD51B669248006771CF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A1808CD71B66924E006771CF /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		A1808CD91B669254006771CF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -139,10 +142,11 @@
 		A1A2CD791B6020FE00A327DB /* CommentTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTVC.swift; sourceTree = "<group>"; };
 		A1A2CD7D1B60514400A327DB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A1A2CD7F1B6062B500A327DB /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
-		A1A789371B6EE23200A6674A /* TermsOfServiceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsOfServiceVC.swift; sourceTree = "<group>"; };
 		A1A7893B1B6EE8DA00A6674A /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordVC.swift; path = ../ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		A1A7893D1B6EED8700A6674A /* InviteSenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteSenderViewController.swift; sourceTree = "<group>"; };
 		A1A7893F1B6EEE3300A6674A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		A1B256831B796E730077B8B6 /* DocumentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DocumentViewController.swift; path = ../DocumentViewController.swift; sourceTree = "<group>"; };
+		A1B256851B796EB50077B8B6 /* TermsOfUse.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = TermsOfUse.pdf; sourceTree = "<group>"; };
 		A1C84EBE1B66936C005BE8CC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A1C84EBF1B66936C005BE8CC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A1C84EC01B66936C005BE8CC /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -288,6 +292,7 @@
 		A16C358D1B67232D009BABD2 /* Login And Registration */ = {
 			isa = PBXGroup;
 			children = (
+				A1B256831B796E730077B8B6 /* DocumentViewController.swift */,
 				A19F32221B71589300E428D3 /* InviteSetupVC.swift */,
 				A1A7893B1B6EE8DA00A6674A /* ForgotPasswordVC.swift */,
 				A135CC8D1B68072200445C21 /* TextFieldCell.swift */,
@@ -297,7 +302,6 @@
 				A1A2CD7D1B60514400A327DB /* LoginViewController.swift */,
 				A1A7893D1B6EED8700A6674A /* InviteSenderViewController.swift */,
 				A1398AAE1B681412007867B1 /* MultipleChoiceCell.swift */,
-				A1A789371B6EE23200A6674A /* TermsOfServiceVC.swift */,
 				A19F322A1B71913C00E428D3 /* InstructionsContentVC.swift */,
 				A19F322C1B71980100E428D3 /* InstructionsPageViewController.swift */,
 			);
@@ -312,6 +316,7 @@
 				A1A2C20A1B66E4E9000AC5C8 /* browser.json */,
 				A16C358E1B672ADF009BABD2 /* userProfileQuestions.json */,
 				A19F322E1B7272D900E428D3 /* instructions.json */,
+				A1B256851B796EB50077B8B6 /* TermsOfUse.pdf */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -321,6 +326,7 @@
 			children = (
 				A19F32241B715F8A00E428D3 /* ProfileSettingsTVC.swift */,
 				A19F32261B715FD500E428D3 /* ChangePasswordVC.swift */,
+				A16F9ACE1B791B91004A3669 /* ChangeCareTeamVC.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -475,6 +481,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A145857C1B4E29BF00C1BD30 /* Images.xcassets in Resources */,
+				A1B256861B796EB50077B8B6 /* TermsOfUse.pdf in Resources */,
 				A19F322F1B7272D900E428D3 /* instructions.json in Resources */,
 				A1FBAFB31B5D749200980086 /* PostProfileView.xib in Resources */,
 				A1A2C20B1B66E4E9000AC5C8 /* browser.json in Resources */,
@@ -525,6 +532,7 @@
 				A16984491B5EC61000FD90C9 /* TableViewController.swift in Sources */,
 				A16984471B5EC47600FD90C9 /* CommentTVC.xib in Sources */,
 				A14585751B4E29BF00C1BD30 /* AppDelegate.swift in Sources */,
+				A16F9ACF1B791B91004A3669 /* ChangeCareTeamVC.swift in Sources */,
 				A1FBAFB11B5D748300980086 /* PostProfileView.swift in Sources */,
 				A1D42DBC1B5DD9410035A5C7 /* CircularImageView.swift in Sources */,
 				A14C750C1B728E240025DE4B /* CaregiversViewController.swift in Sources */,
@@ -535,9 +543,9 @@
 				A14503E71B4F008B006AC555 /* PostView.swift in Sources */,
 				A116B10D1B61943200B10061 /* PostTVC.swift in Sources */,
 				A14503E91B4F04DB006AC555 /* UIReusableView.swift in Sources */,
-				A1A789381B6EE23200A6674A /* TermsOfServiceVC.swift in Sources */,
 				A1A2C2021B66CCAF000AC5C8 /* BrowseTableViewController.swift in Sources */,
 				A1398AAF1B681412007867B1 /* MultipleChoiceCell.swift in Sources */,
+				A1B256841B796E730077B8B6 /* DocumentViewController.swift in Sources */,
 				A135CC8A1B67EDA500445C21 /* MultilineCell.swift in Sources */,
 				F86A8EFB1B6DB7880086E3D8 /* ADLTableTableViewController.swift in Sources */,
 			);

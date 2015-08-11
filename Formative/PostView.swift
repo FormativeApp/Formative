@@ -11,10 +11,11 @@ import Bolts
 import Parse
 import ParseUI
 
-@IBDesignable class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
+class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
 
     // MARK: - Outlets
     
+    @IBOutlet weak var topColorBar: UIView!
     @IBOutlet weak var postImage: PFImageView!
     @IBOutlet weak var profileView: PostProfileView!
     @IBOutlet weak var postTextLabel: UILabel!
@@ -58,7 +59,24 @@ import ParseUI
         buttonToBottomConstraint.constant = 5
         
         postTextLabel.text = post["text"] as? String
+        
         categoryLabel.text = (post["tags"] as! NSArray)[0] as? String
+        
+        if let type = post["type"] as? String {
+            if (type == "Question")
+            {
+                topColorBar.backgroundColor = UIColor.orangeColor()
+            }
+            if (type == "Update")
+            {
+                topColorBar.backgroundColor = UIColor.greenColor()
+            }
+            if (type == "Admin")
+            {
+                topColorBar.backgroundColor = UIColor.blueColor()
+            }
+        }
+        
         var user = (post["user"] as! PFUser)
         profileView.nameLabel.text = user["name"] as? String
         
@@ -76,7 +94,7 @@ import ParseUI
         if let file = post["photo"] as? PFFile {
             
             postImage.image = nil
-            postImage.backgroundColor = UIColor.greenColor()
+            postImage.backgroundColor = UIColor.clearColor()
             postImage.file = file
             
             

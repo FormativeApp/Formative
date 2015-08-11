@@ -20,10 +20,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewWillAppear(true)
-        print(PFUser.currentUser())
         if let user = PFUser.currentUser()
         {
             println("ding!")
+            user.fetch()
+            println(user)
             if (user["completedSetup"] as! Bool) {
                 self.performSegueWithIdentifier("goToTabBar", sender: nil)
             }

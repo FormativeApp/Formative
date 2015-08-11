@@ -127,15 +127,39 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
         post["type"] = sender.titleLabel!.text == "Post as Update" ? "Update" : "Question"
         post["stars"] = []
         post["comments"] = []
-        post["recipientID"] = PFUser.currentUser()!["PWDid"]
-        post["tags"] = ["\(categoryButton.titleLabel!.text!)"]
-        post["user"] = PFUser.currentUser()
-        if let image = photoButton.imageView?.image {
-            let imageData = UIImagePNGRepresentation(image) //takes the image and converts it to the binary code
-            let imageFile = PFFile(data: imageData)
-            post["photo"] = imageFile
-            post["aspectRatio"] = image.aspectRatio
+        
+        if (PFUser.currentUser()!["isAdmin"] as? Bool == true)
+        {
+            post["recipientID"] = "admin"
+            post["tags"] = "Admin Message"
+
         }
+        else
+        {
+            post["recipientID"] = PFUser.currentUser()!["PWDid"]
+            post["tags"] = ["\(categoryButton.titleLabel!.text!)"]
+
+        }
+
+        post["user"] = PFUser.currentUser()
+
+        if (photoButton.imageView?.image != UIImage(named: "Choose Picture"))
+        {
+            if let image = photoButton.imageView?.image {
+                let imageData = UIImagePNGRepresentation(image) //takes the image and converts it to the binary code
+                if (Double(imageData.length)/1000000.0  >= 9.9)
+                {
+                    alertErrorWithTitle("Image size too large.", message: "Please keep image sizes below 10MB", inViewController: self)
+                    return
+                }
+                let imageFile = PFFile(data: imageData)
+                post["photo"] = imageFile
+                post["aspectRatio"] = image.aspectRatio
+            }
+        }else{
+            println("No Picture!")
+        }
+        
         spinner.startAnimating()
         post.saveInBackgroundWithBlock { (success, error) -> Void in
             self.spinner.stopAnimating()
