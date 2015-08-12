@@ -12,7 +12,8 @@ import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var loginLabel: UILabel!
+
+    @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var passwordFieldYConstraint: NSLayoutConstraint!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -43,7 +44,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             passwordFieldYConstraint.constant = view.bounds.height/4
             UIView.animateWithDuration(1.0, animations: {
                 self.view.layoutIfNeeded()
-                self.loginLabel.alpha = 0
+                self.logo.alpha = 0
             })
         }
         return true
@@ -64,7 +65,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             self.passwordFieldYConstraint.constant = 0
             UIView.animateWithDuration(1.0, animations: {
                 self.view.layoutIfNeeded()
-                self.loginLabel.alpha = 1
+                self.logo.alpha = 1
                 textField.resignFirstResponder()
             })
         }

@@ -6,12 +6,12 @@
     },
     {
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "Sign Me Up.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "Formative_logo_png (1).png"
+      "scale" : "3x"
     }
   ],
   "info" : {

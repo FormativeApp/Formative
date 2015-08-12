@@ -44,7 +44,7 @@
                         <constraint firstAttribute="height" constant="1" id="KI4-sX-jXx"/>
                     </constraints>
                 </view>
-                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Portrait" translatesAutoresizingMaskIntoConstraints="NO" id="bOX-fj-DeG" customClass="PFImageView">
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bOX-fj-DeG" customClass="PFImageView">
                     <rect key="frame" x="20" y="172" width="314" height="200"/>
                     <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <gestureRecognizers/>
@@ -112,7 +112,7 @@
                         </mask>
                     </variation>
                 </textView>
-                <imageView userInteractionEnabled="NO" alpha="0.74999999999999978" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Right Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="uYT-xO-bgv">
+                <imageView userInteractionEnabled="NO" alpha="0.74999999999999978" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Right Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="uYT-xO-bgv">
                     <rect key="frame" x="304" y="253" width="25" height="38"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="25" id="77h-fw-WMK"/>
@@ -203,7 +203,6 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
-        <image name="Portrait" width="341" height="416"/>
         <image name="Right Arrow" width="57" height="90"/>
     </resources>
 </document>

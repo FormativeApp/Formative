@@ -160,8 +160,9 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
             println("No Picture!")
         }
         
-        spinner.startAnimating()
-        post.saveInBackgroundWithBlock { (success, error) -> Void in
+        post.saveInBackground()
+        //spinner.startAnimating()
+        /*post.saveInBackgroundWithBlock { (success, error) -> Void in
             self.spinner.stopAnimating()
             if (success) {
                 self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
@@ -169,7 +170,7 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
             else {
                 alertErrorWithTitle("Post Failed", message: "\(error?.description)", inViewController: self)
             }
-        }
+        }*/
         
 
     }

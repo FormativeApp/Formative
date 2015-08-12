@@ -12,7 +12,8 @@ import Parse
 
 class NewUserViewController: UIViewController, UIDocumentInteractionControllerDelegate {
 
-    @IBOutlet weak var newUserLabel: UILabel!
+
+    @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
@@ -43,7 +44,7 @@ class NewUserViewController: UIViewController, UIDocumentInteractionControllerDe
             passwordFieldYConstraint.constant = view.bounds.height/4 - 10
             UIView.animateWithDuration(1.0, animations: {
                 self.view.layoutIfNeeded()
-                self.newUserLabel.alpha = 0
+                self.logo.alpha = 0
             })
         }
         return true
@@ -68,7 +69,7 @@ class NewUserViewController: UIViewController, UIDocumentInteractionControllerDe
             self.passwordFieldYConstraint.constant = 40
             UIView.animateWithDuration(1.0, animations: {
                 self.view.layoutIfNeeded()
-                self.newUserLabel.alpha = 1
+                self.logo.alpha = 1
                 textField.resignFirstResponder()
             })
         }

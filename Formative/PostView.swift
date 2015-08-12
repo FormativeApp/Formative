@@ -44,7 +44,7 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
     func reset(){
         
         var numFavorites = (post["stars"] as! Array<String>).count
-        favoritesView.favoritesLabel.text = "\(numFavorites) Favorites"
+        favoritesView.favoritesLabel.text = "\(numFavorites)"
         if (contains((post["stars"] as! Array<String>),PFUser.currentUser()!["PWDid"] as! String))
         {
             favoritesView.starred = true
@@ -81,11 +81,11 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
         profileView.nameLabel.text = user["name"] as? String
         
         if (post["comments"] as! Array<PFObject>).count == 0 {
-            commentsString = "No Comments (Add your own)"
+            commentsString = "Reply"
         }
         else {
             var count = (post["comments"] as! Array<PFObject>).count
-            var str = count == 1 ? "Comment" : "Comments"
+            var str = count == 1 ? "Reply" : "Replies"
             commentsString = "\(count) \(str)"
         }
         
@@ -260,7 +260,7 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
         }
         
         var numFavorites = (post["stars"] as! Array<String>).count
-        favoritesView.favoritesLabel.text = "\(numFavorites) Favorites"
+        favoritesView.favoritesLabel.text = "\(numFavorites)"
     }
     
     // MARK: - Comments Animation
@@ -271,7 +271,7 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
         if (commentsHidden)
         {
             commentsHidden = false
-            sender.setTitle("Hide Comments", forState: UIControlState.Normal)
+            sender.setTitle("Hide Replies", forState: UIControlState.Normal)
             commentsTableView.reloadData()
             
             println(superview)
@@ -290,6 +290,16 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
         else
         {
             commentsHidden = true
+            
+            if (post["comments"] as! Array<PFObject>).count == 0 {
+                commentsString = "Reply"
+            }
+            else {
+                var count = (post["comments"] as! Array<PFObject>).count
+                var str = count == 1 ? "Reply" : "Replies"
+                commentsString = "\(count) \(str)"
+            }
+            
             sender.setTitle(commentsString, forState: UIControlState.Normal)
             self.commentsTableView.hidden = true
             self.commentTextView.hidden = true
