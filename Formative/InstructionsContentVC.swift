@@ -14,22 +14,11 @@ class InstructionsContentVC: UIViewController{
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var mainText: UILabel!
     
-    var pageIndex: Int!
     var pageData: [String]!
+    var pageIndex: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = pageData[0]
-        titleLabel.alpha = 0
-        backgroundImageView.image = UIImage(named: "Mealtimes")
-        mainText.text = pageData[1]
-        mainText.alpha = 0
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        UIView.animateWithDuration(1.5, animations: {
-            self.titleLabel.alpha = 1
-            self.mainText.alpha = 1
-        })
+        backgroundImageView.image = UIImage(named: pageData![0])
     }
 }

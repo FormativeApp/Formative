@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>1FEB5320-4E19-4391-A3DC-8E47A707906F</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Formative</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>8FD1F7571A7EF7B830E37D4F29030C11DA0BE0D7</key>
 		<string>https://github.com/FormativeApp/Formative.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Formative.xcodeproj/project.xcworkspace</string>
+	<string>Formative.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>8FD1F7571A7EF7B830E37D4F29030C11DA0BE0D7</key>

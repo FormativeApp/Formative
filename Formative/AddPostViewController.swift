@@ -94,7 +94,7 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
             image = info[UIImagePickerControllerOriginalImage] as? UIImage
         }
         
-        photoButton.setImage(image, forState: UIControlState.Normal)
+        photoButton.setImage(imageWithImage(image!, scaledToSize: CGSize(width: 200*image!.aspectRatio, height: 200)), forState: UIControlState.Normal)
         //photoButtonAspectRatioConstraint.constant = photoButton.imageView!.image!.aspectRatio
         
         photoButton.cornerRadius = photoButton.bounds.width/2
@@ -146,12 +146,13 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
         if (photoButton.imageView?.image != UIImage(named: "Choose Picture"))
         {
             if let image = photoButton.imageView?.image {
-                let imageData = UIImagePNGRepresentation(image) //takes the image and converts it to the binary code
-                if (Double(imageData.length)/1000000.0  >= 9.9)
+                let imageData = UIImagePNGRepresentation(image)
+                //takes the image and converts it to the binary code
+                /*if (Double(imageData.length)/1000000.0  >= 9.9)
                 {
                     alertErrorWithTitle("Image size too large.", message: "Please keep image sizes below 10MB", inViewController: self)
                     return
-                }
+                }*/
                 let imageFile = PFFile(data: imageData)
                 post["photo"] = imageFile
                 post["aspectRatio"] = image.aspectRatio

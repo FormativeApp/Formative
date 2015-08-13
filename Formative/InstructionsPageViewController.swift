@@ -29,6 +29,7 @@ class InstructionsPageViewController: UIViewController, UIPageViewControllerData
         pageViewController.didMoveToParentViewController(self)
         
     }
+    
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         
         var index = (viewController as! InstructionsContentVC).pageIndex

@@ -14,7 +14,8 @@ import Bolts
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    var formativeBlue = UIColor(red: 0, green: 155.0/255.0, blue: 208.0/255.0, alpha: 1)
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -32,15 +33,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var pageControl = UIPageControl.appearance()
         pageControl.pageIndicatorTintColor = UIColor.lightGrayColor()
-        pageControl.currentPageIndicatorTintColor = UIColor.blackColor()
+        pageControl.currentPageIndicatorTintColor = formativeBlue
         pageControl.backgroundColor = UIColor.whiteColor()
         
-        UINavigationBar.appearance().barTintColor = UIColor(red: 0, green: 155.0/255.0, blue: 208.0/255.0, alpha: 1)
+        UINavigationBar.appearance().barTintColor = formativeBlue
         UINavigationBar.appearance().alpha = 0.6
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         
-        UITabBar.appearance().tintColor = UIColor(red: 0, green: 155.0/255.0, blue: 208.0/255.0, alpha: 1)
+        UITabBar.appearance().tintColor = formativeBlue
 
         
         //UINavigationBar.appearance().clipsToBounds = true

@@ -143,10 +143,10 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="de6-pc-C5v">
-                    <rect key="frame" x="0.0" y="0.0" width="354" height="8"/>
+                    <rect key="frame" x="0.0" y="0.0" width="354" height="4"/>
                     <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="8" id="Zv5-H3-01o"/>
+                        <constraint firstAttribute="height" constant="4" id="Zv5-H3-01o"/>
                     </constraints>
                 </view>
             </subviews>
