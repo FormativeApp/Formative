@@ -74,7 +74,7 @@ class InviteSetupVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
             image = info[UIImagePickerControllerOriginalImage] as? UIImage
         } else {
             // [Jihoon]: convert the image to binary, and save to the Parse cloud
-            let imageData = UIImagePNGRepresentation(image) //takes the image and converts it to the binary code
+            let imageData = UIImagePNGRepresentation(imageWithImage(image!, scaledToSize: CGSize(width: 200, height: 200))) //takes the image and converts it to the binary code
             let imageFile = PFFile(data: imageData)
             PFUser.currentUser()?.setObject(imageFile, forKey: "profileImage")
             PFUser.currentUser()?.saveInBackground()

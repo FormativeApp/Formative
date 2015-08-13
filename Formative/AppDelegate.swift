@@ -35,6 +35,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         pageControl.currentPageIndicatorTintColor = UIColor.blackColor()
         pageControl.backgroundColor = UIColor.whiteColor()
         
+        UINavigationBar.appearance().barTintColor = UIColor(red: 0, green: 155.0/255.0, blue: 208.0/255.0, alpha: 1)
+        UINavigationBar.appearance().alpha = 0.6
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
+        UITabBar.appearance().tintColor = UIColor(red: 0, green: 155.0/255.0, blue: 208.0/255.0, alpha: 1)
+
+        
+        //UINavigationBar.appearance().clipsToBounds = true
+        
         return true
     }
 

@@ -69,6 +69,7 @@
 		A1D1E0691B6AB4CD007611AB /* CategorySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D1E0681B6AB4CD007611AB /* CategorySelectionViewController.swift */; };
 		A1D42DBC1B5DD9410035A5C7 /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D42DBB1B5DD9410035A5C7 /* CircularImageView.swift */; };
 		A1D4A3131B7A679F00633AEF /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D4A3121B7A679F00633AEF /* SettingsTableViewController.swift */; };
+		A1D4A3151B7C1ECD00633AEF /* ImageResizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D4A3141B7C1ECD00633AEF /* ImageResizer.swift */; };
 		A1FBAFAF1B5D6ED400980086 /* PostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FBAFAE1B5D6ED400980086 /* PostView.xib */; };
 		A1FBAFB11B5D748300980086 /* PostProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FBAFB01B5D748300980086 /* PostProfileView.swift */; };
 		A1FBAFB31B5D749200980086 /* PostProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1FBAFB21B5D749200980086 /* PostProfileView.xib */; };
@@ -157,6 +158,7 @@
 		A1D1E0681B6AB4CD007611AB /* CategorySelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySelectionViewController.swift; sourceTree = "<group>"; };
 		A1D42DBB1B5DD9410035A5C7 /* CircularImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
 		A1D4A3121B7A679F00633AEF /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		A1D4A3141B7C1ECD00633AEF /* ImageResizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageResizer.swift; sourceTree = "<group>"; };
 		A1FBAFAE1B5D6ED400980086 /* PostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostView.xib; sourceTree = "<group>"; };
 		A1FBAFB01B5D748300980086 /* PostProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostProfileView.swift; sourceTree = "<group>"; };
 		A1FBAFB21B5D749200980086 /* PostProfileView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostProfileView.xib; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				A16C358E1B672ADF009BABD2 /* userProfileQuestions.json */,
 				A19F322E1B7272D900E428D3 /* instructions.json */,
 				A1B256851B796EB50077B8B6 /* TermsOfUse.pdf */,
+				A1D4A3141B7C1ECD00633AEF /* ImageResizer.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				A1A2CD7E1B60514400A327DB /* LoginViewController.swift in Sources */,
 				A1398AB31B686143007867B1 /* ProfilePictureSelectionCell.swift in Sources */,
 				A1A2CD801B6062B500A327DB /* NewUserViewController.swift in Sources */,
+				A1D4A3151B7C1ECD00633AEF /* ImageResizer.swift in Sources */,
 				A1D1E0691B6AB4CD007611AB /* CategorySelectionViewController.swift in Sources */,
 				A1A2C2041B66D29D000AC5C8 /* JSONManager.swift in Sources */,
 				A1A7893E1B6EED8700A6674A /* InviteSenderViewController.swift in Sources */,

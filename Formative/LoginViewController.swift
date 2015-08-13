@@ -67,6 +67,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 self.view.layoutIfNeeded()
                 self.logo.alpha = 1
                 textField.resignFirstResponder()
+
             })
         }
         

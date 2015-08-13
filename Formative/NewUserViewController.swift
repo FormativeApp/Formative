@@ -41,7 +41,7 @@ class NewUserViewController: UIViewController, UIDocumentInteractionControllerDe
         if (passwordFieldYConstraint.constant == 40) {
             // Animate fields up
             println("UP")
-            passwordFieldYConstraint.constant = view.bounds.height/4 - 10
+            passwordFieldYConstraint.constant = view.bounds.height/5 + 40
             UIView.animateWithDuration(1.0, animations: {
                 self.view.layoutIfNeeded()
                 self.logo.alpha = 0

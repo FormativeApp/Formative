@@ -161,18 +161,7 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
         }
         
         post.saveInBackground()
-        //spinner.startAnimating()
-        /*post.saveInBackgroundWithBlock { (success, error) -> Void in
-            self.spinner.stopAnimating()
-            if (success) {
-                self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
-            }
-            else {
-                alertErrorWithTitle("Post Failed", message: "\(error?.description)", inViewController: self)
-            }
-        }*/
-        
-
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
     // MARK: - Storyboard Navigation

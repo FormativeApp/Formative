@@ -22,7 +22,6 @@ class StrategiesTVC: UITableViewController {
         
         tableView.estimatedRowHeight = 40
         tableView.rowHeight = UITableViewAutomaticDimension
-        navigationItem.leftBarButtonItem?.title = "Back"
     }
     
     override func didReceiveMemoryWarning() {

@@ -20,6 +20,8 @@ class KeywordsTVC: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        let backItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backItem
     }
     
     override func didReceiveMemoryWarning() {
