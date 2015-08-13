@@ -60,7 +60,12 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
         
         postTextLabel.text = post["text"] as? String
         
-        categoryLabel.text = (post["tags"] as! NSArray)[0] as? String
+        
+        var categoryText = (post["tags"] as! NSArray)[0] as? String
+        
+        if categoryText! != "" {
+            categoryLabel.text = categoryText!
+        }
         
         if let type = post["type"] as? String {
             if (type == "Question")

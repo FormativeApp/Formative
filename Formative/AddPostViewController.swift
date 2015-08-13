@@ -116,11 +116,6 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
             return
         }
         
-        if (categoryButton.titleLabel?.text == "Choose Category")
-        {
-            alertErrorWithTitle("Please choose a category", message: nil, inViewController: self)
-            return
-        }
         
         var post = PFObject(className: "Post")
         post["text"] = messageTextView.text
@@ -138,6 +133,11 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
         {
             post["recipientID"] = PFUser.currentUser()!["PWDid"]
             post["tags"] = ["\(categoryButton.titleLabel!.text!)"]
+            
+            if ( categoryButton.titleLabel!.text! == "Choose Category →")
+            {
+                post["tags"] = [""]
+            }
 
         }
 

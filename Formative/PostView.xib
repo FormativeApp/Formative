@@ -120,7 +120,7 @@
                     </constraints>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tg0-6e-kQd">
-                    <rect key="frame" x="0.0" y="447" width="346" height="138"/>
+                    <rect key="frame" x="0.0" y="453" width="346" height="138"/>
                     <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="138" id="gpj-2y-WYF"/>
@@ -181,7 +181,7 @@
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bOX-fj-DeG" secondAttribute="trailing" constant="20" id="mGb-zE-5IL"/>
                 <constraint firstAttribute="trailing" secondItem="tg0-6e-kQd" secondAttribute="trailing" constant="8" id="oRG-dg-Nfa"/>
                 <constraint firstAttribute="centerX" secondItem="bOX-fj-DeG" secondAttribute="centerX" id="p0r-mE-a9F"/>
-                <constraint firstItem="Q46-YW-rj5" firstAttribute="top" secondItem="tg0-6e-kQd" secondAttribute="bottom" constant="8" id="sp5-jw-slH"/>
+                <constraint firstItem="Q46-YW-rj5" firstAttribute="top" secondItem="tg0-6e-kQd" secondAttribute="bottom" constant="2" id="sp5-jw-slH"/>
                 <constraint firstItem="SpW-8E-vMX" firstAttribute="top" secondItem="45v-II-OSi" secondAttribute="bottom" constant="8" id="ucy-XB-dMy"/>
                 <constraint firstAttribute="centerX" secondItem="G7c-Pr-fSD" secondAttribute="centerX" constant="4" id="vGW-eR-FBw"/>
                 <constraint firstAttribute="centerX" secondItem="ObU-7M-zjC" secondAttribute="centerX" constant="1" id="xne-fZ-ndx"/>

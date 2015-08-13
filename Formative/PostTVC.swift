@@ -14,7 +14,10 @@ class PostTVC: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        postView.layer.shadowOffset = CGSize(width: 2, height: 3)
+        postView.layer.shadowRadius = 2
+        postView.layer.shadowOpacity = 0.3
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

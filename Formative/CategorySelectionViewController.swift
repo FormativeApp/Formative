@@ -10,16 +10,7 @@ import UIKit
 
 class CategorySelectionViewController: UITableViewController {
 
-    var categories: Array<String> = []
-    
-    override func viewDidLoad() {
-        var browerContentData = NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("browser", ofType: "json")!)
-        var browserContent = parseJSON(browerContentData!) as! NSArray
-        for item in browserContent{
-            let category = item as! NSDictionary
-            categories.append(category["title"] as! String)
-        }
-    }
+    var categories: Array<String> = ["Sleep", "Personal Care", "Difficult Behaviors", "Communication", "Legal Decisions", "Respite Care", "Long-Term Care Providers", "Moments of Joy", "Other"]
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categories.count
