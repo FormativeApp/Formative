@@ -203,6 +203,12 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
             textView.text = ""
         }
         
+        var coordinateY = textView.convertPoint(textView.bounds.origin, toView: superTableView).y
+        var cell = view.superview?.superview?.superview! as! UITableViewCell
+        //superTableView!.scrollToRowAtIndexPath(superTableView!.indexPathForCell(cell)!, atScrollPosition: UITableViewScrollPosition.Middle, animated: true)
+        println(coordinateY)
+        superTableView?.setContentOffset(CGPointMake(0, coordinateY-100), animated: true)
+        
         commentTextView.becomeFirstResponder()
     }
     
@@ -281,14 +287,12 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
     
     var commentsHidden = true
     @IBAction func revealOrHideComments(sender: UIButton) {
-        println(post["comments"] as! Array<PFObject>)
         if (commentsHidden)
         {
             commentsHidden = false
             sender.setTitle("Hide Replies", forState: UIControlState.Normal)
             commentsTableView.reloadData()
             
-            println(superview)
             tableViewHeightConstraint.constant = commentsTableView.contentSize.height
             buttonToBottomConstraint.constant = commentTextView.frame.height + tableViewHeightConstraint.constant + 50
             superTableView?.beginUpdates()
@@ -336,7 +340,6 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
     // MARK: - Gesture Recognizers
     
     @IBAction func imageTapped(sender: UITapGestureRecognizer) {
-        println("Image Tapped")
         viewController?.performSegueWithIdentifier("goToImage", sender: postImage.image)
         
     }

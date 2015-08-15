@@ -41,7 +41,7 @@
 		A1808CE81B669285006771CF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A1808CE71B669285006771CF /* libsqlite3.dylib */; };
 		A199AD251B6163B6004FE514 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A199AD241B6163B6004FE514 /* FeedViewController.swift */; };
 		A19F32231B71589300E428D3 /* InviteSetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F32221B71589300E428D3 /* InviteSetupVC.swift */; };
-		A19F32251B715F8A00E428D3 /* ProfileSettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F32241B715F8A00E428D3 /* ProfileSettingsTVC.swift */; };
+		A19F32251B715F8A00E428D3 /* DementiaProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F32241B715F8A00E428D3 /* DementiaProfileTVC.swift */; };
 		A19F32271B715FD500E428D3 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F32261B715FD500E428D3 /* ChangePasswordVC.swift */; };
 		A19F322B1B71913C00E428D3 /* InstructionsContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F322A1B71913C00E428D3 /* InstructionsContentVC.swift */; };
 		A19F322D1B71980100E428D3 /* InstructionsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F322C1B71980100E428D3 /* InstructionsPageViewController.swift */; };
@@ -50,7 +50,7 @@
 		A1A2C2041B66D29D000AC5C8 /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2C2031B66D29D000AC5C8 /* JSONManager.swift */; };
 		A1A2C20B1B66E4E9000AC5C8 /* browser.json in Resources */ = {isa = PBXBuildFile; fileRef = A1A2C20A1B66E4E9000AC5C8 /* browser.json */; };
 		A1A2C20D1B66EC60000AC5C8 /* BrowsePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2C20C1B66EC60000AC5C8 /* BrowsePhotoCell.swift */; };
-		A1A2C2111B66FA53000AC5C8 /* ProfileSetupTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2C2101B66FA53000AC5C8 /* ProfileSetupTVC.swift */; };
+		A1A2C2111B66FA53000AC5C8 /* DementiaProfileEditTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2C2101B66FA53000AC5C8 /* DementiaProfileEditTVC.swift */; };
 		A1A2CD7A1B6020FE00A327DB /* CommentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2CD791B6020FE00A327DB /* CommentTVC.swift */; };
 		A1A2CD7E1B60514400A327DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2CD7D1B60514400A327DB /* LoginViewController.swift */; };
 		A1A2CD801B6062B500A327DB /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2CD7F1B6062B500A327DB /* NewUserViewController.swift */; };
@@ -130,7 +130,7 @@
 		A1808CE71B669285006771CF /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		A199AD241B6163B6004FE514 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		A19F32221B71589300E428D3 /* InviteSetupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteSetupVC.swift; sourceTree = "<group>"; };
-		A19F32241B715F8A00E428D3 /* ProfileSettingsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSettingsTVC.swift; sourceTree = "<group>"; };
+		A19F32241B715F8A00E428D3 /* DementiaProfileTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DementiaProfileTVC.swift; sourceTree = "<group>"; };
 		A19F32261B715FD500E428D3 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChangePasswordVC.swift; path = ../ChangePasswordVC.swift; sourceTree = "<group>"; };
 		A19F322A1B71913C00E428D3 /* InstructionsContentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsContentVC.swift; sourceTree = "<group>"; };
 		A19F322C1B71980100E428D3 /* InstructionsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsPageViewController.swift; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 		A1A2C2031B66D29D000AC5C8 /* JSONManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
 		A1A2C20A1B66E4E9000AC5C8 /* browser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = browser.json; sourceTree = "<group>"; };
 		A1A2C20C1B66EC60000AC5C8 /* BrowsePhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowsePhotoCell.swift; sourceTree = "<group>"; };
-		A1A2C2101B66FA53000AC5C8 /* ProfileSetupTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSetupTVC.swift; sourceTree = "<group>"; };
+		A1A2C2101B66FA53000AC5C8 /* DementiaProfileEditTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DementiaProfileEditTVC.swift; sourceTree = "<group>"; };
 		A1A2CD791B6020FE00A327DB /* CommentTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTVC.swift; sourceTree = "<group>"; };
 		A1A2CD7D1B60514400A327DB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A1A2CD7F1B6062B500A327DB /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
@@ -300,7 +300,6 @@
 				A19F32221B71589300E428D3 /* InviteSetupVC.swift */,
 				A1A7893B1B6EE8DA00A6674A /* ForgotPasswordVC.swift */,
 				A135CC8D1B68072200445C21 /* TextFieldCell.swift */,
-				A1A2C2101B66FA53000AC5C8 /* ProfileSetupTVC.swift */,
 				A1398AB21B686143007867B1 /* ProfilePictureSelectionCell.swift */,
 				A1A2CD7F1B6062B500A327DB /* NewUserViewController.swift */,
 				A1A2CD7D1B60514400A327DB /* LoginViewController.swift */,
@@ -330,9 +329,10 @@
 		A1CD91C41B72AA1C005E9875 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				A19F32241B715F8A00E428D3 /* ProfileSettingsTVC.swift */,
+				A19F32241B715F8A00E428D3 /* DementiaProfileTVC.swift */,
 				A19F32261B715FD500E428D3 /* ChangePasswordVC.swift */,
 				A16F9ACE1B791B91004A3669 /* ChangeCareTeamVC.swift */,
+				A1A2C2101B66FA53000AC5C8 /* DementiaProfileEditTVC.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -537,7 +537,7 @@
 				A1A2CD7A1B6020FE00A327DB /* CommentTVC.swift in Sources */,
 				F81A48671B6DA4F00060288F /* AdminViewViewController.swift in Sources */,
 				A199AD251B6163B6004FE514 /* FeedViewController.swift in Sources */,
-				A1A2C2111B66FA53000AC5C8 /* ProfileSetupTVC.swift in Sources */,
+				A1A2C2111B66FA53000AC5C8 /* DementiaProfileEditTVC.swift in Sources */,
 				A16C358C1B672186009BABD2 /* AlertManager.swift in Sources */,
 				A135CC881B67EBA200445C21 /* StrategiesTVC.swift in Sources */,
 				A1D4A3131B7A679F00633AEF /* SettingsTableViewController.swift in Sources */,
@@ -551,7 +551,7 @@
 				A1D42DBC1B5DD9410035A5C7 /* CircularImageView.swift in Sources */,
 				A14C750C1B728E240025DE4B /* CaregiversViewController.swift in Sources */,
 				A1398AB11B6823B7007867B1 /* AddPostViewController.swift in Sources */,
-				A19F32251B715F8A00E428D3 /* ProfileSettingsTVC.swift in Sources */,
+				A19F32251B715F8A00E428D3 /* DementiaProfileTVC.swift in Sources */,
 				A135CC8E1B68072200445C21 /* TextFieldCell.swift in Sources */,
 				A19F32231B71589300E428D3 /* InviteSetupVC.swift in Sources */,
 				A14503E71B4F008B006AC555 /* PostView.swift in Sources */,

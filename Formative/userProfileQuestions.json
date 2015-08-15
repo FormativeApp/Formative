@@ -1,5 +1,4 @@
 [
- ["fullName", "Full Name"],
  ["PWDName", "Who do you care for?"],
  ["PWDAge", "Patients age?"],
  ["PWDDuration", "How long has your person had dementia?"],

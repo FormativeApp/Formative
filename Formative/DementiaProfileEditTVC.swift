@@ -1,5 +1,5 @@
 //
-//  ProfileSetupTVC.swift
+//  DementiaProfileEditTVC.swift
 //  
 //
 //  Created by Andrew Ke on 7/27/15.
@@ -11,7 +11,7 @@ import Parse
 import Bolts
 import MobileCoreServices
 
-class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class DementiaProfileEditTVC: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var questions: NSArray!
     
@@ -23,6 +23,9 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
     var profileImageCell: ProfilePictureSelectionCell!
     
     var user = PFUser.currentUser()!
+    
+    var numberOfTextQuestions = 4
+    
     // MARK: - VC Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +62,7 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        if (indexPath.row < 5)
+        if (indexPath.row < numberOfTextQuestions)
         {
             let cell = tableView.dequeueReusableCellWithIdentifier("questionCell", forIndexPath: indexPath) as! TextFieldCell
             cell.key = questions[indexPath.row][0] as? String
@@ -81,7 +84,7 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
             let cell = tableView.dequeueReusableCellWithIdentifier("multipleCell", forIndexPath: indexPath) as! MultipleChoiceCell
             cell.array = questions[indexPath.row][1] as! Array<String>
             cell.title = (questions[indexPath.row][0] as! NSString).substringFromIndex(3)
-            cell.selection = selections[indexPath.row-5]
+            cell.selection = selections[indexPath.row-numberOfTextQuestions]
             if (cell.selection == -1)
             {
                 if let patient = patient
@@ -98,8 +101,8 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
     }
     
     override func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if (indexPath.row >= 5) {
-            selections[indexPath.row-5] = (cell as! MultipleChoiceCell).selection
+        if (indexPath.row >= numberOfTextQuestions) {
+            selections[indexPath.row-numberOfTextQuestions] = (cell as! MultipleChoiceCell).selection
         }
     }
     
@@ -117,12 +120,12 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
             
             println(selections)
             
-            for i in 5..<selections.count+5 {
+            for i in numberOfTextQuestions..<selections.count+numberOfTextQuestions {
                 var cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: i, inSection: 0)) as? MultipleChoiceCell
                 if let cell = cell {
-                    selections[i-5] = cell.selection
+                    selections[i-numberOfTextQuestions] = cell.selection
                 }
-                patient[questions[i][0] as! String] = selections[i-5]
+                patient[questions[i][0] as! String] = selections[i-numberOfTextQuestions]
             }
             
             patient.saveInBackground()

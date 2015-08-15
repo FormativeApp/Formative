@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ljV-ZM-zEc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ljV-ZM-zEc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -7,10 +7,10 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Dementia Profile-->
+        <!--Edit Profile-->
         <scene sceneID="WPd-fl-VIo">
             <objects>
-                <tableViewController id="7uo-GR-gGq" customClass="ProfileSetupTVC" customModule="Formative" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="7uo-GR-gGq" customClass="DementiaProfileEditTVC" customModule="Formative" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Emb-w6-Rx2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -113,7 +113,7 @@
                             <outlet property="delegate" destination="7uo-GR-gGq" id="kLv-Mi-CkY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Dementia Profile" id="mA6-WO-0Z9">
+                    <navigationItem key="navigationItem" title="Edit Profile" id="mA6-WO-0Z9">
                         <barButtonItem key="backBarButtonItem" title="Back" id="ae4-LO-Gz5"/>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="11D-QB-2eX">
                             <connections>
@@ -129,7 +129,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1759" y="3502"/>
+            <point key="canvasLocation" x="2384" y="3634"/>
         </scene>
         <!--Categories-->
         <scene sceneID="zof-Gg-Ace">
@@ -1188,99 +1188,53 @@ If you have more questions and would like to connect with an experienced caregiv
             </objects>
             <point key="canvasLocation" x="3278" y="1810"/>
         </scene>
-        <!--Your Profile-->
+        <!--Pateint Profile-->
         <scene sceneID="gdE-hq-SwC">
             <objects>
-                <tableViewController id="VzK-34-mGY" customClass="ProfileSettingsTVC" customModule="Formative" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6iF-9u-LzZ">
+                <tableViewController id="VzK-34-mGY" customClass="DementiaProfileTVC" customModule="Formative" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6iF-9u-LzZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <sections>
-                            <tableViewSection id="nNZ-Uy-8rS">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="photoCell" rowHeight="230" id="2e9-UZ-X93" customClass="ProfilePictureSelectionCell" customModule="Formative" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="230"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2e9-UZ-X93" id="1qJ-Br-J4V">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch to select a profile image" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLz-gJ-Vae">
-                                                    <rect key="frame" x="181" y="178" width="238" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="B9k-Ej-J5j"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="d5s-f2-8SH" customClass="CircularImageView" customModule="Formative" customModuleProvider="target">
-                                                    <rect key="frame" x="238" y="35" width="125" height="125"/>
-                                                    <color key="backgroundColor" red="0.60000002384185791" green="0.60000002384185791" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <gestureRecognizers/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="d5s-f2-8SH" secondAttribute="height" multiplier="1:1" id="wGf-W6-lX6"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Foj-KD-yuH">
-                                                    <rect key="frame" x="282" y="79" width="37" height="37"/>
-                                                    <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </activityIndicatorView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="d5s-f2-8SH" firstAttribute="top" secondItem="1qJ-Br-J4V" secondAttribute="topMargin" constant="27" id="72v-vX-15B"/>
-                                                <constraint firstAttribute="centerX" secondItem="d5s-f2-8SH" secondAttribute="centerX" id="8co-RV-cak"/>
-                                                <constraint firstItem="Foj-KD-yuH" firstAttribute="centerY" secondItem="d5s-f2-8SH" secondAttribute="centerY" id="EsB-Fk-pQK"/>
-                                                <constraint firstAttribute="bottom" secondItem="CLz-gJ-Vae" secondAttribute="bottom" constant="30" id="KzA-3f-a2H"/>
-                                                <constraint firstItem="Foj-KD-yuH" firstAttribute="centerX" secondItem="d5s-f2-8SH" secondAttribute="centerX" id="P6p-Hx-huo"/>
-                                                <constraint firstItem="CLz-gJ-Vae" firstAttribute="top" secondItem="d5s-f2-8SH" secondAttribute="bottom" constant="18" id="UlC-d5-B3v"/>
-                                                <constraint firstAttribute="centerX" secondItem="CLz-gJ-Vae" secondAttribute="centerX" id="kNn-0R-gEL"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <outlet property="profileImage" destination="d5s-f2-8SH" id="P5t-iM-u48"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="mCB-g6-2PS" rowHeight="60" style="IBUITableViewCellStyleDefault" id="NC2-6b-lfF">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NC2-6b-lfF" id="7an-Ml-gkb">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Dementia Profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mCB-g6-2PS">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="7uo-GR-gGq" kind="show" id="XSx-HX-YcQ"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="8zn-Kv-aGs" detailTextLabel="xts-LH-7Yy" style="IBUITableViewCellStyleSubtitle" id="jLU-KJ-QhZ">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jLU-KJ-QhZ" id="7Ej-XD-FYe">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" id="8zn-Kv-aGs">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xts-LH-7Yy">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="VzK-34-mGY" id="VhK-20-MvH"/>
                             <outlet property="delegate" destination="VzK-34-mGY" id="iA4-r9-hJE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Your Profile" id="OoL-6C-olM">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="Psc-tV-rMA">
+                    <navigationItem key="navigationItem" title="Pateint Profile" id="OoL-6C-olM">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="jpg-en-gH0">
                             <connections>
-                                <action selector="logout:" destination="VzK-34-mGY" id="cdZ-Wk-B3g"/>
+                                <segue destination="7uo-GR-gGq" kind="show" id="ljM-C1-w5w"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="profileImage" destination="d5s-f2-8SH" id="go4-Ya-1wf"/>
-                        <outlet property="spinner" destination="Foj-KD-yuH" id="wRK-Li-4lh"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1G-tT-XmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2497" y="3502"/>
+            <point key="canvasLocation" x="3332" y="3558"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Onb-6Y-Jut">
@@ -1293,6 +1247,48 @@ If you have more questions and would like to connect with an experienced caregiv
                         <sections>
                             <tableViewSection id="RDv-lE-ID6">
                                 <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="photoCell" rowHeight="230" id="8CX-Dc-Wde" customClass="ProfilePictureSelectionCell" customModule="Formative" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="230"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8CX-Dc-Wde" id="TXV-rS-OC8">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch to select a profile image" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCs-e8-0dZ">
+                                                    <rect key="frame" x="181" y="178" width="238" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="kkn-Hg-W88"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="ggj-LB-Hc3" customClass="CircularImageView" customModule="Formative" customModuleProvider="target">
+                                                    <rect key="frame" x="238" y="35" width="125" height="125"/>
+                                                    <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <gestureRecognizers/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="ggj-LB-Hc3" secondAttribute="height" multiplier="1:1" id="b0v-Sj-QOk"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Kvc-GO-y6s">
+                                                    <rect key="frame" x="282" y="79" width="37" height="37"/>
+                                                    <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="ggj-LB-Hc3" secondAttribute="centerX" id="Dks-aN-Tag"/>
+                                                <constraint firstItem="fCs-e8-0dZ" firstAttribute="top" secondItem="ggj-LB-Hc3" secondAttribute="bottom" constant="18" id="LeQ-LH-wAU"/>
+                                                <constraint firstItem="Kvc-GO-y6s" firstAttribute="centerX" secondItem="ggj-LB-Hc3" secondAttribute="centerX" id="PyU-aF-SLG"/>
+                                                <constraint firstAttribute="bottom" secondItem="fCs-e8-0dZ" secondAttribute="bottom" constant="30" id="dxT-qa-rpC"/>
+                                                <constraint firstItem="Kvc-GO-y6s" firstAttribute="centerY" secondItem="ggj-LB-Hc3" secondAttribute="centerY" id="imP-ve-6ex"/>
+                                                <constraint firstItem="ggj-LB-Hc3" firstAttribute="top" secondItem="TXV-rS-OC8" secondAttribute="topMargin" constant="27" id="sRZ-oF-lcI"/>
+                                                <constraint firstAttribute="centerX" secondItem="fCs-e8-0dZ" secondAttribute="centerX" id="ylg-p7-c6T"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="profileImage" destination="ggj-LB-Hc3" id="w7c-L3-TIB"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="DGb-Jj-VCt">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DGb-Jj-VCt" id="Fde-8g-H27">
@@ -1373,7 +1369,19 @@ If you have more questions and would like to connect with an experienced caregiv
                             <outlet property="delegate" destination="GUc-ar-AX2" id="Lhj-hX-Eiq"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Settings" id="UXT-Bg-uZP"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Settings" id="UXT-Bg-uZP">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="iP4-wG-eiO">
+                            <connections>
+                                <action selector="logout:" destination="GUc-ar-AX2" id="QHq-GL-P1N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="profileImage" destination="ggj-LB-Hc3" id="9v8-6i-Stm"/>
+                        <outlet property="spinner" destination="Kvc-GO-y6s" id="cXy-PU-O6d"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LiR-Hp-xCW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1501,9 +1509,9 @@ If you have more questions and would like to connect with an experienced caregiv
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ja0-Sj-If6">
-                                <rect key="frame" x="224" y="507" width="152" height="36"/>
+                                <rect key="frame" x="188" y="507" width="225" height="36"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                <state key="normal" title="Add New Members">
+                                <state key="normal" title="Add New Members via Email">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1511,7 +1519,7 @@ If you have more questions and would like to connect with an experienced caregiv
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cJU-4G-UhM">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="450"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="395"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xnG-dh-Rta">
                                     <size key="itemSize" width="134" height="160"/>
@@ -1564,25 +1572,36 @@ If you have more questions and would like to connect with an experienced caregiv
                                 </connections>
                             </collectionView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Invitation Code" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wop-jQ-IVN">
-                                <rect key="frame" x="16" y="458" width="568" height="41"/>
+                                <rect key="frame" x="16" y="403" width="568" height="41"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="6JA-gX-nBv"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4Y-4g-u4a">
+                                <rect key="frame" x="16" y="452" width="568" height="47"/>
+                                <string key="text">Copy and paste the above code to send via text to your family and friends
+</string>
+                                <fontDescription key="fontDescription" name="AvenirNext-Italic" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cJU-4G-UhM" firstAttribute="leading" secondItem="Gyg-kY-mdi" secondAttribute="leading" id="3GT-0B-pT0"/>
+                            <constraint firstItem="L4Y-4g-u4a" firstAttribute="top" secondItem="Wop-jQ-IVN" secondAttribute="bottom" constant="8" id="5uN-Jl-xty"/>
                             <constraint firstItem="Wop-jQ-IVN" firstAttribute="top" secondItem="cJU-4G-UhM" secondAttribute="bottom" constant="8" id="87q-fc-AXW"/>
+                            <constraint firstItem="L4Y-4g-u4a" firstAttribute="leading" secondItem="Gyg-kY-mdi" secondAttribute="leadingMargin" id="9ru-BK-O8x"/>
                             <constraint firstItem="Wop-jQ-IVN" firstAttribute="leading" secondItem="Gyg-kY-mdi" secondAttribute="leadingMargin" id="AgV-TD-mKG"/>
                             <constraint firstItem="Wop-jQ-IVN" firstAttribute="trailing" secondItem="Gyg-kY-mdi" secondAttribute="trailingMargin" id="Ht7-5M-4St"/>
                             <constraint firstAttribute="centerX" secondItem="ja0-Sj-If6" secondAttribute="centerX" id="JD0-7J-mV1"/>
+                            <constraint firstItem="ja0-Sj-If6" firstAttribute="top" secondItem="L4Y-4g-u4a" secondAttribute="bottom" constant="8" id="JyU-pa-nqN"/>
                             <constraint firstItem="s0x-Gd-NmQ" firstAttribute="top" secondItem="ja0-Sj-If6" secondAttribute="bottom" constant="8" id="Mgl-Ac-YhJ"/>
-                            <constraint firstItem="ja0-Sj-If6" firstAttribute="top" secondItem="Wop-jQ-IVN" secondAttribute="bottom" constant="8" id="SAj-XZ-JSo"/>
                             <constraint firstItem="cJU-4G-UhM" firstAttribute="top" secondItem="Gyg-kY-mdi" secondAttribute="top" id="gJ0-wP-JgL"/>
+                            <constraint firstItem="L4Y-4g-u4a" firstAttribute="trailing" secondItem="Gyg-kY-mdi" secondAttribute="trailingMargin" id="q9L-Sf-AkO"/>
                             <constraint firstAttribute="trailing" secondItem="cJU-4G-UhM" secondAttribute="trailing" id="wwa-Zp-nqA"/>
                         </constraints>
                     </view>
@@ -1723,11 +1742,11 @@ If you have more questions and would like to connect with an experienced caregiv
             </objects>
             <point key="canvasLocation" x="-36" y="1945"/>
         </scene>
-        <!--Profile-->
+        <!--Patient Profile-->
         <scene sceneID="aEj-SH-kNe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vaf-Gq-Fs3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="contacts" id="MHA-7b-B3T"/>
+                    <tabBarItem key="tabBarItem" title="Patient Profile" image="contacts" id="MHA-7b-B3T"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GHg-vx-2H7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1807,29 +1826,33 @@ If you have more questions and would like to connect with an experienced caregiv
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invitation Code:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HB3-Gz-rsV">
-                                <rect key="frame" x="240" y="192" width="121" height="21"/>
+                                <rect key="frame" x="240" y="187" width="121" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1231h2213" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mrb-Z4-LsZ">
-                                <rect key="frame" x="239" y="221" width="123" height="32"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="23"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Invitation Code" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oUN-vB-BOl">
+                                <rect key="frame" x="16" y="216" width="568" height="41"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="sBb-O9-AOr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="lAq-zz-OJv" firstAttribute="top" secondItem="Az3-Dp-WVZ" secondAttribute="bottom" constant="8" id="9qz-tu-2Pb"/>
-                            <constraint firstItem="Mrb-Z4-LsZ" firstAttribute="top" secondItem="HB3-Gz-rsV" secondAttribute="bottom" constant="8" id="CF1-Dc-jmX"/>
+                            <constraint firstItem="oUN-vB-BOl" firstAttribute="top" secondItem="HB3-Gz-rsV" secondAttribute="bottom" constant="8" id="A8z-Pa-z0b"/>
+                            <constraint firstItem="Az3-Dp-WVZ" firstAttribute="top" secondItem="oUN-vB-BOl" secondAttribute="bottom" constant="8" id="HVn-VG-vVS"/>
                             <constraint firstAttribute="centerX" secondItem="lAq-zz-OJv" secondAttribute="centerX" id="LH4-tr-EG7"/>
+                            <constraint firstItem="oUN-vB-BOl" firstAttribute="leading" secondItem="eye-2Z-aSK" secondAttribute="leadingMargin" id="O8d-GC-dPS"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Az3-Dp-WVZ" secondAttribute="trailing" id="OHr-e3-1Rn"/>
-                            <constraint firstAttribute="centerX" secondItem="Mrb-Z4-LsZ" secondAttribute="centerX" id="Pxp-id-0nU"/>
                             <constraint firstItem="Az3-Dp-WVZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eye-2Z-aSK" secondAttribute="leadingMargin" id="Vi8-BV-yEm"/>
                             <constraint firstAttribute="centerY" secondItem="Az3-Dp-WVZ" secondAttribute="centerY" id="eNH-wQ-PeY"/>
+                            <constraint firstItem="oUN-vB-BOl" firstAttribute="trailing" secondItem="eye-2Z-aSK" secondAttribute="trailingMargin" id="jd1-bQ-DDQ"/>
                             <constraint firstAttribute="centerX" secondItem="HB3-Gz-rsV" secondAttribute="centerX" id="lDA-X5-1XK"/>
-                            <constraint firstItem="Az3-Dp-WVZ" firstAttribute="top" secondItem="Mrb-Z4-LsZ" secondAttribute="bottom" constant="12" id="oL7-5Q-oiA"/>
                             <constraint firstAttribute="centerX" secondItem="Az3-Dp-WVZ" secondAttribute="centerX" constant="-0.5" id="y9H-qr-7JY"/>
                         </constraints>
                     </view>
@@ -1841,7 +1864,7 @@ If you have more questions and would like to connect with an experienced caregiv
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="patientID" destination="Mrb-Z4-LsZ" id="YI6-eg-XgF"/>
+                        <outlet property="patientID" destination="oUN-vB-BOl" id="E5N-2J-tnQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sp1-Ho-RzP" userLabel="First Responder" sceneMemberID="firstResponder"/>

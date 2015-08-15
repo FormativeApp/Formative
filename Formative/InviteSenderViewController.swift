@@ -15,7 +15,7 @@ import MessageUI
 
 class InviteSenderViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
-    @IBOutlet weak var patientID: UILabel!
+    @IBOutlet weak var patientID: UITextView!
     
     override func viewDidLoad() {
         var user = PFUser.currentUser()!

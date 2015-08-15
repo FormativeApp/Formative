@@ -12,7 +12,7 @@ class PostTVC: UITableViewCell {
 
     @IBOutlet weak var postView: PostView!
     
-    override func awakeFromNib() {
+    /*override func awakeFromNib() {
         super.awakeFromNib()
         
         postView.layer.shadowOffset = CGSize(width: 2, height: 3)
@@ -23,7 +23,7 @@ class PostTVC: UITableViewCell {
         postView.layer.shouldRasterize = true
         postView.layer.rasterizationScale = UIScreen.mainScreen().scale
 
-    }
+    }*/
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
