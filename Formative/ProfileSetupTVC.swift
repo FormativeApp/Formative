@@ -15,7 +15,7 @@ class ProfileSetupTVC: UITableViewController, UIImagePickerControllerDelegate, U
     
     var questions: NSArray!
     
-    var selections = [-1, -1, -1, -1, -1, -1]
+    var selections = [-1, -1, -1, -1, -1, -1, -1]
     
     var patient:PFObject?
     

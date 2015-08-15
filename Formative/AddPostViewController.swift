@@ -127,6 +127,7 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
         {
             post["recipientID"] = "admin"
             post["tags"] = "Admin Message"
+            post["type"] = "Admin"
 
         }
         else
@@ -136,7 +137,7 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
             
             if ( categoryButton.titleLabel!.text! == "Choose Category →")
             {
-                post["tags"] = [""]
+                post["tags"] = ["No Tags"]
             }
 
         }
@@ -161,7 +162,9 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
             println("No Picture!")
         }
         
+        var user = PFUser.currentUser()!
         post.saveInBackground()
+        PFCloud.callFunctionInBackground("postCreated", withParameters: ["name" : user["name"] as! String, "text" : post["text"] as! String, "type" : post["type"] as! String, "team" : user["PWDid"] as! String, "sender" : user.objectId!])
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     

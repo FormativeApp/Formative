@@ -58,7 +58,8 @@
 		A1A7893E1B6EED8700A6674A /* InviteSenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A7893D1B6EED8700A6674A /* InviteSenderViewController.swift */; };
 		A1A789401B6EEE3300A6674A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A7893F1B6EEE3300A6674A /* MessageUI.framework */; };
 		A1B256841B796E730077B8B6 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B256831B796E730077B8B6 /* DocumentViewController.swift */; };
-		A1B256861B796EB50077B8B6 /* TermsOfUse.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A1B256851B796EB50077B8B6 /* TermsOfUse.pdf */; };
+		A1B256861B796EB50077B8B6 /* Legal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A1B256851B796EB50077B8B6 /* Legal.pdf */; };
+		A1B3D3C61B7EB7EB0023F2AE /* GlobalColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B3D3C51B7EB7EB0023F2AE /* GlobalColors.swift */; };
 		A1C84EC41B66936C005BE8CC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C84EBE1B66936C005BE8CC /* Bolts.framework */; };
 		A1C84EC51B66936C005BE8CC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C84EBF1B66936C005BE8CC /* Parse.framework */; };
 		A1C84EC61B66936C005BE8CC /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C84EC01B66936C005BE8CC /* ParseCrashReporting.framework */; };
@@ -146,7 +147,8 @@
 		A1A7893D1B6EED8700A6674A /* InviteSenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteSenderViewController.swift; sourceTree = "<group>"; };
 		A1A7893F1B6EEE3300A6674A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A1B256831B796E730077B8B6 /* DocumentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DocumentViewController.swift; path = ../DocumentViewController.swift; sourceTree = "<group>"; };
-		A1B256851B796EB50077B8B6 /* TermsOfUse.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = TermsOfUse.pdf; sourceTree = "<group>"; };
+		A1B256851B796EB50077B8B6 /* Legal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Legal.pdf; sourceTree = "<group>"; };
+		A1B3D3C51B7EB7EB0023F2AE /* GlobalColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalColors.swift; sourceTree = "<group>"; };
 		A1C84EBE1B66936C005BE8CC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A1C84EBF1B66936C005BE8CC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A1C84EC01B66936C005BE8CC /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -313,12 +315,13 @@
 		A1A2C2051B66D2A3000AC5C8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A1B3D3C51B7EB7EB0023F2AE /* GlobalColors.swift */,
 				A1A2C2031B66D29D000AC5C8 /* JSONManager.swift */,
 				A16C358B1B672186009BABD2 /* AlertManager.swift */,
 				A1A2C20A1B66E4E9000AC5C8 /* browser.json */,
 				A16C358E1B672ADF009BABD2 /* userProfileQuestions.json */,
 				A19F322E1B7272D900E428D3 /* instructions.json */,
-				A1B256851B796EB50077B8B6 /* TermsOfUse.pdf */,
+				A1B256851B796EB50077B8B6 /* Legal.pdf */,
 				A1D4A3141B7C1ECD00633AEF /* ImageResizer.swift */,
 			);
 			name = Model;
@@ -489,7 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A145857C1B4E29BF00C1BD30 /* Images.xcassets in Resources */,
-				A1B256861B796EB50077B8B6 /* TermsOfUse.pdf in Resources */,
+				A1B256861B796EB50077B8B6 /* Legal.pdf in Resources */,
 				A19F322F1B7272D900E428D3 /* instructions.json in Resources */,
 				A1FBAFB31B5D749200980086 /* PostProfileView.xib in Resources */,
 				A1A2C20B1B66E4E9000AC5C8 /* browser.json in Resources */,
@@ -527,6 +530,7 @@
 				A1A7893C1B6EE8DA00A6674A /* ForgotPasswordVC.swift in Sources */,
 				A116B1131B61DD1A00B10061 /* ImageViewController.swift in Sources */,
 				A16C35911B6732DF009BABD2 /* KeywordsTVC.swift in Sources */,
+				A1B3D3C61B7EB7EB0023F2AE /* GlobalColors.swift in Sources */,
 				A116B10F1B61D83400B10061 /* TeamProfileView.swift in Sources */,
 				A1FBAFB91B5D7CB400980086 /* PostFavoritesView.swift in Sources */,
 				A1A2C20D1B66EC60000AC5C8 /* BrowsePhotoCell.swift in Sources */,
@@ -681,7 +685,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/HoonJi/Desktop/Formative.care/Parse/ParseSwiftStarterProject,
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Formative/Info.plist;
@@ -698,7 +701,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/HoonJi/Desktop/Formative.care/Parse/ParseSwiftStarterProject,
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Formative/Info.plist;

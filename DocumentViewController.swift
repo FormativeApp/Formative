@@ -13,7 +13,7 @@ class DocumentViewController: UIViewController, UIDocumentInteractionControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var url = NSBundle.mainBundle().URLForResource("TermsOfUse", withExtension: "pdf")
+        var url = NSBundle.mainBundle().URLForResource("Legal", withExtension: "pdf")
         
         var documentInteractionController = UIDocumentInteractionController(URL: url!)
         

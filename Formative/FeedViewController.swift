@@ -25,8 +25,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var user: PFUser!
     
     struct TableViewConstants {
-        static let numberOfInitialCells = 4
-        static let numberOfCellsPerLoad = 2
+        static let numberOfInitialCells = 8
+        static let numberOfCellsPerLoad = 8
     }
     
     override func viewDidLoad() {
@@ -46,7 +46,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.dataSource = self
         tableView.delegate = self
         
-        tableView.estimatedRowHeight = 200.0
+        tableView.estimatedRowHeight = 300.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
         user = PFUser.currentUser()!
@@ -80,6 +80,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func refresh(refreshControl: UIRefreshControl) {
+        
+        refreshControl.tintColor = GlobalColors.formativeBlue
         user = PFUser.currentUser()!
         let postsQuery = PFQuery(className: "Post")
         postsQuery.whereKey("recipientID", equalTo: user["PWDid"]!)
@@ -136,7 +138,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         var currentOffset = scrollView.contentOffset.y
         var maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
         
-        if (maximumOffset - currentOffset <= 150.0) {
+        if (maximumOffset - currentOffset <= 300.0) {
             if (loadInProgress == false && posts.count > 0){
                 loadMorePosts()
                 //println("Load!")

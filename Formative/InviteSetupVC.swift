@@ -114,13 +114,17 @@ class InviteSetupVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         
         user["name"] = nameSplit[0]
         user["fullName"] = nameTextField.text
-        user["completedSetup"] = true
         user["PWDrelation"] = ["Spouse", "Parent", "Grandparent", "Friend", "Neighbor", "Client", "Other"][relationPicker.selectedRowInComponent(0)]
         if (user["invited"] as? Bool == false)
         {
             var patient = PFObject(className: "Patient")
             patient.saveInBackgroundWithBlock({ (success, error) -> Void in
+                
                 user["PWDid"] = patient.objectId
+                var currentInstallation = PFInstallation.currentInstallation()
+                currentInstallation["PWDid"] = patient.objectId
+                currentInstallation.saveInBackground()
+                
                 user.saveInBackgroundWithBlock { (success, error) -> Void in
                     if (success){
                         self.performSegueWithIdentifier("goToInstructions", sender: nil)

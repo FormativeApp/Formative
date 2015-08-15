@@ -18,7 +18,11 @@ class InviteSenderViewController: UIViewController, MFMailComposeViewControllerD
     @IBOutlet weak var patientID: UILabel!
     
     override func viewDidLoad() {
-        patientID.text = PFUser.currentUser()!["PWDid"] as? String
+        var user = PFUser.currentUser()!
+        var PWDid = user["PWDid"] as! String
+        patientID.text = PWDid
+        user["completedSetup"] = true
+        user.saveInBackground()
     }
 
 

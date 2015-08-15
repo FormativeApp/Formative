@@ -34,6 +34,11 @@ class ChangeCareTeamVC: UIViewController {
         
         var user = PFUser.currentUser()!
         user["PWDid"] = invitationTextField.text
+        
+        var currentInstallation = PFInstallation.currentInstallation()
+        currentInstallation["PWDid"] = invitationTextField.text
+        currentInstallation.saveInBackground()
+        
         user.saveInBackground()
         
     }

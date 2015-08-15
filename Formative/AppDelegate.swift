@@ -1,4 +1,4 @@
-     //
+//
 //  AppDelegate.swift
 //  Formative
 //
@@ -9,13 +9,12 @@
 import UIKit
 import Parse
 import Bolts
-
+     
 @UIApplicationMain
+     
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-    var formativeBlue = UIColor(red: 0, green: 155.0/255.0, blue: 208.0/255.0, alpha: 1)
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -33,20 +32,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var pageControl = UIPageControl.appearance()
         pageControl.pageIndicatorTintColor = UIColor.lightGrayColor()
-        pageControl.currentPageIndicatorTintColor = formativeBlue
+        pageControl.currentPageIndicatorTintColor = GlobalColors.formativeBlue
         pageControl.backgroundColor = UIColor.whiteColor()
         
-        UINavigationBar.appearance().barTintColor = formativeBlue
+        UINavigationBar.appearance().barTintColor = GlobalColors.formativeBlue
         UINavigationBar.appearance().alpha = 0.6
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        
-        UITabBar.appearance().tintColor = formativeBlue
+        UIBarButtonItem.appearance().tintColor = UIColor.whiteColor()
+        UITabBar.appearance().tintColor = GlobalColors.formativeBlue
 
+        var type = UIUserNotificationType.Badge | UIUserNotificationType.Alert | UIUserNotificationType.Sound;
+        var setting = UIUserNotificationSettings(forTypes: type, categories: nil);
+        UIApplication.sharedApplication().registerUserNotificationSettings(setting);
+        UIApplication.sharedApplication().registerForRemoteNotifications();
         
         //UINavigationBar.appearance().clipsToBounds = true
         
+        PFCloud.callFunctionInBackground("hello", withParameters: ["request": "Text"]) {
+            (response: AnyObject?, error: NSError?) -> Void in
+            let responseString = response as? String
+            println(responseString)
+        }
+
+        
         return true
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        var currentInstallation = PFInstallation.currentInstallation()
+        currentInstallation.setDeviceTokenFromData(deviceToken)
+        currentInstallation.channels = ["global"]
+        currentInstallation.saveInBackground()
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        PFPush.handlePush(userInfo)
     }
 
     func applicationWillResignActive(application: UIApplication) {

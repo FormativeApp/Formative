@@ -70,15 +70,15 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
         if let type = post["type"] as? String {
             if (type == "Question")
             {
-                topColorBar.backgroundColor = UIColor.orangeColor()
+                topColorBar.backgroundColor = GlobalColors.formativeBlue
             }
             if (type == "Update")
             {
-                topColorBar.backgroundColor = UIColor.greenColor()
+                topColorBar.backgroundColor = UIColor.clearColor()
             }
             if (type == "Admin")
             {
-                topColorBar.backgroundColor = UIColor.blueColor()
+                topColorBar.backgroundColor = UIColor.blackColor()
             }
         }
         
@@ -233,7 +233,14 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
         comment["text"] = commentTextView.text
         comment["user"] = PFUser.currentUser()!
         post["comments"]  = (post["comments"] as! Array<PFObject>) + [comment]
-        commentTextView.text = "Add a comment"
+
+        commentTextView.resignFirstResponder()
+        
+        if ((post["user"] as! PFUser).objectId! != PFUser.currentUser()!.objectId)
+        {
+            PFCloud.callFunctionInBackground("commentCreated", withParameters: ["name" : PFUser.currentUser()!["name"] as! String, "creator" : (post["user"] as! PFUser).objectId!, "text" : commentTextView.text])
+        }
+
         post.saveInBackgroundWithBlock { (success, error) -> Void in
             self.commentsTableView.reloadData()
             self.superTableView?.beginUpdates()
@@ -250,6 +257,8 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
                     self.doneButton.hidden = false
             })
         }
+        
+        commentTextView.text = "Add a comment"
         
     }
     

@@ -15,7 +15,7 @@ class SettingsTableViewController: UITableViewController, UIDocumentInteractionC
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var url = NSBundle.mainBundle().URLForResource("TermsOfUse", withExtension: "pdf")
+        var url = NSBundle.mainBundle().URLForResource("Legal", withExtension: "pdf")
         
         documentInteractionController = UIDocumentInteractionController(URL: url!)
         

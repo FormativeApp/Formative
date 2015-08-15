@@ -18,6 +18,11 @@ class PostTVC: UITableViewCell {
         postView.layer.shadowOffset = CGSize(width: 2, height: 3)
         postView.layer.shadowRadius = 2
         postView.layer.shadowOpacity = 0.3
+        
+        // Performance improvements at http://stackoverflow.com/questions/10133109/fastest-way-to-do-shadows-on-ios/10133182#10133182
+        postView.layer.shouldRasterize = true
+        postView.layer.rasterizationScale = UIScreen.mainScreen().scale
+
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

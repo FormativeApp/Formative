@@ -11,6 +11,7 @@ import Parse
 
 class InstructionsPageViewController: UIViewController, UIPageViewControllerDataSource {
     
+    @IBOutlet weak var contentView: UIView!
     var pageViewController: UIPageViewController!
     var pageData = parseJSON(NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("instructions", ofType: "json")!)!) as! Array<Array<String>>
     

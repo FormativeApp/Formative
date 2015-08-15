@@ -23,7 +23,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewWillAppear(true)
         if let user = PFUser.currentUser()
         {
-            println("ding!")
             user.fetch()
             println(user)
             if (user["completedSetup"] as! Bool) {
@@ -83,12 +82,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             if let error = error {
                 let errorString = error.userInfo?["error"] as? String
                 
-                alertErrorWithTitle("Login Failed", message: error.description, inViewController: self)
+                alertErrorWithTitle("Login Failed", message: errorString, inViewController: self)
                 
             } else {
+                var currentInstallation = PFInstallation.currentInstallation()
                 if (user!["completedSetup"] as! Bool) {
+                    
+                    currentInstallation["PWDid"] = user!["PWDid"]
+                    currentInstallation["userId"] = user?.objectId
+                    currentInstallation.saveInBackground()
+                    
                     self.performSegueWithIdentifier("goToTabBar", sender: nil)
                 } else {
+                    
+                    currentInstallation["userId"] = user?.objectId
+                    currentInstallation.saveInBackground()
+                    
                     self.performSegueWithIdentifier("resumeSetup", sender: nil)
                 }
                 
