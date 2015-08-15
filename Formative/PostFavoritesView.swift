@@ -8,6 +8,7 @@
 
 import UIKit
 
+// View for displaying favorites icon and text
 @IBDesignable class PostFavoritesView: UIReusableView {
     
     

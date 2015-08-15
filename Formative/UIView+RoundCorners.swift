@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Extension to give UIView rounded corners (Editable from the IB Builder). From NSHipster
 extension UIView {
     @IBInspectable var cornerRadius: CGFloat {
         get {

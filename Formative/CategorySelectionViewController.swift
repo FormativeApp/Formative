@@ -8,6 +8,7 @@
 
 import UIKit
 
+// VC for selecting categories. AddPostViewController segues here.
 class CategorySelectionViewController: UITableViewController {
 
     var categories: Array<String> = ["Sleep", "Personal Care", "Difficult Behaviors", "Communication", "Legal Decisions", "Respite Care", "Long-Term Care Providers", "Moments of Joy", "Other"]
@@ -23,6 +24,7 @@ class CategorySelectionViewController: UITableViewController {
         return cell
     }
     
+    // Unwind segue to go back and pass data back to AddPostViewController
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         performSegueWithIdentifier("back", sender: tableView.cellForRowAtIndexPath(indexPath)?.textLabel?.text)
     }

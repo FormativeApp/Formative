@@ -40,6 +40,7 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
         }
     }
     
+    // Configures done button so when it is pressed, the keyboard dismisses
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         if (text == "\n"){
             textView.resignFirstResponder()
@@ -94,8 +95,8 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
             image = info[UIImagePickerControllerOriginalImage] as? UIImage
         }
         
+        // Reisze the image so uploading the post is much quicker
         photoButton.setImage(imageWithImage(image!, scaledToSize: CGSize(width: 200*image!.aspectRatio, height: 200)), forState: UIControlState.Normal)
-        //photoButtonAspectRatioConstraint.constant = photoButton.imageView!.image!.aspectRatio
         
         photoButton.cornerRadius = photoButton.bounds.width/2
         
@@ -123,6 +124,7 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
         post["stars"] = []
         post["comments"] = []
         
+        // Admin posting
         if (PFUser.currentUser()!["isAdmin"] as? Bool == true)
         {
             post["recipientID"] = "admin"
@@ -148,22 +150,24 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
         {
             if let image = photoButton.imageView?.image {
                 let imageData = UIImagePNGRepresentation(image)
-                //takes the image and converts it to the binary code
-                /*if (Double(imageData.length)/1000000.0  >= 9.9)
+                
+                // Check if image is too large
+                if (Double(imageData.length)/1000000.0  >= 9.9)
                 {
                     alertErrorWithTitle("Image size too large.", message: "Please keep image sizes below 10MB", inViewController: self)
                     return
-                }*/
+                }
+                
                 let imageFile = PFFile(data: imageData)
                 post["photo"] = imageFile
                 post["aspectRatio"] = image.aspectRatio
             }
-        }else{
-            println("No Picture!")
         }
         
         var user = PFUser.currentUser()!
         post.saveInBackground()
+        
+        // Fire off push notification
         PFCloud.callFunctionInBackground("postCreated", withParameters: ["name" : user["name"] as! String, "text" : post["text"] as! String, "type" : post["type"] as! String, "team" : user["PWDid"] as! String, "sender" : user.objectId!])
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }

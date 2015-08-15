@@ -30,35 +30,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // [Optional] Track statistics around application opens.
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
+        // Setup pageControl apeearence
         var pageControl = UIPageControl.appearance()
         pageControl.pageIndicatorTintColor = UIColor.lightGrayColor()
         pageControl.currentPageIndicatorTintColor = GlobalColors.formativeBlue
         pageControl.backgroundColor = UIColor.whiteColor()
         
+        // Customize navigation bar
         UINavigationBar.appearance().barTintColor = GlobalColors.formativeBlue
         UINavigationBar.appearance().alpha = 0.6
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         UIBarButtonItem.appearance().tintColor = UIColor.whiteColor()
         UITabBar.appearance().tintColor = GlobalColors.formativeBlue
-
+        
+        // Register for notifications
         var type = UIUserNotificationType.Badge | UIUserNotificationType.Alert | UIUserNotificationType.Sound;
         var setting = UIUserNotificationSettings(forTypes: type, categories: nil);
         UIApplication.sharedApplication().registerUserNotificationSettings(setting);
         UIApplication.sharedApplication().registerForRemoteNotifications();
-        
-        //UINavigationBar.appearance().clipsToBounds = true
-        
-        PFCloud.callFunctionInBackground("hello", withParameters: ["request": "Text"]) {
-            (response: AnyObject?, error: NSError?) -> Void in
-            let responseString = response as? String
-            println(responseString)
-        }
 
-        
         return true
     }
     
+    // The following two methods are from Parse's push notification tutorial
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         var currentInstallation = PFInstallation.currentInstallation()
         currentInstallation.setDeviceTokenFromData(deviceToken)

@@ -1,5 +1,5 @@
 //
-//  InstructionsPageViewController.swift
+//  InstructionsViewController.swift
 //  Formative
 //
 //  Created by Andrew Ke on 8/4/15.
@@ -9,14 +9,14 @@
 import UIKit
 import Parse
 
-class InstructionsPageViewController: UIViewController, UIPageViewControllerDataSource {
+// VC to display instructions for use. Constructed using translated code form AppCoda.com
+class InstructionsViewController: UIViewController, UIPageViewControllerDataSource {
     
     @IBOutlet weak var contentView: UIView!
     var pageViewController: UIPageViewController!
     var pageData = parseJSON(NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("instructions", ofType: "json")!)!) as! Array<Array<String>>
     
     override func viewDidLoad() {
-        print(pageData)
         var pageViewController = storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
         pageViewController.dataSource = self
         
@@ -25,11 +25,14 @@ class InstructionsPageViewController: UIViewController, UIPageViewControllerData
         
         pageViewController.view.frame = CGRectMake(0, 0, view.frame.width, view.frame.height)
         
+        // Embedd page view controller
         addChildViewController(pageViewController)
         view.addSubview(pageViewController.view)
         pageViewController.didMoveToParentViewController(self)
         
     }
+    
+    // MARK: - Page View Controller Delegate
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         

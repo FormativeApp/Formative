@@ -9,6 +9,6 @@
 import UIKit
 
 class MultilineCell: UITableViewCell {
-
+    // Set to have 0 lines and constrained with Autolayout
     @IBOutlet weak var multilineText: UILabel!
 }

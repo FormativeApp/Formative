@@ -9,11 +9,14 @@
 import UIKit
 import ParseUI
 
+// Table view cell to display comments
 class CommentTVC: UITableViewCell {
     
     var view: UIView!
     
+    // Multiline UILabel
     @IBOutlet weak var commentLabel: UILabel!
+    
     @IBOutlet weak var profileImage: CircularImageView!
 
 }

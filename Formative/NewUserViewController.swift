@@ -94,12 +94,11 @@ class NewUserViewController: UIViewController, UIDocumentInteractionControllerDe
         
         spinner.startAnimating()
         
+        // Check invitation code to make sure it is valid before proceeding
         if (invitationTextField.text != "")
         {
             var query = PFQuery(className: "Patient")
-            println("Verifying...")
             query.getObjectInBackgroundWithId(invitationTextField.text, block: { (first, error) -> Void in
-                println("Done \(error) \(first)")
                 if (first == nil){
                     alertErrorWithTitle("Invitation Code Invalid", message: nil, inViewController: self)
                     self.spinner.stopAnimating()
@@ -107,7 +106,6 @@ class NewUserViewController: UIViewController, UIDocumentInteractionControllerDe
                 }
                 if (error == nil){
                     user["invited"] = true
-                    println("Invitation Code Valid!")
                     self.signUpUser(user)
                 }
             })

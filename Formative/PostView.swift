@@ -23,26 +23,28 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
     @IBOutlet weak var commentTextView: UITextView!
     @IBOutlet weak var commentTextViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var buttonToBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var buttonToBottomConstraint: NSLayoutConstraint! // This is used to reveal/hide comments
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var viewCommentsButton: UIButton!
     @IBOutlet weak var favoritesView: PostFavoritesView!
     
     // MARK: - Properties
-    var superTableView: UITableView? // Table view that the post is in set by FeedViewController
-    var viewController: UIViewController?
     
-    var aspectRatioConstraint: NSLayoutConstraint?
-    var commentsString: String!
+    var superTableView: UITableView? // Table view that the post is in set by FeedViewController
+    var viewController: UIViewController? // Used to send alerts
+    
+    var aspectRatioConstraint: NSLayoutConstraint? // constraint for photo
+    var commentsString: String! // string to display on hide/reveal comments button
     
     // MARK: - Reuse
     
     var post: PFObject!
-    var aspectRatio: Double?
+    var aspectRatio: Double? // The aspect ratio of the photo
     
     func reset(){
         
+        // Setup favorites view
         var numFavorites = (post["stars"] as! Array<String>).count
         favoritesView.favoritesLabel.text = "\(numFavorites)"
         if (contains((post["stars"] as! Array<String>),PFUser.currentUser()!["PWDid"] as! String))
@@ -52,21 +54,22 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
             favoritesView.starred = false
         }
         
+        // Hide comments
         commentsTableView.hidden = true
         commentTextView.hidden = true
         doneButton.hidden = true
         
         buttonToBottomConstraint.constant = 5
         
-        postTextLabel.text = post["text"] as? String
+        // Configure post text
+        var postText = post["text"] as? String
+        postTextLabel.text = postText?.stringByReplacingOccurrencesOfString("\\n", withString: "\n")
         
-        
+
         var categoryText = (post["tags"] as! NSArray)[0] as? String
+        categoryLabel.text = categoryText!
         
-        if categoryText! != "" {
-            categoryLabel.text = categoryText!
-        }
-        
+        // Configure top color bar
         if let type = post["type"] as? String {
             if (type == "Question")
             {
@@ -85,6 +88,7 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
         var user = (post["user"] as! PFUser)
         profileView.nameLabel.text = user["name"] as? String
         
+        // Configure reveal/hide comments button
         if (post["comments"] as! Array<PFObject>).count == 0 {
             commentsString = "Reply"
         }
@@ -96,11 +100,11 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
         
         viewCommentsButton.setTitle(commentsString, forState: UIControlState.Normal)
         
+        // Configure post photo
         if let file = post["photo"] as? PFFile {
             
             postImage.backgroundColor = UIColor.clearColor()
             postImage.file = file
-            
             
             if let aspectRatio = post["aspectRatio"] as? Double {
                 var newAspectRatioConstraint = NSLayoutConstraint(
@@ -109,7 +113,7 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
                     relatedBy: .Equal,
                     toItem: self.postImage,
                     attribute: .Height,
-                    multiplier: CGFloat(aspectRatio),
+                    multiplier: CGFloat(aspectRatio), // Constraint aspect ratio
                     constant: CGFloat(0))
                 if (aspectRatioConstraint != nil)
                 {
@@ -130,7 +134,7 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
                 relatedBy: .Equal,
                 toItem: self.postImage,
                 attribute: .Height,
-                multiplier: 0,
+                multiplier: 0, // This makes the height zero!
                 constant: 0)
             if (self.aspectRatioConstraint != nil)
             {
@@ -144,6 +148,7 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
         profileView.profileImage.loadInBackground()
     }
     
+    // Required for UIReusableView subclass
     override var className: String {
         get {
             return "PostView"
@@ -161,6 +166,7 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
         
         buttonToBottomConstraint.constant = 5
         
+        // Needed for deque cell with reuse identifier in cell for row at index path
         commentsTableView.registerNib(UINib(nibName: "CommentTVC", bundle: nil), forCellReuseIdentifier: "commentCell")
         
         commentsTableView.dataSource = self
@@ -176,6 +182,7 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
         super.awakeFromNib()
         setup()
     }
+    
     
     override func prepareForInterfaceBuilder() {
         var aspectRatioConstraint = NSLayoutConstraint(
@@ -203,10 +210,9 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
             textView.text = ""
         }
         
+        // Scroll table view so text view is visible
         var coordinateY = textView.convertPoint(textView.bounds.origin, toView: superTableView).y
         var cell = view.superview?.superview?.superview! as! UITableViewCell
-        //superTableView!.scrollToRowAtIndexPath(superTableView!.indexPathForCell(cell)!, atScrollPosition: UITableViewScrollPosition.Middle, animated: true)
-        println(coordinateY)
         superTableView?.setContentOffset(CGPointMake(0, coordinateY-100), animated: true)
         
         commentTextView.becomeFirstResponder()
@@ -242,11 +248,12 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
 
         commentTextView.resignFirstResponder()
         
+        // Fire off push notification if needed
         if ((post["user"] as! PFUser).objectId! != PFUser.currentUser()!.objectId)
         {
             PFCloud.callFunctionInBackground("commentCreated", withParameters: ["name" : PFUser.currentUser()!["name"] as! String, "creator" : (post["user"] as! PFUser).objectId!, "text" : commentTextView.text])
         }
-
+        
         post.saveInBackgroundWithBlock { (success, error) -> Void in
             self.commentsTableView.reloadData()
             self.superTableView?.beginUpdates()
@@ -268,6 +275,7 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
         
     }
     
+    // MARK: - Favorites
     @IBAction func starTapped(sender: UITapGestureRecognizer) {
         if (favoritesView.starred)
         {
@@ -285,6 +293,8 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
     
     // MARK: - Comments Animation
     
+    
+    // Animation for revealing or hiding comments
     var commentsHidden = true
     @IBAction func revealOrHideComments(sender: UIButton) {
         if (commentsHidden)
@@ -296,6 +306,7 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
             tableViewHeightConstraint.constant = commentsTableView.contentSize.height
             buttonToBottomConstraint.constant = commentTextView.frame.height + tableViewHeightConstraint.constant + 50
             superTableView?.beginUpdates()
+            
             UIView.animateWithDuration(0.5, animations: {
                 self.superview?.layoutIfNeeded()
                 self.superTableView?.endUpdates()
@@ -333,8 +344,6 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
 
 
         }
-        
-        
     }
     
     // MARK: - Gesture Recognizers
@@ -360,18 +369,11 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
         cell.profileImage.file = commentPoster["profileImage"] as? PFFile
         cell.profileImage.loadInBackground()
         
-        //superTableView?.beginUpdates()
-        
         tableViewHeightConstraint.constant = commentsTableView.contentSize.height
         self.superview?.layoutIfNeeded()
-        //self.superTableView?.endUpdates()
         
         return cell
     }
-    
-
-
-
 }
 
 // MARK: - Extensions

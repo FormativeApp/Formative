@@ -14,6 +14,7 @@ class SettingsTableViewController: UITableViewController, UIDocumentInteractionC
     
     @IBOutlet weak var profileImage: CircularImageView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var pushNotificationsSwitch: UISwitch!
     
     var documentInteractionController: UIDocumentInteractionController?
     
@@ -28,10 +29,20 @@ class SettingsTableViewController: UITableViewController, UIDocumentInteractionC
         
         profileImage.file = PFUser.currentUser()!["profileImage"] as? PFFile
         profileImage.loadInBackground()
+        
+        println(UIApplication.sharedApplication().isRegisteredForRemoteNotifications())
+        if (UIApplication.sharedApplication().isRegisteredForRemoteNotifications())
+        {
+            pushNotificationsSwitch.on = true
+        }
+        else
+        {
+            pushNotificationsSwitch.on = false
+        }
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if (indexPath.row == 3)
+        if (indexPath.row == 4)
         {
             documentInteractionController!.presentPreviewAnimated(true)
         }

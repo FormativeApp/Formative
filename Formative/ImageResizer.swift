@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Function to resize images to a specific CGSize
 func imageWithImage(image: UIImage, scaledToSize newSize: CGSize) -> UIImage
 {
     UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)

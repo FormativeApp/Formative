@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Simple helper function to parse JSON
 func parseJSON(inputData: NSData) -> AnyObject{
     var error: NSError?
     let parsed: AnyObject? = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.AllowFragments, error: nil);

@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Andrew Ke. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
+// Helper function to create an alert with a title and a message
 func alertErrorWithTitle(title: String, #message: String?, inViewController vc: UIViewController){
     var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
     alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))

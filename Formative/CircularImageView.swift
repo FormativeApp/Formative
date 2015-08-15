@@ -11,6 +11,7 @@ import ParseUI
 import Parse
 import Bolts
 
+// A PFImageView subclass for perfectly circular imageViews
 @IBDesignable class CircularImageView: PFImageView {
     
     override var bounds:CGRect {

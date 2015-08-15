@@ -8,9 +8,13 @@
 
 import UIKit
 
+// Contains a post view
 class PostTVC: UITableViewCell {
 
     @IBOutlet weak var postView: PostView!
+    
+    // No shadows enabled for best performance right now
+    // Uncomment awakeFromNib() to enable shadows
     
     /*override func awakeFromNib() {
         super.awakeFromNib()

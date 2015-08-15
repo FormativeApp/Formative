@@ -718,7 +718,7 @@ If you have more questions and would like to connect with an experienced caregiv
         <!--Instructions-->
         <scene sceneID="7xy-1u-HXj">
             <objects>
-                <viewController id="U5k-G7-CF1" customClass="InstructionsPageViewController" customModule="Formative" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="U5k-G7-CF1" customClass="InstructionsViewController" customModule="Formative" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KWT-rW-yZL"/>
                         <viewControllerLayoutGuide type="bottom" id="wPR-i1-ojY"/>
@@ -1294,7 +1294,7 @@ If you have more questions and would like to connect with an experienced caregiv
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DGb-Jj-VCt" id="Fde-8g-H27">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kYM-oV-xNp">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kYM-oV-xNp">
                                                     <rect key="frame" x="543" y="14" width="51" height="31"/>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0G-Jf-fG8">
@@ -1380,6 +1380,7 @@ If you have more questions and would like to connect with an experienced caregiv
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="profileImage" destination="ggj-LB-Hc3" id="9v8-6i-Stm"/>
+                        <outlet property="pushNotificationsSwitch" destination="kYM-oV-xNp" id="3P5-nP-gxf"/>
                         <outlet property="spinner" destination="Kvc-GO-y6s" id="cXy-PU-O6d"/>
                     </connections>
                 </tableViewController>

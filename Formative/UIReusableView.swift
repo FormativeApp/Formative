@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Class for reusable UIViews in xibs. Subclasses MUST overide className property.
 class UIReusableView: UIView {
 
     // Our custom view from the XIB file

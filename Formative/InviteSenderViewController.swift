@@ -12,7 +12,7 @@ import Parse
 import Bolts
 import MessageUI
 
-
+// Sends invites and displays invitation code
 class InviteSenderViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var patientID: UITextView!

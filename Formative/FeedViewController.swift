@@ -1,7 +1,7 @@
 //
 //  FeedViewController.swift
 //  Formative
-//0
+//
 
 //  Created by Andrew Ke on 7/23/15.
 //  Copyright (c) 2015 Andrew Ke. All rights reserved.
@@ -34,7 +34,9 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         tableView.hidden = true
         
+        // Configure pull up to refresh
         let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = GlobalColors.formativeBlue
         refreshControl.addTarget(self, action: "refresh:", forControlEvents: .ValueChanged)
         tableView.addSubview(refreshControl)
         
@@ -49,6 +51,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.estimatedRowHeight = 300.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        // Create query for admin posts and care team posts
         user = PFUser.currentUser()!
         let postsQuery = PFQuery(className: "Post")
         postsQuery.whereKey("recipientID", equalTo: user["PWDid"]!)
@@ -79,9 +82,9 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         })
     }
     
+    // Called when user pulls up tableview to refresh
     func refresh(refreshControl: UIRefreshControl) {
         
-        refreshControl.tintColor = GlobalColors.formativeBlue
         user = PFUser.currentUser()!
         let postsQuery = PFQuery(className: "Post")
         postsQuery.whereKey("recipientID", equalTo: user["PWDid"]!)
@@ -117,6 +120,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         
+        // Configure add post button animation
         if (scrollView.contentOffset.y < 30 && addPostButton.alpha != 1)
         {
             
@@ -135,13 +139,13 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             })
         }
         
+        // Load more posts as user reaches bottom of the tableView
         var currentOffset = scrollView.contentOffset.y
         var maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
         
         if (maximumOffset - currentOffset <= 300.0) {
             if (loadInProgress == false && posts.count > 0){
                 loadMorePosts()
-                //println("Load!")
                 loadInProgress = true
             }
         }
@@ -153,11 +157,6 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // MARK: - Table view data source
     
-    
-    /*func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-            return 200
-        }
-    }*/
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -174,25 +173,20 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        // Special Whitespace Cell
-        /*if (indexPath.row == 0)
-        {
-            let cell = tableView.dequeueReusableCellWithIdentifier("whiteSpaceCell", forIndexPath: indexPath) as! UITableViewCell
-            return cell
-        }*/
-
+        
+        
+        // Configure post cell
         let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! PostTVC
         cell.postView.superTableView = self.tableView
         cell.postView.viewController = self
         var post = posts[indexPath.row]
         cell.postView.post = post
-        //cell.postView.aspectRatioConstraint?.constant = 4
-        //println(cell.postView.aspectRatioConstraint?.constant)
-        //println("Cell created")
         cell.postView.reset()
         return cell
     }
     
+    
+    // Function to load more posts in to Table View Controller
     var loadInProgress = false
     
     func loadMorePosts() {
@@ -226,22 +220,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         self.posts.append(object)
                     }
                 }
-                println(self.posts.count)
-                //var offset = self.tableView.contentOffset
                 self.tableView.reloadData()
                 self.tableView.layoutSubviews()
-                //self.tableView.layoutIfNeeded()
-                //self.tableView.reloadData()
-                //self.tableView.setContentOffset(offset, animated: false)
-                /*var indexPaths: Array<NSIndexPath> = [NSIndexPath(forRow: 2, inSection: 0)]
-                
-                for i in 1...(objects!.count-1){
-                    indexPaths.append(NSIndexPath(forRow: self.posts.count - objects!.count + i, inSection: 1))
-                }*/
-
-                /*self.tableView.beginUpdates()
-                self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 2, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Bottom)
-                self.tableView.endUpdates()*/
             }
             else {
                 self.loadingLabel.text = "No more posts to be loaded"
@@ -250,7 +230,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
 
-    
+    // Segue to image scroller
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "goToImage")
         {

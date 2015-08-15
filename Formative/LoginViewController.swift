@@ -24,7 +24,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if let user = PFUser.currentUser()
         {
             user.fetch()
-            println(user)
+            
+            // Direct user to correct location
             if (user["completedSetup"] as! Bool) {
                 self.performSegueWithIdentifier("goToTabBar", sender: nil)
             }
@@ -34,6 +35,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
 
     }
+    
     // Called whenever a user taps on a text field
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         if (passwordFieldYConstraint.constant == 0) {
@@ -75,7 +77,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func loginButtonTouched() {
         spinner.startAnimating()
-        println("\(nameTextField.text), \(passwordTextField.text)")
+        
         PFUser.logInWithUsernameInBackground(nameTextField.text, password:passwordTextField.text) {
             (user: PFUser?, error: NSError?) -> Void in
             self.spinner.stopAnimating()
@@ -84,8 +86,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
                 alertErrorWithTitle("Login Failed", message: errorString, inViewController: self)
                 
-            } else {
-                var currentInstallation = PFInstallation.currentInstallation()
+            }
+            else {
+                var currentInstallation = PFInstallation.currentInstallation() // For push notifications
                 if (user!["completedSetup"] as! Bool) {
                     
                     currentInstallation["PWDid"] = user!["PWDid"]
@@ -104,15 +107,5 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
