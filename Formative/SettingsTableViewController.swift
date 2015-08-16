@@ -18,8 +18,8 @@ class SettingsTableViewController: UITableViewController, UIDocumentInteractionC
     
     var documentInteractionController: UIDocumentInteractionController?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
         var url = NSBundle.mainBundle().URLForResource("Legal", withExtension: "pdf")
         
@@ -30,7 +30,18 @@ class SettingsTableViewController: UITableViewController, UIDocumentInteractionC
         profileImage.file = PFUser.currentUser()!["profileImage"] as? PFFile
         profileImage.loadInBackground()
         
-        println(UIApplication.sharedApplication().isRegisteredForRemoteNotifications())
+        configureSwitch()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "configureSwitch", name: UIApplicationWillEnterForegroundNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func configureSwitch()
+    {
+        println("Test")
         if (UIApplication.sharedApplication().isRegisteredForRemoteNotifications())
         {
             pushNotificationsSwitch.on = true
@@ -42,12 +53,16 @@ class SettingsTableViewController: UITableViewController, UIDocumentInteractionC
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if (indexPath.row == 4)
+        
+        if indexPath.row == 1
+        {
+            alertErrorWithTitle("Please visit Settings -> Formative -> Notifications to enable or disable push notifications", message: nil, inViewController: self)
+        }
+        else if (indexPath.row == 4)
         {
             documentInteractionController!.presentPreviewAnimated(true)
         }
-        
-        if (indexPath.row == 0) {
+        else if (indexPath.row == 0) {
             // Create an alert
             var alert = UIAlertController(title: "Choose A Source", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Camera", style: .Default, handler: { (action) in

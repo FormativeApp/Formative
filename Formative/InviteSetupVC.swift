@@ -123,6 +123,7 @@ class InviteSetupVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
                 user["PWDid"] = patient.objectId
                 var currentInstallation = PFInstallation.currentInstallation()
                 currentInstallation["PWDid"] = patient.objectId
+                currentInstallation["userID"] = user.objectId
                 currentInstallation.saveInBackground()
                 
                 user.saveInBackgroundWithBlock { (success, error) -> Void in
@@ -136,6 +137,12 @@ class InviteSetupVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         }
         else {
             user.saveInBackgroundWithBlock { (success, error) -> Void in
+                
+                var currentInstallation = PFInstallation.currentInstallation()
+                currentInstallation["PWDid"] = user["PWDid"]
+                currentInstallation["userID"] = user.objectId
+                currentInstallation.saveInBackground()
+                
                 if (success){
                     self.performSegueWithIdentifier("goToInstructions", sender: nil)
                 }else {

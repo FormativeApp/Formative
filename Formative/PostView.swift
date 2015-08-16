@@ -181,6 +181,20 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
     override func awakeFromNib() {
         super.awakeFromNib()
         setup()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+    }
+    
+    // Store the keyboard height
+    var keyboardHeight: CGFloat = 0.0
+    func keyboardWillShow(notification: NSNotification)
+    {
+        if let userInfo = notification.userInfo {
+            if let keyboardHeightLocal = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue().size.height {
+                println(keyboardHeightLocal)
+                keyboardHeight = keyboardHeightLocal
+            }
+        }
     }
     
     
@@ -210,12 +224,10 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
             textView.text = ""
         }
         
-        // Scroll table view so text view is visible
-        var coordinateY = textView.convertPoint(textView.bounds.origin, toView: superTableView).y
-        var cell = view.superview?.superview?.superview! as! UITableViewCell
-        superTableView?.setContentOffset(CGPointMake(0, coordinateY-100), animated: true)
-        
-        commentTextView.becomeFirstResponder()
+        // Scroll tableview so comment text view is right above the keyboard
+        var coordinateY = commentTextView.convertPoint(commentTextView.bounds.origin, toView: superTableView).y
+        superTableView?.setContentOffset(CGPointMake(0, coordinateY - (viewController!.view.bounds.height-keyboardHeight) + 80), animated: true)
+
     }
     
     func textViewDidEndEditing(textView: UITextView) {

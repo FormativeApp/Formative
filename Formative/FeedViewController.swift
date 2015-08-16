@@ -72,6 +72,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 
                 self.posts = objects as! Array<PFObject>
                 //print(self.posts)
+                self.loadingLabel.text = "No more posts to be loaded"
                 self.tableView.reloadData()
                 self.tableView.hidden = false
                 self.mainSpinner.stopAnimating()

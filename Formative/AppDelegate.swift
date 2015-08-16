@@ -40,7 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = GlobalColors.formativeBlue
         UINavigationBar.appearance().alpha = 0.6
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName : UIFont(name: "Avenir-Medium", size: 20)!]
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName : UIFont(name: "Avenir-Book", size: 18)!], forState: UIControlState.Normal)
         UIBarButtonItem.appearance().tintColor = UIColor.whiteColor()
         UITabBar.appearance().tintColor = GlobalColors.formativeBlue
         

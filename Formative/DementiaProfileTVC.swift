@@ -73,7 +73,10 @@ class DementiaProfileTVC: UITableViewController{
             if let patient = patient
             {
                 if let lastValue = patient[questions[indexPath.row][0] as! String] as? String {
-                    mainText = lastValue
+                    if (lastValue != "")
+                    {
+                        mainText = lastValue
+                    }
                 }
             }
         }

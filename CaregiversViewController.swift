@@ -21,9 +21,9 @@ class CaregiversViewController: UIViewController, MFMailComposeViewControllerDel
     var users: Array<PFUser> = []
     
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(animated: Bool) {
         
+        super.viewDidAppear(animated)
         var user = PFUser.currentUser()!
         
         invitationTextView.text = "Invitation Code: " + (user["PWDid"] as! String)

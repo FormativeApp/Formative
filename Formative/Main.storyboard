@@ -757,9 +757,9 @@ If you have more questions and would like to connect with an experienced caregiv
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="0NN-UT-cVN" customClass="CircularImageView" customModule="Formative" customModuleProvider="target">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0NN-UT-cVN" customClass="CircularImageView" customModule="Formative" customModuleProvider="target">
                                 <rect key="frame" x="226" y="74" width="148" height="148"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.63921568630000003" green="0.63921568630000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0NN-UT-cVN" secondAttribute="height" multiplier="1:1" id="btr-V5-DKB"/>
@@ -889,7 +889,7 @@ If you have more questions and would like to connect with an experienced caregiv
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="0.0" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="centerY" secondItem="XwV-27-vdL" secondAttribute="centerY" id="dQC-rn-utK"/>
                                         <constraint firstAttribute="centerX" secondItem="XwV-27-vdL" secondAttribute="centerX" id="qEE-7G-JPh"/>
@@ -906,7 +906,7 @@ If you have more questions and would like to connect with an experienced caregiv
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="xfP-3h-3MR" secondAttribute="bottom" constant="8" id="SzY-c8-pG7"/>
                                                 <constraint firstItem="xfP-3h-3MR" firstAttribute="leading" secondItem="wKa-hz-Eq5" secondAttribute="leading" constant="8" id="ejk-rf-Hxs"/>
@@ -920,7 +920,7 @@ If you have more questions and would like to connect with an experienced caregiv
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" alpha="0.79999999999999982" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4U-vN-Gkd">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4U-vN-Gkd">
                                 <rect key="frame" x="163" y="50" width="274" height="47"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -955,7 +955,7 @@ If you have more questions and would like to connect with an experienced caregiv
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="5Kl-Sh-t7P">
                                 <rect key="frame" x="290" y="290" width="37" height="37"/>
-                                <color key="color" red="0.0" green="0.25098040699958801" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="color" red="0.21568627450980393" green="0.60784313725490191" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
@@ -1197,7 +1197,7 @@ If you have more questions and would like to connect with an experienced caregiv
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="8zn-Kv-aGs" detailTextLabel="xts-LH-7Yy" style="IBUITableViewCellStyleSubtitle" id="jLU-KJ-QhZ">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="8zn-Kv-aGs" detailTextLabel="xts-LH-7Yy" style="IBUITableViewCellStyleSubtitle" id="jLU-KJ-QhZ">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jLU-KJ-QhZ" id="7Ej-XD-FYe">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -1261,7 +1261,7 @@ If you have more questions and would like to connect with an experienced caregiv
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="ggj-LB-Hc3" customClass="CircularImageView" customModule="Formative" customModuleProvider="target">
+                                                <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ggj-LB-Hc3" customClass="CircularImageView" customModule="Formative" customModuleProvider="target">
                                                     <rect key="frame" x="238" y="35" width="125" height="125"/>
                                                     <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <gestureRecognizers/>
@@ -1271,7 +1271,7 @@ If you have more questions and would like to connect with an experienced caregiv
                                                 </imageView>
                                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Kvc-GO-y6s">
                                                     <rect key="frame" x="282" y="79" width="37" height="37"/>
-                                                    <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="color" red="0.2156862745" green="0.60784313729999995" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 </activityIndicatorView>
                                             </subviews>
                                             <constraints>
@@ -1289,20 +1289,24 @@ If you have more questions and would like to connect with an experienced caregiv
                                             <outlet property="profileImage" destination="ggj-LB-Hc3" id="w7c-L3-TIB"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="DGb-Jj-VCt">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="60" id="DGb-Jj-VCt">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DGb-Jj-VCt" id="Fde-8g-H27">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kYM-oV-xNp">
-                                                    <rect key="frame" x="543" y="14" width="51" height="31"/>
-                                                </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Push Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0G-Jf-fG8">
                                                     <rect key="frame" x="12" y="18" width="523" height="24"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kYM-oV-xNp">
+                                                    <rect key="frame" x="543" y="14" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="switchTapped:" destination="GUc-ar-AX2" eventType="touchDown" id="DHL-Kx-WFk"/>
+                                                        <action selector="switchValueChanged:" destination="GUc-ar-AX2" eventType="valueChanged" id="IYb-XD-Bbv"/>
+                                                    </connections>
+                                                </switch>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="b0G-Jf-fG8" firstAttribute="leading" secondItem="Fde-8g-H27" secondAttribute="leadingMargin" constant="4" id="PA6-u0-zYi"/>
@@ -1536,8 +1540,9 @@ If you have more questions and would like to connect with an experienced caregiv
                                             <rect key="frame" x="0.0" y="0.0" width="134" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="P4E-Ux-VqI" customClass="CircularImageView" customModule="Formative" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P4E-Ux-VqI" customClass="CircularImageView" customModule="Formative" customModuleProvider="target">
                                                     <rect key="frame" x="11" y="4" width="112" height="112"/>
+                                                    <color key="backgroundColor" red="0.63921568630000003" green="0.63921568630000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="P4E-Ux-VqI" secondAttribute="height" id="D4E-7X-g2u"/>
                                                     </constraints>
