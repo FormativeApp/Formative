@@ -41,7 +41,6 @@ class SettingsTableViewController: UITableViewController, UIDocumentInteractionC
     
     func configureSwitch()
     {
-        println("Test")
         if (UIApplication.sharedApplication().isRegisteredForRemoteNotifications())
         {
             pushNotificationsSwitch.on = true
@@ -56,7 +55,11 @@ class SettingsTableViewController: UITableViewController, UIDocumentInteractionC
         
         if indexPath.row == 1
         {
-            alertErrorWithTitle("Please visit Settings -> Formative -> Notifications to enable or disable push notifications", message: nil, inViewController: self)
+            var alert = UIAlertController(title: "Please visit Settings -> Formative -> Notifications to enable or disable push notifications", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (_) -> Void in
+                UIApplication.sharedApplication().openURL(NSURL(string:UIApplicationOpenSettingsURLString)!)
+            }))
+            self.presentViewController(alert, animated: true, completion: nil)
         }
         else if (indexPath.row == 4)
         {
