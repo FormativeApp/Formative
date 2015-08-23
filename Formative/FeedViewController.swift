@@ -215,7 +215,6 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             if (objects != nil && objects?.count != 0) {
                 
-                println("\(objects?.count)")
                 for object in objects as! Array<PFObject> {
                     if !contains(self.posts, object){
                         self.posts.append(object)

@@ -191,7 +191,6 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
     {
         if let userInfo = notification.userInfo {
             if let keyboardHeightLocal = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue().size.height {
-                println(keyboardHeightLocal)
                 keyboardHeight = keyboardHeightLocal
             }
         }

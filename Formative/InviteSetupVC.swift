@@ -17,7 +17,13 @@ class InviteSetupVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     @IBOutlet weak var relationPicker: UIPickerView!
     
     override func viewDidLoad() {
+        // Default selection
         relationPicker.selectRow(3, inComponent: 0, animated: true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     @IBAction func imageTapped(sender: UITapGestureRecognizer) {
@@ -33,11 +39,6 @@ class InviteSetupVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         alert.addAction(UIAlertAction(title: "Cancel", style: .Destructive, handler: nil))
         presentViewController(alert, animated: true, completion: nil)
         
-    }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
     
     // MARK: - Image Picker
@@ -58,7 +59,7 @@ class InviteSetupVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     func photoFromCameraRoll()
     {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
-            println("success!")
+            
             let picker = UIImagePickerController()
             picker.sourceType = .PhotoLibrary
             picker.mediaTypes = [kUTTypeImage]
@@ -99,13 +100,15 @@ class InviteSetupVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        // Changes this along with pickerView numberOfRowsInComponent to add more choices
         return ["Spouse", "Parent", "Grandparent", "Friend", "Neighbor", "Client", "Other"][row]
     }
     
     @IBAction func done(sender: AnyObject) {
         var user = PFUser.currentUser()!
+        
+        // Check if name is valid
         var nameSplit = split(nameTextField.text) {$0 == " "}
-        println(nameSplit)
         
         if (nameSplit.count != 2) {
             alertErrorWithTitle("Invalid Name", message: "Please add both your first and last name.", inViewController: self)
@@ -114,18 +117,26 @@ class InviteSetupVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         
         user["name"] = nameSplit[0]
         user["fullName"] = nameTextField.text
+        
         user["PWDrelation"] = ["Spouse", "Parent", "Grandparent", "Friend", "Neighbor", "Client", "Other"][relationPicker.selectedRowInComponent(0)]
+        
+        // Different options in case user was invited or not
         if (user["invited"] as? Bool == false)
         {
+            // Create new patient
             var patient = PFObject(className: "Patient")
             patient.saveInBackgroundWithBlock({ (success, error) -> Void in
                 
                 user["PWDid"] = patient.objectId
+                
+                // For push notifications
                 var currentInstallation = PFInstallation.currentInstallation()
                 currentInstallation["PWDid"] = patient.objectId
                 currentInstallation["userID"] = user.objectId
                 currentInstallation.saveInBackground()
                 
+                // Fire of push notification
+                PFCloud.callFunctionInBackground("newUserCreated", withParameters: ["name" : user["name"] as! String, "team" : user["PWDid"] as! String, "sender" : user.objectId!])
                 user.saveInBackgroundWithBlock { (success, error) -> Void in
                     if (success){
                         self.performSegueWithIdentifier("goToInstructions", sender: nil)
@@ -138,6 +149,7 @@ class InviteSetupVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         else {
             user.saveInBackgroundWithBlock { (success, error) -> Void in
                 
+                // For push notifications
                 var currentInstallation = PFInstallation.currentInstallation()
                 currentInstallation["PWDid"] = user["PWDid"]
                 currentInstallation["userID"] = user.objectId

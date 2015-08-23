@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 
+// Changes user's password.
 class ChangePasswordVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var newPassword: UITextField!

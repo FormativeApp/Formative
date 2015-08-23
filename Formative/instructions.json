@@ -1,6 +1,6 @@
 [
-    ["Step 1", "Your dementia care hub.", "This tool can serve as a hub for managing the care for your loved one.", "Mealtimes"],
-    ["Step 2", "MORE TEXT!", "Mealtimes"],
-    ["Step 3", "EVEN MORE TEXT!", "Mealtimes"],
-    ["Step 4"]
+    ["Step-1", "Your dementia care hub.", "This tool can serve as a hub for managing the care for your loved one.", "Mealtimes"],
+    ["Step-2", "MORE TEXT!", "Mealtimes"],
+    ["Step-3", "EVEN MORE TEXT!", "Mealtimes"],
+    ["Step-4"]
 ]

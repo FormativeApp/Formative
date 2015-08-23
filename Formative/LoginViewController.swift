@@ -41,7 +41,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if (passwordFieldYConstraint.constant == 0) {
             
             // Animate fields up
-            println("UP")
             passwordFieldYConstraint.constant = view.bounds.height/4
             UIView.animateWithDuration(1.0, animations: {
                 self.view.layoutIfNeeded()
@@ -61,7 +60,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             passwordTextField.becomeFirstResponder()
         }
         else {
-            println("Down")
             // Done button (Animate fields down)
             self.passwordFieldYConstraint.constant = 0
             UIView.animateWithDuration(1.0, animations: {

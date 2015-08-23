@@ -8,21 +8,26 @@
 
 import UIKit
 
+// Table view cell that has a multiple choice table view inside. Used in editing dementia profile.
 class MultipleChoiceCell: UITableViewCell, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
+    // Options for multiple choice
     var array: Array<String>!{
         didSet{
             tableView.reloadData()
         }
     }
     
+    // The title of the cell Ex: "Eating"
     var title: String!
     
+    // Corresponding parse object key ("ADLEating", "ADLTime")
     var key: String!
     
+    // Ranges from -1 to 4 depending on selection. -1 means no selection
     var selection = -1
     
     override func awakeFromNib() {
@@ -71,6 +76,8 @@ class MultipleChoiceCell: UITableViewCell, UITableViewDataSource, UITableViewDel
         selection = indexPath.row
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
+        
+        // Make sure all the other cells are unchecked
         for i in 0..<array.count {
             if (i != indexPath.row){
                 let cell2 = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: i, inSection: 0))
@@ -81,53 +88,7 @@ class MultipleChoiceCell: UITableViewCell, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        println("deselecting!")
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         cell?.accessoryType = UITableViewCellAccessoryType.None
     }
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return NO if you do not want the specified item to be editable.
-    return true
-    }
-    */
-    
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    if editingStyle == .Delete {
-    // Delete the row from the data source
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    } else if editingStyle == .Insert {
-    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }
-    }
-    */
-    
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-    
-    }
-    */
-    
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return NO if you do not want the item to be re-orderable.
-    return true
-    }
-    */
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -26,7 +26,7 @@ class CaregiversViewController: UIViewController, MFMailComposeViewControllerDel
         super.viewDidAppear(animated)
         var user = PFUser.currentUser()!
         
-        invitationTextView.text = "Invitation Code: " + (user["PWDid"] as! String)
+        invitationTextView.text = user["PWDid"] as! String
         
         // Query for users
         var query = PFUser.query()
@@ -77,7 +77,6 @@ class CaregiversViewController: UIViewController, MFMailComposeViewControllerDel
     }
     
     func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
-        println(result.value)
         controller.dismissViewControllerAnimated(true, completion: nil)
     }
 }

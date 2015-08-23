@@ -40,7 +40,6 @@ class NewUserViewController: UIViewController, UIDocumentInteractionControllerDe
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         if (passwordFieldYConstraint.constant == 40) {
             // Animate fields up
-            println("UP")
             passwordFieldYConstraint.constant = view.bounds.height/5 + 40
             UIView.animateWithDuration(1.0, animations: {
                 self.view.layoutIfNeeded()
@@ -64,7 +63,6 @@ class NewUserViewController: UIViewController, UIDocumentInteractionControllerDe
             invitationTextField.becomeFirstResponder()
         }
         else {
-            println("Down")
             // Done button (Animate fields down)
             self.passwordFieldYConstraint.constant = 40
             UIView.animateWithDuration(1.0, animations: {

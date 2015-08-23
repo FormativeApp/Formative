@@ -10,6 +10,7 @@ import UIKit
 import MobileCoreServices
 import Parse
 
+// VC for displaying non-editable data about the patient.
 class DementiaProfileTVC: UITableViewController{
     
     var questions: NSArray!
@@ -18,6 +19,7 @@ class DementiaProfileTVC: UITableViewController{
     
     var user = PFUser.currentUser()!
     
+    // Non multiple choice questions
     var numberOfTextQuestions = 4
     
     // MARK: - VC Lifecycle
@@ -61,17 +63,19 @@ class DementiaProfileTVC: UITableViewController{
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
-        var mainText = ""
-        var detailText = ""
+        var mainText = "" // ex: John Smith
+        var detailText = "" // ex: Name
         
+        // A text question
         if (indexPath.row < numberOfTextQuestions)
         {
             
             detailText = (questions[indexPath.row][1] as? String)!
-            mainText = "NA"
+            mainText = "--"
             
             if let patient = patient
             {
+                // Check if question is already filled in
                 if let lastValue = patient[questions[indexPath.row][0] as! String] as? String {
                     if (lastValue != "")
                     {
@@ -80,12 +84,14 @@ class DementiaProfileTVC: UITableViewController{
                 }
             }
         }
+        // A multiple choice question
         else
         {
-            mainText = "NA"
+            mainText = "--"
             detailText = (questions[indexPath.row][0] as! NSString).substringFromIndex(3)
             if let patient = patient
             {
+                // Check if question is already filled in
                 if let lastValue = patient[questions[indexPath.row][0] as! String] as? Int {
                     if (lastValue >= 0)
                     {

@@ -41,7 +41,6 @@ class InviteSenderViewController: UIViewController, MFMailComposeViewControllerD
     }
     
     func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
-        println(result.value)
         controller.dismissViewControllerAnimated(true, completion: nil)
     }
 }

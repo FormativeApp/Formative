@@ -15,11 +15,13 @@ class DementiaProfileEditTVC: UITableViewController, UIImagePickerControllerDele
     
     var questions: NSArray!
     
+    // Stores the selections of the multiple choice questions
     var selections = [-1, -1, -1, -1, -1, -1, -1]
     
     var patient:PFObject?
     
     var textCells: Array<TextFieldCell> = []
+    
     var profileImageCell: ProfilePictureSelectionCell!
     
     var user = PFUser.currentUser()!
@@ -62,6 +64,7 @@ class DementiaProfileEditTVC: UITableViewController, UIImagePickerControllerDele
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        // Text cell
         if (indexPath.row < numberOfTextQuestions)
         {
             let cell = tableView.dequeueReusableCellWithIdentifier("questionCell", forIndexPath: indexPath) as! TextFieldCell
@@ -79,6 +82,7 @@ class DementiaProfileEditTVC: UITableViewController, UIImagePickerControllerDele
             textCells.append(cell)
             return cell
         }
+        // Multiple choice cells
         else
         {
             let cell = tableView.dequeueReusableCellWithIdentifier("multipleCell", forIndexPath: indexPath) as! MultipleChoiceCell
@@ -117,8 +121,6 @@ class DementiaProfileEditTVC: UITableViewController, UIImagePickerControllerDele
             {
                 patient["\(cell.key!)"] = cell.textField.text as String
             }
-            
-            println(selections)
             
             for i in numberOfTextQuestions..<selections.count+numberOfTextQuestions {
                 var cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: i, inSection: 0)) as? MultipleChoiceCell

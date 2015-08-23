@@ -22,14 +22,14 @@ class ForgotPasswordVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func submitPressed() {
         spinner.startAnimating()
-    PFUser.requestPasswordResetForEmailInBackground(emailTextField.text, block: { (success, error) -> Void in
-        self.spinner.stopAnimating()
-        if (success) {
-            self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
-        }
-        else {
-            alertErrorWithTitle("Reset failed.", message: error!.userInfo?["error"] as? String, inViewController: self)
-        }
-    })
+        PFUser.requestPasswordResetForEmailInBackground(emailTextField.text, block: { (success, error) -> Void in
+            self.spinner.stopAnimating()
+            if (success) {
+                self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+            }
+            else {
+                alertErrorWithTitle("Reset failed.", message: error!.userInfo?["error"] as? String, inViewController: self)
+            }
+        })
     }
 }

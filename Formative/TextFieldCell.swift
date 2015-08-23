@@ -8,6 +8,8 @@
 
 import UIKit
 
+// UITableView cell with a textfiled and a title label. 
+
 class TextFieldCell: UITableViewCell, UITextFieldDelegate {
 
     @IBOutlet weak var label: UILabel!

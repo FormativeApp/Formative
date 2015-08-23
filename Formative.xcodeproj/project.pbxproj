@@ -36,6 +36,8 @@
 		A1808CE41B669275006771CF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1808CE31B669275006771CF /* SystemConfiguration.framework */; };
 		A1808CE61B66927B006771CF /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A1808CE51B66927B006771CF /* libz.dylib */; };
 		A1808CE81B669285006771CF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A1808CE71B669285006771CF /* libsqlite3.dylib */; };
+		A19401D21B894FE800F59AAF /* Legal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A19401D11B894FE800F59AAF /* Legal.pdf */; };
+		A19401D41B89562E00F59AAF /* DocumentWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19401D31B89562E00F59AAF /* DocumentWebViewController.swift */; };
 		A199AD251B6163B6004FE514 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A199AD241B6163B6004FE514 /* FeedViewController.swift */; };
 		A19F32231B71589300E428D3 /* InviteSetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F32221B71589300E428D3 /* InviteSetupVC.swift */; };
 		A19F32251B715F8A00E428D3 /* DementiaProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F32241B715F8A00E428D3 /* DementiaProfileTVC.swift */; };
@@ -55,7 +57,6 @@
 		A1A7893E1B6EED8700A6674A /* InviteSenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A7893D1B6EED8700A6674A /* InviteSenderViewController.swift */; };
 		A1A789401B6EEE3300A6674A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A7893F1B6EEE3300A6674A /* MessageUI.framework */; };
 		A1B256841B796E730077B8B6 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B256831B796E730077B8B6 /* DocumentViewController.swift */; };
-		A1B256861B796EB50077B8B6 /* Legal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = A1B256851B796EB50077B8B6 /* Legal.pdf */; };
 		A1B3D3C61B7EB7EB0023F2AE /* GlobalColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B3D3C51B7EB7EB0023F2AE /* GlobalColors.swift */; };
 		A1C84EC41B66936C005BE8CC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C84EBE1B66936C005BE8CC /* Bolts.framework */; };
 		A1C84EC51B66936C005BE8CC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C84EBF1B66936C005BE8CC /* Parse.framework */; };
@@ -120,6 +121,8 @@
 		A1808CE31B669275006771CF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A1808CE51B66927B006771CF /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		A1808CE71B669285006771CF /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		A19401D11B894FE800F59AAF /* Legal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Legal.pdf; sourceTree = "<group>"; };
+		A19401D31B89562E00F59AAF /* DocumentWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentWebViewController.swift; sourceTree = "<group>"; };
 		A199AD241B6163B6004FE514 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		A19F32221B71589300E428D3 /* InviteSetupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteSetupVC.swift; sourceTree = "<group>"; };
 		A19F32241B715F8A00E428D3 /* DementiaProfileTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DementiaProfileTVC.swift; sourceTree = "<group>"; };
@@ -139,7 +142,6 @@
 		A1A7893D1B6EED8700A6674A /* InviteSenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteSenderViewController.swift; sourceTree = "<group>"; };
 		A1A7893F1B6EEE3300A6674A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A1B256831B796E730077B8B6 /* DocumentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DocumentViewController.swift; path = ../DocumentViewController.swift; sourceTree = "<group>"; };
-		A1B256851B796EB50077B8B6 /* Legal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Legal.pdf; sourceTree = "<group>"; };
 		A1B3D3C51B7EB7EB0023F2AE /* GlobalColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalColors.swift; sourceTree = "<group>"; };
 		A1C84EBE1B66936C005BE8CC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A1C84EBF1B66936C005BE8CC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 		A16C358D1B67232D009BABD2 /* Login And Registration */ = {
 			isa = PBXGroup;
 			children = (
+				A19401D31B89562E00F59AAF /* DocumentWebViewController.swift */,
 				A1B256831B796E730077B8B6 /* DocumentViewController.swift */,
 				A19F32221B71589300E428D3 /* InviteSetupVC.swift */,
 				A1A7893B1B6EE8DA00A6674A /* ForgotPasswordVC.swift */,
@@ -307,7 +310,7 @@
 				A1A2C20A1B66E4E9000AC5C8 /* browser.json */,
 				A16C358E1B672ADF009BABD2 /* userProfileQuestions.json */,
 				A19F322E1B7272D900E428D3 /* instructions.json */,
-				A1B256851B796EB50077B8B6 /* Legal.pdf */,
+				A19401D11B894FE800F59AAF /* Legal.pdf */,
 				A1D4A3141B7C1ECD00633AEF /* ImageResizer.swift */,
 			);
 			name = Model;
@@ -469,12 +472,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A145857C1B4E29BF00C1BD30 /* Images.xcassets in Resources */,
-				A1B256861B796EB50077B8B6 /* Legal.pdf in Resources */,
 				A19F322F1B7272D900E428D3 /* instructions.json in Resources */,
 				A1FBAFB31B5D749200980086 /* PostProfileView.xib in Resources */,
 				A1A2C20B1B66E4E9000AC5C8 /* browser.json in Resources */,
 				A14E2D6A1B5D6D8A001666E8 /* Main.storyboard in Resources */,
 				A1FBAFBD1B5D7E5100980086 /* PostFavoritesView.xib in Resources */,
+				A19401D21B894FE800F59AAF /* Legal.pdf in Resources */,
 				A1FBAFAF1B5D6ED400980086 /* PostView.xib in Resources */,
 				A16C358F1B672ADF009BABD2 /* userProfileQuestions.json in Resources */,
 			);
@@ -509,6 +512,7 @@
 				A1B3D3C61B7EB7EB0023F2AE /* GlobalColors.swift in Sources */,
 				A1FBAFB91B5D7CB400980086 /* PostFavoritesView.swift in Sources */,
 				A1A2C20D1B66EC60000AC5C8 /* BrowsePhotoCell.swift in Sources */,
+				A19401D41B89562E00F59AAF /* DocumentWebViewController.swift in Sources */,
 				A1A2CD7A1B6020FE00A327DB /* CommentTVC.swift in Sources */,
 				A199AD251B6163B6004FE514 /* FeedViewController.swift in Sources */,
 				A1A2C2111B66FA53000AC5C8 /* DementiaProfileEditTVC.swift in Sources */,

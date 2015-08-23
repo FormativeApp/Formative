@@ -128,7 +128,7 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
         if (PFUser.currentUser()!["isAdmin"] as? Bool == true)
         {
             post["recipientID"] = "admin"
-            post["tags"] = "Admin Message"
+            post["tags"] = "Formative"
             post["type"] = "Admin"
 
         }
@@ -139,7 +139,7 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
             
             if ( categoryButton.titleLabel!.text! == "Choose Category →")
             {
-                post["tags"] = ["No Tags"]
+                post["tags"] = ["Update"]
             }
 
         }

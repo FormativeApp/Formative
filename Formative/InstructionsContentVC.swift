@@ -8,7 +8,7 @@
 
 import UIKit
 
-// Content VC for InstructionsContentVC
+// Content VC for InstructionsContentVC (Page View)
 class InstructionsContentVC: UIViewController{
 
     @IBOutlet weak var titleLabel: UILabel!

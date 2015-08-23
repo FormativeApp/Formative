@@ -31,6 +31,8 @@ class SettingsTableViewController: UITableViewController, UIDocumentInteractionC
         profileImage.loadInBackground()
         
         configureSwitch()
+        
+        // This is called when user comes back from multitasking. If they just came back from settings, we want to update the state of the switch
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "configureSwitch", name: UIApplicationWillEnterForegroundNotification, object: nil)
     }
     
@@ -39,6 +41,7 @@ class SettingsTableViewController: UITableViewController, UIDocumentInteractionC
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
+    // The switch shows whether push notifications are enabled on this device or not
     func configureSwitch()
     {
         if (UIApplication.sharedApplication().isRegisteredForRemoteNotifications())
@@ -53,6 +56,7 @@ class SettingsTableViewController: UITableViewController, UIDocumentInteractionC
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
+        // Switch row
         if indexPath.row == 1
         {
             var alert = UIAlertController(title: "Please visit Settings -> Formative -> Notifications to enable or disable push notifications", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
@@ -61,10 +65,14 @@ class SettingsTableViewController: UITableViewController, UIDocumentInteractionC
             }))
             self.presentViewController(alert, animated: true, completion: nil)
         }
+            
+        // Privacy Policy
         else if (indexPath.row == 4)
         {
             documentInteractionController!.presentPreviewAnimated(true)
         }
+            
+        // Profile Picture
         else if (indexPath.row == 0) {
             // Create an alert
             var alert = UIAlertController(title: "Choose A Source", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
@@ -79,6 +87,7 @@ class SettingsTableViewController: UITableViewController, UIDocumentInteractionC
         }
         
     }
+    
     func documentInteractionControllerViewControllerForPreview(controller: UIDocumentInteractionController) -> UIViewController {
         return self
     }
@@ -113,7 +122,7 @@ class SettingsTableViewController: UITableViewController, UIDocumentInteractionC
     func photoFromCameraRoll()
     {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
-            println("success!")
+    
             let picker = UIImagePickerController()
             picker.sourceType = .PhotoLibrary
             picker.mediaTypes = [kUTTypeImage]
