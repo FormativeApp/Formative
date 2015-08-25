@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nxV-c9-B2j">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ljV-ZM-zEc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -26,8 +26,8 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tLf-sB-Q3U" id="4BE-bU-IEI">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OBH-KQ-0R2">
-                                            <rect key="frame" x="15" y="37" width="570" height="44"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OBH-KQ-0R2">
+                                            <rect key="frame" x="15" y="37" width="570" height="42"/>
                                             <color key="backgroundColor" red="0.98039215690000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -749,13 +749,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Touch to select a profile image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSs-kM-yr5">
-                                <rect key="frame" x="181" y="186" width="238" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch to select a profile image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSs-kM-yr5">
+                                <rect key="frame" x="181" y="230" width="238" height="24"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="defualt.png" translatesAutoresizingMaskIntoConstraints="NO" id="0NN-UT-cVN" customClass="CircularImageView" customModule="Formative" customModuleProvider="target">
-                                <rect key="frame" x="226" y="30" width="148" height="148"/>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defualt.png" translatesAutoresizingMaskIntoConstraints="NO" id="0NN-UT-cVN" customClass="CircularImageView" customModule="Formative" customModuleProvider="target">
+                                <rect key="frame" x="226" y="74" width="148" height="148"/>
                                 <color key="backgroundColor" red="0.63921568630000003" green="0.63921568630000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -766,8 +766,8 @@
                                     <outletCollection property="gestureRecognizers" destination="D8g-3A-Dlb" appends="YES" id="RgR-a8-Aic"/>
                                 </connections>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OPp-fP-Muf">
-                                <rect key="frame" x="90" y="230" width="420" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OPp-fP-Muf">
+                                <rect key="frame" x="90" y="274" width="420" height="30"/>
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="aTA-vS-6mh"/>
@@ -778,16 +778,16 @@
                                     <outlet property="delegate" destination="bJK-Ga-P9P" id="8Ip-2Z-2N2"/>
                                 </connections>
                             </textField>
-                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sTD-gj-aEX">
-                                <rect key="frame" x="16" y="307" width="568" height="162"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sTD-gj-aEX">
+                                <rect key="frame" x="16" y="351" width="568" height="162"/>
                                 <color key="backgroundColor" red="0.70196080207824707" green="0.70196080207824707" blue="0.70196080207824707" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="bJK-Ga-P9P" id="orN-Mm-wmd"/>
                                     <outlet property="delegate" destination="bJK-Ga-P9P" id="X5S-cx-dCS"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="The person with dementia is my" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frY-Zw-w0d">
-                                <rect key="frame" x="177" y="275" width="246" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The person with dementia is my" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frY-Zw-w0d">
+                                <rect key="frame" x="177" y="319" width="246" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="rlK-ep-0vh"/>
                                 </constraints>
@@ -1185,7 +1185,7 @@
             </objects>
             <point key="canvasLocation" x="3278" y="1810"/>
         </scene>
-        <!--Pateint Profile-->
+        <!--Patient Profile-->
         <scene sceneID="gdE-hq-SwC">
             <objects>
                 <tableViewController id="VzK-34-mGY" customClass="DementiaProfileTVC" customModule="Formative" customModuleProvider="target" sceneMemberID="viewController">
@@ -1221,7 +1221,7 @@
                             <outlet property="delegate" destination="VzK-34-mGY" id="iA4-r9-hJE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Pateint Profile" id="OoL-6C-olM">
+                    <navigationItem key="navigationItem" title="Patient Profile" id="OoL-6C-olM">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="jpg-en-gH0">
                             <connections>
                                 <segue destination="7uo-GR-gGq" kind="show" id="ljM-C1-w5w"/>
@@ -1250,24 +1250,24 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8CX-Dc-Wde" id="TXV-rS-OC8">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tap circle to select a new profile image" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCs-e8-0dZ">
-                                                    <rect key="frame" x="150" y="175" width="301" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap circle to select a new profile image" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCs-e8-0dZ">
+                                                    <rect key="frame" x="150" y="178" width="301" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="kkn-Hg-W88"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="defualt.png" translatesAutoresizingMaskIntoConstraints="NO" id="ggj-LB-Hc3" customClass="CircularImageView" customModule="Formative" customModuleProvider="target">
-                                                    <rect key="frame" x="240" y="35" width="122" height="122"/>
+                                                <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defualt.png" translatesAutoresizingMaskIntoConstraints="NO" id="ggj-LB-Hc3" customClass="CircularImageView" customModule="Formative" customModuleProvider="target">
+                                                    <rect key="frame" x="238" y="35" width="125" height="125"/>
                                                     <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="ggj-LB-Hc3" secondAttribute="height" multiplier="1:1" id="b0v-Sj-QOk"/>
                                                     </constraints>
                                                 </imageView>
-                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Kvc-GO-y6s">
-                                                    <rect key="frame" x="282" y="78" width="37" height="37"/>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Kvc-GO-y6s">
+                                                    <rect key="frame" x="282" y="79" width="37" height="37"/>
                                                     <color key="color" red="0.2156862745" green="0.60784313729999995" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 </activityIndicatorView>
                                             </subviews>
@@ -1766,7 +1766,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVK-8N-Afn">
-                                <rect key="frame" x="276" y="562" width="49" height="30"/>
+                                <rect key="frame" x="275" y="559" width="50" height="33"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                 <state key="normal" title="I Agree">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1774,8 +1775,8 @@
                                     <segue destination="bJK-Ga-P9P" kind="show" id="Y6Q-Ld-xo5"/>
                                 </connections>
                             </button>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLb-Og-NZ5">
-                                <rect key="frame" x="0.0" y="64" width="600" height="490"/>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BLb-Og-NZ5">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
@@ -1945,8 +1946,8 @@
         <image name="settings" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Sxd-6p-hNI"/>
-        <segue reference="ILZ-Ct-zbN"/>
+        <segue reference="eQi-dj-j3m"/>
+        <segue reference="JOu-9E-LMZ"/>
         <segue reference="g1t-Bq-4Jj"/>
     </inferredMetricsTieBreakers>
 </document>

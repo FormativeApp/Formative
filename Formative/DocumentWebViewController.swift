@@ -15,6 +15,6 @@ class DocumentWebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        webView.loadRequest(NSURLRequest(URL: NSURL(string: "https://docs.google.com/document/d/1jL3fv1LQWbCJ_kMCK6UNKlplkIjlal_NY9sqgNptuq8/edit?usp=sharing")!))
+        webView.loadRequest(NSURLRequest(URL: NSURL(string: "http://www.formative.care/terms-of-service")!))
     }
 }

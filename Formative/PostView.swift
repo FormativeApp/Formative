@@ -291,10 +291,10 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
         if (favoritesView.starred)
         {
             favoritesView.starred = false
-            post["stars"] = (post["stars"] as! Array<String>).filter({$0 != PFUser.currentUser()!["PWDid"] as! String})
+            post["stars"] = (post["stars"] as! Array<String>).filter({$0 != PFUser.currentUser()?.objectId!})
         }else{
             favoritesView.starred = true
-            post["stars"] = (post["stars"]! as! Array<String>) + [PFUser.currentUser()!["PWDid"] as! String]
+            post["stars"] = (post["stars"]! as! Array<String>) + [PFUser.currentUser()!.objectId!]
             post.saveInBackground()
         }
         
