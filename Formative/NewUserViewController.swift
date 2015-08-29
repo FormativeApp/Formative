@@ -2,6 +2,8 @@
 //  NewUserViewController.swift
 //  Formative
 //
+//  No longer used! Checkout InviteSetupVC instead.
+//
 //  Created by Andrew Ke on 7/22/15.
 //  Copyright (c) 2015 Andrew Ke. All rights reserved.
 //

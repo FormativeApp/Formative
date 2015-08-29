@@ -51,8 +51,8 @@ class CaregiversViewController: UIViewController, MFMailComposeViewControllerDel
         (cell.viewWithTag(2) as! UILabel).text = users[indexPath.row]["fullName"] as? String
         var image = (cell.viewWithTag(1) as! CircularImageView)
         
+        image.image = UIImage(named: "default")
         image.file = users[indexPath.row]["profileImage"] as? PFFile
-        image.backgroundColor = UIColor.grayColor()
         image.loadInBackground()
         
         return cell

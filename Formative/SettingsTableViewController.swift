@@ -136,23 +136,23 @@ class SettingsTableViewController: UITableViewController, UIDocumentInteractionC
         var image = info[UIImagePickerControllerEditedImage] as? UIImage
         if image == nil {
             image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        } else {
-            // [Jihoon]: convert the image to binary, and save to the Parse cloud
-            let imageData = UIImagePNGRepresentation(imageWithImage(image!, scaledToSize: CGSize(width: 200, height: 200))) //takes the image and converts it to the binary code
-            let imageFile = PFFile(data: imageData)
-            spinner.startAnimating()
-            PFUser.currentUser()!["profileImage"] = imageFile
-            PFUser.currentUser()?.saveInBackgroundWithBlock({ (success, error) -> Void in
-                self.spinner.stopAnimating()
-                if (success){
-                    self.profileImage.image = image
-                }
-                else {
-                    alertErrorWithTitle("Image Save Failed", message: nil, inViewController: self)
-                }
-            })
-            
         }
+        
+        // [Jihoon]: convert the image to binary, and save to the Parse cloud
+        let imageData = UIImagePNGRepresentation(imageWithImage(image!, scaledToSize: CGSize(width: 200, height: 200))) //takes the image and converts it to the binary code
+        let imageFile = PFFile(data: imageData)
+        spinner.startAnimating()
+        PFUser.currentUser()!["profileImage"] = imageFile
+        PFUser.currentUser()?.saveInBackgroundWithBlock({ (success, error) -> Void in
+            self.spinner.stopAnimating()
+            if (success){
+                self.profileImage.image = image
+            }
+            else {
+                alertErrorWithTitle("Image Save Failed", message: nil, inViewController: self)
+            }
+        })
+        
         profileImage.image = image
         dismissViewControllerAnimated(true, completion: nil)
     }

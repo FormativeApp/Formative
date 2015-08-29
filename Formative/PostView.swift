@@ -46,8 +46,9 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
         
         // Setup favorites view
         var numFavorites = (post["stars"] as! Array<String>).count
+        
         favoritesView.favoritesLabel.text = "\(numFavorites)"
-        if (contains((post["stars"] as! Array<String>),PFUser.currentUser()!["PWDid"] as! String))
+        if (contains((post["stars"] as! Array<String>),PFUser.currentUser()!.objectId!))
         {
             favoritesView.starred = true
         }else{
@@ -144,6 +145,7 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
             self.aspectRatioConstraint = aspectRatioConstraint
         }
         
+        profileView.profileImage.image = UIImage(named: "default")
         profileView.profileImage.file = user["profileImage"] as? PFFile
         profileView.profileImage.loadInBackground()
     }
@@ -303,7 +305,6 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
     }
     
     // MARK: - Comments Animation
-    
     
     // Animation for revealing or hiding comments
     var commentsHidden = true

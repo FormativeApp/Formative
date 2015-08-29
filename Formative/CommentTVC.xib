@@ -14,7 +14,7 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kKI-XO-XNj" id="YVh-8n-Jcb">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Portrait" translatesAutoresizingMaskIntoConstraints="NO" id="Cml-lp-ErQ" customClass="CircularImageView" customModule="Formative" customModuleProvider="target">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="Cml-lp-ErQ" customClass="CircularImageView" customModule="Formative" customModuleProvider="target">
                         <rect key="frame" x="449" y="42" width="35" height="35"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="35" id="9oh-c3-rkb"/>
@@ -48,6 +48,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Portrait" width="341" height="416"/>
+        <image name="default" width="341" height="416"/>
     </resources>
 </document>

@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="433" height="136"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defualt.png" translatesAutoresizingMaskIntoConstraints="NO" id="hCY-o0-dVz" customClass="CircularImageView" customModule="Formative" customModuleProvider="target">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="hCY-o0-dVz" customClass="CircularImageView" customModule="Formative" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="136" height="136"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="hCY-o0-dVz" secondAttribute="height" multiplier="1:1" id="DdV-Wz-RmH"/>
@@ -50,6 +50,6 @@
         </view>
     </objects>
     <resources>
-        <image name="defualt.png" width="617" height="598"/>
+        <image name="default" width="341" height="416"/>
     </resources>
 </document>

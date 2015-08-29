@@ -750,24 +750,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch to select a profile image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSs-kM-yr5">
-                                <rect key="frame" x="181" y="230" width="238" height="24"/>
+                                <rect key="frame" x="181" y="202" width="238" height="24"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defualt.png" translatesAutoresizingMaskIntoConstraints="NO" id="0NN-UT-cVN" customClass="CircularImageView" customModule="Formative" customModuleProvider="target">
-                                <rect key="frame" x="226" y="74" width="148" height="148"/>
-                                <color key="backgroundColor" red="0.63921568630000003" green="0.63921568630000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Choose Picture" translatesAutoresizingMaskIntoConstraints="NO" id="0NN-UT-cVN" customClass="CircularImageView" customModule="Formative" customModuleProvider="target">
+                                <rect key="frame" x="240" y="74" width="120" height="120"/>
+                                <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0NN-UT-cVN" secondAttribute="height" multiplier="1:1" id="btr-V5-DKB"/>
-                                    <constraint firstAttribute="height" constant="148" id="qpx-of-ySx"/>
+                                    <constraint firstAttribute="height" constant="120" id="qpx-of-ySx"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="D8g-3A-Dlb" appends="YES" id="RgR-a8-Aic"/>
                                 </connections>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OPp-fP-Muf">
-                                <rect key="frame" x="90" y="274" width="420" height="30"/>
+                                <rect key="frame" x="90" y="246" width="420" height="30"/>
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="aTA-vS-6mh"/>
@@ -779,7 +779,7 @@
                                 </connections>
                             </textField>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sTD-gj-aEX">
-                                <rect key="frame" x="16" y="351" width="568" height="162"/>
+                                <rect key="frame" x="16" y="323" width="568" height="162"/>
                                 <color key="backgroundColor" red="0.70196080207824707" green="0.70196080207824707" blue="0.70196080207824707" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="bJK-Ga-P9P" id="orN-Mm-wmd"/>
@@ -787,7 +787,7 @@
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The person with dementia is my" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frY-Zw-w0d">
-                                <rect key="frame" x="177" y="319" width="246" height="24"/>
+                                <rect key="frame" x="177" y="291" width="246" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="rlK-ep-0vh"/>
                                 </constraints>
@@ -1258,7 +1258,7 @@
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defualt.png" translatesAutoresizingMaskIntoConstraints="NO" id="ggj-LB-Hc3" customClass="CircularImageView" customModule="Formative" customModuleProvider="target">
+                                                <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="ggj-LB-Hc3" customClass="CircularImageView" customModule="Formative" customModuleProvider="target">
                                                     <rect key="frame" x="238" y="35" width="125" height="125"/>
                                                     <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <gestureRecognizers/>
@@ -1537,7 +1537,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="134" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defualt.png" translatesAutoresizingMaskIntoConstraints="NO" id="P4E-Ux-VqI" customClass="CircularImageView" customModule="Formative" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="P4E-Ux-VqI" customClass="CircularImageView" customModule="Formative" customModuleProvider="target">
                                                     <rect key="frame" x="11" y="4" width="112" height="112"/>
                                                     <color key="backgroundColor" red="0.63921568630000003" green="0.63921568630000003" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -1939,7 +1939,7 @@
         <image name="User" width="448" height="460"/>
         <image name="browse" width="28" height="28"/>
         <image name="contacts" width="22" height="22"/>
-        <image name="defualt.png" width="617" height="598"/>
+        <image name="default" width="341" height="416"/>
         <image name="feed" width="25" height="25"/>
         <image name="logo" width="400" height="95"/>
         <image name="people" width="40" height="40"/>
