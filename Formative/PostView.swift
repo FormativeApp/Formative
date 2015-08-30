@@ -148,6 +148,10 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
         profileView.profileImage.image = UIImage(named: "default")
         profileView.profileImage.file = user["profileImage"] as? PFFile
         profileView.profileImage.loadInBackground()
+        
+        commentsTableView.reloadData()
+        commentsTableView.reloadData()
+        
     }
     
     // Required for UIReusableView subclass
@@ -294,6 +298,7 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
         {
             favoritesView.starred = false
             post["stars"] = (post["stars"] as! Array<String>).filter({$0 != PFUser.currentUser()?.objectId!})
+            post.saveInBackground()
         }else{
             favoritesView.starred = true
             post["stars"] = (post["stars"]! as! Array<String>) + [PFUser.currentUser()!.objectId!]
@@ -309,6 +314,7 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
     // Animation for revealing or hiding comments
     var commentsHidden = true
     @IBAction func revealOrHideComments(sender: UIButton) {
+        commentsTableView.reloadData()
         if (commentsHidden)
         {
             commentsHidden = false
@@ -326,6 +332,7 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
                     self.commentsTableView.hidden = false
                     self.commentTextView.hidden = false
                     self.doneButton.hidden = false
+                    self.superTableView?.layoutIfNeeded()
             })
         }
         else
@@ -352,6 +359,7 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
                 self.superview?.layoutIfNeeded()
                 self.superTableView?.endUpdates()
             }, completion: { (success) -> Void in
+                self.superTableView?.layoutIfNeeded()
             })
 
 
@@ -374,13 +382,17 @@ class PostView: UIReusableView, UITableViewDataSource, UITextViewDelegate  {
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("commentCell", forIndexPath: indexPath) as! CommentTVC
-        
         // Configure the cell...
         cell.commentLabel.text = (post["comments"] as! Array<PFObject>)[indexPath.row]["text"] as? String
         var commentPoster = (post["comments"] as! Array<PFObject>)[indexPath.row]["user"] as! PFUser
-        cell.profileImage.file = commentPoster["profileImage"] as? PFFile
-        cell.profileImage.loadInBackground()
         
+        cell.profileImage.image = UIImage(named: "default")
+
+        commentPoster.fetchIfNeededInBackgroundWithBlock { (object, error) -> Void in
+                cell.profileImage.file = commentPoster["profileImage"] as? PFFile
+                cell.profileImage.loadInBackground()
+        }
+
         tableViewHeightConstraint.constant = commentsTableView.contentSize.height
         self.superview?.layoutIfNeeded()
         

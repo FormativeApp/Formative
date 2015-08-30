@@ -71,6 +71,7 @@ class InviteSetupVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         var image = info[UIImagePickerControllerEditedImage] as? UIImage
+        
         if image == nil {
             image = info[UIImagePickerControllerOriginalImage] as? UIImage
         }

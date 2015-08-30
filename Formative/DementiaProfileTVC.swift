@@ -101,6 +101,7 @@ class DementiaProfileTVC: UITableViewController{
             }
         }
         
+        cell.textLabel?.numberOfLines = 0
         cell.textLabel?.text = mainText
         cell.detailTextLabel?.text = detailText
         

@@ -30,6 +30,9 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     override func viewDidLoad() {
+        
+        println(PFUser.currentUser()?.objectId)
+        
         super.viewDidLoad()
         
         tableView.hidden = true
@@ -152,8 +155,14 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        tableView.layoutIfNeeded()
+        tableView.layoutSubviews()
+    }
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         loadInProgress = false
+        tableView.layoutIfNeeded()
+        tableView.layoutSubviews()
     }
     
     // MARK: - Table view data source

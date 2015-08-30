@@ -128,7 +128,7 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
         if (PFUser.currentUser()!["isAdmin"] as? Bool == true)
         {
             post["recipientID"] = "admin"
-            post["tags"] = "Formative"
+            post["tags"] = ["Formative"]
             post["type"] = "Admin"
 
         }
@@ -164,6 +164,7 @@ class AddPostViewController: UIViewController, UITextViewDelegate, UIImagePicker
             }
         }
         
+        println("Saving!")
         var user = PFUser.currentUser()!
         post.saveInBackground()
         

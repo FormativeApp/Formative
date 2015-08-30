@@ -1939,7 +1939,7 @@
         <image name="User" width="448" height="460"/>
         <image name="browse" width="28" height="28"/>
         <image name="contacts" width="22" height="22"/>
-        <image name="default" width="341" height="416"/>
+        <image name="default" width="617" height="598"/>
         <image name="feed" width="25" height="25"/>
         <image name="logo" width="400" height="95"/>
         <image name="people" width="40" height="40"/>
