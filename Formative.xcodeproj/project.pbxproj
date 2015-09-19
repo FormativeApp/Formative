@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A107431B1BAE0646007CA799 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A107431A1BAE0646007CA799 /* Launch Screen.xib */; };
 		A116B10D1B61943200B10061 /* PostTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A116B10C1B61943200B10061 /* PostTVC.swift */; };
 		A116B1131B61DD1A00B10061 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A116B1121B61DD1A00B10061 /* ImageViewController.swift */; };
 		A135CC881B67EBA200445C21 /* StrategiesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A135CC871B67EBA200445C21 /* StrategiesTVC.swift */; };
@@ -87,6 +88,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A107431A1BAE0646007CA799 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		A116B10C1B61943200B10061 /* PostTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTVC.swift; sourceTree = "<group>"; };
 		A116B1121B61DD1A00B10061 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		A135CC871B67EBA200445C21 /* StrategiesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategiesTVC.swift; sourceTree = "<group>"; };
@@ -101,7 +103,6 @@
 		A14585731B4E29BF00C1BD30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A14585741B4E29BF00C1BD30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A145857B1B4E29BF00C1BD30 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Formative/Images.xcassets; sourceTree = "<group>"; };
-		A145857E1B4E29BF00C1BD30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A14585841B4E29BF00C1BD30 /* FormativeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FormativeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14585891B4E29BF00C1BD30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A145858A1B4E29BF00C1BD30 /* FormativeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormativeTests.swift; sourceTree = "<group>"; };
@@ -243,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				A14E2D691B5D6D8A001666E8 /* Main.storyboard */,
+				A107431A1BAE0646007CA799 /* Launch Screen.xib */,
 				A1CD91C51B72AA39005E9875 /* Care Team */,
 				A1CD91C41B72AA1C005E9875 /* Settings */,
 				A16C358D1B67232D009BABD2 /* Login And Registration */,
@@ -260,7 +262,6 @@
 			isa = PBXGroup;
 			children = (
 				A14585741B4E29BF00C1BD30 /* AppDelegate.swift */,
-				A145857D1B4E29BF00C1BD30 /* LaunchScreen.xib */,
 				A14585731B4E29BF00C1BD30 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -481,6 +482,7 @@
 				A19401D21B894FE800F59AAF /* Legal.pdf in Resources */,
 				A1FBAFAF1B5D6ED400980086 /* PostView.xib in Resources */,
 				A16C358F1B672ADF009BABD2 /* userProfileQuestions.json in Resources */,
+				A107431B1BAE0646007CA799 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,17 +561,6 @@
 			targetProxy = A14585851B4E29BF00C1BD30 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		A145857D1B4E29BF00C1BD30 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A145857E1B4E29BF00C1BD30 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A145858C1B4E29BF00C1BD30 /* Debug */ = {
